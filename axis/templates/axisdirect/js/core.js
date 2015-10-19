@@ -194,6 +194,7 @@ if(localStorage.getItem("activeclass2")!="")
         $('.forget-email-block2').show();
     });
 
+ 
     // unfreeze account
     $(".unfreeze input[type='radio']").click(function() {
         if ($(this).val() == "pan") {
