@@ -1,0 +1,75 @@
+
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+			<!-- Header -->
+			<header class="header" role="banner">
+				<div class="header-inner clearfix">
+					<a class="brand pull-left col-sm-4 col-xs-4 col-md-3" href="<?php echo $this->baseurl; ?>/">
+						<?php echo $logo; ?>
+						<?php if ($this->params->get('sitedescription')) : ?>
+							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription')) . '</div>'; ?>
+						<?php endif; ?>
+					</a>
+					<!-- <div class="header-search pull-right">
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div> -->
+					<div class="col-sm-4 col-md-6  col-xs-4 navHolder">
+						<nav class="navigation1 navbar navbar-default" role="navigation">
+							<div class="navbar-header pull-left">
+								<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</a>
+							</div>
+							<div class="collapse navbar-collapse">
+								<jdoc:include type="modules" name="position-2" style="border: 1px solid #000;" />
+							</div>
+						</nav>
+					</div>
+					<div class="col-sm-4 col-md-3  col-xs-4">
+						Axis Direct
+					</div>
+				</div>
+			</header>
+			<?php if ($this->countModules('position-1')) : ?>
+				<nav class="navigation" role="navigation">
+					<div class="navbar pull-left">
+						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+					</div>
+					<div class="nav-collapse">
+						<jdoc:include type="modules" name="position-1" style="none" />
+					</div>
+				</nav>
+			<?php endif; ?>
+			<jdoc:include type="modules" name="banner" style="xhtml" />
+			<div class="row-fluid">
+				<?php if ($this->countModules('position-8')) : ?>
+					<!-- Begin Sidebar -->
+					<div id="sidebar" class="span3">
+						<div class="sidebar-nav">
+							<jdoc:include type="modules" name="position-8" style="xhtml" />
+						</div>
+					</div>
+					<!-- End Sidebar -->
+				<?php endif; ?>
+				<main id="content" role="main" class="<?php echo $span; ?>">
+					<!-- Begin Content -->
+					<jdoc:include type="modules" name="position-3" style="xhtml" />
+					<jdoc:include type="message" />
+					<jdoc:include type="component" />
+					<!-- <jdoc:include type="modules" name="position-2" style="none" /> -->
+					<!-- End Content -->
+				</main>
+				<?php if ($this->countModules('position-7')) : ?>
+					<div id="aside" class="span3">
+						<!-- Begin Right Sidebar -->
+						<jdoc:include type="modules" name="position-7" style="well" />
+						<!-- End Right Sidebar -->
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>

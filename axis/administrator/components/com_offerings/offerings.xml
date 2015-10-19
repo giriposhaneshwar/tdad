@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_offerings</name>
+    <creationDate>2015-10-16</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Giri</author>
+    <authorEmail>egp.designs@gmail.com</authorEmail>
+    <authorUrl>http://giri.com</authorUrl>
+    <version>1.0.0</version>
+    <description>Offerings Module</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>offerings.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_offerings.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_offerings/assets/images/s_com_offerings.png" >COM_OFFERINGS</menu>
+        <submenu>
+            
+			<menu link="option=com_offerings&amp;view=overv1ews" view="overv1ews" img="components/com_offerings/assets/images/s_overv1ews.png" alt="Offerings/Overv1ews">COM_OFFERINGS_TITLE_OVERV1EWS</menu>
+
+			<menu link="option=com_offerings&amp;view=productss" view="productss" img="components/com_offerings/assets/images/s_productss.png" alt="Offerings/Productss">COM_OFFERINGS_TITLE_PRODUCTSS</menu>
+
+			<menu link="option=com_offerings&amp;view=platformss" view="platformss" img="components/com_offerings/assets/images/s_platformss.png" alt="Offerings/Platformss">COM_OFFERINGS_TITLE_PLATFORMSS</menu>
+
+			<menu link="option=com_offerings&amp;view=pricings" view="pricings" img="components/com_offerings/assets/images/s_pricings.png" alt="Offerings/Pricings">COM_OFFERINGS_TITLE_PRICINGS</menu>
+
+			<menu link="option=com_offerings&amp;view=accountss" view="accountss" img="components/com_offerings/assets/images/s_accountss.png" alt="Offerings/Accountss">COM_OFFERINGS_TITLE_ACCOUNTSS</menu>
+
+			<menu link="option=com_offerings&amp;view=valueaddedservicess" view="valueaddedservicess" img="components/com_offerings/assets/images/s_valueaddedservicess.png" alt="Offerings/Valueaddedservicess">COM_OFFERINGS_TITLE_VALUEADDEDSERVICESS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>offerings.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_offerings.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_offerings.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="offerings"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

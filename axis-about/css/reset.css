@@ -1,0 +1,268 @@
+*{ margin:0; padding:0;box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box;-webkit-appearance: none;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height:normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a{
+	text-decoration:none;
+}
+small{
+	font-size:12px;
+}
+
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Border radius */
+
+.radius-4{
+	border-radius:4px;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.radius-4-down{
+	border-radius: 0px 0px 4px 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+}
+/* anchor color */
+a{
+	color:#1190e0;
+}
+
+/* Floatings */
+.push-left{
+	float:left;
+}
+.push-right{
+	float:right;
+}
+/* txt center */
+
+.txt-center{text-align:center;}
+/* Overflow */
+.overflow-dots{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align:middle;
+}
+
+/* ::::::::::::::::::::::::::::::::: Overlay ::::::::::::::::::::::::::::::::*/
+
+.overlay{
+	background: rgba(0, 0, 0, 0.9) none repeat scroll 0% 0%;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 12;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	display:none;
+	transition:ease all 0.8s;
+}
+.overlay-filter{
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	z-index: 12;
+	top: 0px;
+	left: 0px;
+	display:none;
+	transition:ease all 0.8s;
+}
+
+/* Sprite Iage */
+.sprite-img{
+	background:url(../images/Sprite-Sheet.png) no-repeat;
+	display:inline-block;
+}
+
+/* Margins and paddings */
+.mt5{
+	margin-top:5px;
+}
+.mt10{
+	margin-top:10px;
+}
+.mt15{margin-top:15px;}
+.mt20{
+	margin-top:20px;
+}
+.mt30{
+	margin-top:30px;
+}
+
+.mb5{
+	margin-bottom:5px;
+}
+.mb10{
+	margin-bottom:10px;
+}
+.mb20{
+	margin-bottom:20px;
+}
+
+.ml5{
+	margin-left:5px;
+}
+.ml10{
+	margin-left:10px;
+}
+
+.pd10{
+	padding:10px;
+}
+.pd20{
+	padding:20px;
+}
+.pt10{
+	padding-top:10px;
+}
+.pt20{
+	padding-top:20px;
+}
+.pt30{
+	padding-top:30px;
+}
+
+.ptb20{
+	padding:20px 0;
+}
+.ptb30{
+	padding:30px 0;
+}
+
+
+
+/* Transitions */
+.transitions{
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+
+/*** Button Styles ***/
+/* Buttons */
+.primary-btn,.secondary-btn{
+	color:#fff;
+	font-size:12px;
+	padding: 8px 16px 6px;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+	text-transform:uppercase;
+}
+.primary-btn{
+	background-color:#1190e0;
+	border-bottom:2px solid #006db2;
+}
+.primary-btn:hover{
+	background-color:#006db2;
+}
+.secondary-btn{
+	background-color:#303030;
+	border-bottom:2px solid #000000;
+}
+.secondary-btn:hover{
+	background-color:#000000;
+}
+
+
+
+
+/* tabs slider */
+.tabs-slider-list .bx-wrapper .bx-viewport{left: 0px; padding: 0 !important;border:0px;}
+.tabs-slider-list{margin-bottom:20px;background-color:#fff;}
+ul.curosal_con-dis > li > a{padding:18px 26px;border-right:1px solid #c5c5c5;display:block;}
+ul.curosal_con-dis > li:last-child > a{border-right:0px;}
+ul.curosal_con-dis > li > a.active-tab{background-color: #1190e0;}
+ul.curosal_con-dis > li > a.active-tab:hover{background-color: #1190e0;}
+ul.curosal_con-dis > li > a:hover{background-color:#f7f7f7;}
+ul.curosal_con-dis > li > a.active-tab .mar-name, ul.curosal_con-dis > li > a.active-tab .mar-per,ul.curosal_con-dis > li > a.active-tab .mar-value,ul.curosal_con-dis > li > a.active-tab .mar-cap{color:#fff;}
+ul.curosal_con-dis > li > a.active-tab .market-pri-inc{background-position: -598px -42px;}
+ul.curosal_con-dis > li > a.active-tab .market-pri-inc.dec{background-position: -598px -61px;}
+.curosal_con-dis li{float:left;}
+
+
+/* ::::::::::::::::::::::::::::::::: Background colors ::::::::::::::::::::::::::::::::*/
+.gray-bg{
+	background-color:#fbfbfb;
+}
+.blue-bg{
+	background-color:#f2f2f2
+}
+
+/* ::::::::::::::::::::::::::::::::: Shadow ::::::::::::::::::::::::::::::::*/
+.shadow-panel {
+	background-color:#fff;
+	 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 transition: all 0.2s ease-in-out;
+}
+.shadow-panel:hover{
+	box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);-webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);-moz-box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);-ms-box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);-o-box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);
+}
+.shadow-panel-normal{
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	 transition: all 0.2s ease-in-out;
+}
+
+/* ::::::::::::::::::::::::::::::::: overflow ::::::::::::::::::::::::::::::::*/
+ 
+.popup-overflow{overflow:hidden !important;}

@@ -1,0 +1,13 @@
+<div class="breadcrumb-sec dis-none">
+            <div class="bredcrumb clearfix">
+                <p class="main-item"><i class="menu-icon-small menu11-small"></i><span>Research Reports</span></p>
+                <ul class="researchmenu clearfix">
+             <li ><a href="<?php echo JRoute::_('index.php?option=com_insights&view=researchcallsoverview'); ?>">Overview</a></li>
+             <li><a href="<?php echo JRoute::_('index.php?option=com_insights&view=researchcallspremiumideas'); ?>">Fundamental Reports</a></li>
+            <li><a href="<?php echo JRoute::_('index.php?option=com_insights&view=researchcallsinvestmentidea'); ?>">Technical Reports</a></li>
+            <li><a href="<?php echo JRoute::_('index.php?option=com_insights&view=researchtradingideas'); ?>">Mutual Fund Reports</a></li>
+            <li><a href="<?php echo JRoute::_('index.php?option=com_insights&view=researchcallsderivative'); ?>">Sector, Economy, Other</a></li>
+                </ul>
+            </div>
+        </div>
+    

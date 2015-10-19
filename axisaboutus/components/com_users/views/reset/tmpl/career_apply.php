@@ -1,0 +1,39 @@
+<div class="custom-dialog likepop">
+    <div class="banner-locate-us clearfix">
+        <a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
+        <div class="dialog-title clearfix">
+            <h4 class="car-pop-hea">Apply Now for Sales Executive Position at Mumbai</h4>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="dialog-content">
+            <div class="clearfix">
+                
+                <form>
+                    <div class="frm-sec">
+                        <input type="text" placeholder="Name"/>
+                    </div>
+                    <div class="frm-sec">
+                        
+                        <input type="text" placeholder="Email"/>
+                    </div>
+                    <div class="frm-sec">
+                        <input type="text" placeholder="Mobile No"/>
+                    </div>
+                    <div class="frm-sec resume-upload">
+                        <label>Upload Resume / CV :  (.pdf, .txt, .doc, .docx, .rtf) </label>
+                        <p class="browsebtn"><input type="file"/> Upload Image</p>
+                        
+                    </div>
+                    <div class="frm-sec">
+                         <button type="button" class="primary-btn">Submit</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        <div class="frm-sec car-info-frm">
+                        <p class="cnt-txt">Got something different to offer? </p><p class="cnt-txt">Drop us a mail at <a href="mailto:recruitment@axisdirect.in">recruitment@axisdirect.in</a> and we will be happy to check it out</p>
+                    </div>
+    </div>
+</div>
