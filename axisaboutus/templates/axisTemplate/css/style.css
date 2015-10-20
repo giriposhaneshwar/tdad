@@ -138,7 +138,7 @@ videorelatecontent:after, .videorelatecontent:before {
 .invest-content{ padding-left:80px; min-height:140px;}
 .invest-content p{color:#999;margin-top:10px;line-height:18px;}
 .contentinvesthead{ font-size:24px; color:#000; text-transform:capitalize;}
-.contentinvesthead a{ color:#000;}
+.contentinvesthead a{ color:#000; border-bottom: 1px solid #000; line-height: 28px;}
 
 /* Finance Section */
 
@@ -449,10 +449,10 @@ ul.curosal_con-dis > li > a.active-tab .locate-icon{background-position:-11px -2
 .car-info-frm a{color:#666;}
 /*:::::::::::::::::::::::::: Media Center ::::::::::::::::::::::::::*/
 .announce-icon{ background-position:-400px -80px;}
-.press-icon{background-position:-466px -80px;}
+.press-icon{background-position:-466px -82px;}
 .video-icon{background-position:-533px -80px;}
 .gallery-icon{background-position:-596px -80px;}
-.anual-icon{background-position:-665px -80px;}
+.anual-icon{background-position:-665px -82px;}
 
 
 .innerpage-bannersec{ width:100%; height:400px; background:url(../../../images/mediabanner.jpg) 0 0 no-repeat; background-size:cover;}

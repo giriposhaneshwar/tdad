@@ -1,3 +1,5 @@
+(function($, window){
+
 $(document).ready(function() {
 
 
@@ -26,19 +28,40 @@ $(document).ready(function() {
     //View Details for ajax calls 
     $(".pop-like").on("click", function() {
         $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-pack").dialog("open").load(pagename + ".html");
+        $(".pop-pack").dialog("open").load($(this).attr('data-url'), function(response, status, xhr) {
+			if(status == 'success'){
+				$(this).dialog({
+					position: {
+						my: "center",
+						at: "center",
+						of: window,
+						collision: 'fit'
+					}
+				});
+			}	
+		});
 
     });
-    $(".apply-car").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-pack1").dialog("open").load(pagename + ".html");
 
-    });
+	$(".apply-car").on("click", function() {
+		$('body').toggleClass('popup-overflow');
+		$(".pop-pack1").dialog("open").load($(this).attr('data-url'), function(response, status, xhr) {
+			if(status == 'success'){
+				$(this).dialog({
+					position: {
+						my: "center",
+						at: "center",
+						of: window,
+						collision: 'fit'
+					}
+				});
+			}
+		});
+
+	});
 
     //Close Dialog Popup
-    $('.jqpop').on('click', '.dialog-close', function(e) {
+    $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
         $('body').removeClass('popup-overflow');
         $(".pop-pack,.pop-pack1").dialog("close");
@@ -101,3 +124,5 @@ $(document).ready(function() {
 	$(".gallerylst").lightGallery();
 });
 
+
+}(jQuery, window));

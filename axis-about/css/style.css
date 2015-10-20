@@ -138,6 +138,7 @@ videorelatecontent:after, .videorelatecontent:before {
 .invest-content{ padding-left:80px; min-height:140px;}
 .invest-content p{color:#999;margin-top:10px;line-height:18px;}
 .contentinvesthead{ font-size:24px; color:#000; text-transform:capitalize;}
+.contentinvesthead a{ color:#000; border-bottom: 1px solid #000; line-height: 28px;}
 
 /* Finance Section */
 
@@ -212,6 +213,7 @@ videorelatecontent:after, .videorelatecontent:before {
 .footer-menu{margin-top:10px;padding-bottom:10px;}
 .footer-menu li{display:inline-block;margin-top:10px;}
 .footer-menu li a{padding:0 10px;color:rgba(153,153,153,0.5); border-right:1px solid rgba(102,102,102,0.6);font-size:12px;}
+.footer-menu li a:hover{color: rgba(153,153,153,1);}
 .footer-menu li:first-child a{padding-left:0;}
 .footer-menu li:last-child a{border-right:0px;}
 .footer-add .foot-add{color:#fff;font-size:14px;margin-bottom:10px;}
@@ -413,7 +415,7 @@ ul.curosal_con-dis > li > a.active-tab .locate-icon{background-position:-11px -2
 	 transition: all 0.2s ease-in-out;}
 .accordian-hea {padding:15px 0;cursor:pointer;}
 .cariers-list > li:first-child{background-color:#666;box-shadow:none;color:#fff;padding:10px 0;}
-.car-job-hea {width:20%;float:left;padding:0 20px;}
+.car-job-hea {width:25%;float:left;padding:0 20px;}
 .accordion-content{border-top:1px solid #cccccc;background:#fff; padding:30px;}
 
 .acc-exp-hea{color:#333333;font-size:18px;}
@@ -447,10 +449,10 @@ ul.curosal_con-dis > li > a.active-tab .locate-icon{background-position:-11px -2
 .car-info-frm a{color:#666;}
 /*:::::::::::::::::::::::::: Media Center ::::::::::::::::::::::::::*/
 .announce-icon{ background-position:-400px -80px;}
-.press-icon{background-position:-466px -80px;}
+.press-icon{background-position:-466px -82px;}
 .video-icon{background-position:-533px -80px;}
 .gallery-icon{background-position:-596px -80px;}
-.anual-icon{background-position:-665px -80px;}
+.anual-icon{background-position:-665px -82px;}
 
 
 .innerpage-bannersec{ width:100%; height:400px; background:url(../images/mediabanner.jpg) 0 0 no-repeat; background-size:cover;}
@@ -460,7 +462,8 @@ ul.curosal_con-dis > li > a.active-tab .locate-icon{background-position:-11px -2
 .innerbannercontent p{padding-top:0;}
 .innerbannercontent h1{padding-bottom:0;}
 .innerbannercontent h1{line-height:50px;}
-.innerbannercontent{ position:absolute; right:0; top:120px;}
+.innerbannercontent{ position:absolute; left:0; top:120px;}
+.innerbannercontent.media-banner{ left: inherit; right:0;}
 .medialst{ border-bottom:solid 1px #ccc;}
 .mediatabcontent{ margin:30px 0;}
 .medialst > li{ position:relative; width:20%; text-align:center; float:left;}

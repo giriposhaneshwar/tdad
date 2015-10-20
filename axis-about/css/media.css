@@ -44,7 +44,7 @@
 	.bx-wrapper .bx-viewport{left:0;padding:0 !important;}
 	.bx-wrapper .bx-controls-direction a{width:30px;height:30px;margin:0px -25px;}
 	.bx-wrapper .bx-prev,.bx-wrapper .bx-next{
-	background: url(../../../images/arrows-small.png) no-repeat;
+	background: url(../images/arrows-small.png) no-repeat;
 	opacity:0.5;
 	}
 	.bx-wrapper .bx-next{right: 5px;
