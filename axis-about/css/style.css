@@ -138,7 +138,7 @@ videorelatecontent:after, .videorelatecontent:before {
 .invest-content{ padding-left:80px; min-height:140px;}
 .invest-content p{color:#999;margin-top:10px;line-height:18px;}
 .contentinvesthead{ font-size:24px; color:#000; text-transform:capitalize;}
-.contentinvesthead a{ color:#000; border-bottom: 1px solid #000; line-height: 28px;}
+.contentinvesthead a{ color:#000;}
 
 /* Finance Section */
 
