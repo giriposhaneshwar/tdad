@@ -92,7 +92,7 @@ $(document).ready(function() {
         });
     }
 
-    $(window).resize(function() {
+    $(document).resize(function() {
         if (reswid <= 995) {
             $(document).click(function(e) {
                 var p = $(e.target).closest('.res-moremenu').length
@@ -105,13 +105,18 @@ $(document).ready(function() {
 
 
     // Move top arrow
-    $(window).scroll(function() {
+   $(window).scroll(function() {
         if ($(this).scrollTop() < 100) {
             $('#totop').fadeOut();
+			 $('.header-second-web,.breadcrumb-sec').show();
+			$('.site-start-modules,.site-start').removeClass('site-start-modules-hide');
         } else {
             $('#totop').fadeIn();
+			$('.header-second-web,.breadcrumb-sec').hide();
+			$('.site-start-modules,.site-start').addClass('site-start-modules-hide');
         }
     });
+	
     $('#totop').on('click', function() {
         $('html, body').animate({
             scrollTop: 0
@@ -540,6 +545,39 @@ $(document).ready(function() {
 
     /* :::::::::::::::::::::::::::::::::: offerings :::::::::::::::::::::::::::::::::::::::*/
 
+		//planssection 
+		$('.showme-plans').on('click', function() {
+			$('.showme-plans').hide();
+			$('.modifyplans').show();
+			$('.plans-invest').show();
+		});
+		
+		// expansion
+		var scrolled = 0;
+		$('.pro-exp-btn').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
+			$(this).closest('.pro-over').find('.expansion-pro1').hide();
+			scrolled = $(document).scrollTop();
+			  scrolled = scrolled + 100;
+			  $('html , body').animate({
+			   scrollTop: scrolled
+			  })
+		});
+		$('.pro1-exp-btn').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
+			$(this).closest('.pro-over').find('.expansion-pro').hide();
+			scrolled = $(document).scrollTop();
+			  scrolled = scrolled + 100;
+			  $('html , body').animate({
+			   scrollTop: scrolled
+			  })
+		});
+		
+		$('.close-expansion').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
+		});
+		
+		
 
 
     // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
@@ -581,7 +619,7 @@ $(document).ready(function() {
     //menu filter
     $('.menu-filter').accordion();
 
-    //Auto Complete
+    //Auto Complete -->Markets
     $(function() {
         var availableTags = [
             "RELIND - Reliance Industries Ltd",
@@ -597,9 +635,37 @@ $(document).ready(function() {
             "Reliance Chemotex Industries Ltd - NA"
         ];
         $(".auto-complete").autocomplete({
-            source: availableTags
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 511
+            });
+        }
         });
     });
+	
+	$(function() {
+        var availableTags = [
+            "Equity",
+            "Derivatives",
+            "Mutual",
+            "Reliance",
+            "Communications Lt",
+            "RPOWER",
+            "RELINFRA",
+            "RELCAPITAL",
+            "RELIGARE ",
+            "RIIL ",
+            "NA"
+        ];
+        $(".global-search").autocomplete({
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 230
+            });
+        }
+        });
+    });
+	
 
     //BX Slider for card view --> insights
 
@@ -654,36 +720,52 @@ $(document).ready(function() {
     //price slider --> Offerinigs
     var price_slider_setting = {
         moveSlides: 1,
-        infiniteLoop: false
+        infiniteLoop: false,
     };
 
     var price_slider;
 
     var price_list_slider_width = $('.price-list-slider').width();
+	
+	// priceing newto investing
+	$('.newinvest-plans-block').on('click', function() {
+		$('.dis-price-slider,.newinvest-plans-block').hide();
+		$('.slide-price-none,.newinvest-plans-none').show();
+		price_slider = $('.price-carosal').bxSlider({slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width});
+	});
+	$('.newinvest-plans-none').on('click', function() {
+		$('.slide-price-none,.newinvest-plans-none').hide();	
+		$('.dis-price-slider,.newinvest-plans-block').show();
+		price_slider = $('.price-carosal').bxSlider().destroySlider();		
+	});
 
-    if ($(window).width() <= 995) {
-        price_slider_setting.slideWidth = price_list_slider_width;
-        price_slider_setting.minSlides = 1;
-        price_slider_setting.maxSlides = 1;
-        price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    } else {
-        price_slider_setting.slideWidth = 225;
-        price_slider_setting.minSlides = 2;
-        price_slider_setting.maxSlides = 4;
-        price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    }
+    //if ($(window).width() <= 995) {
+//        price_slider_setting.slideWidth = price_list_slider_width;
+//        price_slider_setting.minSlides = 1;
+//        price_slider_setting.maxSlides = 1;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    } else {
+//        price_slider_setting.slideWidth = 225;
+//        price_slider_setting.minSlides = 2;
+//        price_slider_setting.maxSlides = 4;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    }
 
     $(window).resize(function() {
         if ($(window).width() <= 995) {
-            price_slider_setting.slideWidth = price_list_slider_width;
-            price_slider_setting.minSlides = 1;
-            price_slider_setting.maxSlides = 1;
-            price_slider.reloadSlider(price_slider_setting);
+			if(price_slider != undefined){
+				price_slider_setting.slideWidth = price_list_slider_width;
+				price_slider_setting.minSlides = 1;
+				price_slider_setting.maxSlides = 1;
+				price_slider.reloadSlider(price_slider_setting);
+			}
         } else {
+			if(price_slider != undefined){
             price_slider_setting.slideWidth = 225;
             price_slider_setting.minSlides = 2;
             price_slider_setting.maxSlides = 4;
             price_slider.reloadSlider(price_slider_setting);
+			}
         }
     });
 	
@@ -733,23 +815,17 @@ $(document).ready(function() {
         until: new Date(2015, 10 - 1, 04)
     });
 
-    // parallax -- > offerings
-    $('.jarallax').jarallax({
-        speed: 0.5,
-        imgWidth: 1920,
-        imgHeight: 500
-    });
-
     //animation -- > offerings
     var wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',
+		offset:180,
         mobile: true,
         live: true
     });
     wow.init();
 	
-	//Range slider
+	/*//Range slider
 	//Tooltip
 	var tooltip = $('<div id="tooltip" />').css({
 		position: 'absolute',
@@ -804,7 +880,7 @@ $(document).ready(function() {
 	
 	$('.ui-slider-handle').live('change', function(){
 		alert("slider mouse");
-	});
+	});*/
 	
 
     // Menu Active and scrool 
@@ -817,7 +893,7 @@ $(document).ready(function() {
         });
     } else {
         $('.le-products-menu').singlePageNav({
-            offset: 137,
+            offset: 34,
             filter: ':not(.external)',
             speed: 750,
             currentClass: 'active',
@@ -849,7 +925,7 @@ function navigation() {
 
             event.stopImmediatePropagation();
         });
-        $('.second-level-menu > li').click(function() {
+        $('.second-level-menu > li').hover(function() {
             $(this).closest('li').siblings().removeClass('active');
             $(this).closest('li').addClass('active');
         });

@@ -305,7 +305,7 @@
 }
 
 /* ::::::::::::::::::::::::::::::::: Auto Complete ::::::::::::::::::::::::::::::::*/
-ul.ui-autocomplete.ui-menu{width:511px !important;background-color: #F1EFEF;margin-top:80px !important;border: 1px solid #e5e6e6;z-index:28;height:250px;overflow:auto;}
+ul.ui-autocomplete.ui-menu{background-color: #F1EFEF;border: 1px solid #e5e6e6;z-index:29;height:250px;overflow:auto;}
 ul.ui-autocomplete.ui-menu .ui-menu-item{padding: 16px;color: #3c3c3c;cursor:pointer;border-bottom: 1px solid #e5e6e6;}
 ul.ui-autocomplete.ui-menu .ui-menu-item:hover{background-color:#fff;}
 
