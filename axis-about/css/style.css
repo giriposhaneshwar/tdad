@@ -33,7 +33,7 @@ body{font-family: Arial,Helvetica,sans-serif;font-size:14px;color:#666666;backgr
 
 /* Video Section */
 .html5-video-content,.html5-video-player .video-click-tracking, .html5-video-player .video-stream{ width:100% !important;}
-.videosec {position: relative;background: #000;height:550px;position:relative;border-bottom:solid 4px #bfbdbd;}
+.videosec {position: relative;background: #000;height:400px;position:relative;border-bottom:solid 4px #bfbdbd;}
 .capitalcnt{ font-size:40px;color:#333;}
 
 
