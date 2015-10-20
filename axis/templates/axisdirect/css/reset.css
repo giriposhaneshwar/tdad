@@ -1,4 +1,4 @@
-*{ margin:0; padding:0;box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box;-webkit-appearance: none;}
+*{ margin:0; padding:0;box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box;-webkit-appearance: none;;}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,7 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: transparent;
 }
 body {
-	line-height:1;
+	line-height:normal;
 }
 ol, ul {
 	list-style: none;
@@ -69,15 +69,6 @@ table {
 	-webkit-border-radius: 0px 0px 4px 4px;
     -moz-border-radius: 0px 0px 4px 4px;
 }
-/* Border radius */
-.transitions{
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-}
-
 /* anchor color */
 a{
 	color:#1190e0;
@@ -113,10 +104,20 @@ a{
 	display:none;
 	transition:ease all 0.8s;
 }
+.overlay-filter{
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	z-index: 12;
+	top: 0px;
+	left: 0px;
+	display:none;
+	transition:ease all 0.8s;
+}
 
 /* Sprite Iage */
 .sprite-img{
-	background:url(../images/sprite-icons.png) no-repeat;
+	background:url(../../../images/sprite-icons.png) no-repeat;
 	display:inline-block;
 }
 
@@ -127,6 +128,7 @@ a{
 .mt10{
 	margin-top:10px;
 }
+.mt15{margin-top:15px;}
 .mt20{
 	margin-top:20px;
 }
@@ -221,12 +223,17 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 .error-msg span{color:#ff5353;font-size:12px;}
 .error-msg i{color:#ff5353;}
 
+/* ie close mark */
+.inp-filed::-ms-clear,.search-page-inp::-ms-clear {
+    display: none;
+}
+
 /*** Button Styles ***/
 /* Buttons */
-.primary-btn,.secondary-btn,.thrid-btn,.buy-btn,.sell-btn,.disable-btn{
+.primary-btn,.secondary-btn,.thrid-btn,.buy-btn,.sell-btn,.disable-btn,.fourth-btn{
 	color:#fff;
 	font-size:12px;
-	padding: 8px 16px;
+	padding: 8px 16px 6px;
 	border:none;
 	cursor:pointer;
 	display:inline-block;
@@ -259,6 +266,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 	background-color:#696969;
 	border-bottom:2px solid #696969;
 }
+.fourth-btn{color:#666;background:#e8e8e8;}
 .buy-btn{background-color:#7cc774;border-bottom:2px solid #63b25b;}
 .buy-btn:hover{
 	background-color:#63b25b;
@@ -362,7 +370,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 .compare-flyout{
 	background-color:#ffedae;
 	padding:10px; 
-	margin:20px 0 10px 0;
+	margin:10px 0;
 	display:none;
 	text-align:center;
 	border:1px solid #f8db78;
@@ -413,7 +421,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
     left: 0;
 }
 .coatch-boxes {
-   margin-top: 240px;
+   margin-top: 260px;
 }
 .coatch-container {
     position: relative;
@@ -446,7 +454,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 	float:left;
 }
 .rgt-txt {
-    right: 250px;
+    right: 260px;
 	float:left;
 	margin-top:60px;
 }
@@ -508,7 +516,7 @@ width: 20px;}
 
 .headingtooltip {
 	position: relative;
-	background: #ffffff;
+	background: #eff2f4;
 	border: 1px solid #e0e0e0;
 	display:none;
 	position:absolute;
@@ -530,7 +538,7 @@ width: 20px;}
 }
 .headingtooltip:after {
 	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: #ffffff;
+	border-bottom-color: #eff2f4;
 	border-width: 10px;
 	margin-left: -10px;
 }
@@ -580,13 +588,13 @@ width: 20px;}
 	background-color:#fff;
 }
 .gray-bg{
-	background-color:#f6f6f6
+	background-color:#fbfbfb;
 }
 .yellow-bg{
 	background-color:#e5f0c8
 }
 .blue-bg{
-	background-color:#e4e8fa
+	background-color:#f2f2f2
 }
 
 /* ::::::::::::::::::::::::::::::::: Panel ::::::::::::::::::::::::::::::::*/
@@ -626,3 +634,16 @@ width: 20px;}
 .complete{
 	background-color: #fff0f0;
 }
+
+/* tabs slider */
+.tabs-slider-list .bx-wrapper .bx-viewport{left: 0px; padding: 0 !important;border:0px;}
+.tabs-slider-list{margin-bottom:20px;background-color:#fff;}
+ul.curosal_con-dis > li > a{width:244px;padding:18px 26px;border-right:1px solid #c5c5c5;display:block;}
+ul.curosal_con-dis > li:last-child > a{border-right:0px;}
+ul.curosal_con-dis > li > a.active-tab{background-color: #1190e0;}
+ul.curosal_con-dis > li > a.active-tab:hover{background-color: #1190e0;}
+ul.curosal_con-dis > li > a:hover{background-color:#f7f7f7;}
+ul.curosal_con-dis > li > a.active-tab .mar-name, ul.curosal_con-dis > li > a.active-tab .mar-per,ul.curosal_con-dis > li > a.active-tab .mar-value,ul.curosal_con-dis > li > a.active-tab .mar-cap{color:#fff;}
+ul.curosal_con-dis > li > a.active-tab .market-pri-inc{background-position: -598px -42px;}
+ul.curosal_con-dis > li > a.active-tab .market-pri-inc.dec{background-position: -598px -61px;}
+.curosal_con-dis li{float:left;}

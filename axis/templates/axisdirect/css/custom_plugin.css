@@ -2,16 +2,11 @@
 
 /*:::::::::::::::::::::::::::::::: BX Slider ::::::::::::::::::::::::::::::::*/
 .bx-wrapper{max-width:inherit !important;}
-.bx-wrapper .bx-viewport {
-	height:100% !important;
-	-moz-box-shadow: none;
-	-webkit-box-shadow:none;
+.bx-wrapper .bx-viewport{-moz-box-shadow: none;
 	box-shadow:none;
 	border:  none;
-	left: -5px;
-	background: none;
-	 padding:0 6px !important;
-}
+	background: none;}
+
 .bx-wrapper .bx-controls-direction a{
 	height: 44px;
 	width: 44px;
@@ -34,6 +29,21 @@
 	background-position:0 -44px;
 }
 .bx-pager{display:none;}
+
+/*Option Chain Vertical Slider*/
+.chainslider .bx-wrapper .bx-viewport {height:460px !important}
+.chainslider .bx-wrapper .bx-prev, .chainslider .bx-wrapper .bx-next{
+	background: url(../images/arrows-small.png) no-repeat;	
+	width:30px;height:30px;left:48%;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.chainslider .bx-wrapper .bx-prev {top:-24px;}
+.chainslider .bx-wrapper .bx-next {background-position:0 -30px;bottom:-32px;top:auto;}
+
 
 /****************************************** Content Carousel *******************************************/
 
@@ -172,7 +182,9 @@
 }
 
 /* ::::::::::::::::::::::::::::::::: Tab ::::::::::::::::::::::::::::::::*/
-
+.ui-tabs-panel{
+	padding:0;
+}
 .tab-sec {
 	position: relative;
 }
@@ -212,20 +224,20 @@
 
 
 /* ::::::::::::::::::::::::::::::::: Slider Tabs ::::::::::::::::::::::::::::::::*/
-.slide-tabs .ui-slider-tabs-list-wrapper{z-index:27;
+.slide-tabs .ui-slider-tabs-list-wrapper{z-index:6;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	 -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	 -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	 -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	 -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.slide-tabs .ui-slider-left-arrow{left:-50px;}
+.slide-tabs .ui-slider-left-arrow{left:-60px;}
 .slide-tabs a.ui-slider-right-arrow{right:-50px;}
 .slide-tabs .ui-slider-tabs-list-container{
 	margin:0 !important;
 }
 .ui-slider-tabs-list li {
-	height:100px !important;
+	/*height:100px !important;*/
 	position:relative;
 }
 .ui-slider-tabs-list-container{overflow:hidden;}
@@ -271,10 +283,81 @@
  background: url('../images/arrows-big.png') no-repeat ; height: 44px;
     width: 44px;
 }
-.ui-slider-left-arrow.edge,.ui-slider-right-arrow{margin:20px 0 0 0;border:0;background:none;box-shadow:none;}
+.ui-slider-left-arrow.edge,.ui-slider-right-arrow{margin:30px 0 0 0;border:0;background:none;box-shadow:none;}
 .ui-slider-left-arrow.edge:hover{border:0;}
-.ui-slider-left-arrow{border:0;border-radius:0;box-shadow:none;margin:20px 0 0 0;}
+.ui-slider-left-arrow{border:0;border-radius:0;box-shadow:none;margin:30px 0 0 0;}
 .ui-slider-right-arrow div{background:url('../images/arrows-big.png') no-repeat 0 -44px; height: 44px;
     width: 44px;}
 .ui-slider-left-arrow:hover, .ui-slider-right-arrow:hover {box-shadow:none;background:none;}
 .ui-slider-left-arrow, .ui-slider-right-arrow, .ui-slider-left-arrow.edge:hover, .ui-slider-right-arrow.edge:hover{border:0;background:none;}
+
+
+
+/* ::::::::::::::::::::::::::::::::: Select box ::::::::::::::::::::::::::::::::*/
+.mstockselect .select2-container .select2-selection--single,.mstockselect .select2-container--default .select2-selection--single .select2-selection__arrow {
+	height:28px;
+}
+.mstockselect .select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height:28px;
+}
+.mstockselect .select2-container--default .select2-selection--single .select2-selection__arrow{
+	top:-2px;
+}
+
+/* ::::::::::::::::::::::::::::::::: Auto Complete ::::::::::::::::::::::::::::::::*/
+ul.ui-autocomplete.ui-menu{background-color: #F1EFEF;border: 1px solid #e5e6e6;z-index:29;height:250px;overflow:auto;}
+ul.ui-autocomplete.ui-menu .ui-menu-item{padding: 16px;color: #3c3c3c;cursor:pointer;border-bottom: 1px solid #e5e6e6;}
+ul.ui-autocomplete.ui-menu .ui-menu-item:hover{background-color:#fff;}
+
+/* ::::::::::::::::::::::::::::::::: events calender ::::::::::::::::::::::::::::::::*/
+.events-calender .calendar h2{padding-left:0px;margin-top:20px;}
+
+/* ::::::::::::::::::::::::::::::::: Calendar Styles ::::::::::::::::::::::::::::::::: */
+.ui-datepicker{cursor:pointer;font-size:13px;background:#f5f3f3;padding:10px;width:250px;border:1px solid #ccc;display:none;z-index:9 !important;}
+.ui-datepicker .ui-datepicker-title{margin:0 10px 0 10px;text-align:left;line-height:22px;color:#666766;text-align:center;}
+.ui-icon{text-indent:-99999px;display:block;}
+.ui-datepicker .ui-datepicker-header{padding:2px;position:relative;background:#fbfbfb;margin-bottom:4px;}
+.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next{height:9px;position:absolute;top:9px;width:6px;background:url(../images/dp_arrows.png) no-repeat;}
+.ui-datepicker .ui-datepicker-prev{background-position:0 -9px;left:8px;border:0;}
+.ui-datepicker .ui-datepicker-next{background-position:0 0;right:8px;border:0;}
+.ui-datepicker .ui-datepicker-next:hover{background-position:-6px 0;}
+.ui-datepicker .ui-datepicker-prev:hover{background-position:-6px -9px;}
+.ui-datepicker-trigger{margin:4px 0 0 0;cursor:pointer;position: absolute;right: 8px;top: 2px;width:16px;height:16px;}
+.ui-datepicker-calendar{padding:0 2px;font-size:11px;}
+.event-frm .ui-datepicker-trigger{float:none;margin:1px 0 0 10px;cursor:pointer;}
+.ui-datepicker-calendar th{color:#666766;text-align:left;padding:2px 4px;}
+.ui-datepicker-calendar td{padding:0;}
+.ui-datepicker-calendar .ui-state-default{text-align:center;display:block;color:#999;padding:4px;width:30px;margin:1px 0px;}
+.ui-datepicker-today .ui-state-highlight,.ui-datepicker-calendar .ui-state-hover{background:#28406d;color:#fff;border:0;}
+.ui-datepicker .ui-state-disabled span{color:#7cccec !important;}
+.ui-datepicker .ui-state-active, .ui-datepicker .ui-widget-content .ui-state-active,.ui-datepicker  .ui-widget-header .ui-state-active{border:1px solid #28406d;}
+
+
+/************************************ Points slider *******************************************/
+.placeholder .ui-slider-horizontal, .catalogue-point .ui-slider-horizontal, .suggest-rewards .ui-slider-horizontal, .point-slide .ui-slider-horizontal{
+	border-color: #ababab;
+	height: 0;
+	margin: 20px 0;
+}
+.placeholder .ui-slider .ui-slider-handle, .catalogue-point .ui-slider .ui-slider-handle, .suggest-rewards  .ui-slider .ui-slider-handle, .point-slide .ui-slider .ui-slider-handle {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: #cc3366;
+	border: 1px solid #cc3366;
+}
+.placeholder .ui-slider .ui-state-focus, .suggest-rewards .ui-slider .ui-state-focus, .point-slider .ui-slider .ui-state-focus, .points-slider .ui-slider .ui-state-focus{
+	outline: none;
+}
+.placeholder .ui-slider-horizontal .ui-slider-handle, .catalogue-point .ui-slider-horizontal .ui-slider-handle, .suggest-rewards  .ui-slider-horizontal .ui-slider-handle, .point-slide .ui-slider-horizontal .ui-slider-handle{
+	top: -9px;
+}
+.pointer-start, .pointer-end {
+	font-size: 12px;
+	color: #444;
+	position: absolute;
+	top: 10px;
+}
+.pointer-end {
+	right: 0;
+}

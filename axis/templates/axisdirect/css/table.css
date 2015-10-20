@@ -18,8 +18,8 @@
 	font-size:14px;
 	color:#666666;
 }
-tr:nth-child(even) {background: #f8f8f8}
-tr:nth-child(odd) {background: #eee}
+.customtable tr:nth-child(even) {background: #f8f8f8}
+.customtable tr:nth-child(odd) {background: #eee}
   table th, table td {
     padding: 10px;
     text-align: left;
@@ -35,38 +35,37 @@ tr:nth-child(odd) {background: #eee}
 
   @media screen and (max-width: 997px) {
 
-    table {
+    .customtable {
       border: 0;
     }
 
-    table thead {
-      display: none;
+    .customtable thead {
+      display: none !important;
     }
 
-    table tr {
-      margin-bottom: 10px;
-      display: block;
-      border-bottom: 1px solid #ddd;
+    .customtable tr {
+      border-bottom: 1px solid #c5c5c5;
     }
 
-    table td {
+    .customtable td {
       display: block;
       text-align: left;
       font-size: 14px;
 	  color:#666;
-      border-bottom: 1px dotted #ccc;
+      border-bottom: 1px dotted #c5c5c5;
     }
 
-    table td:last-child {
+    .customtable td:last-child {
       border-bottom: 0;
     }
 
-    table td:before {
+    .customtable td:before {
       content: attr(data-label);
       float: left;
 	  font-size: 14px;
-	color:#333333;
-	font-weight:normal;
+		color:#333333;
+		font-weight:normal;
+		margin-right:5px;
     }
 	
   }
