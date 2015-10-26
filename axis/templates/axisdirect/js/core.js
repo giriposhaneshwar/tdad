@@ -152,6 +152,50 @@ if(localStorage.getItem("activeclass2")!="")
         }
     });
 
+     //Responsive more-menu 
+    $(".res-moremenu").on('click', function() {
+        $('.header-menu').toggle();
+    });
+    var reswid = $(document).width();
+    if (reswid <= 995) {
+        $(document).click(function(e) {
+            var p = $(e.target).closest('.res-moremenu').length
+            if (!p) {
+                $('.header-menu').hide();
+            }
+        });
+    }
+    $(document).resize(function() {
+        if (reswid <= 995) {
+            $(document).click(function(e) {
+                var p = $(e.target).closest('.res-moremenu').length
+                if (!p) {
+                    $('.header-menu').hide();
+                }
+            });
+        }
+    });
+    // Move top arrow
+   $(window).scroll(function() {
+        if ($(this).scrollTop() < 100) {
+            $('#totop').fadeOut();
+             $('.header-second-web,.breadcrumb-sec').show();
+            $('.site-start-modules,.site-start').removeClass('site-start-modules-hide');
+        } else {
+            $('#totop').fadeIn();
+            $('.header-second-web,.breadcrumb-sec').hide();
+            $('.site-start-modules,.site-start').addClass('site-start-modules-hide');
+        }
+    });
+    
+    $('#totop').on('click', function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'fast');
+        return false;
+    });
+    /* :::::::::::::::::::::::::::::::::: Kyc :::::::::::::::::::::::::::::::::::::::*/
+
     // Wizard
     $('.pcacs-tabs').on('click', function() {
         var pastep = "." + $(this).attr('id')
@@ -206,7 +250,20 @@ if(localStorage.getItem("activeclass2")!="")
         }
     });
 
-    // cart more menu -- reasearch module
+      // Alert message
+    $('.sucess-alert-btn').on('click', function() {
+        var $div2 = $('.def-msg-none');
+        $('.def-msg').hide();
+        if ($div2.is(':visible')) {
+            return;
+        }
+        $div2.show();
+        setTimeout(function() {
+            $div2.hide();
+        }, 2000);
+    });
+    /* :::::::::::::::::::::::::::::::::: Research :::::::::::::::::::::::::::::::::::::::*/
+    // reasearch time and term 
     $('.invest-down').on('click', function() {
         var $div = $(this).next();
         $('.rea-mod-time').not($div).hide();
@@ -223,7 +280,13 @@ if(localStorage.getItem("activeclass2")!="")
         $('.invest-item-time').html($(this).closest('li').find('.invest-time').text());
         $('.rea-mod-time').hide();
     });
-    // reasearch time and term -- reasearch module
+    //tabs -Content Change --markets
+    $('.mar-time-drop li a').on('click', function() {
+        var time_drop_text = $(this).text();
+        $(this).parents('.invest-drop-txt').find('.invest-down .invest-item-time').text(time_drop_text);
+        $('.rea-mod-time').hide();
+    });
+    // reasearch time and term
     function terms() {
         var allVals = [];
         var res_time = $('input[name="term"]:checked').each(function() {
@@ -240,20 +303,18 @@ if(localStorage.getItem("activeclass2")!="")
 
     $('.sort-name').on('click', function() {
         $(this).closest('.sort-by').find('.sort-list').toggle();
-        $('.sort-by').toggleClass('active');
+        // $('.sort-by').toggleClass('active');
     });
     $(document).on('click', function(e) {
         var p = $(e.target).closest('.sort-name').length
         if (!p) {
             $('.sort-list').hide();
-            $('.sort-by').removeClass('active');
+            // $('.sort-by').removeClass('active');
         }
     });
     $('.sort-list li a').on('click', function() {
-        $('.sort-select-name').html($(this).text());
-        alert(i);
-        $('.sort-list').hide();
-        $('.sort-by').removeClass('active');
+         $(this).closest('.sort-slide-num').find('.sort-select-name').html($(this).text());
+         $('.sort-list').addClass(a);
     });
     $('.add-wish-sel').on('click', function() {
         $(this).closest('.msg-select').find('.sort-list').toggle();
@@ -278,18 +339,23 @@ if(localStorage.getItem("activeclass2")!="")
     });
     $('.add-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
-        $(this).closest('.stock-sec').find('.wish-suces').show();
+        $(this).closest('.stock-sec').find('.wish-suces').show().delay(2000).fadeOut(800);
     });
     $('.cancel-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
     });
 
     //wish list inside page
-    $('.wish-compare-in').on('click', function() {
-        if (!$(this).is(':checked')) {
+    $('.panel-heading').on('click', function() {
+        if ($(this).closest('.panel-heading').find('.panel-compare-action input[type="checkbox"]').is(':checked')) {
             $('.sel-msg-fly-in').show();
             $(this).parentsUntil('stock-details').find('.wishlist-in').addClass('wishwork');
+        } else {
+            $('.sel-msg-fly-in').hide();
         }
+    });
+    $('.wishlist').on('click', function() {
+        $('.select-basic-compare').show().delay(2000).fadeOut(800);
     });
     $('.cart-list').on('click', '.wishwork', function() {
         $('.sel-msg-fly-in').hide();
@@ -311,6 +377,15 @@ if(localStorage.getItem("activeclass2")!="")
         $(this).next(".fill-call-data").slideToggle("").siblings(".fill-call-data:visible").slideUp("");
         $(this).toggleClass("current");
         $(this).siblings(".acc-fill").removeClass("current");
+    });
+
+    // filter boxes check for radio
+    $('.filter-check ').click(function() {
+        if ($(this).closest('.serach-box-fly').find('.filter-check input[type="checkbox"]').is(':checked')) {
+            $(this).closest('.serach-box-fly').find('.fillcheck').prop("checked", false);
+        } else {
+            $(this).closest('.serach-box-fly').find('.fillcheck').prop("checked", true);
+        }
     });
 
     // Grid view list view display
@@ -342,85 +417,15 @@ if(localStorage.getItem("activeclass2")!="")
     $(".cart-more-items li a").on('click', function() {
         $(".cart-more-items").hide();
     });
-    /*
-	
-   setTimeout(function() {
-		$('.invest-drop').removeClass('coath-text');
-        $('.coatch-overlay').fadeOut(300);
-    }, 5000);
-    $(document).click(function() {
-		$('.invest-drop').removeClass('coath-text');
-        $('.coatch-overlay').fadeOut(300);
-    });*/
-
-    //Coatch Screen Overlay
-    setTimeout(function() {
-        $('.invest-drop').removeClass('coath-text');
-        $('.coatch-overlay').fadeOut(300);
-        if ($('.coatch-overlay').css("display", "none")) {
-            $('body').addClass("open");
-        } else {
-            $('body').removeClass("open");
-        }
-    }, 5000);
-    $(document).click(function() {
-        $('.invest-drop').removeClass('coath-text');
-        $('.coatch-overlay').fadeOut(300);
-        $('body').css("overflow", "inherit");
-    });
-
-    // reasearch time and term -- reasearch module
-    $(".rea-mod-time input[type='radio']").click(function() {
-        var res_time = $('input[name="time"]:checked').val();
-        $('.invest-items-time').text(res_time);
-    });
-
-    function terms() {
-        var allVals = [];
-        var res_time = $('input[name="term"]:checked').each(function() {
-            allVals.push($(this).val());
-        });
-        $('.invest-items-term').text(allVals) + "";
-    }
-    $(".rea-mod-time input[type='checkbox']").click(function() {
-        terms();
-    });
-
-    //Responsive more-menu	
-    $(".res-moremenu").on('click', function() {
-        $('.header-menu').toggle();
-    });
-    var reswid = $(document).width();
-    if (reswid < 995) {
-        $(document).click(function(e) {
-            var p = $(e.target).closest('.res-moremenu,.header-menu').length
-            if (!p) {
-                $(".header-menu").Hide();
-            }
-        });
-    }
-
-    //Portfolio menu	
+   
     $('.fill-box,.fil-fly-btns').on('click', function() {
-        $('.filter-content-box').toggle();
+         $('.filter-content-box').slideToggle();
     });
     $(document).on('click', function(e) {
         var p = $(e.target).closest('.fill-box,.filter-content-box').length
         if (!p) {
-            $('.filter-content-box').hide();
+             $('.filter-content-box').slideUp();
         }
-    });
-
-    // Alert message
-    $('.sucess-alert-btn').on('click', function() {
-        var $div2 = $('.def-msg-none');
-        if ($div2.is(':visible')) {
-            return;
-        }
-        $div2.show();
-        setTimeout(function() {
-            $div2.hide();
-        }, 2000);
     });
 
     // Reports showall
@@ -457,6 +462,179 @@ if(localStorage.getItem("activeclass2")!="")
         $('.graph-deisgn,.ratle-btns').show();
     });
 
+    //Coatch Screen Overlay
+    setTimeout(function() {
+        $('.invest-drop').removeClass('coath-text');
+        $('.coatch-overlay').fadeOut(300);
+        if ($('.coatch-overlay').css("display", "none")) {
+            $('body').addClass("open");
+        } else {
+            $('body').removeClass("open");
+        }
+    }, 5000);
+    $(document).click(function() {
+        $('.invest-drop').removeClass('coath-text');
+        $('.coatch-overlay').fadeOut(300);
+        $('body').css("overflow", "auto");
+    });
+    /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
+    // markest stockbuz vals chnage like tabs 
+    $(document).on('click', function(e) {
+        var hitTar = $(e.target);
+        if (hitTar.hasClass('market_val_item')) {
+            var hitTarVal = hitTar.attr('data-val');
+            hitTar.addClass('active').parent().siblings().find('a').removeClass('active');
+            hitTar.closest('ul.market-vals').next('.dval-dis').text(hitTarVal);
+        }
+    });
+    // Sort menu
+    $('.sort-select-name-click').on('click', function() {
+        $(this).closest('.stockhead').find('.market-subnames').toggle();
+    });
+    $(document).on('click', function(e) {
+        var p = $(e.target).closest('.sort-select-name-click').length
+        if (!p) {
+            $('.market-subnames').hide();
+        }
+    });
+    $('.market-subnames li a').on('click', function() {
+        $(this).closest('.stockhead').find('.sort-select-name').html($(this).text());
+        $('.market-subnames').hide();
+    });
+    // Grid view list view display
+    $('.mar-grid-btn').on('click', function() {
+        $(this).closest('.gri-li-sta').find('.mar-list-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-scattered-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-grid-con').show();
+    });
+    $('.mar-list-btn').on('click', function() {
+        $(this).closest('.gri-li-sta').find('.mar-grid-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-scattered-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-list-con').show();
+    });
+    $('.mar-sctared-btn').on('click', function() {
+        $(this).closest('.gri-li-sta').find('.mar-grid-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-list-con').hide();
+        $(this).closest('.gri-li-sta').find('.mar-scattered-con').show();
+    });
+    //Shareholding View Details
+    $(".sharehold-viewdetails").on('click', function() {
+        var $el = $(this);
+        $el.text($el.text() == "View More" ? "View Less" : "View More");
+        $('.trdisplay').toggle();
+    });
+    $(".company-trading-show").on('click', function() {
+        $(this).closest('.data-section').find('.trading-show-btn').hide();
+        $(this).closest('.data-section').find('.comny-trade-hide').show();
+    });
+    //statisticelist
+    $('.statistics-list-view').on('click', function() {
+        var $el = $(this);
+        $el.text($el.text() == "View Funds" ? "Hide Funds" : "View Funds");
+        $(this).closest('.mutual-statistics-con').find('.mutual-statistics-list').toggle();
+    });
+    // gotocontract and stock buzz
+    $('.contarct-buzz').on('click', function() {
+        $('.stock-buzz-con').hide();
+        $('.contarct-buzz-con').show();
+    });
+    $('.stock-buzz').on('click', function() {
+        $('.contarct-buzz-con').hide();
+        $('.stock-buzz-con').show();
+    });
+    //tabs -Content Change
+    $('.tab-slide1 li a').on('click', function() {
+        $('.tab-slide1 li a').removeClass('active-tab');
+        $('.tab-slider-content').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide2 li a').on('click', function() {
+        $('.tab-slide2 li a').removeClass('active-tab');
+        $('.tab-slider-content2').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide3 li a').on('click', function() {
+        $('.tab-slide3 li a').removeClass('active-tab');
+        $('.tab-slider-content3').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide4 li a').on('click', function() {
+        $('.tab-slide4 li a').removeClass('active-tab');
+        $('.tab-slider-content4').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide5 li a').on('click', function() {
+        $('.tab-slide5 li a').removeClass('active-tab');
+        $('.tab-slider-content5').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide6 li a').on('click', function() {
+        $('.tab-slide6 li a').removeClass('active-tab');
+        $('.tab-slider-content6').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide7 li a').on('click', function() {
+        $('.tab-slide7 li a').removeClass('active-tab');
+        $('.tab-slider-content7').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    $('.tab-slide8 li a').on('click', function() {
+        $('.tab-slide8 li a').removeClass('active-tab');
+        $('.tab-slider-content8').hide();
+        $(this).addClass('active-tab');
+        var div_name = $(this).attr('data-val');
+        $('#' + div_name).show();
+    });
+    /* :::::::::::::::::::::::::::::::::: offerings :::::::::::::::::::::::::::::::::::::::*/
+        //planssection 
+        $('.showme-plans').on('click', function() {
+            $('.showme-plans').hide();
+            $('.modifyplans').show();
+            $('.plans-invest').show();
+        });
+        
+        // expansion
+        var scrolled = 0;
+        $('.pro-exp-btn').on('click', function() {
+            $(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
+            $(this).closest('.pro-over').find('.expansion-pro1').hide();
+            scrolled = $(document).scrollTop();
+              scrolled = scrolled + 100;
+              $('html , body').animate({
+               scrollTop: scrolled
+              })
+        });
+        $('.pro1-exp-btn').on('click', function() {
+            $(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
+            $(this).closest('.pro-over').find('.expansion-pro').hide();
+            scrolled = $(document).scrollTop();
+              scrolled = scrolled + 100;
+              $('html , body').animate({
+               scrollTop: scrolled
+              })
+        });
+        
+        $('.close-expansion').on('click', function() {
+            $(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
+        });
+        
+        
+    // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
+
     //News-ticker	
     var nt_example1 = $('.sensex-list').newsTicker({
         row_height: 31,
@@ -473,32 +651,75 @@ if(localStorage.getItem("activeclass2")!="")
     // Tabs
     $('.tabs').tabs();
 
+    // Tabs
+    $(".tabs-secmenu").tabs({
+        active: 1
+    });
+    // Tabslider
+    tabslider();
+
     //Custom Select
     $('.select').select2({
         minimumResultsForSearch: -1,
     });
 
-    // tabs with slider -->Markets
-    var pos, slides;
-    pos = slides = $(".tabs-new li").length;
-    $(".next-btn").click(function() {
-        if (pos > 0) {
-            $(".tabs-new ul").stop(true, true).animate({
-                left: "-=55px"
-            }, 500);
-            pos--;
-        }
-    });
-    $(".prev-btn").click(function() {
-        if (pos < slides) {
-            $(".tabs-new ul").stop(true, true).animate({
-                left: "+=55px"
-            }, 500);
-            pos++;
-        }
+    //Table accordian
+    $(".acordian-click").accordion({
+        heightStyle: "content"
     });
 
-    //BX Slider 
+    //menu filter
+    $('.menu-filter').accordion();
+
+    //Auto Complete -->Markets
+    $(function() {
+        var availableTags = [
+            "RELIND - Reliance Industries Ltd",
+            "RELINF - Reliance Infrastructure Ltd",
+            "RELIDF - Reliance Industrial Infrastructure Ltd",
+            "Reliance Industries Ltd - RELIANCE",
+            "Reliance Communications Ltd - RCOM",
+            "Reliance Power Ltd - RPOWER",
+            "Reliance Infrastructure Ltd - RELINFRA",
+            "Reliance Capital Ltd - RELCAPITAL",
+            "Religare Enterprises Ltd - RELIGARE ",
+            "Reliance Industrial Infrastructure Ltd - RIIL ",
+            "Reliance Chemotex Industries Ltd - NA"
+        ];
+        $(".auto-complete").autocomplete({
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 511
+            });
+        }
+        });
+    });
+    
+    $(function() {
+        var availableTags = [
+            "Equity",
+            "Derivatives",
+            "Mutual",
+            "Reliance",
+            "Communications Lt",
+            "RPOWER",
+            "RELINFRA",
+            "RELCAPITAL",
+            "RELIGARE ",
+            "RIIL ",
+            "NA"
+        ];
+        $(".global-search").autocomplete({
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 230
+            });
+        }
+        });
+    });
+    
+
+    //BX Slider for card view --> insights
     if ($(window).width() <= 995) {
         $('.ca-slider').bxSlider({
             minSlides: 1,
@@ -512,6 +733,88 @@ if(localStorage.getItem("activeclass2")!="")
             slideMargin: 20
         });
     }
+
+     //BX Slider  --> news markets
+    $('.snap-news-slider').bxSlider({
+        auto: true,
+    });
+    //Bxslider for Option Chain --> Derivatives
+    $('.option-chain-slider').bxSlider({
+        mode: 'vertical',
+        infiniteLoop: true,
+        pager: false,
+        controls: true,
+        minSlides: 3,
+        maxSlides: 4,
+        moveSlides: 1,
+    });
+    //Date Picker
+    $('.datepicker').datepicker({
+        showOn: "both",
+        buttonImage: '../images/calender-icon.png',
+        buttonImageOnly: true,
+    });
+    //Markets slider tab
+    $('.curosal').bxSlider({
+        slideWidth: 244,
+        minSlides: 2,
+        maxSlides: 4,
+        moveSlides: 1,
+        infiniteLoop: false
+    });
+    //price slider --> Offerinigs
+    var price_slider_setting = {
+        moveSlides: 1,
+        infiniteLoop: false,
+    };
+    var price_slider;
+    var price_list_slider_width = $('.price-list-slider').width();
+    
+    // priceing newto investing
+    $('.newinvest-plans-block').on('click', function() {
+        $('.dis-price-slider,.newinvest-plans-block').hide();
+        $('.slide-price-none,.newinvest-plans-none').show();
+        price_slider = $('.price-carosal').bxSlider({slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width});
+    });
+    $('.newinvest-plans-none').on('click', function() {
+        $('.slide-price-none,.newinvest-plans-none').hide();    
+        $('.dis-price-slider,.newinvest-plans-block').show();
+        price_slider = $('.price-carosal').bxSlider().destroySlider();      
+    });
+    //if ($(window).width() <= 995) {
+//        price_slider_setting.slideWidth = price_list_slider_width;
+//        price_slider_setting.minSlides = 1;
+//        price_slider_setting.maxSlides = 1;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    } else {
+//        price_slider_setting.slideWidth = 225;
+//        price_slider_setting.minSlides = 2;
+//        price_slider_setting.maxSlides = 4;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    }
+    $(window).resize(function() {
+        if ($(window).width() <= 995) {
+            if(price_slider != undefined){
+                price_slider_setting.slideWidth = price_list_slider_width;
+                price_slider_setting.minSlides = 1;
+                price_slider_setting.maxSlides = 1;
+                price_slider.reloadSlider(price_slider_setting);
+            }
+        } else {
+            if(price_slider != undefined){
+            price_slider_setting.slideWidth = 225;
+            price_slider_setting.minSlides = 2;
+            price_slider_setting.maxSlides = 4;
+            price_slider.reloadSlider(price_slider_setting);
+            }
+        }
+    });
+    
+    
+    // platform slider --> offerings
+    $('.platform-slider').bxSlider({
+        mode: 'vertical',
+    });
 
     //Dialog Box
     $(".premiumresearchdialog,.pop-pack,.addtopopup").dialog({
@@ -531,23 +834,12 @@ if(localStorage.getItem("activeclass2")!="")
         width: 980,
     });
 
-    $(".addtopopup").dialog({
-        width: 800
-    });
 
-	
-	$(".pop-pack").dialog({
-		closeOnEscape: false,
-		position: { my: "center", at: "center", of: window,collision: 'fit' }
-    });
     //View Details for ajax calls 
     $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
         $('body').toggleClass('popup-overflow');
-        //var pagename = $(this).attr("data-url");
-       // $(".pop-pack").dialog("open").load(pagename);
-		
-		 $('.pop-pack').load($(this).attr("data-url"));
-		 $( ".pop-pack").dialog( "open" );
+        var pagename = $(this).attr('title');
+       $(".pop-pack").dialog("open").load(pagename + ".html");
 
     });
 
@@ -558,17 +850,102 @@ if(localStorage.getItem("activeclass2")!="")
         $(".pop-pack").dialog("close");
         return false;
     });
-	
 
-});
+     // timer -- markets
+    $('.defaultCountdown').countdown({
+        until: new Date(2015, 10 - 1, 04)
+    });
+    //animation -- > offerings
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset:180,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+                
+    /*//Range slider
+    //Tooltip
+    var tooltip = $('<div id="tooltip" />').css({
+        position: 'absolute',
+        top: -17,
+        left: -5
+    }).hide();
+    
+    //Range slider
+    $(".slider").each(function () {
+        var begin = $(this).data("begin"),
+            end = $(this).data("end"); $(this).slider({
+            range: "min",
+            value: 300,
+            min: begin,
+            max: end,
+            slide: function (event, ui) {
+                var mop = 10000;
+                var slideramount = ("#" + $(this).attr("id") + "_amount");
+                var p1 = $(slideramount).val();
+                var vpp = 5;
+                var cash = mop-(p1*vpp);
+                var sliderresult = ("#" + $(this).attr("id") + "_inr");
+                
+                $('#msg').text(cash);
+                $(sliderresult).val("INR "+cash);
+                
+                tooltip.text(ui.value);
+                //update text box quantity
+                var slideramount = ("#" + $(this).attr("id") + "_amount");
+                $(slideramount).val(ui.value);
+                var slideramount1 = ("#" + $(this).attr("id") + "_qwe");
+                $(slideramount1).val(ui.value);
+                $(this).find(".ui-slider-handle").append(tooltip).hover(function() {
+                    tooltip.show()
+                }, function() {
+                    tooltip.hide()
+                })
+            }
+        })
 
-$(window).resize(function() {
-    navigation();
+        //initialise text box quantity
+        var slideramount = ("#" + $(this).attr("id") + "_amount");
+            $(slideramount).val($(this).slider("value"));
+        });
+   
+     
+    
+    
+    
+    $('.ui-slider-handle').live('change', function(){
+        alert("slider mouse");
+    });*/
+    
+    // Menu Active and scrool 
+    if ($(window).width() <= 995) {
+        $('.le-products-menu').singlePageNav({
+            offset: 86,
+            filter: ':not(.external)',
+            speed: 750,
+            currentClass: 'active',
+        });
+    } else {
+        $('.le-products-menu').singlePageNav({
+            offset: 34,
+            filter: ':not(.external)',
+            speed: 750,
+            currentClass: 'active',
+        });
+    }
+    /* resize function */
+    $(window).resize(function() {
+        // navigation
+        navigation();
+    });
 });
 
 // header-top expansion Menu for web and mobile
 function navigation() {
     var scr_width = $(document).width();
+    console.log("Screen ", scr_width);
     if (scr_width > 995) {
         $('.first-level-menu > li > a').click(function(event) {
             $('.second-level').not($(this).closest('li').find('.second-level')).hide();
@@ -577,23 +954,8 @@ function navigation() {
             $(this).closest('li').toggleClass('active');
 
             event.stopImmediatePropagation();
-
-            var secondLevelMenu = $(event.target.parentElement.children[1]);
-
-            console.log($(secondLevelMenu[0]).children());
-            /*if(secondLevelMenu.has('ul > li.active > ul')){
-                console.log("This is menu");
-            }else{
-                console.log("This is not a menu");
-            }*/
-
-            if($('.second-level > ul > li').children().length > 1){
-                $('.second-level').css('height', '144');
-            }else{
-                $('.second-level').css('height', '90');
-            }
         });
-        $('.second-level-menu > li').click(function() {
+        $('.second-level-menu > li').hover(function() {
             $(this).closest('li').siblings().removeClass('active');
             $(this).closest('li').addClass('active');
         });
@@ -605,21 +967,6 @@ function navigation() {
                 $('.first-level-menu > li').removeClass('active');
             }
 
-            // if($('.second-level > ul > li').children().length > 1){
-            //     $('.second-level').css('height', '144');
-            //     console.log("Large Menu");
-            // }else{
-            //     $('.second-level').css('height', '90');
-            //     console.log("Small Menu");
-            // }
-        });
-
-        $('.second-level > ul > li').on('click', function(e){
-            if($(this).children().length > 1){
-                $('.second-level').css('height', '144');
-            }else{
-                $('.second-level').css('height', '90');
-            }
         });
 
     } else {
@@ -631,30 +978,13 @@ function navigation() {
     }
 }
 
-$(document).ready(function() {
+function tabslider() {
     $(".slide-tab").sliderTabs({
         mousewheel: false,
         position: "top",
         transition: "fade",
-        tabSlideLength: 200,
+        tabSlideLength: 2,
+        tabSlideLength: $(document).width() > 995 ? 196 : 160,
         tabHeight: 100
     });
-	/*$("#popupdialog").dialog({
-        width: '40%',
-        modal: true,
-        autoOpen: false, 
-        closeOnEscape: true,
-    }); 
-      
-    $( ".pop-like" ).click(function() {
-
-      $('#popupdialog').load($(this).attr("data-url"));
-
-      $( "#popupdialog").dialog( "open" );
-    });*/	
-	
-	$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-		options.async = true;
-	});
-	//$('.tabs').tabs();
-});
+}
