@@ -334,86 +334,30 @@ ul.ui-autocomplete.ui-menu .ui-menu-item:hover{background-color:#fff;}
 
 
 /************************************ Points slider *******************************************/
-
-.slider-area .ui-slider {
-	position: relative;
-	text-align: left;
-	background:url(../images/price-slider/slider-inside.png);
-	height:14px !important;
-	border-radius:10px;
-	margin:0 3px;
-	
+.placeholder .ui-slider-horizontal, .catalogue-point .ui-slider-horizontal, .suggest-rewards .ui-slider-horizontal, .point-slide .ui-slider-horizontal{
+	border-color: #ababab;
+	height: 0;
+	margin: 20px 0;
 }
-.slider-area .ui-slider .ui-slider-handle {
+.placeholder .ui-slider .ui-slider-handle, .catalogue-point .ui-slider .ui-slider-handle, .suggest-rewards  .ui-slider .ui-slider-handle, .point-slide .ui-slider .ui-slider-handle {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: #cc3366;
+	border: 1px solid #cc3366;
+}
+.placeholder .ui-slider .ui-state-focus, .suggest-rewards .ui-slider .ui-state-focus, .point-slider .ui-slider .ui-state-focus, .points-slider .ui-slider .ui-state-focus{
+	outline: none;
+}
+.placeholder .ui-slider-horizontal .ui-slider-handle, .catalogue-point .ui-slider-horizontal .ui-slider-handle, .suggest-rewards  .ui-slider-horizontal .ui-slider-handle, .point-slide .ui-slider-horizontal .ui-slider-handle{
+	top: -9px;
+}
+.pointer-start, .pointer-end {
+	font-size: 12px;
+	color: #444;
 	position: absolute;
-	z-index: 2;
-	width: 39px;
-	height: 47px;
-	background:url(../images/price-slider/pointer.png);
-	cursor: pointer;
+	top: 10px;
 }
-.slider-area .ui-slider .ui-slider-range {
-	position: absolute;
-	z-index: 1;
-	font-size: .7em;
-	display: block;
-	border: 0;
-	background-position: 0 0;
-	background:url(../images/price-slider/slider-pattern.png);
-	height:12px !important;
-	border-radius:10px;
-	margin-top:1px;
-}
-
-/* For IE8 - See #6727 */
-.slider-area .ui-slider.ui-state-disabled .ui-slider-handle,
-.slider-area .ui-slider.ui-state-disabled .ui-slider-range {
-	filter: inherit;
-}
-
-.slider-area .ui-slider-horizontal {
-	height: .8em;
-}
-.slider-area .ui-slider-horizontal .ui-slider-handle {
-	top: -18px;
-	margin-left: -20px;
-}
-.slider-area .ui-slider-horizontal .ui-slider-range {
-	top: 0;
-	height: 100%;
-}
-.slider-area .ui-slider-horizontal .ui-slider-range-min {
-	left: 0;
-}
-.slider-area .ui-slider-horizontal .ui-slider-range-max {
+.pointer-end {
 	right: 0;
-}
-
-/************************************ progress bar *******************************************/
-
-.progressbar.ui-progressbar {
-    background-color: #f0f0f0;
-}
-.progressbar.ui-progressbar {
-    position: relative;
-    border-radius: 30px;
-    height: 16px;
-    margin: 5px 0;
-}
-.progressbar.ui-progressbar .ui-progressbar-value {
-    border: solid 1px #4e8c33;
-}
-.progressbar.ui-progressbar .ui-progressbar-value {
-    height: 100%;
-    margin: -1px;
-    border-radius: 30px;
-    display: block;
-    background: url(../images/progress-bg.png) repeat left top;
-}
-.progressbar .progress-label {
-    position: absolute;
-    left: 50%;
-    top: 4px;
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #fff;
 }

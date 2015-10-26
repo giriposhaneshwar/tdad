@@ -44,9 +44,6 @@
 	.bx-wrapper .bx-next {
 		right:20px;
 	}
-	/* offerings */
-	/*prodcts*/
-	.le-products-menu li a{min-height:138px;}
 }
 @media screen and (max-width:997px){
 	
@@ -1122,7 +1119,7 @@
 	
 	/*Product menu*/	
 	.le-products-menu li{width:33.3%;border-right:1px solid #cccccc;border-bottom:1px solid #cccccc;float:left;}
-	.le-products-menu li a{padding:10px;font-size:12px;min-height:inherit;}
+	.le-products-menu li a{padding:10px;font-size:12px;}
 	
 	/*Products section*/	
 	.product-align{height:auto;padding:50px 20px;text-align:center;}

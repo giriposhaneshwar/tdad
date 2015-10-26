@@ -105,36 +105,24 @@ $(document).ready(function() {
 
 
     // Move top arrow
-    $(window).scroll(function() {
+   $(window).scroll(function() {
         if ($(this).scrollTop() < 100) {
             $('#totop').fadeOut();
-            $('.header-second-web,.breadcrumb-sec').show();
-            $('.site-start-modules,.site-start').removeClass('site-start-modules-hide');
+			 $('.header-second-web,.breadcrumb-sec').show();
+			$('.site-start-modules,.site-start').removeClass('site-start-modules-hide');
         } else {
             $('#totop').fadeIn();
-            $('.header-second-web,.breadcrumb-sec').hide();
-            $('.site-start-modules,.site-start').addClass('site-start-modules-hide');
+			$('.header-second-web,.breadcrumb-sec').hide();
+			$('.site-start-modules,.site-start').addClass('site-start-modules-hide');
         }
     });
-
+	
     $('#totop').on('click', function() {
         $('html, body').animate({
             scrollTop: 0
         }, 'fast');
         return false;
     });
-
-    /* :::::::::::::::::::::::::::::::::: Share like :::::::::::::::::::::::::::::::::::::::*/
-
-    $('.like-box-btn').on('click', function() {
-        $(this).find('.like-small').addClass('active');
-        $('.like-box').show().delay(2000).fadeOut(800);
-    });
-    $('.like-box-btn1').on('click', function() {
-        $(this).find('.share-1').addClass('active');
-        $('.like-box').show().delay(2000).fadeOut(800);
-    });
-
 
     /* :::::::::::::::::::::::::::::::::: Kyc :::::::::::::::::::::::::::::::::::::::*/
 
@@ -284,7 +272,7 @@ $(document).ready(function() {
     });
     $('.add-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
-        $(this).closest('.stock-sec').find('.wish-suces').show().delay(3000).fadeOut(800);
+        $(this).closest('.stock-sec').find('.wish-suces').show().delay(2000).fadeOut(800);
     });
     $('.cancel-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
@@ -557,48 +545,40 @@ $(document).ready(function() {
 
     /* :::::::::::::::::::::::::::::::::: offerings :::::::::::::::::::::::::::::::::::::::*/
 
-    //planssection 
-    $('.showme-plans').on('click', function() {
-        $(this).closest('.pricing-btnsec').find('.showme-plans,.price-trade-link').hide();
-        $(this).closest('.pricing-btnsec').find('.modifyplans').show();
-        $(this).closest('.pricing-btnsec').find('.plans-invest').show();
-    });
+		//planssection 
+		$('.showme-plans').on('click', function() {
+			$('.showme-plans').hide();
+			$('.modifyplans').show();
+			$('.plans-invest').show();
+		});
+		
+		// expansion
+		var scrolled = 0;
+		$('.pro-exp-btn').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
+			$(this).closest('.pro-over').find('.expansion-pro1').hide();
+			scrolled = $(document).scrollTop();
+			  scrolled = scrolled + 100;
+			  $('html , body').animate({
+			   scrollTop: scrolled
+			  })
+		});
+		$('.pro1-exp-btn').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
+			$(this).closest('.pro-over').find('.expansion-pro').hide();
+			scrolled = $(document).scrollTop();
+			  scrolled = scrolled + 100;
+			  $('html , body').animate({
+			   scrollTop: scrolled
+			  })
+		});
+		
+		$('.close-expansion').on('click', function() {
+			$(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
+		});
+		
+		
 
-    // expansion
-    var scrolled = 0;
-    $('.pro-exp-btn').on('click', function() {
-        $(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
-        $(this).closest('.pro-over').find('.expansion-pro1').hide();
-        scrolled = $(document).scrollTop();
-        scrolled = scrolled + 500;
-        $('html , body').animate({
-            scrollTop: scrolled
-        })
-    });
-    $('.pro1-exp-btn').on('click', function() {
-        $(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
-        $(this).closest('.pro-over').find('.expansion-pro').hide();
-        scrolled = $(document).scrollTop();
-        scrolled = scrolled + 500;
-        $('html , body').animate({
-            scrollTop: scrolled
-        })
-    });
-
-    $('.close-expansion').on('click', function() {
-        $(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
-    });
-
-    /* pricing respecive div show*/
-    $('.price-item-selctor li a').on('click', function() {
-        var div_name = $(this).attr('data-val');
-        $('.pricing-btnsec').hide();
-        $('#' + div_name).show();
-    });
-    $('.price-trade-link').on('click', function() {
-        $('.invest-1').hide();
-        $('.invest-2').show();
-    });
 
     // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
 
@@ -609,6 +589,11 @@ $(document).ready(function() {
         duration: 4000,
     });
 
+    //View Plan Details
+    $('.pop-pack').on('click', '.showdetails', function() {
+        $('.plandetails-show').show();
+        $('.showdetails').hide();
+    });
 
     // Tabs
     $('.tabs').tabs();
@@ -650,16 +635,15 @@ $(document).ready(function() {
             "Reliance Chemotex Industries Ltd - NA"
         ];
         $(".auto-complete").autocomplete({
-            source: availableTags,
-            open: function(event, ui) {
-                $(this).autocomplete("widget").css({
-                    "width": 511
-                });
-            }
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 511
+            });
+        }
         });
     });
-
-    $(function() {
+	
+	$(function() {
         var availableTags = [
             "Equity",
             "Derivatives",
@@ -674,15 +658,14 @@ $(document).ready(function() {
             "NA"
         ];
         $(".global-search").autocomplete({
-            source: availableTags,
-            open: function(event, ui) {
-                $(this).autocomplete("widget").css({
-                    "width": 230
-                });
-            }
+            source: availableTags,open: function(event, ui) {
+            $(this).autocomplete("widget").css({
+                "width": 230
+            });
+        }
         });
     });
-
+	
 
     //BX Slider for card view --> insights
 
@@ -743,71 +726,58 @@ $(document).ready(function() {
     var price_slider;
 
     var price_list_slider_width = $('.price-list-slider').width();
-
-    // priceing newto investing
-    $('.newinvest-plans-block').on('click', function() {
-        $('.dis-price-slider,.newinvest-plans-block').hide();
-        $('.slide-price-none,.newinvest-plans-none').show();
-        price_slider = $('.price-carosal').bxSlider({
-            slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width,
-            minSlides: $(document).width() > 995 ? 1 : 1,
-            maxSlides: $(document).width() > 995 ? 3 : 1,
-            // slideMargin: $(document).width() > 995 ? 10 : 5,
-            infiniteLoop: true,
-        });
-
-        console.log("Wi", price_list_slider_width, price_slider);
-    });
-    $('.newinvest-plans-none').on('click', function() {
-        $('.slide-price-none,.newinvest-plans-none').hide();
-        $('.dis-price-slider,.newinvest-plans-block').show();
-        price_slider = $('.price-carosal').bxSlider().destroySlider();
-    });
+	
+	// priceing newto investing
+	$('.newinvest-plans-block').on('click', function() {
+		$('.dis-price-slider,.newinvest-plans-block').hide();
+		$('.slide-price-none,.newinvest-plans-none').show();
+		price_slider = $('.price-carosal').bxSlider({slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width});
+	});
+	$('.newinvest-plans-none').on('click', function() {
+		$('.slide-price-none,.newinvest-plans-none').hide();	
+		$('.dis-price-slider,.newinvest-plans-block').show();
+		price_slider = $('.price-carosal').bxSlider().destroySlider();		
+	});
 
     //if ($(window).width() <= 995) {
-    //        price_slider_setting.slideWidth = price_list_slider_width;
-    //        price_slider_setting.minSlides = 1;
-    //        price_slider_setting.maxSlides = 1;
-    //        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    //    } else {
-    //        price_slider_setting.slideWidth = 225;
-    //        price_slider_setting.minSlides = 2;
-    //        price_slider_setting.maxSlides = 4;
-    //        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    //    }
+//        price_slider_setting.slideWidth = price_list_slider_width;
+//        price_slider_setting.minSlides = 1;
+//        price_slider_setting.maxSlides = 1;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    } else {
+//        price_slider_setting.slideWidth = 225;
+//        price_slider_setting.minSlides = 2;
+//        price_slider_setting.maxSlides = 4;
+//        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
+//    }
 
     $(window).resize(function() {
-        var price_list_slider_width = $('.price-list-slider').width();
-
-        if (price_slider != undefined) {
-            price_slider_setting.slideWidth = $(document).width() > 995 ? 225 : price_list_slider_width;
-            price_slider_setting.minSlides = $(document).width() > 995 ? 4 : 1;
-            price_slider_setting.maxSlides = $(document).width() > 995 ? 4 : 1;
-            // price_slider_setting.slideMargin = $(document).width() > 995 ? 10 : 5;
-            // price_slider.reloadSlider(price_slider_setting);
-
-            price_slider.reloadSlider();
-            console.log("BX Slider Exists");
-        }else{
-            console.log("Not Loading");
+        if ($(window).width() <= 995) {
+			if(price_slider != undefined){
+				price_slider_setting.slideWidth = price_list_slider_width;
+				price_slider_setting.minSlides = 1;
+				price_slider_setting.maxSlides = 1;
+				price_slider.reloadSlider(price_slider_setting);
+			}
+        } else {
+			if(price_slider != undefined){
+            price_slider_setting.slideWidth = 225;
+            price_slider_setting.minSlides = 2;
+            price_slider_setting.maxSlides = 4;
+            price_slider.reloadSlider(price_slider_setting);
+			}
         }
     });
-
-
+	
+	
     // platform slider --> offerings
 
     $('.platform-slider').bxSlider({
         mode: 'vertical',
     });
 
-    //View Plan Details
-    $('.pop-pack').on('click', '.showdetails', function() {
-        $('.plandetails-show').show();
-        $('.showdetails').hide();
-    });
-
     //Dialog Box
-    $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.pop-share-details").dialog({
+    $(".premiumresearchdialog,.pop-pack,.addtopopup").dialog({
         autoOpen: false,
         draggable: false,
         resizable: false,
@@ -817,14 +787,11 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
+        $(".premiumresearchdialog,.pop-pack,.addtopopup").dialog("option", "position", "center");
     });
 
-    $(".premiumresearchdialog,.pop-pack,.pop-price").dialog({
+    $(".premiumresearchdialog,.pop-pack").dialog({
         width: 980,
-    });
-    $(".pop-share-details").dialog({
-        width: 500,
     });
 
     //View Details for ajax calls 
@@ -835,27 +802,11 @@ $(document).ready(function() {
 
     });
 
-    //View Details for ajax calls->pricing offerings
-    $(".pop-price-btn").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-price").dialog("open").load(pagename + ".html");
-
-    });
-
-    //View Details for ajax calls->share
-    $(".share-details").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-share-details").dialog("open").load(pagename + ".html");
-
-    });
-
     //Close Dialog Popup
     $('.jqpop').on('click', '.dialog-close', function(e) {
         e.preventDefault();
         $('body').removeClass('popup-overflow');
-        $(".pop-pack,.pop-share-details").dialog("close");
+        $(".pop-pack").dialog("close");
         return false;
     });
 
@@ -868,98 +819,13 @@ $(document).ready(function() {
     var wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',
-        offset: 180,
+		offset:180,
         mobile: true,
         live: true
     });
     wow.init();
-
-    // prcing slider for -- >offerings
-
-    $(".slider-range-min1").slider({
-        range: "min",
-        value: 50000,
-        min: 1,
-        max: 100000,
-        slide: function(event, ui) {
-            $(".amount1").val("Rs " + ui.value);
-        }
-    });
-    $(".amount1").val("Rs " + $(".slider-range-min1").slider("value"));
-
-    $(".slider-range-min2").slider({
-        range: "min",
-        value: 3000,
-        min: 1,
-        max: 50000,
-        slide: function(event, ui) {
-            $(".amount2").val("Rs " + ui.value);
-        }
-    });
-    $(".amount2").val("Rs " + $(".slider-range-min2").slider("value"));
-
-    $(".slider-range-min3").slider({
-        range: "min",
-        value: 40000,
-        min: 1,
-        max: 100000,
-        slide: function(event, ui) {
-            $(".amount3").val("Rs " + ui.value);
-        }
-    });
-    $(".amount3").val("Rs " + $(".slider-range-min3").slider("value"));
-
-    $(".slider-range-min4").slider({
-        range: "min",
-        value: 50000,
-        min: 1,
-        max: 100000,
-        slide: function(event, ui) {
-            $(".amount4").val("Rs " + ui.value);
-        }
-    });
-    $(".amount4").val("Rs " + $(".slider-range-min4").slider("value"));
-
-    $(".slider-range-min5").slider({
-        range: "min",
-        value: 60000,
-        min: 1,
-        max: 100000,
-        slide: function(event, ui) {
-            $(".amount5").val("Rs " + ui.value);
-        }
-    });
-    $(".amount5").val("Rs " + $(".slider-range-min5").slider("value"));
-
-    // priceing progress bar -- >offerings
-
-    var progressbar = $(".progressbar"),
-        progressLabel = $(".progress-label");
-
-    progressbar.progressbar({
-        value: false,
-        change: function() {
-            progressLabel.text(progressbar.progressbar("value") + "%");
-        },
-        complete: function() {
-            progressLabel.text("Complete!");
-        }
-    });
-
-    function progress() {
-        var val = progressbar.progressbar("value") || 0;
-
-        progressbar.progressbar("value", val + 2);
-
-        if (val < 99) {
-            setTimeout(progress, 80);
-        }
-    }
-
-    setTimeout(progress, 2000);
-
-
-    /*//Range slider
+	
+	/*//Range slider
 	//Tooltip
 	var tooltip = $('<div id="tooltip" />').css({
 		position: 'absolute',
@@ -1015,7 +881,7 @@ $(document).ready(function() {
 	$('.ui-slider-handle').live('change', function(){
 		alert("slider mouse");
 	});*/
-
+	
 
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
