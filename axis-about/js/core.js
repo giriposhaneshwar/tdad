@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
     //Dialog Box
-    $(".pop-pack,.pop-pack1").dialog({
+    $(".pop-pack,.pop-pack1,.share-pop").dialog({
         autoOpen: false,
         draggable: false,
         resizable: false,
@@ -16,6 +16,7 @@ $(document).ready(function() {
     $(window).resize(function() {
         $(".pop-pack").dialog("option", "position", "center");
         $(".pop-pack1").dialog("option", "position", "center");
+		$(".share-pop").dialog("option", "position", "center");
     });
 
     $(".pop-pack").dialog({
@@ -24,44 +25,30 @@ $(document).ready(function() {
     $(".pop-pack1").dialog({
         width: 500,
     });
-
+	
     //View Details for ajax calls 
     $(".pop-like").on("click", function() {
         $('body').toggleClass('popup-overflow');
-        $(".pop-pack").dialog("open").load($(this).attr('data-url'), function(response, status, xhr) {
-			if(status == 'success'){
-				$(this).dialog({
-					position: {
-						my: "center",
-						at: "center",
-						of: window,
-						collision: 'fit'
-					}
-				});
-			}	
-		});
-
+        var pagename = $(this).attr('data-val');
+        $(".pop-pack").dialog("open").load(pagename + ".html");
+    });
+    $(".apply-car").on("click", function() {
+        $('body').toggleClass('popup-overflow');
+        var pagename = $(this).attr('data-val');
+        $(".pop-pack1").dialog("open").load(pagename + ".html");
+    });
+	
+	$('.like-box-btn').on('click', function() {
+		$(this).find('.like-small').addClass('active');
+        $('.like-box').show().delay(2000).fadeOut(800);
+    });
+	$('.like-box-btn1').on('click', function() {
+		$(this).find('.share-1').addClass('active');
+        $('.like-box').show().delay(2000).fadeOut(800);
     });
 
-	$(".apply-car").on("click", function() {
-		$('body').toggleClass('popup-overflow');
-		$(".pop-pack1").dialog("open").load($(this).attr('data-url'), function(response, status, xhr) {
-			if(status == 'success'){
-				$(this).dialog({
-					position: {
-						my: "center",
-						at: "center",
-						of: window,
-						collision: 'fit'
-					}
-				});
-			}
-		});
-
-	});
-
     //Close Dialog Popup
-    $('body').on('click', '.dialog-close', function(e) {
+    $('.jqpop').on('click', '.dialog-close', function(e) {
         e.preventDefault();
         $('body').removeClass('popup-overflow');
         $(".pop-pack,.pop-pack1").dialog("close");

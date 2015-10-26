@@ -89,17 +89,16 @@
 	.navsec li a{ color:rgba(255,255,255,0.5);}
 	.navsec li.active a{color:#fff;}
 	.navsec li:hover a{ background:#000; color:#fff;}
+	.navsec li.axis-dir-menu{display:block;}
+	
 	
 	/* ::::::::::::::::::::::::::::::::: Home page ::::::::::::::::::::::::::::::::*/
-	.logosec{ width:150px;}
-	.logosec a{margin:17px 0 0 30px;line-height:inherit;display:inline-block}
-	.logosec a{}
+	.logosec{ width:inherit;}
+	.logosec a{margin:0 0 0 30px;line-height:inherit;display:inline-block}
 	.capitalcnt{font-size:30px;}
 	.baner-quote{padding:0;}
 	.section-head{font-size:30px;}
-	.axisdirectlinksec:before{width:139px;}
-	.axisdirectlinksec{ width:140px;}
-	.axisdirectlinksec a{ width:100px;}
+	.axisdirectlinksec{display:none;}
 	.videorelatecontent, .investment-sec, .finacesec, .cuture-sec, .award-sec{ padding:50px 0;}
 	.banner-sec{margin-top:50px;}
 	.videosec{height:inherit;}
@@ -120,8 +119,10 @@
 	/*.finacelftsec{ padding-top:100px;}*/
 	.cuture-activity{ background-size:cover;}
 	.cuture-activity li{ width:100%; display:block; height:auto;}
-	.video-lst li,.presslst li{ display:block;}
+	.video-lst > li,.presslst > li{ display:block;}
 	.anouncelst li{ height:auto;}
+	.share-area{position:static;top:inherit;right:inherit;margin-top:10px;}
+	
 	.datsec{ width:100%; padding:5px 0; height:40px;}
 	.datsec span{ display:inline-block;}
 	.datsec .date{ padding:0px;}
@@ -176,5 +177,8 @@
 	.rem-txt p{font-size:14px;}
 	
 	.carrers-select,.carrers-inp{width:100%;}
+	
+	/* share popup */
+	.share-list-pop > li{width:120px;height:36px;margin:0 10px 10px 0;}
 		
 }

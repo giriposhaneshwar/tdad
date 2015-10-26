@@ -656,11 +656,11 @@
  bottom: -5px;
  background-position: 16px 16px;
 }
-.dialog-close{position: absolute;top:10px;right:30px;display:block; z-index:99;}
+.dialog-close{position: absolute;top:15px;right:30px;display:block; z-index:99;}
 .dialog-close i{font-size: 18px;}
 .close-pop{background-position:-100px -215px;width:18px;height:18px;}
 .custom-dialog{display:block; background:#fff; min-height:300px;}
-.dialog-title{position:relative;padding:10px 0px;margin:0 30px}
+.dialog-title{position:relative;padding:15px 0px;margin:0 30px}
 .dialogheader{color:#333;padding-left:20px;}
 
 
