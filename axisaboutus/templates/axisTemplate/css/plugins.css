@@ -1271,3 +1271,98 @@ left: 0;
 @media only screen and (max-width:768px) {
 #lg-action{display:none;}	
 }
+
+/******************************************** Rateit Styles ****************************************************/
+.rateit {
+    display: -moz-inline-box;
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;margin:2px 0;
+}
+
+.rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(../../../images/Social-Sprite-Sheet.png) -351px -132px no-repeat;
+    height: 20px !important;
+    outline: none;
+    width:115px !important;
+}
+
+.rateit .rateit-range * {
+    display:block;
+}
+
+/* for IE 6 */
+* html .rateit, * html .rateit .rateit-range
+{
+    display: inline;
+}
+
+/* for IE 7 */
+* + html .rateit, * + html .rateit .rateit-range
+{
+    display: inline;
+}
+
+.rateit .rateit-hover, .rateit .rateit-selected
+{
+    position: absolute;
+    left: 0px;
+    background: url(../../../images/Social-Sprite-Sheet.png)  no-repeat -10px -108px;
+    height:18px !important;
+   
+}
+
+.star-rateit .rateit-hover-rtl, .star-rateit .rateit-selected-rtl
+{
+    left: auto;
+    right: 0px;
+}
+
+/*** Star Rating ***/
+.star-rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(../../../images/Social-Sprite-Sheet.png)  no-repeat -10px -126px;
+    height: 18px !important;
+    outline: none;
+	cursor:pointer;
+}
+.star-rateit .rateit-hover
+{
+     background: url(../../../images/Social-Sprite-Sheet.png)  no-repeat -10px -108px;
+}
+
+.star-rateit .rateit-hover-rtl
+{
+    background-position: right -20px;
+}
+
+.star-rateit .rateit-selected
+{
+    background: url(../../../images/Social-Sprite-Sheet.png)  no-repeat -10px -108px;
+	cursor:pointer;
+}
+
+.star-rateit .rateit-selected-rtl
+{
+    background-position: right -16px;
+}
+
+.star-rateit .rateit-preset
+{
+    background: url(../../../images/Social-Sprite-Sheet.png)  no-repeat -10px -108px;
+}
+
+.star-rateit button.rateit-reset{display:none !important;}

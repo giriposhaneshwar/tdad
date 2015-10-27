@@ -44,6 +44,7 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/jquery.b
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/wow.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/viewportchecker.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/lightGallery.min.js');
+// $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/rate-it.js');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/core.js');
 
 
@@ -153,7 +154,8 @@ else
 			        <div class="navigationfull-section">
 	                    <jdoc:include type="modules" name="position-1" style="none" />
 	                </div>
-			        <div class="axisdirectlinksec"><a href="javasccript:void(0)">Axis Direct</a></div>
+			        <!-- <div class="axisdirectlinksec"><a href="javasccript:void(0)">Axis Direct</a></div> -->
+			        <div class="axisdirectlinksec"><a href="javasccript:void(0)"><img src="images/logo-dir.png"></a></div>
 				</header>
 				<?php endif; ?>
 		    </div>

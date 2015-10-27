@@ -2,6 +2,17 @@
 
     $(document).ready(function() {
 
+        function appendScript(filepath) {
+            var ele = document.createElement('script');
+            ele.setAttribute("type", "text/javascript");
+            ele.setAttribute("src", filepath);
+
+            if ($('head script[src="' + filepath + '"]').length > 0) {
+                $('head script[src="' + filepath + '"]').remove();
+            }
+            $('head').append(ele);
+        }
+
 
         //Dialog Box
         $(".pop-pack,.pop-pack1,.share-pop").dialog({
@@ -22,8 +33,7 @@
         // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
         var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
 
-        //View Details for ajax calls 
-
+        //View Details for ajax calls      
         $('.pop-like, .apply-car').on('click', function(e) {
             $('body').toggleClass('popup-overflow');
             if ($(this).attr('title') == undefined) {
@@ -32,11 +42,11 @@
                 var pagename = $(this).attr('title');
             }
             var loadPopup = popUrl + "&layout=" + pagename;
-            var localPop = pagename+'.html';
+            var localPop = pagename + '.html';
             $('.pop-pack').dialog({
                 width: $(this).attr('data-size') == undefined ? 980 : $(this).attr('data-size')
             });
-            $(".pop-pack").dialog("open").load(loadPopup, function(content, status, xhr) {
+            $(".pop-pack").text("").dialog("open").load(loadPopup, function(content, status, xhr) {
                 // console.log(content, status, xhr);
                 if (status == 'success') {
                     $(".pop-pack").dialog({
@@ -47,17 +57,25 @@
                             collision: 'fit'
                         }
                     });
+                    var fileLoc = window.location.href;
+                    var filePath = window.location.pathname;
+                    var localPth = "templates/axisTemplate/js/";
+                    var fileRemoteLoc = filePath.substring(0, filePath.length - 9);
+                    appendScript(fileRemoteLoc + localPth + 'rate-it.js');
+                    // appendScript('js/rate-it.js');
                 }
             });
         });
 
-        $(".pop-like").on("click", function() {
-            console.log(popUrl + "&layout=" + pagename);
-        }, function() {});
+
 
         $('body').on("click", ".more-btn", function() {
             $(".more-btn").hide();
             $('.soc-icon-hide').css('display', 'inline-block');
+        });
+        $('body').on("click", ".rate-it", function() {
+            $(".rating-div").hide();
+            $('.thank').show();
         });
 
         $('.like-box-btn').on('click', function() {
@@ -131,7 +149,26 @@
 
         //Gallery Popup
         $(".gallerylst").lightGallery();
+
+        //Rate me
+        $(".rateit").bind('over', function(event, value) {
+            $(this).attr('title', tooltipvalues[value - 1]);
+        });
+
+        /*$('.sub-tabs ul li a').on('click', function(e){ 
+		var trig = $(this).attr('data-val');
+		var destTrig = $('.yearList ul li[data-year="'+trig+'"]');
+		$.each(destTrig, function(i, n){
+			//destTrig.show().siblings().hide();			
+			console.log(i, n);
+			$(n).show().siblings().hide();
+		});
+		//console.log(destTrig.find('li[data-year="'+trig+'"]'));
+	});*/
+
+
     });
+
 
 
 }(jQuery, window));

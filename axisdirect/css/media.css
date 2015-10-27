@@ -795,7 +795,8 @@
 	 }
 	 .pro-name{font-size:18px;}
 	 .shadow-panel{ border:1px solid #ccc;box-shadow:none;
-		 margin-right:inherit !important;}
+		 /*margin-right:inherit !important;*/ 
+		}
 	 .grid-box .invest-ment > li{
 		 float:none;
 	 }

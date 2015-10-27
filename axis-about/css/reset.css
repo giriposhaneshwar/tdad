@@ -266,3 +266,70 @@ ul.curosal_con-dis > li > a.active-tab .market-pri-inc.dec{background-position: 
 /* ::::::::::::::::::::::::::::::::: overflow ::::::::::::::::::::::::::::::::*/
  
 .popup-overflow{overflow:hidden !important;}
+
+
+/* ::::::::::::::::::::::::::::::::: Tooltip Styles ::::::::::::::::::::::::::::::::*/
+
+.tooltipdiv{position:relative;left:0px;top:0px;cursor:pointer;}
+.tooltip-bdy{position:absolute;background:#eff2f4; border:1px solid #ddd;border-radius:1px;min-height:70px;width:270px;top:0px;left:20px;display:none;z-index:2;}
+.info-icon{ background: #999;border-radius: 50%; /*bottom: 10px;*/color: #999;height: 20px;padding: 4px;/*position: absolute;right: 250px;*/text-align: center; display:inline-block;
+width: 20px;}
+.thumb-tool{position:absolute;top:-38px;}
+.thumb-tool:hover .tooltip-bdy{display:block;}
+
+.headingtooltip {
+	background: #fff;
+	display:none;
+	position:absolute;
+	z-index:2;
+}
+.headingtooltip .tooltip-inner{
+	padding:5px;
+}
+.headingtooltip:after{
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.headingtooltip:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-left-color: #fff;
+	border-width: 6px;
+	margin-top: -6px;
+}
+.headingtooltip:before {
+	border-color: rgba(224, 224, 224, 0);
+	border-left-color: #e0e0e0;
+	border-width: 7px;
+	margin-left: -7px;
+}
+
+
+.tool-con{
+	margin-top:8px;
+	line-height:15px;
+	font-size:12px;
+}
+
+
+
+.txt-area::-webkit-input-placeholder {
+   color:#ccc;
+}
+
+.txt-area:-moz-placeholder { / Firefox 18- /
+   color:#ccc;
+}
+
+.txt-area::-moz-placeholder {  / Firefox 19+ /
+   color:#ccc;  
+}
+
+.txt-area:-ms-input-placeholder {  
+   color:#ccc; 
+}
