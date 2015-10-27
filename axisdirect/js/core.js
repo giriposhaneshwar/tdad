@@ -123,6 +123,18 @@ $(document).ready(function() {
         }, 'fast');
         return false;
     });
+	
+	/* :::::::::::::::::::::::::::::::::: Share like :::::::::::::::::::::::::::::::::::::::*/
+
+	$('.like-box-btn').on('click', function() {
+		$(this).find('.like-small').addClass('active');
+        $('.like-box').show().delay(2000).fadeOut(800);
+    });
+	$('.like-box-btn1').on('click', function() {
+		$(this).find('.share-1').addClass('active');
+        $('.like-box').show().delay(2000).fadeOut(800);
+    });
+
 
     /* :::::::::::::::::::::::::::::::::: Kyc :::::::::::::::::::::::::::::::::::::::*/
 
@@ -272,7 +284,7 @@ $(document).ready(function() {
     });
     $('.add-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
-        $(this).closest('.stock-sec').find('.wish-suces').show().delay(2000).fadeOut(800);
+        $(this).closest('.stock-sec').find('.wish-suces').show().delay(3000).fadeOut(800);
     });
     $('.cancel-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
@@ -402,9 +414,9 @@ $(document).ready(function() {
         $('.invest-drop').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
         if ($('.coatch-overlay').css("display", "none")) {
-            $('body').addClass("open");
+            $('.overlayhide').addClass("open");
         } else {
-            $('body').removeClass("open");
+            $('.overlayhide').removeClass("open");
         }
     }, 5000);
     $(document).click(function() {
@@ -547,9 +559,9 @@ $(document).ready(function() {
 
 		//planssection 
 		$('.showme-plans').on('click', function() {
-			$('.showme-plans').hide();
-			$('.modifyplans').show();
-			$('.plans-invest').show();
+			$(this).closest('.pricing-btnsec').find('.showme-plans,.price-trade-link').hide();
+			$(this).closest('.pricing-btnsec').find('.modifyplans').show();
+			$(this).closest('.pricing-btnsec').find('.plans-invest').show();
 		});
 		
 		// expansion
@@ -558,7 +570,7 @@ $(document).ready(function() {
 			$(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
 			$(this).closest('.pro-over').find('.expansion-pro1').hide();
 			scrolled = $(document).scrollTop();
-			  scrolled = scrolled + 100;
+			  scrolled = scrolled + 500;
 			  $('html , body').animate({
 			   scrollTop: scrolled
 			  })
@@ -567,7 +579,7 @@ $(document).ready(function() {
 			$(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
 			$(this).closest('.pro-over').find('.expansion-pro').hide();
 			scrolled = $(document).scrollTop();
-			  scrolled = scrolled + 100;
+			  scrolled = scrolled + 500;
 			  $('html , body').animate({
 			   scrollTop: scrolled
 			  })
@@ -577,9 +589,17 @@ $(document).ready(function() {
 			$(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
 		});
 		
+		/* pricing respecive div show*/
+		$('.price-item-selctor li a').on('click', function() {
+			var div_name = $(this).attr('data-val');
+			$('.pricing-btnsec').hide();
+			$('#' + div_name).show();
+		});
+		$('.price-trade-link').on('click', function() {
+			$('.invest-1').hide();
+			$('.invest-2').show();
+		});
 		
-
-
     // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
 
     //News-ticker	
@@ -589,11 +609,6 @@ $(document).ready(function() {
         duration: 4000,
     });
 
-    //View Plan Details
-    $('.pop-pack').on('click', '.showdetails', function() {
-        $('.plandetails-show').show();
-        $('.showdetails').hide();
-    });
 
     // Tabs
     $('.tabs').tabs();
@@ -677,7 +692,7 @@ $(document).ready(function() {
         });
     } else {
         $('.ca-slider').bxSlider({
-            minSlides: 3,
+            minSlides: 1,
             maxSlides: 3,
             slideWidth: 315,
             slideMargin: 20
@@ -731,7 +746,14 @@ $(document).ready(function() {
 	$('.newinvest-plans-block').on('click', function() {
 		$('.dis-price-slider,.newinvest-plans-block').hide();
 		$('.slide-price-none,.newinvest-plans-none').show();
-		price_slider = $('.price-carosal').bxSlider({slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width});
+		price_slider = $('.price-carosal').bxSlider({
+			slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width ,
+			/* minSlides: 1,
+			infiniteLoop : false,
+			hideControlOnEnd : true,
+			minSlides: 1,
+			maxSlides: 4,*/
+		});
 	});
 	$('.newinvest-plans-none').on('click', function() {
 		$('.slide-price-none,.newinvest-plans-none').hide();	
@@ -762,7 +784,7 @@ $(document).ready(function() {
         } else {
 			if(price_slider != undefined){
             price_slider_setting.slideWidth = 225;
-            price_slider_setting.minSlides = 2;
+            price_slider_setting.minSlides = 4;
             price_slider_setting.maxSlides = 4;
             price_slider.reloadSlider(price_slider_setting);
 			}
@@ -775,9 +797,15 @@ $(document).ready(function() {
     $('.platform-slider').bxSlider({
         mode: 'vertical',
     });
+	
+	//View Plan Details
+    $('.pop-pack').on('click', '.showdetails', function() {
+        $('.plandetails-show').show();
+        $('.showdetails').hide();
+    });
 
     //Dialog Box
-    $(".premiumresearchdialog,.pop-pack,.addtopopup").dialog({
+    $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.pop-share-details").dialog({
         autoOpen: false,
         draggable: false,
         resizable: false,
@@ -787,28 +815,94 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        $(".premiumresearchdialog,.pop-pack,.addtopopup").dialog("option", "position", "center");
+        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
     });
 
-    $(".premiumresearchdialog,.pop-pack").dialog({
+    $(".pop-pack").dialog({
         width: 980,
     });
-
-    //View Details for ajax calls 
+	
+	
+    /*//View Details for ajax calls 
     $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
         $('body').toggleClass('popup-overflow');
         var pagename = $(this).attr('title');
         $(".pop-pack").dialog("open").load(pagename + ".html");
 
     });
+	
+	//View Details for ajax calls->pricing offerings
+	 $(".pop-price-btn").on("click", function() {
+        $('body').toggleClass('popup-overflow');
+        var pagename = $(this).attr('data-val');
+        $(".pop-price").dialog("open").load(pagename + ".html");
 
+    });
+	
+	//View Details for ajax calls->share
+	 $(".share-details").on("click", function() {
+        $('body').toggleClass('popup-overflow');
+        var pagename = $(this).attr('data-val');
+        $(".pop-share-details").dialog("open").load(pagename + ".html");
+
+    });
+	*/
     //Close Dialog Popup
-    $('.jqpop').on('click', '.dialog-close', function(e) {
+    $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
         $('body').removeClass('popup-overflow');
-        $(".pop-pack").dialog("close");
+        $(".pop-pack,.pop-share-details").dialog("close");
         return false;
     });
+
+// data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
+        var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
+
+        //View Details for ajax calls 
+
+        $('.pop-like, .apply-car').on('click', function(e) {
+            $('body').toggleClass('popup-overflow');
+            if ($(this).attr('title') == undefined) {
+                var pagename = $(this).attr('data-val');
+            } else {
+                var pagename = $(this).attr('title');
+            }
+            var loadPopup = popUrl + "&layout=" + pagename;
+            var localPop = pagename+'.html';
+            $('.pop-pack').dialog({
+                width: $(this).attr('data-size') == undefined ? 980 : $(this).attr('data-size')
+            });
+            $(".pop-pack").dialog("open").load(localPop, function(content, status, xhr) {
+                // console.log(content, status, xhr);
+                if (status == 'success') {
+                    $(".pop-pack").dialog({
+                        position: {
+                            my: "center",
+                            at: "center",
+                            of: window,
+                            collision: 'fit'
+                        }
+                    });
+					$(document).find('head').append('<script src="js/rate-it.js"></script>');
+                }
+            });
+        });
+		
+		 $('body').on("click", ".more-btn", function() {
+            $(".more-btn").hide();
+            $('.soc-icon-hide').css('display', 'inline-block');
+        });
+		$('body').on("click", ".rate-it", function() {
+            $(".rating-div").hide();
+            $('.thank').show();
+        });
+
+
+
+
+
+	//Rate me
+    $(".rateit").bind('over', function (event, value) { $(this).attr('title', tooltipvalues[value - 1]); });
 
     // timer -- markets
     $('.defaultCountdown').countdown({
@@ -824,6 +918,93 @@ $(document).ready(function() {
         live: true
     });
     wow.init();
+	
+	// prcing slider for -- >offerings
+	
+	$( ".slider-range-min1" ).slider({
+      range: "min",
+      value: 50000,
+      min: 1,
+      max: 100000,
+      slide: function( event, ui ) {
+        $( ".amount1" ).val( "Rs " + ui.value );
+      }
+    });
+    $( ".amount1" ).val( "Rs " + $( ".slider-range-min1" ).slider( "value" ));
+	
+	$( ".slider-range-min2" ).slider({
+      range: "min",
+      value: 3000,
+      min: 1,
+      max: 50000,
+      slide: function( event, ui ) {
+        $( ".amount2" ).val( "Rs " + ui.value );
+      }
+    });
+    $( ".amount2" ).val( "Rs " + $( ".slider-range-min2" ).slider( "value" ));
+	
+	$( ".slider-range-min3" ).slider({
+      range: "min",
+      value: 40000,
+      min: 1,
+      max: 100000,
+      slide: function( event, ui ) {
+        $( ".amount3" ).val( "Rs " + ui.value );
+      }
+    });
+    $( ".amount3" ).val( "Rs " + $( ".slider-range-min3" ).slider( "value" ));
+	
+	$( ".slider-range-min4" ).slider({
+      range: "min",
+      value: 50000,
+      min: 1,
+      max: 100000,
+      slide: function( event, ui ) {
+        $( ".amount4" ).val( "Rs " + ui.value );
+      }
+    });
+    $( ".amount4" ).val( "Rs " + $( ".slider-range-min4" ).slider( "value" ));
+	
+	$( ".slider-range-min5" ).slider({
+      range: "min",
+      value: 60000,
+      min: 1,
+      max: 100000,
+      slide: function( event, ui ) {
+        $( ".amount5" ).val( "Rs " + ui.value );
+      }
+    });
+    $( ".amount5" ).val( "Rs " + $( ".slider-range-min5" ).slider( "value" ));
+	
+	// priceing progress bar -- >offerings
+	
+	var progressbar = $( ".progressbar" ),
+      progressLabel = $( ".progress-label" );
+ 
+    progressbar.progressbar({
+      value: false,
+      change: function() {
+        progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+      },
+      complete: function() {
+        progressLabel.text( "Complete!" );
+      }
+    });
+ 
+    function progress() {
+      var val = progressbar.progressbar( "value" ) || 0;
+ 
+      progressbar.progressbar( "value", val + 2 );
+ 
+      if ( val < 99 ) {
+        setTimeout( progress, 80 );
+      }
+    }
+ 
+    setTimeout( progress, 2000 );
+	
+	
+	
 	
 	/*//Range slider
 	//Tooltip
@@ -915,7 +1096,7 @@ $(document).ready(function() {
 // header-top expansion Menu for web and mobile
 function navigation() {
     var scr_width = $(document).width();
-    console.log("Screen ", scr_width);
+    /*console.log("Screen ", scr_width);*/
     if (scr_width > 995) {
         $('.first-level-menu > li > a').click(function(event) {
             $('.second-level').not($(this).closest('li').find('.second-level')).hide();
