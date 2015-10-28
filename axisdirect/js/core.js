@@ -696,7 +696,7 @@ $(document).ready(function() {
         $('.ca-slider').bxSlider({
             minSlides: 1,
             maxSlides: 3,
-            slideWidth: 315,
+            slideWidth: 308,
             slideMargin: 20
         });
     }
@@ -744,112 +744,48 @@ $(document).ready(function() {
 
     var price_list_slider_width = $('.price-list-slider').width();
 
-
-
-    /*$(document).ready(function(){
-      $('.slider').bxSlider({
-        slideWidth: 400,
-        minSlides: 2,
-        maxSlides: 7,
-        moveSlides: 7,
-        slideMargin: 10,
-        ticker: false,
-        speed: 1000,
-        pager: false,  
-        nextSelector: '#slider-next',
-        prevSelector: '#slider-prev',
-        nextText: '<button type="button" class="btn btn-sm btn-default">Next &nbsp;&raquo;</button>',
-        prevText: '<button type="button" class="btn btn-sm btn-default">&laquo;&nbsp; Previous</button>'
-      });
-    });*/
-
-
-
     // priceing newto investing
-    // price_slider = $('.price-carosal').bxSlider();
-    // price_slider.destroySlider();
-
     $('.newinvest-plans-block').on('click', function() {
         $('.dis-price-slider,.newinvest-plans-block').hide();
         $('.slide-price-none,.newinvest-plans-none').show();
-        price_slider = $('.price-carosal').reloadSlider({
-            slideWidth: 225,
-            minSlides: 2,
+        price_slider = $(this).closest('.price-downpart').prev().find('.price-carosal').bxSlider({
+            slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width,
+            minSlides: 1,
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            minSlides: 1,
             maxSlides: 4,
-            moveSlides: 4,
-            slideMargin: 10,
-            ticker: false,
-            speed: 1000,
-            pager: false
+            moveSlides: 1,
         });
-    });
-
-
-    $(window).resize(function() {
-        if (price_slider != undefined) {
-            if ($(window).width() < 995) {
-                console.log("resize");
-
-                price_slider.reloadSlider({
-                    slideWidth: $('.price-list-slider').width(),
-                    minSlides: 1,
-                    maxSlides: 1,
-                    moveSlides: 1,
-                    slideMargin: 5,
-                    ticker: false,
-                    speed: 1000,
-                    pager: false
-                });
-            } else {
-                console.log("ok")
-                price_slider.reloadSlider({
-                    slideWidth: 225,
-                    minSlides: 2,
-                    maxSlides: 4,
-                    moveSlides: 4,
-                    slideMargin: 10,
-                    ticker: false,
-                    speed: 1000,
-                    pager: false
-                });
-            }
-        }
+		scrolled = $(document).scrollTop();
+        scrolled = scrolled - 380;
+        $('html , body').animate({
+            scrollTop: scrolled
+        })
     });
     $('.newinvest-plans-none').on('click', function() {
         $('.slide-price-none,.newinvest-plans-none').hide();
         $('.dis-price-slider,.newinvest-plans-block').show();
-        price_slider = $('.price-carosal').bxSlider().destroySlider();
+        price_slider.destroySlider();
     });
 
-    //if ($(window).width() <= 995) {
-    //        price_slider_setting.slideWidth = price_list_slider_width;
-    //        price_slider_setting.minSlides = 1;
-    //        price_slider_setting.maxSlides = 1;
-    //        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    //    } else {
-    //        price_slider_setting.slideWidth = 225;
-    //        price_slider_setting.minSlides = 2;
-    //        price_slider_setting.maxSlides = 4;
-    //        //price_slider = $('.price-carosal').bxSlider(price_slider_setting);
-    //    }
-
-    /*    $(window).resize(function() {
-            if ($(window).width() <= 995) {
-    			if(price_slider != undefined){
-    				price_slider_setting.slideWidth = price_list_slider_width;
-    				price_slider_setting.minSlides = 1;
-    				price_slider_setting.maxSlides = 1;
-    				price_slider.reloadSlider(price_slider_setting);
-    			}
-            } else {
-    			if(price_slider != undefined){
+    $(window).resize(function() {
+        if ($(window).width() <= 995) {
+            if (price_slider != undefined) {
+                price_slider_setting.slideWidth = price_list_slider_width;
+                price_slider_setting.minSlides = 1;
+                price_slider_setting.maxSlides = 1;
+                price_slider.reloadSlider(price_slider_setting);
+            }
+        } else {
+            if (price_slider != undefined) {
                 price_slider_setting.slideWidth = 225;
                 price_slider_setting.minSlides = 4;
                 price_slider_setting.maxSlides = 4;
                 price_slider.reloadSlider(price_slider_setting);
-    			}
             }
-        });*/
+        }
+    });
 
 
     // platform slider --> offerings
@@ -948,10 +884,13 @@ $(document).ready(function() {
         });
     });
 
+    // social more button
     $('body').on("click", ".more-btn", function() {
         $(".more-btn").hide();
         $('.soc-icon-hide').css('display', 'inline-block');
     });
+
+    // feedback button
     $('body').on("click", ".rate-it", function() {
         $(".rating-div").hide();
         $('.thank').show();
@@ -959,14 +898,15 @@ $(document).ready(function() {
 
 
 
-    //Rate me
+
+    //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
         $(this).attr('title', tooltipvalues[value - 1]);
     });
 
     // timer -- markets
     $('.defaultCountdown').countdown({
-        until: new Date(2015, 10 - 1, 04)
+        until: new Date(2015, 10 - 1, 30)
     });
 
     //animation -- > offerings
@@ -1063,64 +1003,6 @@ $(document).ready(function() {
 
     setTimeout(progress, 2000);
 
-
-
-    /*//Range slider
-	//Tooltip
-	var tooltip = $('<div id="tooltip" />').css({
-		position: 'absolute',
-		top: -17,
-		left: -5
-	}).hide();
-	
-	//Range slider
-	$(".slider").each(function () {
-		var begin = $(this).data("begin"),
-            end = $(this).data("end");
-
-        $(this).slider({
-            range: "min",
-            value: 300,
-            min: begin,
-            max: end,
-            slide: function (event, ui) {
-				var mop = 10000;
-				var slideramount = ("#" + $(this).attr("id") + "_amount");
-				var p1 = $(slideramount).val();
-				var vpp = 5;
-				var cash = mop-(p1*vpp);
-				var sliderresult = ("#" + $(this).attr("id") + "_inr");
-				
-				$('#msg').text(cash);
-				$(sliderresult).val("INR "+cash);
-				
-				tooltip.text(ui.value);
-				//update text box quantity
-				var slideramount = ("#" + $(this).attr("id") + "_amount");
-				$(slideramount).val(ui.value);
-				var slideramount1 = ("#" + $(this).attr("id") + "_qwe");
-				$(slideramount1).val(ui.value);
-				$(this).find(".ui-slider-handle").append(tooltip).hover(function() {
-					tooltip.show()
-				}, function() {
-					tooltip.hide()
-				})
-			}
-        })
-
-        //initialise text box quantity
-        var slideramount = ("#" + $(this).attr("id") + "_amount");
-			$(slideramount).val($(this).slider("value"));
-		});
-
-   
-	 
-	
-	
-	
-	$('.ui-slider-handle').live('change', function(){
-		alert("slider mouse");
-	});*/
 
 
     // Menu Active and scrool 

@@ -480,7 +480,7 @@
                             </ul>
                         </div>
                         <div class="grid_4 sip-img">
-                            <img src="../images/sip.png">
+                            <img src="images/sip.png">
                         </div>
                         <div class="grid_4">
                             <ul class="exp-thr-el sip-list clearfix">

@@ -1,3 +1,8 @@
+var dataApp = {
+    testFun: function(){
+        return "tested"
+    }
+};
 (function($, window) {
 
     $(document).ready(function() {

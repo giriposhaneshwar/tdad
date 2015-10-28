@@ -1,12 +1,15 @@
 @media screen and (max-width:1500px){
 	.logosection, .menu-section{
-		width:13.4%
+		width:15.4%
 	}
 	.menu-section{
-		width:85.6%;
+		width:83.6%;
 	}
+	/* offerings */
+	/*prodcts*/
+	.le-products-menu li a{min-height:121px;}
 }
-@media screen and (max-width:1366px){
+@media screen and (max-width:1365px){
 	.logosection, .menu-section{
 		width:12.4%;
 	}
@@ -74,6 +77,8 @@
 	.two-col{
 		padding:0;
 	}
+	/* mark content */
+	/*.mark-con-mob{background-color:#000;}*/
 	
 	/* ::::::::::::::::::::::::::::::::: Reset files ::::::::::::::::::::::::::::::::*/
 	
@@ -256,7 +261,7 @@
 		padding:20px 0 10px 0px;
 	}
 	.header-top-overflow{
-		overflow:hidden;
+		overflow:hidden !important;
 	}
 	.latest-con{
 		width:100%;
@@ -795,8 +800,7 @@
 	 }
 	 .pro-name{font-size:18px;}
 	 .shadow-panel{ border:1px solid #ccc;box-shadow:none;
-		 /*margin-right:inherit !important;*/ 
-		}
+		 margin-right:inherit !important;}
 	 .grid-box .invest-ment > li{
 		 float:none;
 	 }
@@ -1118,6 +1122,8 @@
 	/* ::::::: Products overview :::::::::::*/
 	
 	/*Product Banner*/	
+	.product-top-align .product-paragraph, .product-bottom-align .product-paragraph, .banner-align .product-paragraph{padding:0;}
+	
 	.banner-video{height:inherit;}
 	.banner-video video{bottom:inherit;}
 	.products-banner{background-position:top center;}	
@@ -1130,7 +1136,7 @@
 	.le-products-menu li a{padding:10px;font-size:12px;min-height:inherit;}
 	
 	/*Products section*/	
-	.product-align{height:auto;padding:50px 20px;text-align:center;}
+	.product-align{height:auto;padding:50px 0px;text-align:center;}
 	.over-products{height:inherit;}
 	.product-center{width:auto;}
 	.par-cen-pading{padding:0;}
@@ -1149,6 +1155,7 @@
 	.darkin-responsive .product-title, .darkin-responsive .product-subtitle, .darkin-responsive .product-paragraph, .darkin-responsive .product-button{color:#fff;}
 	.darkin-responsive .product-button{border-color:#fff;}
 	.darkin-responsive .product-button:hover{background:#fff;color:#000;}
+	.product-button{padding:10px;}
 	
 	/* products expansion*/
 	.exp-thr-el li{width:100%;float:none; margin-top:20px;padding-right: 0px;margin-bottom: 0px;}
@@ -1160,7 +1167,7 @@
 	.tax-saving li:last-child{margin-bottom:0;}
 	.curency-de-list li.curd-last{margin-bottom:30px;}
 	.der-products{padding-right:0;}
-.pro-expansion-left:before,.pro-expansion-left.pro-3:before,.pro-expansion-left.pro-7:before,.pro-expansion-left.pro-9:before,.pro-expansion-right:before,.pro-expansion-right.pro-4:before,.pro-expansion-right.pro-6:before{position:static;border-top: 0px}
+.pro-expansion-left:before,.pro-expansion-left.pro-3:before,.pro-expansion-left.pro-7:before,.pro-expansion-left.pro-9:before,.pro-expansion-right:before,.pro-expansion-right.pro-4:before,.pro-expansion-right.pro-6:before,.pro-expansion-right.vas-1:before,.pro-expansion-right.vas-2:before,.pro-expansion-left.vas-3:before,.pro-expansion-left.vas-4:before,.pro-expansion-left.vas-5:before,.pro-expansion-right.vas-6:before{position:static;border-top: 0px}
 	
 	
 	/* price slider */																		
@@ -1186,7 +1193,7 @@
 	.vas-in-con > li{border-bottom:1px dotted #C5C5C5;}
 	.vas-in-con > li:last-child{border-bottom:0;}
 	/* price popup */
-	.price-popup{height:300px;overflow-y:auto;}
+	.price-popup{height:300px;overflow-y:auto;margin:30px 0;}
 	.pri-cal-box li{float:none;width:100%;}
 	.pri-cal-box li.plus{margin-top:0px;width:inherit;}
 	.pri-cal-box li.amountsec{padding-top:20px;}
@@ -1194,5 +1201,17 @@
 	.pop-cal-sec p, .cal-sy{font-size:18px;}
 	.pop-fin-cal{margin-left:0;}
 	
+	/* vas */
+	.vas-online-details li{margin-bottom:10px;padding:0;border-right:0;}
+	.vas-online-details li:last-child{margin-bottom:0;}
+	/* expansions */
+	.portfolio-trackerlist li{width:100%;float:none;padding:0 0 20px 0;}
+	.portfolio-trackerlist li:last-child{padding-bottom:0;}
+	.invest-list-1 li,.financial-list li{min-height:inherit;}
+	.invest-list-1 li:last-child{margin-bottom:0;}
+	.invest-list-2{width:100%;}
+	.ribbonBtn{display:none}
+	.invest-pop-btn{display:inline-block;}
+	.vas-invest h3{margin-bottom:20px;}
 	
 }
