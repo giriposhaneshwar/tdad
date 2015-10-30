@@ -1,29 +1,15 @@
-<section class="site-start-modules">
-        <!--<div class="banner-video">
-            <video autoplay loop>
-                <source src="https://a0.muscache.com/airbnb/static/Croatia-P1-1.mp4" type="video/mp4">
-                <source src="https://html5videoconverter-output.s3.amazonaws.com/5waCW4/sample.webm" type="video/webm">
-                <source src="https://html5videoconverter-output.s3.amazonaws.com/5waCW4/sample.ogg" type="video/ogg">
-            </video>
-            <div class="banner-align">
-                <div class="product-vertical-align">
-                    <h1 class="banner-title">All Investments.<br>
-                        One Destination. 
-                    </h1>
-                    <p>AxisDirect  account brings all investment options together under one roof, giving you the power to diversify your portfolio </p>
-                </div>
-            </div>
-            </div>-->
-        <div class="products-banner">
+<!-- Content -->
+    <section class="site-start-modules">
+        <div class="page-banner products-banner">
             <div class="container_12">
                 <div class="clearfix">
                     <div class="grid_12">
-                        <div class="banner-align">
+                        <div class="product-center banner-align top">
                             <div class="product-vertical-align">
                                 <h1 class="banner-title">All Investments.<br>
                                     One Destination. 
                                 </h1>
-                                <p>AxisDirect  account brings all investment options together under one roof, giving you the power to diversify your portfolio </p>
+                                <p class="product-paragraph">AxisDirect  account brings all investment options together under one roof, giving you the power to diversify your portfolio </p>
                             </div>
                         </div>
                     </div>
@@ -70,7 +56,7 @@
             <li>
                 <a href="#ncds-bonds-fds">
                     <i class="sprite-img pro-icons pro-ico7"></i> 
-                    <p class="of-pro-name">NCDs,Bonds,FDs</p>
+                    <p class="of-pro-name">NCDs, Bonds, FDs</p>
                 </a>
             </li>
             <li>
@@ -91,7 +77,7 @@
             <div class="over-products product-1">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6 darkbg product-align">
+                        <div class="grid_6 darkbg product-align top">
                             <div class="product-vertical-align">
                                 <h1 class="product-title pro-headings">EQUITY</h1>
                                 <h4 class="product-subtitle"> Harness the power of stock markets</h4>
@@ -175,7 +161,7 @@
             <div class="over-products product-2">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_12 product-center product-align blockbg">
+                        <div class="grid_12 product-center product-align top blockbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Derivatives</h1>
                                 <h4 class="product-subtitle">Hedge or Speculate on the price movement of Stocks / Index </h4>
@@ -302,7 +288,7 @@
             <div class="over-products product-3">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6 product-right product-align blockbg">
+                        <div class="grid_6 product-right product-align top blockbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Mutual Funds</h1>
                                 <h4 class="product-subtitle">Your money in Professional hands</h4>
@@ -379,7 +365,7 @@
             <div class="over-products product-4">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6 product-align blockbg">
+                        <div class="grid_6 product-align top blockbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">ETFs</h1>
                                 <h4 class="product-subtitle">Small Investment. Big Diversification.</h4>
@@ -442,12 +428,12 @@
             <div class="over-products product-5">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6 product-right product-align darkbg">
+                        <div class="grid_6 product-right product-align top darkbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Systematic Investment Plans</h1>
                                 <h4 class="product-subtitle">Taste the Markets SIP by SIP</h4>
                                 <p class="product-paragraph">Little Drops Make the Mighty Ocean. Investments are no different. Start with small amounts regularly and create BIG wealth over a period of time. </p>
-                                <div class="two-buttons">	
+                                <div class="two-buttons">   
                                     <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">Mutual Fund SIP</a>
                                     <a href="javascript:void(0)" class="product-button transitions pro1-exp-btn">Equity SIP</a>
                                 </div>
@@ -480,7 +466,7 @@
                             </ul>
                         </div>
                         <div class="grid_4 sip-img">
-                            <img src="images/sip.png">
+                            <img src="../images/sip.png">
                         </div>
                         <div class="grid_4">
                             <ul class="exp-thr-el sip-list clearfix">
@@ -557,7 +543,7 @@
                 <div class="container_12">
                     <div class="clearfix">
                         <div class="grid_12">
-                            <div class="grid_6 product-align blockbg">
+                            <div class="grid_6 product-align top blockbg">
                                 <div class="product-vertical-align">
                                     <h1 class="product-title">Tax Saving</h1>
                                     <h4 class="product-subtitle">Don’t just Save Tax. Multiply your Investments!</h4>
@@ -602,7 +588,7 @@
             <div class="over-products product-7">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_12 product-center product-align darkbg">
+                        <div class="grid_12 product-center product-align top darkbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">NCDs, Bonds, Corporate FDs</h1>
                                 <h4 class="product-subtitle">Fixed Return. Low Risk</h4>
@@ -661,7 +647,7 @@
             <div class="container_12">
                 <div class="clearfix">
                     <div class="grid_12">
-                        <div class="grid_6 product-align darkbg">
+                        <div class="grid_6 product-align top darkbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">IPOs</h1>
                                 <h4 class="product-subtitle">Be the part of tomorrow’s growth stories</h4>
@@ -679,7 +665,7 @@
             <div class="over-products product-9">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6  product-right product-align darkbg">
+                        <div class="grid_6  product-right product-align top darkbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Currency Derivatives</h1>
                                 <h4 class="product-subtitle">Benefit from Currency movements... in whichever direction !</h4>

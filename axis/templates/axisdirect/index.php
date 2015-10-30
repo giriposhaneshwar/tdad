@@ -152,6 +152,7 @@
     </div>
   </footer>
   <div class="overlay"></div>
+  <div class="pop-pack"></div>
 </div>
 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/select2.js" ></script> 
@@ -164,6 +165,8 @@
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.countdown.js" ></script>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/wow.js" ></script>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.singlePageNav.js" ></script>
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.fullPage.js" ></script>
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/fn.js" ></script>
 <?php /*?><script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-migrate-1.2.1.js" ></script> 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.contentcarousel.js" ></script> <?php */?>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/core.js" ></script>

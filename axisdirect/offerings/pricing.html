@@ -373,7 +373,7 @@
                     <li>
                         <a href="javascript:void(0)" class="active">Offerings</a>
                         <div class="second-level">
-                            <ul class="second-level-menu">
+                        <ul class="second-level-menu">
                                 <li>
                                     <a href="overview.html">
                                     <i class="sprite-img menu-icon menu4"></i>
@@ -381,19 +381,19 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="products.html">
                                     <i class="sprite-img menu-icon menu5"></i>
                                     <span class="second-level-menu-name">Products</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="platforms.html">
                                     <i class="sprite-img menu-icon menu6"></i>
                                     <span class="second-level-menu-name">Platforms</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="active">
+                                    <a href="pricing.html" class="active">
                                     <i class="sprite-img menu-icon menu7"></i>
                                     <span class="second-level-menu-name">Pricing</span>
                                     </a>
@@ -405,13 +405,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="valueAddedServices.html">
                                     <i class="sprite-img menu-icon menu9"></i>
                                     <span class="second-level-menu-name">Value Added Services</span>
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                            </div>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Markets</a>
@@ -581,7 +581,7 @@
             <div class="container_12">
                 <div class="clearfix">
                     <div class="grid_12">
-                        <div class="product-center banner-align">
+                        <div class="product-center banner-align bottom">
                             <div class="product-bottom-align">
                                 <h1 class="banner-title">A Pricing Plan for every need.</h1>
                                 <p class="product-paragraph price-baner">Investment and Trading needs differ.That is why we have a host of plans to choose from. So if you are abeginner or a frequent trader – we have a pricing plan that suits you just fine.</p>
@@ -635,7 +635,6 @@
         <div id="new-invest" class="pricing-btnsec" style="display:block;">
             <div class="price-show-btns">
                 <a href="javascript:void(0)" class="primary-btn showme-plans plans-show-btn">SHOW ME PLANS</a>
-                <a href="javascript:void(0)" class="primary-btn modifyplans plans-show-btn">Modify</a>
             </div>
             <div class="stock-sec blue-bg plans-invest">
                 <div class="container_12">
@@ -1368,13 +1367,14 @@
                                     </ul>
                                 </div>
                                 <div class="price-downpart">
-                                    <h3 class="price-sounds">Sounds Good?</h3>
-                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                    <ul class="price-menu">
+                                	<ul class="price-menu">
                                         <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
                                         <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
                                         <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
                                     </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1382,18 +1382,22 @@
                 </div>
             </div>
         </div>
+        
         <div id="regular-invest" class="pricing-btnsec price-slider">
             <div class="invest-1">
             	<div class="invest-box-con">
                 <h2 class="reg-ivest-hea">My monthly Trade value (Buy + Sell) for Equity Delivery is</h2>
                 <ul class="slider-area">
                     <li>
+                    	<span class="amt-val mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min1"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount1" readonly>
+                            <input type="hidden" class="amount1" readonly>
+                            <span class="amt-val web-dis-price"></span>
                         </p>
+                        
                     </li>
                 </ul>
                 <div class="price-show-btns">
@@ -2219,14 +2223,15 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -2239,38 +2244,46 @@
                 <ul class="slider-area">
                     <li>
                         <p class="slide-left1">For Equity Delivery is</p>
+                        <span class="amt-val2 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min2"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount2" readonly>
+                            <input type="hidden" class="amount2" readonly>
+                            <span class="amt-val2 web-dis-price"></span>
                         </p>
                     </li>
                     <li >
                         <p class="slide-left1">For Equity Intraday is</p>
+                        <span class="amt-val3 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min3"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount3" readonly>
+                            <input type="hidden" class="amount3" readonly>
+                            <span class="amt-val3 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Futures is</p>
+                        <span class="amt-val4 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min4"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount4" readonly>
+                            <input type="hidden" class="amount4" readonly>
+                            <span class="amt-val4 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Options is<span>(Options Turnover is Options Strike Price + Premium) X Lot size)</span></p>
+                        <span class="amt-val5 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min5"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount5" readonly>
+                            <input type="hidden" class="amount5" readonly>
+                            <span class="amt-val5 web-dis-price"></span>
                         </p>
                     </li>
                     </p>
@@ -2900,14 +2913,15 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -2918,21 +2932,26 @@
         </div>
         <div id="active-invest" class="pricing-btnsec price-slider">
             <div class="invest-1">
+            	<div class="invest-box-con">
                 <h2 class="reg-ivest-hea">My monthly Trade value (Buy + Sell) for Equity Delivery is</h2>
                 <ul class="slider-area">
                     <li>
+                    	<span class="amt-val mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min1"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount1" readonly>
+                            <input type="hidden" class="amount1" readonly>
+                            <span class="amt-val web-dis-price"></span>
                         </p>
+                        
                     </li>
                 </ul>
                 <div class="price-show-btns">
                     <a href="javascript:void(0)" class="price-trade-link">Also Trade in Equity Intraday, Futures, Options? </a>
                     <a href="javascript:void(0)" class="primary-btn showme-plans plans-show-btn">SHOW ME PLANS</a>
                     <a href="javascript:void(0)" class="primary-btn modifyplans plans-show-btn">Modify</a>
+                </div>
                 </div>
                 <div class="stock-sec blue-bg plans-invest">
                     <div class="container_12">
@@ -3751,14 +3770,15 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -3766,42 +3786,51 @@
                 </div>
             </div>
             <div class="invest-2">
+            <div class="invest-box-con">
                 <h2 class="reg-ivest-hea">My monthly Trade value (Buy + Sell)</h2>
                 <ul class="slider-area">
                     <li>
                         <p class="slide-left1">For Equity Delivery is</p>
+                        <span class="amt-val2 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min2"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount2" readonly>
+                            <input type="hidden" class="amount2" readonly>
+                            <span class="amt-val2 web-dis-price"></span>
                         </p>
                     </li>
                     <li >
                         <p class="slide-left1">For Equity Intraday is</p>
+                        <span class="amt-val3 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min3"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount3" readonly>
+                            <input type="hidden" class="amount3" readonly>
+                            <span class="amt-val3 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Futures is</p>
+                        <span class="amt-val4 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min4"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount4" readonly>
+                            <input type="hidden" class="amount4" readonly>
+                            <span class="amt-val4 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Options is<span>(Options Turnover is Options Strike Price + Premium) X Lot size)</span></p>
+                        <span class="amt-val5 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min5"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount5" readonly>
+                            <input type="hidden" class="amount5" readonly>
+                            <span class="amt-val5 web-dis-price"></span>
                         </p>
                     </li>
                     </p>
@@ -3809,6 +3838,7 @@
                 <div class="price-show-btns">
                     <a href="javascript:void(0)" class="primary-btn plans-show-btn pop-like"  data-val="price-pans-popup">SHOW ME PLANS</a>
                 </div>
+                </div>
                 <div class="stock-sec blue-bg plans-invest">
                     <div class="container_12">
                         <div class="row clearfix">
@@ -4430,32 +4460,38 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                
+            </div>            
         </div>
         <div id="active-trader" class="pricing-btnsec price-slider">
             <div class="invest-1">
+            	<div class="invest-box-con">
                 <h2 class="reg-ivest-hea">My monthly Trade value (Buy + Sell) for Equity Delivery is</h2>
                 <ul class="slider-area">
                     <li>
+                    	<span class="amt-val mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min1"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount1" readonly>
+                            <input type="hidden" class="amount1" readonly>
+                            <span class="amt-val web-dis-price"></span>
                         </p>
+                        
                     </li>
                 </ul>
                 <div class="price-show-btns">
@@ -4463,6 +4499,7 @@
                     <a href="javascript:void(0)" class="primary-btn showme-plans plans-show-btn">SHOW ME PLANS</a>
                     <a href="javascript:void(0)" class="primary-btn modifyplans plans-show-btn">Modify</a>
                 </div>
+                </div>
                 <div class="stock-sec blue-bg plans-invest">
                     <div class="container_12">
                         <div class="row clearfix">
@@ -5280,14 +5317,15 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -5295,48 +5333,58 @@
                 </div>
             </div>
             <div class="invest-2">
+            <div class="invest-box-con">
                 <h2 class="reg-ivest-hea">My monthly Trade value (Buy + Sell)</h2>
                 <ul class="slider-area">
                     <li>
                         <p class="slide-left1">For Equity Delivery is</p>
+                        <span class="amt-val2 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min2"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount2" readonly>
+                            <input type="hidden" class="amount2" readonly>
+                            <span class="amt-val2 web-dis-price"></span>
                         </p>
                     </li>
                     <li >
                         <p class="slide-left1">For Equity Intraday is</p>
+                        <span class="amt-val3 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min3"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount3" readonly>
+                            <input type="hidden" class="amount3" readonly>
+                            <span class="amt-val3 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Futures is</p>
+                        <span class="amt-val4 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min4"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount4" readonly>
+                            <input type="hidden" class="amount4" readonly>
+                            <span class="amt-val4 web-dis-price"></span>
                         </p>
                     </li>
                     <li>
                         <p class="slide-left1">For Options is<span>(Options Turnover is Options Strike Price + Premium) X Lot size)</span></p>
+                        <span class="amt-val5 mob-dis-price"></span>
                         <div class="slide-left">
                             <div class="slider-range-min5"></div>
                         </div>
                         <p class="slide-right">
-                            <input type="text" class="amount5" readonly>
+                            <input type="hidden" class="amount5" readonly>
+                            <span class="amt-val5 web-dis-price"></span>
                         </p>
                     </li>
                     </p>
                 </ul>
                 <div class="price-show-btns">
-                    <a href="javascript:void(0)" class="primary-btn plans-show-btn pop-price-btn"  data-val="price-pans-popup">SHOW ME PLANS</a>
+                    <a href="javascript:void(0)" class="primary-btn plans-show-btn pop-like"  data-val="price-pans-popup">SHOW ME PLANS</a>
+                </div>
                 </div>
                 <div class="stock-sec blue-bg plans-invest">
                     <div class="container_12">
@@ -5959,20 +6007,22 @@
                                         </ul>
                                     </div>
                                     <div class="price-downpart">
-                                        <h3 class="price-sounds">Sounds Good?</h3>
-                                        <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
-                                        <ul class="price-menu">
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
-                                            <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
+                                	<ul class="price-menu">
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-block">Show me all Plans</a></li>
+                                        <li><a href="javascript:void(0)" class="newinvest-plans-none">Show Less</a></li>
+                                        <li><a href="javascript:void(0)" title="terms" class="pop-like">Terms & Conditions</a></li>
+                                    </ul>
+                                    <h3 class="price-sounds">Sounds Good?</h3>
+                                    <a href="javascript:void(0)" class="primary-btn">OPEN AN ACCOUNT</a>
+                                    
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                
+            </div>            
         </div>
     </section>
     <!-- Footer -->
@@ -6149,6 +6199,9 @@
 <script src="../js/jquery.countdown.js"></script>
 <script src="../js/jquery.singlePageNav.js"></script>
 <script src="../js/wow.js"></script>
+<script src="../js/viewportchecker.js"></script>
+<script src="../js/rate-it.js"></script>
+<script src="../js/jquery.fullPage.js"></script>
 <script src="../js/core.js"></script>
 </body>
 </html>
