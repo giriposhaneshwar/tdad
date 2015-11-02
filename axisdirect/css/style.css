@@ -4717,13 +4717,13 @@ box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
 /*.image-platfade{position:relative;}
 .image-platfade img{position:absolute;z-index:1}
 .image-platfade img.active{z-index:3}*/
-.image-platfade{display:block; border: 1px solid #c00;float: none;position: static;}
-.image-platfade ul{margin: 0px; padding: 0px; list-style: none;position: relative;float: none;}
-.image-platfade ul li{position: absolute; top: 0px; left: 0px; border: 1px solid #000;}
-.image-platfade ul:after{position: static;float: none;}
-.container_12 .grid_6:after{
-	float: none;
-	position: static;
+.image-platfade{display:block; min-height: 10px;}
+.image-platfade ul{display: block; margin: 0px; padding: 0px; list-style: none;position: relative;min-height: 10px;}
+.image-platfade ul li{position: absolute;}
+.image-platfade ul li{width: 100%; margin-top: -25%;}
+.image-platfade .grid_6{
+	display: inline-block;
+	vertical-align: middle;
 }
 
 /*platform over view */

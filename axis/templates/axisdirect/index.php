@@ -12,6 +12,7 @@
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-latest.js" ></script> 
 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-ui.js" ></script> 
+
 </head>
 <body>
 <div id="main">
@@ -102,6 +103,8 @@
   </section>-->
   <!-- footer -->
   <footer class="footer">
+
+<div><?php var_dump($this); ?></div>
     <div class="container_12">
       <div class="row clearfix">
         <div class="grid_2">

@@ -28,6 +28,8 @@ var fnGet = {};
 		if(cb) cb(event, status);
 	}
 
+
+
 	fnGet.scrollTopEle = scrollTopEle;
 	fnGet.appendScript = appendScript;
 
