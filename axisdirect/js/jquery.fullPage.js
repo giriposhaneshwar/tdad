@@ -381,7 +381,7 @@
             });
 
             var windowsWidth = $window.width();
-            windowsHeight = $window.height() -137;  //updating global var
+            windowsHeight = $window.height()-137;  //updating global var
             //text resizing
             if (options.resize) {
                 resizeMe(windowsHeight, windowsWidth);
@@ -1988,7 +1988,7 @@
                     section = element.closest(SECTION_SEL);
                 }
 
-                var paddings = parseInt(section.css('padding-top')) + parseInt(section.css('padding-bottom'))+ parseInt(section.css('margin-top'));
+                var paddings = parseInt(section.css('padding-top')) + parseInt(section.css('padding-bottom'));
                 sectionHeight = (windowsHeight - paddings);
             }
 

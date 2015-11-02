@@ -164,7 +164,7 @@
 		position:relative;
 	}	
 	.site-start,.site-start-modules{
-		padding:88px 0 0 0;
+		margin:88px 0 0 0;
 		transition:none;
 	}
 	.header-top-expand-arrow{
@@ -1139,7 +1139,7 @@
 	 
 	/* overview banners*/
 	.over-pro-1,.products-banner{background:url(../images/products/overview-1-small.jpg) center center;}
-	.over-pro-2{background:url(../images/products/overview-2-small.jpg) center center;}
+	.over-pro-2,.platform-banner{background:url(../images/products/overview-2-small.jpg) center center;}
 	.over-pro-3{background:url(../images/products/pricing-small.jpg) center center;}
 	.over-pro-4,.vas-banner{background:url(../images/products/overview-4-small.jpg) center center;}
 	.over-pro-5{background:url(../images/products/overview-5-small.jpg) center center;}
@@ -1290,5 +1290,8 @@
 	.ribbonBtn{display:none}
 	.invest-pop-btn{display:inline-block;}
 	.vas-invest h3{margin-bottom:20px;}
-	
+	/* plaft form over page*/
+	.platform-4{background:url(../images/products/platform-4-small.jpg) center center;}
+	.platform-5{background:url(../images/products/platform-5-small.jpg) center center;}
+	.plat-mob-img img{width:100%;}
 }
