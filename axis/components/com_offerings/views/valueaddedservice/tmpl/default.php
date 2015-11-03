@@ -24,3 +24,5 @@ else:
     echo JText::_('COM_OFFERINGS_ITEM_NOT_LOADED');
 endif;
 ?>
+
+

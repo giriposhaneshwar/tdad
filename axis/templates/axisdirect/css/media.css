@@ -164,7 +164,7 @@
 		position:relative;
 	}	
 	.site-start,.site-start-modules{
-		padding:88px 0 0 0;
+		margin:88px 0 0 0;
 		transition:none;
 	}
 	.header-top-expand-arrow{
@@ -1139,7 +1139,7 @@
 	 
 	/* overview banners*/
 	.over-pro-1,.products-banner{background:url(../../../images/products/overview-1-small.jpg) center center;}
-	.over-pro-2{background:url(../../../images/products/overview-2-small.jpg) center center;}
+	.over-pro-2,.platform-banner{background:url(../../../images/products/overview-2-small.jpg) center center;}
 	.over-pro-3{background:url(../../../images/products/pricing-small.jpg) center center;}
 	.over-pro-4,.vas-banner{background:url(../../../images/products/overview-4-small.jpg) center center;}
 	.over-pro-5{background:url(../../../images/products/overview-5-small.jpg) center center;}
@@ -1180,8 +1180,8 @@
 	.product-center{width:auto;}
 	.par-cen-pading{padding:0;}
 
-	.two-buttons a:last-child{margin:10px auto 0;}
-	.product-button{min-width:200px;}
+	.two-buttons a:last-child{margin:10px 0 0 5px;}
+	.product-button{min-width:150px;}
 	
 	.equity-content .product-align, .equity-content .floatdiv-right{float:none;}
 	.product-paragraph{font-size:14px;line-height:inherit;margin-bottom:25px;}
@@ -1234,6 +1234,8 @@
 	
 	.banner-title{margin-bottom:10px;}
 	.pri-pop-fot{font-size:12px;}
+	
+	
 	/* vas popup*/
 	.vas-list-pop > li{padding:10px;}
 	.vas-in-con > li:first-child,.vas-in-con > li{float:none;width:100%;border-right:0;padding:10px 0;}
@@ -1242,6 +1244,8 @@
 	.vas-in-con > li:first-child{padding-top:0;}
 	.vas-in-con > li{border-bottom:1px dotted #C5C5C5;}
 	.vas-in-con > li:last-child{border-bottom:0;}
+	.popup-reports-desc{margin-top:0;}
+	.vas-popup-con.dialog-content{padding-top:0;}
 	/* price popup */
 	.price-popup{overflow-y:auto;margin:30px 0;}
 	.pri-cal-box li{float:left;width:18%;padding-right:2%;}
@@ -1281,6 +1285,9 @@
 	
 	.vas-online-details li{margin-bottom:10px;padding:0;border-right:0;}
 	.vas-online-details li:last-child{margin-bottom:0;}
+	
+	.vas-popup-scroll{height:300px;overflow-y:auto;}
+	
 	/* expansions */
 	.portfolio-trackerlist li{width:100%;float:none;padding:0 0 20px 0;}
 	.portfolio-trackerlist li:last-child{padding-bottom:0;}
@@ -1291,4 +1298,10 @@
 	.invest-pop-btn{display:inline-block;}
 	.vas-invest h3{margin-bottom:20px;}
 	
+	/* plaft form over page*/
+	.platform-4{background:url(../../../images/products/platform-4-small.jpg) center center;}
+	.platform-5{background:url(../../../images/products/platform-5-small.jpg) center center;}
+	.plat-mob-img img{width:100%;}
+	.platform-con{text-align:center;margin-top:20px;}
+	.plat-txt-mid{height:inherit;}
 }

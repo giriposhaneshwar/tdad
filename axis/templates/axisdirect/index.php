@@ -82,19 +82,19 @@
     </div>
     
     <div class="header-second-web ">
-    <div class="logosection"> <a href="<?php echo $this->baseurl; ?>/" class="logo"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.png" class="logo-web"></a></div>
-            <div class="menu-section tophead">
-            	<div class="user-login-area clearfix">
-                 <?php if ($this->countModules('top_navigation_login')) : ?>
-              <jdoc:include type="modules" name="top_navigation_login" style="none" />
-              <?php endif; ?>
-                </div>
-                <?php if ($this->countModules('top_navigation')) : ?>
-            <jdoc:include type="modules" name="top_navigation" style="none" />
-            <?php endif; ?>
-                
-            </div>
-        </div>
+      <div class="logosection"> <a href="<?php echo $this->baseurl; ?>/" class="logo"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.png" class="logo-web"></a></div>
+      <div class="menu-section tophead">
+      	<div class="user-login-area clearfix">
+           <?php if ($this->countModules('top_navigation_login')) : ?>
+        <jdoc:include type="modules" name="top_navigation_login" style="none" />
+        <?php endif; ?>
+          </div>
+          <?php if ($this->countModules('top_navigation')) : ?>
+      <jdoc:include type="modules" name="top_navigation" style="none" />
+      <?php endif; ?>
+          
+      </div>
+    </div>
   </header>
 <!--  <section class="site-start">
     <div class="container_12">-->
@@ -103,8 +103,6 @@
   </section>-->
   <!-- footer -->
   <footer class="footer">
-
-<div><?php var_dump($this); ?></div>
     <div class="container_12">
       <div class="row clearfix">
         <div class="grid_2">
@@ -112,19 +110,24 @@
           <jdoc:include type="modules" name="footer_position1" style="none" />
           <?php endif; ?>
         </div>
-        <div class="grid_4">
+        <div class="grid_2">
           <?php if ($this->countModules('footer_position2')) : ?>
           <jdoc:include type="modules" name="footer_position2" style="none" />
           <?php endif; ?>
         </div>
         <div class="grid_2">
           <?php if ($this->countModules('footer_position3')) : ?>
+          <jdoc:include type="modules" name="footer_position2" style="none" />
+          <?php endif; ?>
+        </div>
+        <div class="grid_2">
+          <?php if ($this->countModules('footer_position4')) : ?>
           <jdoc:include type="modules" name="footer_position3" style="none" />
           <?php endif; ?>
         </div>
         <div class="grid_4">
-          <?php if ($this->countModules('footer_position4')) : ?>
-          <jdoc:include type="modules" name="footer_position4" style="none" />
+          <?php if ($this->countModules('footer_position5')) : ?>
+          <jdoc:include type="modules" name="footer_position5" style="none" />
           <?php endif; ?>
         </div>
       </div>
@@ -142,13 +145,10 @@
     <div class="footer-lastline shadow-before-border">
       <div class="shadow-after-border">
         <div class="container_12">
-          <div class="row clearfix">
-            <div class="grid_12">
+          <div class="row footer-lastmenu clearfix">
               <?php if ($this->countModules('footer')) : ?>
               <jdoc:include type="modules" name="footer" style="none" />
               <?php endif; ?>
-              <p class="mt10">&copy; 2015 Axis Direct All rights reserved. Best viewed with Internet Explorer Ver 7.0 or 8.0 with resolution of 1024x768</p>
-            </div>
           </div>
         </div>
       </div>

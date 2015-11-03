@@ -1,3 +1,8 @@
+ <?php
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/platformss/tmpl' );
+echo $this->loadTemplate('breadcrumb');
+                           
+                           ?> 
 <!-- Content -->
     <section class="fullpage site-start-modules site-start-modules-palt">
        

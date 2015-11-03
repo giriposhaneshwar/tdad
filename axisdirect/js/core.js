@@ -12,6 +12,7 @@ $(document).ready(function() {
         }
     }
 
+
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
         $('.top-news-snap').toggle();
@@ -435,7 +436,7 @@ $(document).ready(function() {
     $(document).click(function() {
         $('.invest-drop').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
-        //$('body').css("overflow", "auto");
+        $('body.overlayhide').css("overflow", "auto");
     });
 
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
@@ -790,7 +791,6 @@ $(document).ready(function() {
 
 
 
-
     //View Plan Details
     $('.pop-pack').on('click', '.showdetails', function() {
         $('.plandetails-show').show();
@@ -894,21 +894,111 @@ $(document).ready(function() {
     });
 
     // fullpage -- >offerings
-    $('.fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage'],
-        'navigation': true,
-        'navigationPosition': 'right',
-    });
-    $(document).resize(function(e){
-        // e.preventDefault();
-        if($(window).width() > 995){
-            console.log("above 995");
-            $('.fullpage').fullpage.reBuild('all');            
-        }else{
-            console.log("below");
-            $('.fullpage').fullpage.destroy('all');            
+    $.fn.shufferSlide = function() {
+        var $ele = $(this);
+        var $items = $ele.find('li');
+        // get total number of items
+        // get current slide
+        // get next slide is exist or empty
+        // loop
+        // console.log($items)
+        // for (var i = 0; i < $items.length; i++) {
+        //     var $elePoint = $($items[i]);
+        //     console.log($items.eq(i));
+        //     $items.delay(2000).eq(i).find('img').fadeIn(1000).parent().siblings().find('img').fadeOut();
+        // }
+
+        var i = 0,
+            j = 0;
+        var imgs = $ele.children();
+            imgs.hide();
+        runIt(imgs);
+
+
+        function runIt() {
+            $(imgs).eq(i).fadeIn(1000,function() {
+                setTimeout(runIt, '1000');
+            }).prev().fadeOut();
+            i = i + 1;
+            if (i == imgs.length) {
+                i = 0;
+                $ele.find('li').fadeOut()
+            }
         }
-    });
+    }
+
+    $.fn.fixsize = function(){
+        var $this = $(this);
+        var $header = $('.header-top');
+        var $nav = $('.header-second-web');
+        var $bread = $('.breadcrumb-sec');
+
+        $(window).on('resize ready', function(){
+            var $wh = $(this).height();
+            var fullpageHeight = $wh-($header.height()+$nav.height()+$bread.height());
+            // console.log(fullpageHeight, $wh, $header.height());
+            $this.css({
+                'height': fullpageHeight,
+                'overflow': 'hidden',
+                'overflow-y': 'scroll'
+            });
+           /* $this.on('mousewheel', function(e, delta){
+                console.log(delta);
+                if(e.delta == 1){
+                    e.offsetY -= fullpageHeight                    
+                }else{
+                    e.offsetY += fullpageHeight                                        
+                }
+                    // console.log("Mouse", e.offsetY);
+                    e.preventDefault();
+            });*/
+            $this.find('.fullpage-box').height(fullpageHeight);
+        });
+
+
+    }
+
+    $('.fullpage').fixsize();
+
+
+
+    /*$('.fullpage').fullpage({
+        anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
+        navigation: true,
+        navigationPosition: 'right',
+        afterLoad: function(e) {
+            var $this = $(this);
+            // console.log($(this));
+
+            // setTimeout(function() {
+                // console.log($this);
+                $this.find('.image-platfade').shufferSlide();
+            // }, 1200);
+
+
+            $('#pic-1').delay(900).fadeOut(1000);
+                $('#pic-2').delay(1200).fadeIn(1000);
+                
+				$('#pic-3').delay(900).fadeOut(1000);
+				$('#pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('#pic-5').delay(2700).fadeIn(1000);
+				
+				$('#pic-6').delay(900).fadeOut(1000);
+				$('#pic-7').delay(1200).fadeIn(1000);
+				
+				$('#pic-8').delay(900).fadeOut(1000);
+				$('#pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('#pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('#pic-11').delay(4000).fadeIn(1000);
+				
+				$('#pic-12').delay(900).fadeOut(1000);
+				$('#pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('#pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('#pic-15').delay(4000).fadeIn(1000);
+
+        }
+    });*/
+
 
 
     //Rate me -->social 
@@ -1021,7 +1111,6 @@ $(document).ready(function() {
 
 
 
-
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
         $('.le-products-menu').singlePageNav({
@@ -1098,19 +1187,3 @@ function tabslider() {
     })
 
 }
-
-/* fullpage images -- > offerings*/
-function cycleImages() {
-    var $active = $('.image-platfade ul li.active');
-    var $next = ($active.next().length > 0) ? $active.next() : $('.image-platfade li.active');
-    $next.css('z-index', 2); //move the next image up the pile
-    $active.fadeOut(1500, function() { //fade out the top image
-        $active.css('z-index', 1).fadeIn().removeClass('active'); //reset the z-index and unhide the image
-        $next.css('z-index', 3).addClass('active'); //make the next image the top one
-    });
-}
-
-$(document).ready(function() {
-    // run every 7s
-    setInterval('cycleImages()', 7000);
-})

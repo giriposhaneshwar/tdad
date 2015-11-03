@@ -1,3 +1,8 @@
+ <?php
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/overv1ews/tmpl' );
+echo $this->loadTemplate('breadcrumb');
+                           
+                           ?>  
 <!-- Share Section --> 
     <div class="share-sec">
         <ul class="share-list-box">

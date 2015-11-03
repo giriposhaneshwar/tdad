@@ -1,3 +1,8 @@
+ <?php
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/pricings/tmpl' );
+echo $this->loadTemplate('breadcrumb');
+                           
+                           ?> 
 <!-- Content -->
 <section class="site-start-modules">
     <div class="page-banner pricing-banner">

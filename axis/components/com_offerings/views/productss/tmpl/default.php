@@ -1,3 +1,8 @@
+ <?php
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/productss/tmpl' );
+echo $this->loadTemplate('breadcrumb');
+                           
+                           ?> 
 <!-- Content -->
     <section class="site-start-modules">
         <div class="page-banner products-banner">

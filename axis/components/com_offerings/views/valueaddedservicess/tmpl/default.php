@@ -1,3 +1,8 @@
+ <?php
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/valueaddedservicess/tmpl' );
+echo $this->loadTemplate('breadcrumb');
+                           
+                           ?>   
 <!-- Content -->
     <section class="site-start-modules vas">
         <div class="page-banner vas-banner">
@@ -114,22 +119,10 @@
                                         <h4 class="hea-heaing">Trade in Equity for Short Term</h4>
                                         <p class="exp-txt">(Less Than 1 month)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn ri-col2">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop"><span class="invest-pop-btn ri-col2">View Investment Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop">
                                         <p class="ribbonBtn ri-col2">View Trading Ideas</p>
-                                    </a>
-                                </li>
-                                <li class="clearfix">
-                                    <i class="sprite-img invest-exp-icon invest-exp3"></i>
-                                    <div class="invest-con">
-                                        <h4 class="hea-heaing">Invest in Equity SIP</h4>
-                                        <p class="exp-txt">( 6 to 12 month)</p>
-                                        
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn ri-col3">View Investment Ideas</span></a>
-                                    </div>
-                                    <a href="javascript:void(0)">
-                                        <p class="ribbonBtn ri-col3">View Trading Ideas</p>
                                     </a>
                                 </li>
                                 <li class="clearfix">
@@ -138,9 +131,9 @@
                                         <h4 class="hea-heaing">Invest in Mutual Funds for Long Term</h4>
                                         <p class="exp-txt">(> 3 years)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn ri-col4">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop"><span class="invest-pop-btn ri-col4">View Investment Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop">
                                         <p class="ribbonBtn ri-col4">View Investment Ideas</p>
                                     </a>
                                 </li>
@@ -150,9 +143,9 @@
                                         <h4 class="hea-heaing">Trade in Derivative Strategies</h4>
                                         <p class="exp-txt">( 1 day – 1 month)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn ri-col5">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop"><span class="invest-pop-btn ri-col5">View Investment Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop">
                                         <p class="ribbonBtn ri-col5">View Derivative Strategies</p>
                                     </a>
                                 </li>
@@ -171,9 +164,8 @@
                         <div class="grid_6 darkbg product-align bottom product-right">
                             <div class="product-vertical-align">
                                 <h1 class="product-title pro-headings">Portfolio Tracker</h1>
-                                <h4 class="product-subtitle"> Buy, Sell or Hold? get Expert Advise on Your Portfolio 24/7</h4>
-                                <p class="product-paragraph">It is a great feeling when you know exactly what to do with your stocks. That is why we give you expert advise your portfolio so that you have a healthy portfolio.
-                                </p>
+                                <h4 class="product-subtitle"> Navigate your financial journey with ease</h4>
+                                <p class="product-paragraph">Get a complete view of your finances and track the changes in your financial portfolio with ease. Make smart decisions backed by expert advice on whether you must buy, sell or hold.</p>
                                 <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">What's New ?</a>
                             </div>
                         </div>
@@ -398,8 +390,8 @@
                         <div class="grid_6 product-align top blockbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Financial Planning</h1>
-                                <h4 class="product-subtitle">Good Luck is the result of good planning.</h4>
-                                <p class="product-paragraph">AxisDirect Financial planning tools help you truly analyse your financial profile and provide an direction for the better financial future</p>
+                                <h4 class="product-subtitle">Good Luck is Often Due to Good Planning</h4>
+                                <p class="product-paragraph">It is a great feeling when things turn out to be exactly the way you planned. Plan for a better future using our smartly designed financial planning tools. It’s easier than you think</p>
                                 <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">Financial Planning tools</a>
                             </div>
                         </div>
@@ -416,14 +408,14 @@
                                 <li>
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp1"></i></span>
                                     <h4 class="hea-heaing">Risk Profiler</h4>
-                                    <p class="exp-txt">Take a 360 degree view of your needs, risk appetite and your understanding of various investment products, before the investment process.</p>
+                                    
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
                                 <li>
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp2"></i></span>
                                     <div class="eq-exp-con">
                                         <h4 class="hea-heaing">Financial Health Check</h4>
-                                        <p class="exp-txt">Designed to evaluate your financial health across all financial aspects. Right from your savings and expenses to your investments and insurance cover, your financial health will get a thorough check up.</p>
+                                        
                                     </div>
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
@@ -431,7 +423,6 @@
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp3"></i></span>
                                     <div class="eq-exp-con">
                                         <h4 class="hea-heaing">goal Planning</h4>
-                                        <p class="exp-txt">Helps you to create a goal plan by telling you the exact investment needs towards achieving your goals.</p>
                                     </div>
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
@@ -439,7 +430,6 @@
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp4"></i></span>
                                     <div class="eq-exp-con">
                                         <h4 class="hea-heaing">Life Insurance Calculator</h4>
-                                        <p class="exp-txt">Find the insurance amout necessary to cover your family's expenses when you are not around !!</p>
                                     </div>
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
@@ -447,7 +437,6 @@
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp5"></i></span>
                                     <div class="eq-exp-con">
                                         <h4 class="hea-heaing">Retirement Planning Calculator</h4>
-                                        <p class="exp-txt">Find out how much do you need to start saving from today to live a tension free retired life.</p>
                                     </div>
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
@@ -487,48 +476,59 @@
                                     <i class="sprite-img loan-exp-icon loan-exp1"></i>
                                     <div class="loan-con">
                                         <h4 class="hea-heaing">Home Loan</h4>
-                                        <p class="exp-txt">If rising real estate prices have pushed the house you coveted beyond your budget, Axis Bank's unmatched home loans will put it within reach.</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
-                                    </div>
-                                </li>
-                                <li class="grid_4">
-                                    <i class="sprite-img loan-exp-icon loan-exp2"></i>
-                                    <div class="loan-con">
-                                        <h4 class="hea-heaing">Auto Loan</h4>
-                                        <p class="exp-txt">Be it dream vacation, child's education, home renovation or wedding in your family, you can istantly fulfill your aspirations with Axis Bank Personal Loans.</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
-                                    </div>
-                                </li>
-                                <li class="grid_4">
-                                    <i class="sprite-img loan-exp-icon loan-exp3"></i>
-                                    <div class="loan-con">
-                                        <h4 class="hea-heaing">Loan Against Share</h4>
-                                        <p class="exp-txt">Axis Bank offers loan against share in the form of overdraft against list of approved securities.</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
                                     </div>
                                 </li>
                                 <li class="grid_4">
                                     <i class="sprite-img loan-exp-icon loan-exp4"></i>
                                     <div class="loan-con">
                                         <h4 class="hea-heaing">Personal Loan</h4>
-                                        <p class="exp-txt">Be it dream vacation, child's education, home renovationor wedding in your family, you can instantly fulfill your aspirations with Axis Bank Personal Loans.</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
                                     </div>
                                 </li>
                                 <li class="grid_4">
                                     <i class="sprite-img loan-exp-icon loan-exp5"></i>
                                     <div class="loan-con">
                                         <h4 class="hea-heaing">Loan Against Gold</h4>
-                                        <p class="exp-txt">Axis Bank Offers Loan Against Gold Ornaments with same Day Loan Disbursement</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
                                     </div>
                                 </li>
+                                <li class="grid_4">
+                                    <i class="sprite-img loan-exp-icon loan-exp3"></i>
+                                    <div class="loan-con">
+                                        <h4 class="hea-heaing">Loan Against Priority</h4>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
+                                    </div>
+                                </li>
+                                <li class="grid_4">
+                                    <i class="sprite-img loan-exp-icon loan-exp2"></i>
+                                    <div class="loan-con">
+                                        <h4 class="hea-heaing">SME Loan</h4>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
+                                    </div>
+                                </li>
+                                <li class="grid_4">
+                                    <i class="sprite-img loan-exp-icon loan-exp2"></i>
+                                    <div class="loan-con">
+                                        <h4 class="hea-heaing">Auto Loan</h4>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
+                                    </div>
+                                </li>
+                                
+                                <li class="grid_4">
+                                    <i class="sprite-img loan-exp-icon loan-exp3"></i>
+                                    <div class="loan-con">
+                                        <h4 class="hea-heaing">Loan Against Shares</h4>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
+                                    </div>
+                                </li>
+                                
+                                
                                 <li class="grid_4">
                                     <i class="sprite-img loan-exp-icon loan-exp6"></i>
                                     <div class="loan-con">
                                         <h4 class="hea-heaing">Commercial Vehilce &amp; Constructioin Equipment</h4>
-                                        <p class="exp-txt">Axis Bank offers loan against share in the form of overdraft against list of approved securities.</p>
-                                        <a href="javascript:void(0)" class="fin-aply-btn">Apply</a>
+                                        <a href="javascript:void(0)" class="fin-aply-btn">know more</a>
                                     </div>
                                 </li>
                             </ul>
@@ -626,8 +626,8 @@
                             <div class="grid_6 product-right product-align top blockbg">
                                 <div class="product-vertical-align">
                                     <h1 class="product-title">General Insurance</h1>
-                                    <h4 class="product-subtitle">It's always better safe than sorry and General Insurance is not an exception</h4>
-                                    <p class="product-paragraph">AxisDirect joins hands with TATA AIG to present you smartly designed Health, Travel and Motor Insurance plans for your safe and relaxed life</p>
+                                    <h4 class="product-subtitle">PROTECT THINGS YOU LOVE MOST</h4>
+                                    <p class="product-paragraph">Remain worry free with general insurance solutions from TATA AIG that help you insure your health, travel or motor.</p>
                                     <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">Explore Products</a>
                                 </div>
                             </div>
@@ -643,35 +643,29 @@
                         <div class="grid_12 stock-sec">
                             <ul class="exp-thr-el der-exp-list clearfix">
                                 <li>
-                                    <span class="der-icon-border push-noti-list"><i class="sprite-img push-exp-icon push-exp1"></i></span>
+                                    <span class="der-icon-border push-noti-list"><i class="sprite-img gi-exp-icon gi-exp1"></i></span>
                                     <div class="eq-exp-con">
-                                        <h4 class="hea-heaing">Preserve both your health and savings</h4>
-                                        <p class="exp-txt">With our wide range of our health plans, be prepared to counter any health issue</p>
+                                        <h4 class="hea-heaing">Health Insurance</h4>
                                         <p class="twobtns-aply-btn">
                                             <a href="javascript:void(0)" class="two-ap-btns">Know More</a>
-                                            <a href="javascript:void(0)" class="two-ap-btns">Apply</a>
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <span class="der-icon-border push-noti-list"><i class="sprite-img push-exp-icon push-exp2"></i></span>
+                                    <span class="der-icon-border push-noti-list"><i class="sprite-img gi-exp-icon gi-exp2"></i></span>
                                     <div class="eq-exp-con">
-                                        <h4 class="hea-heaing">Just your travel itinerary is not enough</h4>
-                                        <p class="exp-txt">With our Travel insurance plans, secure your baggage, passport, loss due flight delay and even your health while you travel</p>
+                                        <h4 class="hea-heaing">Travel Insurance</h4>
                                         <p class="twobtns-aply-btn">
                                             <a href="javascript:void(0)" class="two-ap-btns">Know More</a>
-                                            <a href="javascript:void(0)" class="two-ap-btns">Apply</a>
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <span class="der-icon-border push-noti-list"><i class="sprite-img push-exp-icon push-exp3"></i></span>
+                                    <span class="der-icon-border push-noti-list"><i class="sprite-img gi-exp-icon gi-exp3"></i></span>
                                     <div class="eq-exp-con">
-                                        <h4 class="hea-heaing">Don't insure you car just because it's mandatory</h4>
-                                        <p class="exp-txt">Check out our Motor Insurance for added protection</p>
+                                        <h4 class="hea-heaing">Motor Insurance</h4>
                                         <p class="twobtns-aply-btn">
                                             <a href="javascript:void(0)" class="two-ap-btns">Know More</a>
-                                            <a href="javascript:void(0)" class="two-ap-btns">Apply</a>
                                         </p>
                                     </div>
                                 </li>
