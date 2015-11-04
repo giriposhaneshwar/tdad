@@ -13,7 +13,6 @@ $(document).ready(function() {
     }
 	
 
-
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
         $('.top-news-snap').toggle();
@@ -792,6 +791,7 @@ $(document).ready(function() {
 
 
 
+
     //View Plan Details
     $('.pop-pack').on('click', '.showdetails', function() {
         $('.plandetails-show').show();
@@ -866,20 +866,32 @@ $(document).ready(function() {
         $('.pop-pack').dialog({
             width: $(this).attr('data-size') == undefined ? 980 : $(this).attr('data-size')
         });
-        $(".pop-pack").dialog("open").load(localPop, function(content, status, xhr) {
-            // console.log(content, status, xhr);
-            if (status == 'success') {
-                $(".pop-pack").dialog({
-                    position: {
-                        my: "center",
-                        at: "center",
-                        of: window,
-                        collision: 'fit'
-                    }
-                });
-                $(document).find('head').append('<script src="js/rate-it.js"></script>');
-            }
-        });
+		
+		$.fn.popupLoad = function(url){
+			$.ajax({
+				type: "POST",
+				url: url,
+				success: function(msg){
+					$(".pop-pack").dialog({
+						position: {
+							my: "center",
+							at: "center",
+							of: window,
+							collision: 'fit'
+						}
+					});
+					$(".pop-pack").html(msg);
+					$(document).find('head').append('<script src="js/rate-it.js"></script>');
+					//console.log("Success", msg);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					console.log("erro", jqXHR, textStatus, errorThrown)
+				}
+			});
+		
+			}
+		
+        $(".pop-pack").dialog("open").popupLoad(localPop);
     });
 
     // social more button
@@ -895,192 +907,69 @@ $(document).ready(function() {
     });
 
     // fullpage -- >offerings
-<<<<<<< HEAD
-    $.fn.shufferSlide = function() {
-        var $ele = $(this);
-        var $items = $ele.find('li');
-        // get total number of items
-        // get current slide
-        // get next slide is exist or empty
-        // loop
-        // console.log($items)
-        // for (var i = 0; i < $items.length; i++) {
-        //     var $elePoint = $($items[i]);
-        //     console.log($items.eq(i));
-        //     $items.delay(2000).eq(i).find('img').fadeIn(1000).parent().siblings().find('img').fadeOut();
-        // }
-
-        var i = 0,
-            j = 0;
-        var imgs = $ele.children();
-            imgs.hide();
-        runIt(imgs);
-
-
-        function runIt() {
-            $(imgs).eq(i).fadeIn(1000,function() {
-                setTimeout(runIt, '1000');
-            }).prev().fadeOut();
-            i = i + 1;
-            if (i == imgs.length) {
-                i = 0;
-                $ele.find('li').fadeOut()
-            }
-        }
-    }
-
-    $.fn.fixsize = function(){
-        var $this = $(this);
-        var $header = $('.header-top');
-        var $nav = $('.header-second-web');
-        var $bread = $('.breadcrumb-sec');
-
-        $(window).on('resize ready', function(){
-            var $wh = $(this).height();
-            var fullpageHeight = $wh-($header.height()+$nav.height()+$bread.height());
-            // console.log(fullpageHeight, $wh, $header.height());
-            $this.css({
-                'height': fullpageHeight,
-                'overflow': 'hidden',
-                'overflow-y': 'scroll'
-            });
-           /* $this.on('mousewheel', function(e, delta){
-                console.log(delta);
-                if(e.delta == 1){
-                    e.offsetY -= fullpageHeight                    
-                }else{
-                    e.offsetY += fullpageHeight                                        
-                }
-                    // console.log("Mouse", e.offsetY);
-                    e.preventDefault();
-            });*/
-            $this.find('.fullpage-box').height(fullpageHeight);
-        });
-
-
-    }
-
-    $('.fullpage').fixsize();
-
-
-
-    /*$('.fullpage').fullpage({
-        anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
-        navigation: true,
-        navigationPosition: 'right',
-        afterLoad: function(e) {
-            var $this = $(this);
-            // console.log($(this));
-
-            // setTimeout(function() {
-                // console.log($this);
-                $this.find('.image-platfade').shufferSlide();
-            // }, 1200);
-
-
-            $('#pic-1').delay(900).fadeOut(1000);
-                $('#pic-2').delay(1200).fadeIn(1000);
-                
-				$('#pic-3').delay(900).fadeOut(1000);
-				$('#pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-5').delay(2700).fadeIn(1000);
-				
-				$('#pic-6').delay(900).fadeOut(1000);
-				$('#pic-7').delay(1200).fadeIn(1000);
-				
-				$('#pic-8').delay(900).fadeOut(1000);
-				$('#pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
-				$('#pic-11').delay(4000).fadeIn(1000);
-				
-				$('#pic-12').delay(900).fadeOut(1000);
-				$('#pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
-				$('#pic-15').delay(4000).fadeIn(1000);
-
-        }
-    });*/
-
-
-=======
 	
 		$('.fullpage').fullpage({
-			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
+			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
 			navigation: true,
 			navigationPosition: 'right',
 			afterLoad:function(e){
-				
-				var page = window.location.href;
-				var pagePos = page.split('/');
-				var thisPage = pagePos[pagePos.length-1];
-				var pPage = thisPage.split('#');
-				if(pPage[0] == "platforms-mobapp.html"){
-					var a =e;
-					if(a == '1Page'){
-					$('.pic-1').delay(900);
-					$('.pic-2').delay(700).fadeIn();
-					}else if(a == '2Page'){
-					$('.pic-3').delay(900);
-					$('.pic-4').delay(1200).fadeIn();
-					$('.pic-5').delay(2700).fadeIn();
-					}else if(a == '3Page'){
-					$('.pic-6').delay(900).fadeOut();
-					$('.pic-7').delay(700).fadeIn();
-					}else if(a == '4Page'){
-					$('.pic-8').delay(900);
-					$('.pic-9').delay(1200).fadeIn();
-					$('.pic-10').delay(2700).fadeIn();
-					$('.pic-11').delay(4000).fadeIn();
-					}else if(a == '5Page'){
-					$('.pic-12').delay(900);
-					$('.pic-13').delay(1500).fadeIn();
-					$('.pic-14').delay(2100).fadeIn();
-					$('.pic-15').delay(2600).fadeIn();
-					}
-				}else if(pPage[0] == "platforms-trade.html"){
-					var a =e;
-					if(a == '1Page'){
-					$('.pic-1').delay(900);
-					$('.pic-2').delay(1200).fadeIn();
-					$('.pic-3').delay(2700).fadeIn();
-					$('.pic-4').delay(4000).fadeIn();
-					}
+				var a =e;
+				if(a == '1Page'){
+				$('.pic-1').delay(900).fadeOut(1000);
+				$('.pic-2').delay(1200).fadeIn(1000);
+				}else if(a == '2Page'){
+				$('.pic-3').delay(900).fadeOut(1000);
+				$('.pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-5').delay(2700).fadeIn(1000);
+				}else if(a == '3Page'){
+				$('.pic-6').delay(900).fadeOut(1000);
+				$('.pic-7').delay(1200).fadeIn(1000);
+				}else if(a == '4Page'){
+				$('.pic-8').delay(900).fadeOut(1000);
+				$('.pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-11').delay(4000).fadeIn(1000);
+				}else if(a == '5Page'){
+				$('.pic-12').delay(900).fadeOut(1000);
+				$('.pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-15').delay(4000).fadeIn(1000);
 				}
-				else if(pPage[0] == "platforms-webportal.html"){
-					var a =e;
-					if(a == '2Page'){
-					$('.pic-28').delay(1000).fadeOut();
-					$('.pic-29').delay(900).fadeIn().fadeOut();
-					$('.pic-30').delay(1200).fadeIn();					
-					}
-					else if(a == '3Page'){
-					$('.pic-6').delay(900);
-					$('.pic-5').delay(500).fadeIn();
-					}
-					else if(a == '4Page'){
-					$('.pic-23').delay(500);
-					$('.pic-24').delay(1500).fadeIn();
-					$('.pic-25').delay(2500).fadeIn();
-					$('.pic-26').delay(3500).fadeIn();
-					$('.pic-27').delay(4500).fadeIn();
-					}
-					else if(a == '6Page'){
-					$('.pic-16').delay(500);
-					$('.pic-17').delay(1500).fadeIn();
-					$('.pic-18').delay(2500).fadeIn();
-					$('.pic-19').delay(3500).fadeIn();
-					}
-					else if(a == '7Page'){
-					$('.pic-20').delay(500);
-					$('.pic-21').delay(1500).fadeIn();
-					$('.pic-22').delay(2500).fadeIn();
-					}
-				}
-				
 			}
 		});
-		
->>>>>>> 7f250b18e299adfce5dfeb75e5a935b4c87193aa
+	
+		$('.fullpage-trade').fullpage({
+			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
+			navigation: true,
+			navigationPosition: 'right',
+			afterLoad:function(e){
+				var a =e;
+				if(a == '1Page'){
+				$('.pic-1').delay(900).fadeOut(1000);
+				$('.pic-2').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-3').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-4').delay(4000).fadeIn(1000);
+				}else if(a == '2Page'){
+				$('.pic-3').delay(900).fadeOut(1000);
+				$('.pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-5').delay(2700).fadeIn(1000);
+				}else if(a == '3Page'){
+				$('.pic-6').delay(900).fadeOut(1000);
+				$('.pic-7').delay(1200).fadeIn(1000);
+				}else if(a == '4Page'){
+				$('.pic-8').delay(900).fadeOut(1000);
+				$('.pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-11').delay(4000).fadeIn(1000);
+				}else if(a == '5Page'){
+				$('.pic-12').delay(900).fadeOut(1000);
+				$('.pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-15').delay(4000).fadeIn(1000);
+				}
+			}
+		});
+
 
     //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
@@ -1189,6 +1078,7 @@ $(document).ready(function() {
     }
 
     setTimeout(progress, 2000);
+
 
 
 

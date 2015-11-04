@@ -14,7 +14,7 @@ class JConfig {
 	public $dbtype = 'mysql';
 	public $host = 'localhost';
 	public $user = 'root';
-	public $password = 'mysql';
+	public $password = '';
 	public $db = 'axis';
 	public $dbprefix = 'jfms0_';
 	public $live_site = '';
@@ -54,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/var/www/html/axisweb/axis/logs';
-	public $tmp_path = '/var/www/html/axisweb/axis/tmp';
+	public $log_path = '/d/wamp/www/axisweb/axis/logs';
+	public $tmp_path = '/d/wamp/www/axisweb/axis/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 }

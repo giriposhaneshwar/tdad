@@ -54,6 +54,7 @@
 	/* offerings */
 	/*prodcts*/
 	.le-products-menu li a{min-height:138px;}
+	.image-platfade li img{width:100%;}
 }
 @media screen and (max-width:997px){
 	
@@ -1200,6 +1201,7 @@
 	/* products expansion*/
 	.exp-thr-el li{width:100%;float:none; margin-top:20px;padding-right: 0px;margin-bottom: 0px;}
 	.exp-thr-el li:last-child{margin-bottom:20px;}
+	.tax-paragraph{padding:0;margin:20px 0 0 0;}
 	
 	/*.product-center{margin-bottom:20px;}*/
 	.curency-de-list li{width:100%;margin:30px 0;}
@@ -1304,4 +1306,16 @@
 	.plat-mob-img img{width:100%;}
 	.platform-con{text-align:center;margin-top:20px;}
 	.plat-txt-mid{height:inherit;}
+
+	
+	/* platform fullpage*/
+	.fullpage-web,#fp-nav{display:none;}
+	html.fp-enabled, .fp-enabled body{overflow:auto !important;}
+	.ful-sec-bac{padding:50px 0;}
+	.ful-sec-1{background: url(../images/products/blue.jpg);}
+	.ful-sec-3{background: url(../images/products/red.jpg);}
+	.ful-sec-5{background: url(../images/products/green.jpg);}
+	.ful-sec-2,.ful-sec-4,.ful-sec-6{background: url(../images/products/grey.jpg);}
+	.fullpage-images{text-align:center;}
+	.fullpage-ban-con{text-align:center;margin-top:20px;}
 }
