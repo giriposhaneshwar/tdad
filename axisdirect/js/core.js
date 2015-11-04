@@ -11,6 +11,7 @@ $(document).ready(function() {
             }, 500);
         }
     }
+	
 
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
@@ -435,7 +436,7 @@ $(document).ready(function() {
     $(document).click(function() {
         $('.invest-drop').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
-        //$('body').css("overflow", "auto");
+        $('body.overlayhide').css("overflow", "auto");
     });
 
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
@@ -894,22 +895,83 @@ $(document).ready(function() {
     });
 
     // fullpage -- >offerings
-    $('.fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage'],
-        'navigation': true,
-        'navigationPosition': 'right',
-    });
-    $(document).resize(function(e){
-        // e.preventDefault();
-        if($(window).width() > 995){
-            console.log("above 995");
-            $('.fullpage').fullpage.reBuild('all');            
-        }else{
-            console.log("below");
-            $('.fullpage').fullpage.destroy('all');            
-        }
-    });
-
+	
+		$('.fullpage').fullpage({
+			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
+			navigation: true,
+			navigationPosition: 'right',
+			afterLoad:function(e){
+				
+				var page = window.location.href;
+				var pagePos = page.split('/');
+				var thisPage = pagePos[pagePos.length-1];
+				var pPage = thisPage.split('#');
+				if(pPage[0] == "platforms-mobapp.html"){
+					var a =e;
+					if(a == '1Page'){
+					$('.pic-1').delay(900);
+					$('.pic-2').delay(700).fadeIn();
+					}else if(a == '2Page'){
+					$('.pic-3').delay(900);
+					$('.pic-4').delay(1200).fadeIn();
+					$('.pic-5').delay(2700).fadeIn();
+					}else if(a == '3Page'){
+					$('.pic-6').delay(900).fadeOut();
+					$('.pic-7').delay(700).fadeIn();
+					}else if(a == '4Page'){
+					$('.pic-8').delay(900);
+					$('.pic-9').delay(1200).fadeIn();
+					$('.pic-10').delay(2700).fadeIn();
+					$('.pic-11').delay(4000).fadeIn();
+					}else if(a == '5Page'){
+					$('.pic-12').delay(900);
+					$('.pic-13').delay(1500).fadeIn();
+					$('.pic-14').delay(2100).fadeIn();
+					$('.pic-15').delay(2600).fadeIn();
+					}
+				}else if(pPage[0] == "platforms-trade.html"){
+					var a =e;
+					if(a == '1Page'){
+					$('.pic-1').delay(900);
+					$('.pic-2').delay(1200).fadeIn();
+					$('.pic-3').delay(2700).fadeIn();
+					$('.pic-4').delay(4000).fadeIn();
+					}
+				}
+				else if(pPage[0] == "platforms-webportal.html"){
+					var a =e;
+					if(a == '2Page'){
+					$('.pic-28').delay(1000).fadeOut();
+					$('.pic-29').delay(900).fadeIn().fadeOut();
+					$('.pic-30').delay(1200).fadeIn();					
+					}
+					else if(a == '3Page'){
+					$('.pic-6').delay(900);
+					$('.pic-5').delay(500).fadeIn();
+					}
+					else if(a == '4Page'){
+					$('.pic-23').delay(500);
+					$('.pic-24').delay(1500).fadeIn();
+					$('.pic-25').delay(2500).fadeIn();
+					$('.pic-26').delay(3500).fadeIn();
+					$('.pic-27').delay(4500).fadeIn();
+					}
+					else if(a == '6Page'){
+					$('.pic-16').delay(500);
+					$('.pic-17').delay(1500).fadeIn();
+					$('.pic-18').delay(2500).fadeIn();
+					$('.pic-19').delay(3500).fadeIn();
+					}
+					else if(a == '7Page'){
+					$('.pic-20').delay(500);
+					$('.pic-21').delay(1500).fadeIn();
+					$('.pic-22').delay(2500).fadeIn();
+					}
+				}
+				
+			}
+		});
+		
 
     //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
@@ -1098,19 +1160,3 @@ function tabslider() {
     })
 
 }
-
-/* fullpage images -- > offerings*/
-function cycleImages() {
-    var $active = $('.image-platfade ul li.active');
-    var $next = ($active.next().length > 0) ? $active.next() : $('.image-platfade li.active');
-    $next.css('z-index', 2); //move the next image up the pile
-    $active.fadeOut(1500, function() { //fade out the top image
-        $active.css('z-index', 1).fadeIn().removeClass('active'); //reset the z-index and unhide the image
-        $next.css('z-index', 3).addClass('active'); //make the next image the top one
-    });
-}
-
-$(document).ready(function() {
-    // run every 7s
-    setInterval('cycleImages()', 7000);
-})

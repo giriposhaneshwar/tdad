@@ -1,16 +1,17 @@
 $(document).ready(function() {
+
+    // scroll top	
+    var scrollTopEle = function(query, val) {
+        val == undefined || null ? 0 : val;
+        //newinvest-plans-none;
+        var target = query;
+        if (target.length >= 1) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - val
+            }, 500);
+        }
+    }
 	
-	// scroll top	
-	var scrollTopEle = function(query, val){
-		val == undefined || null ? 0 : val;
-		//newinvest-plans-none;
-		var target = query;
-		if(target.length >= 1) {
-			$('html, body').animate({
-				scrollTop: target.offset().top - val
-			}, 500);			
-		}
-	}
 
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
@@ -86,7 +87,6 @@ $(document).ready(function() {
             $('body').removeClass("off");
         }
     });
-
 
     //Responsive more-menu	
     $(".res-moremenu").on('click', function() {
@@ -245,6 +245,8 @@ $(document).ready(function() {
     });
 
     // reasearch time and term
+
+
     function terms() {
         var allVals = [];
         var res_time = $('input[name="term"]:checked').each(function() {
@@ -434,7 +436,7 @@ $(document).ready(function() {
     $(document).click(function() {
         $('.invest-drop').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
-        $('body').css("overflow", "auto");
+        $('body.overlayhide').css("overflow", "auto");
     });
 
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
@@ -574,31 +576,31 @@ $(document).ready(function() {
         $(this).closest('.pricing-btnsec').find('.showme-plans,.price-trade-link').hide();
         $(this).closest('.pricing-btnsec').find('.modifyplans').show();
         $(this).closest('.pricing-btnsec').find('.plans-invest').show();
-		
-		
-		scrollTopEle($(this).closest('.pricing-btnsec').find('.plans-invest'), 100);
+
+
+        scrollTopEle($(this).closest('.pricing-btnsec').find('.plans-invest'), 100);
     });
 
     // expansion
     $('.pro-exp-btn').on('click', function(e) {
-		e.preventDefault();
+        e.preventDefault();
         var target = $(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
         $(this).closest('.pro-over').find('.expansion-pro1').hide();
-        
-			console.log(target);
-		
-			scrollTopEle(target, 250);
+
+        console.log(target);
+
+        scrollTopEle(target, 250);
     });
     $('.pro1-exp-btn').on('click', function(e) {
-		e.preventDefault();
+        e.preventDefault();
         var target = $(this).closest('.pro-over').find('.expansion-pro1').slideToggle(800);
         $(this).closest('.pro-over').find('.expansion-pro').hide();
-       /* scrolled = $(document).scrollTop();
-        scrolled = scrolled + 500;
-        $('html , body').animate({
-            scrollTop: scrolled
-        })*/
-		scrollTopEle(target, 250);
+        /* scrolled = $(document).scrollTop();
+                scrolled = scrolled + 500;
+                $('html , body').animate({
+                    scrollTop: scrolled
+                })*/
+        scrollTopEle(target, 250);
     });
 
     $('.close-expansion').on('click', function() {
@@ -610,16 +612,16 @@ $(document).ready(function() {
         var div_name = $(this).attr('data-val');
         $('.pricing-btnsec').hide();
         $('#' + div_name).show();
-		$('#'+div_name).find('.without-slider-price ul').show();
-		$('#'+div_name).find('.slide-price-none').hide();
-		$('#'+div_name).find('.newinvest-plans-none').hide();
-		$('#'+div_name).find('.newinvest-plans-block').show();
-		
-		$.each($('.price-carosal'), function(i, n){
-			slider = $(n).bxSlider();
-			slider.reloadSlider()
-			slider.destroySlider();
-		});
+        $('#' + div_name).find('.without-slider-price ul').show();
+        $('#' + div_name).find('.slide-price-none').hide();
+        $('#' + div_name).find('.newinvest-plans-none').hide();
+        $('#' + div_name).find('.newinvest-plans-block').show();
+
+        $.each($('.price-carosal'), function(i, n) {
+            slider = $(n).bxSlider();
+            slider.reloadSlider()
+            slider.destroySlider();
+        });
     });
     $('.price-trade-link').on('click', function() {
         $('.invest-1').hide();
@@ -627,7 +629,6 @@ $(document).ready(function() {
     });
 
     // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
-
     //News-ticker	
     var nt_example1 = $('.sensex-list').newsTicker({
         row_height: 31,
@@ -662,19 +663,7 @@ $(document).ready(function() {
 
     //Auto Complete -->Markets
     $(function() {
-        var availableTags = [
-            "RELIND - Reliance Industries Ltd",
-            "RELINF - Reliance Infrastructure Ltd",
-            "RELIDF - Reliance Industrial Infrastructure Ltd",
-            "Reliance Industries Ltd - RELIANCE",
-            "Reliance Communications Ltd - RCOM",
-            "Reliance Power Ltd - RPOWER",
-            "Reliance Infrastructure Ltd - RELINFRA",
-            "Reliance Capital Ltd - RELCAPITAL",
-            "Religare Enterprises Ltd - RELIGARE ",
-            "Reliance Industrial Infrastructure Ltd - RIIL ",
-            "Reliance Chemotex Industries Ltd - NA"
-        ];
+        var availableTags = ["RELIND - Reliance Industries Ltd", "RELINF - Reliance Infrastructure Ltd", "RELIDF - Reliance Industrial Infrastructure Ltd", "Reliance Industries Ltd - RELIANCE", "Reliance Communications Ltd - RCOM", "Reliance Power Ltd - RPOWER", "Reliance Infrastructure Ltd - RELINFRA", "Reliance Capital Ltd - RELCAPITAL", "Religare Enterprises Ltd - RELIGARE ", "Reliance Industrial Infrastructure Ltd - RIIL ", "Reliance Chemotex Industries Ltd - NA"];
         $(".auto-complete").autocomplete({
             source: availableTags,
             open: function(event, ui) {
@@ -686,19 +675,7 @@ $(document).ready(function() {
     });
 
     $(function() {
-        var availableTags = [
-            "Equity",
-            "Derivatives",
-            "Mutual",
-            "Reliance",
-            "Communications Lt",
-            "RPOWER",
-            "RELINFRA",
-            "RELCAPITAL",
-            "RELIGARE ",
-            "RIIL ",
-            "NA"
-        ];
+        var availableTags = ["Equity", "Derivatives", "Mutual", "Reliance", "Communications Lt", "RPOWER", "RELINFRA", "RELCAPITAL", "RELIGARE ", "RIIL ", "NA"];
         $(".global-search").autocomplete({
             source: availableTags,
             open: function(event, ui) {
@@ -711,7 +688,6 @@ $(document).ready(function() {
 
 
     //BX Slider for card view --> insights
-
 
     if ($(window).width() <= 995) {
         $('.ca-slider').bxSlider({
@@ -769,13 +745,13 @@ $(document).ready(function() {
     var price_slider;
 
     var price_list_slider_width = $('.price-list-slider').width();
-	
-	// priceing newto investing
+
+    // priceing newto investing
     $('.newinvest-plans-block').on('click', function() {
         $(this).closest('.price-list-slider').find('.dis-price-slider,.newinvest-plans-block').hide();
         $(this).closest('.price-list-slider').find('.slide-price-none,.newinvest-plans-none').show();
-		
-		
+
+
         price_slider = $(this).closest('.price-downpart').prev().find('.price-carosal').bxSlider({
             slideWidth: $(document).width() > 995 ? 225 : price_list_slider_width,
             minSlides: 1,
@@ -785,14 +761,14 @@ $(document).ready(function() {
             maxSlides: 4,
             moveSlides: 1,
         });
-		// for focused scrolling
-		scrollTopEle($(this).closest('.plans-invest'), 0);
+        // for focused scrolling
+        scrollTopEle($(this).closest('.plans-invest'), 0);
     });
     $('.newinvest-plans-none').on('click', function() {
         $(this).closest('.price-list-slider').find('.slide-price-none,.newinvest-plans-none').hide();
         $(this).closest('.price-list-slider').find('.dis-price-slider,.newinvest-plans-block').show();
         price_slider.destroySlider();
-		scrollTopEle($(this).closest('.plans-invest'), 0);
+        scrollTopEle($(this).closest('.plans-invest'), 0);
     });
 
     $(window).resize(function() {
@@ -814,11 +790,7 @@ $(document).ready(function() {
     });
 
 
-    // platform slider --> offerings
 
-    $('.platform-slider').bxSlider({
-        mode: 'vertical',
-    });
 
     //View Plan Details
     $('.pop-pack').on('click', '.showdetails', function() {
@@ -846,29 +818,30 @@ $(document).ready(function() {
 
 
     /*//View Details for ajax calls 
-    $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('title');
-        $(".pop-pack").dialog("open").load(pagename + ".html");
+        $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
+            $('body').toggleClass('popup-overflow');
 
-    });
-	
-	//View Details for ajax calls->pricing offerings
-	 $(".pop-price-btn").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-price").dialog("open").load(pagename + ".html");
+            var pagename = $(this).attr('title');
+            $(".pop-pack").dialog("open").load(pagename + ".html");
 
-    });
-	
-	//View Details for ajax calls->share
-	 $(".share-details").on("click", function() {
-        $('body').toggleClass('popup-overflow');
-        var pagename = $(this).attr('data-val');
-        $(".pop-share-details").dialog("open").load(pagename + ".html");
+        });
+    	
+    	//View Details for ajax calls->pricing offerings
+    	 $(".pop-price-btn").on("click", function() {
+            $('body').toggleClass('popup-overflow');
+            var pagename = $(this).attr('data-val');
+            $(".pop-price").dialog("open").load(pagename + ".html");
 
-    });
-	*/
+        });
+    	
+    	//View Details for ajax calls->share
+    	 $(".share-details").on("click", function() {
+            $('body').toggleClass('popup-overflow');
+            var pagename = $(this).attr('data-val');
+            $(".pop-share-details").dialog("open").load(pagename + ".html");
+
+        });
+    	*/
     //Close Dialog Popup
     $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
@@ -881,7 +854,6 @@ $(document).ready(function() {
     var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
 
     //View Details for ajax calls 
-
     $('.pop-like, .apply-car').on('click', function(e) {
         $('body').toggleClass('popup-overflow');
         if ($(this).attr('title') == undefined) {
@@ -894,20 +866,32 @@ $(document).ready(function() {
         $('.pop-pack').dialog({
             width: $(this).attr('data-size') == undefined ? 980 : $(this).attr('data-size')
         });
-        $(".pop-pack").dialog("open").load(localPop, function(content, status, xhr) {
-            // console.log(content, status, xhr);
-            if (status == 'success') {
-                $(".pop-pack").dialog({
-                    position: {
-                        my: "center",
-                        at: "center",
-                        of: window,
-                        collision: 'fit'
-                    }
-                });
-                $(document).find('head').append('<script src="js/rate-it.js"></script>');
-            }
-        });
+		
+		$.fn.popupLoad = function(url){
+			$.ajax({
+				type: "POST",
+				url: url,
+				success: function(msg){
+					$(".pop-pack").dialog({
+						position: {
+							my: "center",
+							at: "center",
+							of: window,
+							collision: 'fit'
+						}
+					});
+					$(".pop-pack").html(msg);
+					$(document).find('head').append('<script src="js/rate-it.js"></script>');
+					//console.log("Success", msg);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					console.log("erro", jqXHR, textStatus, errorThrown)
+				}
+			});
+		
+			}
+		
+        $(".pop-pack").dialog("open").popupLoad(localPop);
     });
 
     // social more button
@@ -922,13 +906,69 @@ $(document).ready(function() {
         $('.thank').show();
     });
 
-	// fullpage -- >offerings
+    // fullpage -- >offerings
 	
-	$('.fullpage').fullpage({
-		anchors: ['firstPage', 'secondPage', '3rdPage'],
-		sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-		css3: true
-	});
+		$('.fullpage').fullpage({
+			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
+			navigation: true,
+			navigationPosition: 'right',
+			afterLoad:function(e){
+				var a =e;
+				if(a == '1Page'){
+				$('.pic-1').delay(900).fadeOut(1000);
+				$('.pic-2').delay(1200).fadeIn(1000);
+				}else if(a == '2Page'){
+				$('.pic-3').delay(900).fadeOut(1000);
+				$('.pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-5').delay(2700).fadeIn(1000);
+				}else if(a == '3Page'){
+				$('.pic-6').delay(900).fadeOut(1000);
+				$('.pic-7').delay(1200).fadeIn(1000);
+				}else if(a == '4Page'){
+				$('.pic-8').delay(900).fadeOut(1000);
+				$('.pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-11').delay(4000).fadeIn(1000);
+				}else if(a == '5Page'){
+				$('.pic-12').delay(900).fadeOut(1000);
+				$('.pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-15').delay(4000).fadeIn(1000);
+				}
+			}
+		});
+	
+		$('.fullpage-trade').fullpage({
+			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
+			navigation: true,
+			navigationPosition: 'right',
+			afterLoad:function(e){
+				var a =e;
+				if(a == '1Page'){
+				$('.pic-1').delay(900).fadeOut(1000);
+				$('.pic-2').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-3').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-4').delay(4000).fadeIn(1000);
+				}else if(a == '2Page'){
+				$('.pic-3').delay(900).fadeOut(1000);
+				$('.pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-5').delay(2700).fadeIn(1000);
+				}else if(a == '3Page'){
+				$('.pic-6').delay(900).fadeOut(1000);
+				$('.pic-7').delay(1200).fadeIn(1000);
+				}else if(a == '4Page'){
+				$('.pic-8').delay(900).fadeOut(1000);
+				$('.pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-11').delay(4000).fadeIn(1000);
+				}else if(a == '5Page'){
+				$('.pic-12').delay(900).fadeOut(1000);
+				$('.pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
+				$('.pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
+				$('.pic-15').delay(4000).fadeIn(1000);
+				}
+			}
+		});
 
 
     //Rate me -->social 
@@ -952,7 +992,6 @@ $(document).ready(function() {
     wow.init();
 
     // prcing slider for -- >offerings
-
     $(".slider-range-min1").slider({
         range: "min",
         value: 50000,
@@ -963,8 +1002,8 @@ $(document).ready(function() {
             $(".amt-val").text("Rs " + ui.value);
         }
     });
-	   
-   $(".amt-val").text("Rs " + $(".slider-range-min1").slider("value"));
+
+    $(".amt-val").text("Rs " + $(".slider-range-min1").slider("value"));
 
     $(".slider-range-min2").slider({
         range: "min",
@@ -973,7 +1012,7 @@ $(document).ready(function() {
         max: 50000,
         slide: function(event, ui) {
             $(".amount2").val("Rs " + ui.value);
-			$(".amt-val2").text("Rs " + ui.value);
+            $(".amt-val2").text("Rs " + ui.value);
         }
     });
     $(".amt-val2").text("Rs " + $(".slider-range-min1").slider("value"));
@@ -985,10 +1024,10 @@ $(document).ready(function() {
         max: 100000,
         slide: function(event, ui) {
             $(".amount3").val("Rs " + ui.value);
-			$(".amt-val3").text("Rs " + ui.value);
+            $(".amt-val3").text("Rs " + ui.value);
         }
     });
-	$(".amt-val3").text("Rs " + $(".slider-range-min1").slider("value"));
+    $(".amt-val3").text("Rs " + $(".slider-range-min1").slider("value"));
 
     $(".slider-range-min4").slider({
         range: "min",
@@ -997,10 +1036,10 @@ $(document).ready(function() {
         max: 100000,
         slide: function(event, ui) {
             $(".amount4").val("Rs " + ui.value);
-			$(".amt-val4").text("Rs " + ui.value);
+            $(".amt-val4").text("Rs " + ui.value);
         }
     });
-	$(".amt-val4").text("Rs " + $(".slider-range-min1").slider("value"));
+    $(".amt-val4").text("Rs " + $(".slider-range-min1").slider("value"));
 
     $(".slider-range-min5").slider({
         range: "min",
@@ -1009,13 +1048,12 @@ $(document).ready(function() {
         max: 100000,
         slide: function(event, ui) {
             $(".amount5").val("Rs " + ui.value);
-			$(".amt-val5").text("Rs " + ui.value);
+            $(".amt-val5").text("Rs " + ui.value);
         }
     });
-	$(".amt-val5").text("Rs " + $(".slider-range-min1").slider("value"));
+    $(".amt-val5").text("Rs " + $(".slider-range-min1").slider("value"));
 
     // priceing progress bar -- >offerings
-
     var progressbar = $(".progressbar"),
         progressLabel = $(".progress-label");
 
@@ -1041,8 +1079,8 @@ $(document).ready(function() {
 
     setTimeout(progress, 2000);
 
-	
-		
+
+
 
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
@@ -1074,9 +1112,10 @@ $(document).ready(function() {
 });
 
 // header-top expansion Menu for web and mobile
+
+
 function navigation() {
-    var scr_width = $(document).width();
-    /*console.log("Screen ", scr_width);*/
+    var scr_width = $(document).width(); /*console.log("Screen ", scr_width);*/
     if (scr_width > 995) {
         $('.first-level-menu > li > a').click(function(event) {
             $('.second-level').not($(this).closest('li').find('.second-level')).hide();
@@ -1107,6 +1146,7 @@ function navigation() {
     }
 }
 
+/* tab slider */
 function tabslider() {
     $(".slide-tab").sliderTabs({
         mousewheel: false,
