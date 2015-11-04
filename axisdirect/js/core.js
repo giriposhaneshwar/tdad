@@ -895,7 +895,6 @@ $(document).ready(function() {
     });
 
     // fullpage -- >offerings
-<<<<<<< HEAD
     $.fn.shufferSlide = function() {
         var $ele = $(this);
         var $items = $ele.find('li');
@@ -960,49 +959,8 @@ $(document).ready(function() {
 
     }
 
-    $('.fullpage').fixsize();
+    // $('.fullpage').fixsize();
 
-
-
-    /*$('.fullpage').fullpage({
-        anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page'],
-        navigation: true,
-        navigationPosition: 'right',
-        afterLoad: function(e) {
-            var $this = $(this);
-            // console.log($(this));
-
-            // setTimeout(function() {
-                // console.log($this);
-                $this.find('.image-platfade').shufferSlide();
-            // }, 1200);
-
-
-            $('#pic-1').delay(900).fadeOut(1000);
-                $('#pic-2').delay(1200).fadeIn(1000);
-                
-				$('#pic-3').delay(900).fadeOut(1000);
-				$('#pic-4').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-5').delay(2700).fadeIn(1000);
-				
-				$('#pic-6').delay(900).fadeOut(1000);
-				$('#pic-7').delay(1200).fadeIn(1000);
-				
-				$('#pic-8').delay(900).fadeOut(1000);
-				$('#pic-9').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-10').delay(2700).fadeIn(1000).fadeOut(1000);
-				$('#pic-11').delay(4000).fadeIn(1000);
-				
-				$('#pic-12').delay(900).fadeOut(1000);
-				$('#pic-13').delay(1200).fadeIn(1000).fadeOut(1000);
-				$('#pic-14').delay(2700).fadeIn(1000).fadeOut(1000);
-				$('#pic-15').delay(4000).fadeIn(1000);
-
-        }
-    });*/
-
-
-=======
 	
 		$('.fullpage').fullpage({
 			anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
@@ -1080,7 +1038,6 @@ $(document).ready(function() {
 			}
 		});
 		
->>>>>>> 7f250b18e299adfce5dfeb75e5a935b4c87193aa
 
     //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
