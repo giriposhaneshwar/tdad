@@ -4711,6 +4711,8 @@ box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
 
 /*platform fullpage */
 
+.fullpage-mob{display: none;}
+
 #section0{
     background: url(../images/products/blue.jpg);
 }
@@ -4724,9 +4726,12 @@ box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
     background: url(../images/products/green.jpg);
 }
 .palt-right-pading{padding-right:50px;}
-.image-platfade{display:block; min-height: 10px;}
-.image-platfade{display: block; margin: 0px; padding: 0px; list-style: none;position: relative;min-height: 10px;}
-.image-platfade li{position: absolute; }
+.image-platfade-box{display: block;}
+.image-platfade{display:block; min-height: 10px; width: 100%; position: relative;}
+.image-platfade li{position: absolute; left: 0px;  top: 0px;  width: 100%;  height: 100%;}
+.image-platfade li img{position: absolute; left: 0; top: 0;}
+
+
 
 .pic-1, .pic-2,.pic-3,.pic-4,.pic-5,.pic-6, .pic-7,.pic-8,.pic-9,.pic-10,.pic-11, .pic-12,.pic-13,.pic-14,.pic-15 , .pic-16,.pic-17,.pic-18,.pic-19 ,.pic-20,.pic-21,.pic-22 ,.pic-23,.pic-24,.pic-25,.pic-26,.pic-27,.pic-28,.pic-29,.pic-30{
 position:absolute;
@@ -4741,6 +4746,7 @@ display: none;
 .sec-4,.sec-5{height:460px;}
 
 /* platform trade*/
+
 .fullsec-move{margin-top:-137px;}
 .trade-instant{width:80%;margin:40px auto 0;}
 .trade-instant li{width:28%;margin-right:5%;display:inline-block;text-align:center;}
