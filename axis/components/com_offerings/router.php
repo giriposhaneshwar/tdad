@@ -10,7 +10,7 @@
 // No direct access
 defined('_JEXEC') or die;
 
-JLoader::register('OfferingsFrontendHelper', JPATH_COMPONENT . '/helpers/offerings.php');
+JLoader::register('OfferingsFrontendHelper', JPATH_BASE . '/components/com_offerings/helpers/offerings.php');
 
 class OfferingsRouter extends JComponentRouterBase
 {
@@ -75,7 +75,6 @@ class OfferingsRouter extends JComponentRouterBase
 	public function parse(&$segments)
 	{
 		$vars = array();
-		JLoader::register('OfferingsFrontendHelper', JPATH_SITE . '/components/com_offerings/helpers/offerings.php');
 
 		// view is always the first element of the array
 		$vars['view'] = array_shift($segments);

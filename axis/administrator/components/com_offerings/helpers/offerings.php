@@ -20,34 +20,49 @@ class OfferingsHelper {
      */
     public static function addSubmenu($vName = '') {
         		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_OVERV1EWS'),
-			'index.php?option=com_offerings&view=overv1ews',
-			$vName == 'overv1ews'
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSOVERV1EWS'),
+			'index.php?option=com_offerings&view=offeringsoverv1ews',
+			$vName == 'offeringsoverv1ews'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_PRODUCTSS'),
-			'index.php?option=com_offerings&view=productss',
-			$vName == 'productss'
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSPRODUCTSS'),
+			'index.php?option=com_offerings&view=offeringsproductss',
+			$vName == 'offeringsproductss'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_PLATFORMSS'),
-			'index.php?option=com_offerings&view=platformss',
-			$vName == 'platformss'
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSPRICINGS'),
+			'index.php?option=com_offerings&view=offeringspricings',
+			$vName == 'offeringspricings'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_PRICINGS'),
-			'index.php?option=com_offerings&view=pricings',
-			$vName == 'pricings'
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSPLATFORMSS'),
+			'index.php?option=com_offerings&view=offeringsplatformss',
+			$vName == 'offeringsplatformss'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_ACCOUNTSS'),
-			'index.php?option=com_offerings&view=accountss',
-			$vName == 'accountss'
+			JText::_('COM_OFFERINGS_TITLE_PLATFORMSMOBILEAPPS'),
+			'index.php?option=com_offerings&view=platformsmobileapps',
+			$vName == 'platformsmobileapps'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_OFFERINGS_TITLE_VALUEADDEDSERVICESS'),
-			'index.php?option=com_offerings&view=valueaddedservicess',
-			$vName == 'valueaddedservicess'
+			JText::_('COM_OFFERINGS_TITLE_PLATFORMSTRADES'),
+			'index.php?option=com_offerings&view=platformstrades',
+			$vName == 'platformstrades'
+		);
+		JHtmlSidebar::addEntry(
+			JText::_('COM_OFFERINGS_TITLE_PLATFORMSPORTALS'),
+			'index.php?option=com_offerings&view=platformsportals',
+			$vName == 'platformsportals'
+		);
+		JHtmlSidebar::addEntry(
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSACCOUNTSS'),
+			'index.php?option=com_offerings&view=offeringsaccountss',
+			$vName == 'offeringsaccountss'
+		);
+		JHtmlSidebar::addEntry(
+			JText::_('COM_OFFERINGS_TITLE_OFFERINGSVALUEADDEDSERVICESS'),
+			'index.php?option=com_offerings&view=offeringsvalueaddedservicess',
+			$vName == 'offeringsvalueaddedservicess'
 		);
 
     }

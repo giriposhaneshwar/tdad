@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_offerings</name>
-    <creationDate>2015-10-16</creationDate>
+    <creationDate>2015-11-05</creationDate>
     <copyright>Copyright (C) 2015. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <author>Giri</author>
     <authorEmail>egp.designs@gmail.com</authorEmail>
     <authorUrl>http://giri.com</authorUrl>
     <version>1.0.0</version>
-    <description>Offerings Module</description>
+    <description></description>
     
     
     
@@ -42,17 +42,23 @@
         <menu img="components/com_offerings/assets/images/s_com_offerings.png" >COM_OFFERINGS</menu>
         <submenu>
             
-			<menu link="option=com_offerings&amp;view=overv1ews" view="overv1ews" img="components/com_offerings/assets/images/s_overv1ews.png" alt="Offerings/Overv1ews">COM_OFFERINGS_TITLE_OVERV1EWS</menu>
+			<menu link="option=com_offerings&amp;view=offeringsoverv1ews" view="offeringsoverv1ews" img="components/com_offerings/assets/images/s_offeringsoverv1ews.png" alt="Offerings/Offeringsoverv1ews">COM_OFFERINGS_TITLE_OFFERINGSOVERV1EWS</menu>
 
-			<menu link="option=com_offerings&amp;view=productss" view="productss" img="components/com_offerings/assets/images/s_productss.png" alt="Offerings/Productss">COM_OFFERINGS_TITLE_PRODUCTSS</menu>
+			<menu link="option=com_offerings&amp;view=offeringsproductss" view="offeringsproductss" img="components/com_offerings/assets/images/s_offeringsproductss.png" alt="Offerings/Offeringsproductss">COM_OFFERINGS_TITLE_OFFERINGSPRODUCTSS</menu>
 
-			<menu link="option=com_offerings&amp;view=platformss" view="platformss" img="components/com_offerings/assets/images/s_platformss.png" alt="Offerings/Platformss">COM_OFFERINGS_TITLE_PLATFORMSS</menu>
+			<menu link="option=com_offerings&amp;view=offeringspricings" view="offeringspricings" img="components/com_offerings/assets/images/s_offeringspricings.png" alt="Offerings/Offeringspricings">COM_OFFERINGS_TITLE_OFFERINGSPRICINGS</menu>
 
-			<menu link="option=com_offerings&amp;view=pricings" view="pricings" img="components/com_offerings/assets/images/s_pricings.png" alt="Offerings/Pricings">COM_OFFERINGS_TITLE_PRICINGS</menu>
+			<menu link="option=com_offerings&amp;view=offeringsplatformss" view="offeringsplatformss" img="components/com_offerings/assets/images/s_offeringsplatformss.png" alt="Offerings/Offeringsplatformss">COM_OFFERINGS_TITLE_OFFERINGSPLATFORMSS</menu>
 
-			<menu link="option=com_offerings&amp;view=accountss" view="accountss" img="components/com_offerings/assets/images/s_accountss.png" alt="Offerings/Accountss">COM_OFFERINGS_TITLE_ACCOUNTSS</menu>
+			<menu link="option=com_offerings&amp;view=platformsmobileapps" view="platformsmobileapps" img="components/com_offerings/assets/images/s_platformsmobileapps.png" alt="Offerings/Platformsmobileapps">COM_OFFERINGS_TITLE_PLATFORMSMOBILEAPPS</menu>
 
-			<menu link="option=com_offerings&amp;view=valueaddedservicess" view="valueaddedservicess" img="components/com_offerings/assets/images/s_valueaddedservicess.png" alt="Offerings/Valueaddedservicess">COM_OFFERINGS_TITLE_VALUEADDEDSERVICESS</menu>
+			<menu link="option=com_offerings&amp;view=platformstrades" view="platformstrades" img="components/com_offerings/assets/images/s_platformstrades.png" alt="Offerings/Platformstrades">COM_OFFERINGS_TITLE_PLATFORMSTRADES</menu>
+
+			<menu link="option=com_offerings&amp;view=platformsportals" view="platformsportals" img="components/com_offerings/assets/images/s_platformsportals.png" alt="Offerings/Platformsportals">COM_OFFERINGS_TITLE_PLATFORMSPORTALS</menu>
+
+			<menu link="option=com_offerings&amp;view=offeringsaccountss" view="offeringsaccountss" img="components/com_offerings/assets/images/s_offeringsaccountss.png" alt="Offerings/Offeringsaccountss">COM_OFFERINGS_TITLE_OFFERINGSACCOUNTSS</menu>
+
+			<menu link="option=com_offerings&amp;view=offeringsvalueaddedservicess" view="offeringsvalueaddedservicess" img="components/com_offerings/assets/images/s_offeringsvalueaddedservicess.png" alt="Offerings/Offeringsvalueaddedservicess">COM_OFFERINGS_TITLE_OFFERINGSVALUEADDEDSERVICESS</menu>
 
         </submenu>
         <files folder="administrator">
