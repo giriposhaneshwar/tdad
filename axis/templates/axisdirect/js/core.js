@@ -313,6 +313,7 @@ $(document).ready(function() {
   $('.invest-drop-close').on('click', function() {
     $('.rea-mod-time').hide();
   });
+// sort --> reasearch
   $('.sort-name').on('click', function() {
     $(this).closest('.sort-by').find('.sort-list').toggle();
   });
@@ -476,7 +477,7 @@ $(document).ready(function() {
   $(document).click(function() {
     $('.invest-drop').removeClass('coath-text');
     $('.coatch-overlay').fadeOut(300);
-    $('body').css("overflow", "auto");
+    $('body.overlayhide').css("overflow", "auto");
   });
   /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
   // markest stockbuz vals chnage like tabs
@@ -675,43 +676,43 @@ $(document).ready(function() {
   $('.menu-filter').accordion();
   //Auto Complete -->Markets
   $(function() {
-    var availableTags = [
-      "RELIND - Reliance Industries Ltd",
-      "RELINF - Reliance Infrastructure Ltd",
-      "RELIDF - Reliance Industrial Infrastructure Ltd",
-      "Reliance Industries Ltd - RELIANCE",
-      "Reliance Communications Ltd - RCOM",
-      "Reliance Power Ltd - RPOWER",
-      "Reliance Infrastructure Ltd - RELINFRA",
-      "Reliance Capital Ltd - RELCAPITAL",
-      "Religare Enterprises Ltd - RELIGARE ",
-      "Reliance Industrial Infrastructure Ltd - RIIL ",
-      "Reliance Chemotex Industries Ltd - NA"
-    ];
-    $(".auto-complete").autocomplete({
-      source: availableTags,
-      open: function(event, ui) {
-        $(this).autocomplete("widget").css({
-          "width": 511
+        var availableTags = ["RELIND - Reliance Industries Ltd", "RELINF - Reliance Infrastructure Ltd", "RELIDF - Reliance Industrial Infrastructure Ltd", "Reliance Industries Ltd - RELIANCE", "Reliance Communications Ltd - RCOM", "Reliance Power Ltd - RPOWER", "Reliance Infrastructure Ltd - RELINFRA", "Reliance Capital Ltd - RELCAPITAL", "Religare Enterprises Ltd - RELIGARE ", "Reliance Industrial Infrastructure Ltd - RIIL ", "Reliance Chemotex Industries Ltd - NA"];
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        $(".auto-complete").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+                $(this).autocomplete("widget").css({
+                    "width": 511
+                });
+            }
         });
-      }
     });
-  });
   $(function() {
-    var availableTags = [
-      "Equity",
-      "Derivatives",
-      "Mutual",
-      "Reliance",
-      "Communications Lt",
-      "RPOWER",
-      "RELINFRA",
-      "RELCAPITAL",
-      "RELIGARE ",
-      "RIIL ",
-      "NA"
-    ];
-    $(".global-search").autocomplete({
+        var availableTags = ["Equity", "Derivatives", "Mutual", "Reliance", "Communications Lt", "RPOWER", "RELINFRA", "RELCAPITAL", "RELIGARE ", "RIIL ", "NA"];
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      $(".global-search").autocomplete({
       source: availableTags,
       open: function(event, ui) {
         $(this).autocomplete("widget").css({
@@ -808,10 +809,7 @@ $(document).ready(function() {
       }
     }
   });
-  // platform slider --> offerings
-  $('.platform-slider').bxSlider({
-    mode: 'vertical',
-  });
+  
   //View Plan Details
   $('.pop-pack').on('click', '.showdetails', function() {
     $('.plandetails-show').show();
@@ -826,6 +824,10 @@ $(document).ready(function() {
     autoReposition: true,
     width: 450,
   });
+  $(window).resize(function() {
+        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
+    });
+
   $(".pop-pack").dialog({
     width: 980,
   });
@@ -854,16 +856,19 @@ $(document).ready(function() {
   });
   */
   //Close Dialog Popup
+  var scrollPos;
   $('body').on('click', '.dialog-close', function(e) {
     e.preventDefault();
     $('body').removeClass('popup-overflow');
     $(".pop-pack,.pop-share-details").dialog("close");
+    $(document).scrollTop(scrollPos);
     return false;
   });
   // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
   var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
   //View Details for ajax calls
   $('.pop-like, .apply-car').on('click', function(e) {
+    scrollPos=$(document).scrollTop();
     $('body').toggleClass('popup-overflow');
     if ($(this).attr('title') == undefined) {
       var pagename = $(this).attr('data-val');
@@ -905,13 +910,13 @@ $(document).ready(function() {
       }
     });
   });
-  $(window).resize(function() {
-    $(".premiumresearchdialog, .pop-pack, .pop-price, .addtopopup, .share-details").dialog("option", "position", {
-      my: "center",
-      at: "center",
-      of: window
-    });
-  });
+  // $(window).resize(function() {
+  //   $(".premiumresearchdialog, .pop-pack, .pop-price, .addtopopup, .share-details").dialog("option", "position", {
+  //     my: "center",
+  //     at: "center",
+  //     of: window
+  //   });
+  // });
   // social more button
   $('body').on("click", ".more-btn", function() {
     $(".more-btn").hide();
@@ -924,11 +929,78 @@ $(document).ready(function() {
   });
   // fullpage -- >offerings
   $('.fullpage').fullpage({
-    anchors: ['firstPage', 'secondPage', '3rdPage'],
-    'navigation': true,
-    'navigationPosition': 'right',
-    'marginTop': '136',
-  });
+            anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
+            navigation: true,
+            navigationPosition: 'right',
+            afterLoad:function(e){
+                
+                var page = window.location.href;
+                var pagePos = page.split('/');
+                var thisPage = pagePos[pagePos.length-1];
+                var pPage = thisPage.split('#');
+                if(pPage[0] == "platforms-mobapp.html"){
+                    var a =e;
+                    if(a == '1Page'){
+                    $('.pic-1').delay(900);
+                    $('.pic-2').delay(700).fadeIn();
+                    }else if(a == '2Page'){
+                    $('.pic-3').delay(900);
+                    $('.pic-4').delay(1200).fadeIn();
+                    $('.pic-5').delay(2700).fadeIn();
+                    }else if(a == '4Page'){
+                    $('.pic-8').delay(900);
+                    $('.pic-9').delay(1200).fadeIn();
+                    $('.pic-10').delay(2700).fadeIn();
+                    $('.pic-11').delay(4000).fadeIn();
+                    }else if(a == '5Page'){
+                    $('.pic-12').delay(900);
+                    $('.pic-13').delay(1200).fadeIn();
+                    $('.pic-14').delay(2500).fadeIn();
+                    $('.pic-15').delay(3500).fadeIn();
+                    }
+                }else if(pPage[0] == "platforms-trade.html"){
+                    var a =e;
+                    if(a == '1Page'){
+                    $('.pic-31').delay(900);
+                    $('.pic-32').delay(1500).fadeIn();
+                    $('.pic-33').delay(2500).fadeIn();
+                    $('.pic-34').delay(3500).fadeIn();
+                    }
+                }
+                else if(pPage[0] == "platforms-webportal.html"){
+                    var a =e;
+                    if(a == '2Page'){
+                    $('.pic-28').delay(1000).fadeOut();
+                    $('.pic-29').delay(900).fadeIn().fadeOut();
+                    $('.pic-30').delay(1200).fadeIn();                  
+                    }
+                    else if(a == '3Page'){
+                    $('.pic-6').delay(900);
+                    $('.pic-5').delay(500).fadeIn();
+                    }
+                    else if(a == '4Page'){
+                    $('.pic-23').delay(500);
+                    $('.pic-24').delay(1500).fadeIn();
+                    $('.pic-25').delay(2500).fadeIn();
+                    $('.pic-26').delay(3500).fadeIn();
+                    $('.pic-27').delay(4500).fadeIn();
+                    }
+                    else if(a == '6Page'){
+                    $('.pic-16').delay(500);
+                    $('.pic-17').delay(1500).fadeIn();
+                    $('.pic-18').delay(2500).fadeIn();
+                    $('.pic-19').delay(3500).fadeIn();
+                    }
+                    else if(a == '7Page'){
+                    $('.pic-20').delay(500);
+                    $('.pic-21').delay(1500).fadeIn();
+                    $('.pic-22').delay(2500).fadeIn();
+                    }
+                }
+                
+            }
+        });
+        
   //Rate me -->social
   $(".rateit").bind('over', function(event, value) {
     $(this).attr('title', tooltipvalues[value - 1]);
@@ -1076,7 +1148,8 @@ function navigation() {
     });
   }
 }
-
+ 
+/* tab slider */
 function tabslider() {
   $(".slide-tab").sliderTabs({
     mousewheel: false,
@@ -1087,21 +1160,47 @@ function tabslider() {
     tabHeight: 100
   })
 }
-/* fullpage images -- > offerings*/
-function slideSwitch(sel) {
-  var $active = $(sel + ' IMG.active');
-  if ($active.length == 0) $active = $(sel + ' IMG:last');
-  var $next = $active.next().length ? $active.next() : $(sel + ' IMG:first');
-  var $prev = $active.prev().length ? $active.prev() : $(sel + ' IMG:last');
-  $active.addClass('last-active');
-  $next.addClass('active').animate({
-    opacity: 1.0
-  }, 100, function() {
-    $active.removeClass('active last-active');
-  }).siblings().css({
-    opacity: 0.0
-  });
-}
-$(function() {
-  setInterval("slideSwitch('.image-platfade')", 2000);
+
+// Home
+$('.profilePics ul').find('li').hover(function(){
+    // hover
+    var $this = $(this);
+    var $show = $this.find('.c');
+    var $point = 1;
+    var liW = $this.width()+10;
+    var ele = $show.width()+10;
+    
+ 
+    $this.on('mousemove', function(e){
+        var screenX = e.screenX;
+        var docW = $(window).innerWidth();
+        var opts;
+        if((docW-screenX) < ele){
+            $point = 0;
+        }
+ 
+        if($point == 1){
+           opts = {
+            'left': liW,
+            'top': "0px" 
+           }
+        }else{
+           opts = {
+            'right': liW,
+            'top': "0px" 
+           }
+        }
+        console.log($point);
+        $show.stop().fadeIn().css(opts);
+        $this.css({'border': "1px solid #000", 'color': '#000'}); 
+ 
+    });
+ 
+ 
+}, function(){
+    // out
+    var $this = $(this);
+    var $show = $this.find('.c');
+    $show.stop().fadeOut();
+        $this.css({'border': "1px solid #ccc", 'color': '#ccc'}); 
 });

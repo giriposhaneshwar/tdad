@@ -54,6 +54,7 @@
 	/* offerings */
 	/*prodcts*/
 	.le-products-menu li a{min-height:138px;}
+	.image-platfade li{width:100%;}
 }
 @media screen and (max-width:997px){
 	
@@ -1200,6 +1201,7 @@
 	/* products expansion*/
 	.exp-thr-el li{width:100%;float:none; margin-top:20px;padding-right: 0px;margin-bottom: 0px;}
 	.exp-thr-el li:last-child{margin-bottom:20px;}
+	.tax-paragraph{padding:0;margin:20px 0 0 0;}
 	
 	/*.product-center{margin-bottom:20px;}*/
 	.curency-de-list li{width:100%;margin:30px 0;}
@@ -1304,4 +1306,31 @@
 	.plat-mob-img img{width:100%;}
 	.platform-con{text-align:center;margin-top:20px;}
 	.plat-txt-mid{height:inherit;}
+	
+	/* platform fullpage*/
+	.fullpage-web,#fp-nav{display:none;}
+	.fullpage-mob{display:block;}
+	html.fp-enabled, .fp-enabled body{overflow:auto !important;}
+	.ful-sec-bac{padding:50px 0;}
+	.ful-sec-bac1{padding:20px 0 180px 0;}
+	.ful-sec-1{background: url(../../../images/products/blue.jpg);}
+	.ful-sec-3{background: url(../../../images/products/red.jpg);}
+	.ful-sec-5{background: url(../../../images/products/green.jpg);}
+	.ful-sec-2,.ful-sec-4,.ful-sec-6,.ful-sec-10{background: url(../../../images/products/grey.jpg);}
+	.ful-sec-9{background: url(../../../images/products/purple.jpg);}
+	.ful-sec-7{background: url(../../../images/products/image-small.jpg) center bottom;}
+	.funtastic-down{bottom:0;position:absolute;height:inherit;}
+	.fullpage-images{text-align:center;}
+	.fullpage-big-sm{width:100%;}
+	.fullpage-ban-con{text-align:center;margin-top:20px;}
+	
+	/* platform trade*/
+	.trade-instant{margin-top:20px;}
+	.trade-instant{width:100%;}
+	.trade-instant li{margin-right:5%;margin-bottom:10px;float:left;}
+	.inst-icon1,.inst-icon2,.inst-icon3{width:80px;height:80px;background:url(../../../images/products/trade-2-01-small.png);display:inline-block;}
+	.inst-icon2{background:url(../../../images/products/trade-2-02-small.png)}
+	.inst-icon3{background:url(../../../images/products/trade-2-03-small.png)}
+
+	.trade-instant li:last-child{margin-bottom:0;}
 }

@@ -1,8 +1,7 @@
- <?php
+<?php
 $this->_addPath( 'template', JPATH_COMPONENT  . '/views/valueaddedservicess/tmpl' );
 echo $this->loadTemplate('breadcrumb');
-                           
-                           ?>   
+?>
 <!-- Content -->
     <section class="site-start-modules vas">
         <div class="page-banner vas-banner">
@@ -13,7 +12,7 @@ echo $this->loadTemplate('breadcrumb');
                             <div class="product-vertical-align">
                                 <h1 class="banner-title">go beyond <br>investments.do more.
                                 </h1>
-                                <p class="product-paragraph">AxisDirect is no ordinary Investment Account. It’s More! Explore  power-packed premium features available to you.</p>
+                                <p class="product-paragraph">AxisDirect is no ordinary Investment Account. It’s More! Explore power-packed premium features available to you.</p>
                             </div>
                         </div>
                     </div>
@@ -104,7 +103,7 @@ echo $this->loadTemplate('breadcrumb');
                                 <li class="clearfix">
                                     <i class="sprite-img invest-exp-icon invest-exp1"></i>
                                     <div class="invest-con">
-                                        <h4 class="hea-heaing">Invest in Equity for Long Term</h4>
+                                        <h4 class="hea-heaing">Invest in Equity for Long Term/ Do SIP </h4>
                                         <p class="exp-txt">(6 to 12 months)</p>
                                         
                                          <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn">View Investment Ideas</span></a>
@@ -119,7 +118,7 @@ echo $this->loadTemplate('breadcrumb');
                                         <h4 class="hea-heaing">Trade in Equity for Short Term</h4>
                                         <p class="exp-txt">(Less Than 1 month)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop"><span class="invest-pop-btn ri-col2">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop"><span class="invest-pop-btn ri-col2">View Trading Ideas</span></a>
                                     </div>
                                     <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop">
                                         <p class="ribbonBtn ri-col2">View Trading Ideas</p>
@@ -128,13 +127,13 @@ echo $this->loadTemplate('breadcrumb');
                                 <li class="clearfix">
                                     <i class="sprite-img invest-exp-icon invest-exp4"></i>
                                     <div class="invest-con">
-                                        <h4 class="hea-heaing">Invest in Mutual Funds for Long Term</h4>
+                                        <h4 class="hea-heaing">Invest in Mutual Funds/Do SIP</h4>
                                         <p class="exp-txt">(> 3 years)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop"><span class="invest-pop-btn ri-col4">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop"><span class="invest-pop-btn ri-col4">View Mutual Fund Ideas</span></a>
                                     </div>
                                     <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop">
-                                        <p class="ribbonBtn ri-col4">View Investment Ideas</p>
+                                        <p class="ribbonBtn ri-col4">View Mutual Fund Ideas</p>
                                     </a>
                                 </li>
                                 <li class="clearfix">
@@ -143,7 +142,7 @@ echo $this->loadTemplate('breadcrumb');
                                         <h4 class="hea-heaing">Trade in Derivative Strategies</h4>
                                         <p class="exp-txt">( 1 day – 1 month)</p>
                                         
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop"><span class="invest-pop-btn ri-col5">View Investment Ideas</span></a>
+                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop"><span class="invest-pop-btn ri-col5">View Derivative Strategies</span></a>
                                     </div>
                                     <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop">
                                         <p class="ribbonBtn ri-col5">View Derivative Strategies</p>

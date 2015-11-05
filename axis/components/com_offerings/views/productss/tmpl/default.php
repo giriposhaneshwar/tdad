@@ -217,70 +217,57 @@ echo $this->loadTemplate('breadcrumb');
                 <a href="javascript:void(0)" class="close-expansion"><i class="sprite-img close-pop"></i></a>
                 <div class="container_12">
                     <div class="stock-sec  clearfix">
-                        <div class="grid_6 der-products">
+                        <div class="grid_5 der-products">
                             <div class="fea-headings">
                                 <h2>Futures</h2>
-                                <p>Dummy text on futures</p>
+                                <p>Allows you to hedge your positions or take leveraged bets on stocks & indices</p>
                             </div>
                             <ul class="features-list">
                                 <li class="clearfix">
                                     <div class="fea-icon"></div>
                                     <div class="fea-con">
-                                        <h4 class="hea-heaing">Margin</h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
+                                        <h4 class="hea-heaing">Future Margin</h4>
+                                        <p class="exp-txt">Trade in Futures & option on selected stocks & Indices with lesser capital as compared to cash</p>
                                     </div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="fea-icon"></div>
                                     <div class="fea-con">
                                         <h4 class="hea-heaing">Intraday Features</h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
+                                        <p class="exp-txt">Allows you the flexibility of taking intraday positions in futures at 50% lesser margin as compared to normal futures.  </p>
                                     </div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="fea-icon"></div>
                                     <div class="fea-con">
-                                        <h4 class="hea-heaing">Intraday Features</h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
+                                        <h4 class="hea-heaing">Future - Cover Order</h4>
+                                        <p class="exp-txt">Allows you higher leverage than intraday orders by ensuring that you place a stop loss orders against your futures position. </p>
                                     </div>
                                 </li>
                             </ul>
                             
                         </div>
-                        <div class="grid_6 der-products mob-down">
+                        <div class="push_2 grid_5 der-products mob-down">
                             <div class="fea-headings">
                                 <h2>Options</h2>
-                                <p>Dummy text on futures</p>
+                                <p>A financial derivative contract that allows you right to buy or sell stock or indices at predetermined price on future date</p>
                             </div>
                             <ul class="features-list">
                                 <li class="clearfix">
                                     <div class="option-icon"></div>
                                     <div class="fea-con">
-                                        <h4 class="hea-heaing">Call Option </h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
+                                        <h4 class="hea-heaing">Options - Margin </h4>
+                                        <p class="exp-txt">Hedge your positions or take a bet on future price of a stock by buying or selling options with our Margin orders</p>
                                     </div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="option-icon"></div>
                                     <div class="fea-con">
-                                        <h4 class="hea-heaing">Put Option </h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
+                                        <h4 class="hea-heaing">Options – Cover Order </h4>
+                                        <p class="exp-txt">Allows you higher leverage than normal options orders by ensuring that you place a stop loss orders against your options position. </p>
                                     </div>
                                 </li>
-                                <li class="clearfix">
-                                    <div class="option-icon"></div>
-                                    <div class="fea-con">
-                                        <h4 class="hea-heaing">Margin </h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="option-icon"></div>
-                                    <div class="fea-con">
-                                        <h4 class="hea-heaing">Cover  </h4>
-                                        <p class="exp-txt">as compared with Normal Future product by paying half the margin With our Intraday Futures product.</p>
-                                    </div>
-                                </li>
+                                
                             </ul>
                             
                         </div>
@@ -433,11 +420,11 @@ echo $this->loadTemplate('breadcrumb');
             <div class="over-products product-5">
                 <div class="container_12">
                     <div class="clearfix">
-                        <div class="grid_6 product-right product-align top darkbg">
+                        <div class="grid_6 product-right product-align bottom darkbg">
                             <div class="product-vertical-align">
                                 <h1 class="product-title">Systematic Investment Plans</h1>
-                                <h4 class="product-subtitle">Taste the Markets SIP by SIP</h4>
-                                <p class="product-paragraph">Little Drops Make the Mighty Ocean. Investments are no different. Start with small amounts regularly and create BIG wealth over a period of time. </p>
+                                <h4 class="product-subtitle">Achieve your goals, step-by-step</h4>
+                                <p class="product-paragraph">Attain your set goals systematically with a SIP solution. Start with small amounts regularly and create BIG wealth over a period of time. </p>
                                 <div class="two-buttons">   
                                     <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">Mutual Fund SIP</a>
                                     <a href="javascript:void(0)" class="product-button transitions pro1-exp-btn">Equity SIP</a>
@@ -471,7 +458,7 @@ echo $this->loadTemplate('breadcrumb');
                             </ul>
                         </div>
                         <div class="grid_4 sip-img">
-                            <img src="../images/sip.png">
+                            <img src="images/sip.png">
                         </div>
                         <div class="grid_4">
                             <ul class="exp-thr-el sip-list clearfix">
@@ -548,7 +535,7 @@ echo $this->loadTemplate('breadcrumb');
                 <div class="container_12">
                     <div class="clearfix">
                         <div class="grid_12">
-                            <div class="grid_6 product-align top blockbg">
+                            <div class="grid_6 product-align top darkbg">
                                 <div class="product-vertical-align">
                                     <h1 class="product-title">Tax Saving</h1>
                                     <h4 class="product-subtitle">Don’t just Save Tax. Multiply your Investments!</h4>
@@ -566,23 +553,34 @@ echo $this->loadTemplate('breadcrumb');
                 <div class="container_12">
                     <div class="clearfix">
                         <div class="grid_12 stock-sec">
+                            <div class="product-center blockbg">
+                            <h2>Don’t just Save Tax. Multiply your Investments!</h2>
+                            <P class="product-paragraph tax-paragraph">Tax planning may seem like a tedious exercise requiring lot of efforts. Not with us. Our online Tax Savings Solutions help to reduce your tax burden and at the same time, aim to grow your money through equity investments.</P>
+                            </div>
+                            
                             <ul class="curency-de-list clearfix">
                                 <li>
-                                    <span class="cur-der"><i class="sprite-img curd-exp-icon curd-exp1"></i></span>
+                                    <span class="cur-der"><i class="sprite-img curd-exp-icon tax-exp1"></i></span>
                                     <div class="cur-der-con">
-                                        <h4>Equity Linked Saving Scheme (ELSS) - Save upto Rs. 1.5 lac</h4>
-                                        <p class="exp-txt">Under section 80C. Get the twin-advantage of capital appreciation and tax benefit. It’s a Mutual Fund that comes with a lock-in period of 3 yrs.
+                                        <h4 class="hea-heaing">Equity Linked Saving Scheme (ELSS) - Save upto Rs. 1.5 lac </h4>
+                                        <p class="exp-txt">Under section 80C. Get the twin-advantage of capital appreciation and tax benefit. It’s a Mutual Fund that comes with a lock-in period of 3 yrs
                                         </p>
+                                         <a href="javascript:void(0)" class="fin-aply-btn">Know More</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <span class="cur-der"><i class="sprite-img curd-exp-icon curd-exp2"></i></span>
+                                    <span class="cur-der"><i class="sprite-img curd-exp-icon tax-exp2"></i></span>
                                     <div class="cur-der-con">
-                                        <h4>Equity Linked Saving Scheme (ELSS) - Save upto Rs. 1.5 lac</h4>
-                                        <p class="exp-txt">Under section 80C. Get the twin-advantage of capital appreciation and tax benefit. It’s a Mutual Fund that comes with a lock-in period of 3 yrs.</p>
+                                        <h4 class="hea-heaing">Ragiv Gandhi Equity Saving Scheme (RGESS) – Save upto Rs. 50000</h4>
+                                        <p class="exp-txt">u/s 80CCG by investing in stocks directly. Specially designed for first time investors with annual income is less than 12 lacs.</p>
+                                         <a href="javascript:void(0)" class="fin-aply-btn">Know More</a>
                                     </div>
                                 </li>
                             </ul>
+                            <div class="blockbg product-center">
+                                <a href="javascript:void(0)" class="product-button transitions">Open an Account</a>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
