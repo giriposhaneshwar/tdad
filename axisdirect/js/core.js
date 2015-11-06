@@ -2,20 +2,20 @@ $(document).ready(function() {
 
     // scroll top	
     var scrollTopEle = function(query, val) {
-        val == undefined || null ? 0 : val;
-        //newinvest-plans-none;
-        var target = query;
-        if (target.length >= 1) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - val
-            }, 500);
+            val == undefined || null ? 0 : val;
+            //newinvest-plans-none;
+            var target = query;
+            if (target.length >= 1) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - val
+                }, 500);
+            }
         }
-    }
-
+        // fullpage animations -->offerings
     var inter = null;
     $.fn.imgSlide = function(time, lp, ease) {
-        time = typeof time !== 'undefined' ? time : 2000;
-        lp = typeof lp !== 'undefined' ? true : false;
+        time = typeof time !== 'undefined' ? time : 1500;
+        lp = typeof lp === 'undefined' ? true : false;
         ease = typeof ease !== 'undefined' ? null : ease;
         // console.log(time);
 
@@ -27,21 +27,21 @@ $(document).ready(function() {
         var c = 1;
 
         clearInterval(inter);
-        $this.find('li:first-child img').show(ease);
+        $this.find('li:first-child img').show();
         inter = setInterval(function() {
-            $this.find('li:nth-child(' + i + ') img').show(ease).parent().siblings().find('img').hide(ease);
-            if (lp) {
+            if (lp == true) {
                 if (i == cnt) {
                     i = 1;
                 } else {
                     i++;
                 }
             } else {
-                i == cnt ? 0 : i = i + 1;
+                i >= cnt ? 0 : i = i + 1;
             }
+            $this.find('li:nth-child(' + i + ') img').show(ease).parent().siblings().find('img').hide(ease);
+
         }, time);
     }
-
 
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
@@ -84,7 +84,8 @@ $(document).ready(function() {
 
     //country select header top	
     $('.hea-top-drop li a').on('click', function() {
-        $('.select-val').html($(this).text());
+        var country = $(this);
+        $('.select-val').html(country[0].innerHTML);
         $('.hea-top-drop').hide();
         $('.drop-click').removeClass('active');
     });
@@ -119,6 +120,7 @@ $(document).ready(function() {
     });
 
     //Responsive more-menu	
+
     $(".res-moremenu").on('click', function() {
         $('.header-menu').toggle();
     });
@@ -750,6 +752,21 @@ $(document).ready(function() {
         moveSlides: 1,
     });
 
+    //Bxslider for experience --> homepage
+    $('.exp-sliderr').bxSlider({
+        minSlides: 1,
+        maxSlides: 3,
+    });
+
+    //Bxslider for awards --> homepage
+    $('.awards-curosal').bxSlider({
+        slideWidth: 330,
+        minSlides: 1,
+        maxSlides: 3,
+        moveSlides: 1,
+    });
+
+
     //Date Picker
     $('.datepicker').datepicker({
         showOn: "both",
@@ -886,7 +903,7 @@ $(document).ready(function() {
     var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
 
     //View Details for ajax calls 
-    $('.pop-like, .apply-car').on('click', function(e) {
+    $('.pop-like, .apply-car,.checkpremium').on('click', function(e) {
         scrollPos = $(document).scrollTop();
         $('body').toggleClass('popup-overflow');
         if ($(this).attr('title') == undefined) {
@@ -929,7 +946,6 @@ $(document).ready(function() {
 
     // fullpage -- >offerings
 
-
     $('.fullpage').fullpage({
         anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
         navigation: true,
@@ -949,10 +965,10 @@ $(document).ready(function() {
             // Depending on the page you can place your function in this also 
             if (pPage[0] == "platforms-mobapp.html") {
                 // imageSlide(time, loop, animation speed);
-                tarEle.imgSlide(2000, false);
+                tarEle.imgSlide(1500, false);
             } else {
                 // imageSlide(time, loop, animation speed);
-                tarEle.imgSlide(2000, true, 100);
+                tarEle.imgSlide(1500, true, 100);
             }
         },
         onLeave: function(e, i, a) {
@@ -960,7 +976,6 @@ $(document).ready(function() {
             $(this).find('.image-platfade').removeClass('active');
         }
     });
-
 
     //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
@@ -1149,51 +1164,35 @@ function tabslider() {
 
 }
 
-// Home
-$('.profilePics ul').find('li').hover(function() {
+// Home Testmonials
+$('.customers-testmonials ul').find('li').hover(function() {
     // hover
     var $this = $(this);
-    var $show = $this.find('.c');
+    var $show = $this.find('.cust-tool');
     var $point = 1;
     var liW = $this.width() + 10;
     var ele = $show.width() + 10;
+    var opts = {
+          border: '1px solid #000',
+          left: liW,
+          top: '0px'
+        };
+    
+
+
 
 
     $this.on('mousemove', function(e) {
         var screenX = e.screenX;
-        var docW = $(window).innerWidth();
-        var opts;
-        if ((docW - screenX) < ele) {
-            $point = 0;
-        }
-
-        if ($point == 1) {
-            opts = {
-                'left': liW,
-                'top': "0px"
-            }
-        } else {
-            opts = {
-                'right': liW,
-                'top': "0px"
-            }
-        }
-        console.log($point);
-        $show.stop().fadeIn().css(opts);
-        $this.css({
-            'border': "1px solid #000",
-            'color': '#000'
-        });
-
+        var screenY = e.screenY;
+        var docW = $(window).innerWidth();   
+        $show.siblings().stop();
+        $show.show(500).css(opts);
     });
 
 }, function() {
     // out
     var $this = $(this);
-    var $show = $this.find('.c');
-    $show.stop().fadeOut();
-    $this.css({
-        'border': "1px solid #ccc",
-        'color': '#ccc'
-    });
+    var $show = $this.find('.cust-tool');
+    $show.hide(10);
 });

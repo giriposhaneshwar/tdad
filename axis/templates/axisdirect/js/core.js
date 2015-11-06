@@ -36,9 +36,11 @@ $(document).ready(function() {
   });
   //code for store active class value in localstorage
   $(".second-level-menu li a").on("click", function(e) {
-    // e.preventDefault();
-    var loc = $(this).parent().parent().parent().parent().closest("li").find("a").attr("id");
-    console.log($(this));
+    e.preventDefault();
+    // var loc = $(this).parent().parent().parent().parent().closest("li").find("a").attr("id");
+    var loc = $(this).closest(".second-level").prev().attr("id");
+    // console.log($(this));
+    console.log(e, loc);
     localStorage.setItem("activeclass", loc);
     var loc = $(this).parent().parent().closest("li").find("a").attr("id");
     var loc2 = $(this).attr("data-type");
