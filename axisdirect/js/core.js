@@ -2,20 +2,22 @@ $(document).ready(function() {
 
     // scroll top	
     var scrollTopEle = function(query, val) {
-            val == undefined || null ? 0 : val;
-            //newinvest-plans-none;
-            var target = query;
-            if (target.length >= 1) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top - val
-                }, 500);
-            }
-        }
-        // fullpage animations -->offerings
+		val == undefined || null ? 0 : val;
+		//newinvest-plans-none;
+		var target = query;
+		if (target.length >= 1) {
+			$('html, body').animate({
+				scrollTop: target.offset().top - val
+			}, 500);
+		}
+	}
+	
+	
+    // fullpage animations -->offerings
     var inter = null;
     $.fn.imgSlide = function(time, lp, ease) {
         time = typeof time !== 'undefined' ? time : 1500;
-        lp = typeof lp === 'undefined' ? true : false;
+        lp = typeof lp !== 'undefined' ? true : false;
         ease = typeof ease !== 'undefined' ? null : ease;
         // console.log(time);
 
@@ -27,21 +29,21 @@ $(document).ready(function() {
         var c = 1;
 
         clearInterval(inter);
-        $this.find('li:first-child img').show();
+        $this.find('li:first-child img').show(ease);
         inter = setInterval(function() {
-            if (lp == true) {
+            $this.find('li:nth-child(' + i + ') img').show(ease).parent().siblings().find('img').hide(ease);
+            if (lp == cnt) {
                 if (i == cnt) {
                     i = 1;
                 } else {
                     i++;
                 }
             } else {
-                i >= cnt ? 0 : i = i + 1;
+                i == cnt ? 0 : i = i + 1;
             }
-            $this.find('li:nth-child(' + i + ') img').show(ease).parent().siblings().find('img').hide(ease);
-
         }, time);
     }
+
 
     // header-top expansion for Web
     $('.header-top-expand-arrow').on('click', function() {
@@ -54,6 +56,7 @@ $(document).ready(function() {
         $('.site-start').toggleClass('site-start-after-expansion');
         $('.site-start-modules').toggleClass('site-start-modules-after-expansion');
     });
+
 
     // header-top expansion for mobile
     var scr_width = $(document).width();
@@ -68,6 +71,7 @@ $(document).ready(function() {
         });
     }
 
+
     //support-menu	
     $('.drop-click').on('click', function() {
         var $div = $(this).next();
@@ -81,6 +85,7 @@ $(document).ready(function() {
             $('.drop-click').removeClass('active');
         }
     });
+
 
     //country select header top	
     $('.hea-top-drop li a').on('click', function() {
@@ -103,6 +108,7 @@ $(document).ready(function() {
         $('.header-top-country').hide();
     });
 
+
     // Navigation for resize call function
     navigation();
 
@@ -118,6 +124,7 @@ $(document).ready(function() {
             $('body').removeClass("off");
         }
     });
+
 
     //Responsive more-menu	
 
@@ -168,6 +175,9 @@ $(document).ready(function() {
         return false;
     });
 
+
+
+
     /* :::::::::::::::::::::::::::::::::: Share like :::::::::::::::::::::::::::::::::::::::*/
 
     $('.like-box-btn').on('click', function() {
@@ -178,6 +188,7 @@ $(document).ready(function() {
         $(this).find('.share-1').addClass('active');
         $('.like-box').show().delay(2000).fadeOut(800);
     });
+
 
 
     /* :::::::::::::::::::::::::::::::::: Kyc :::::::::::::::::::::::::::::::::::::::*/
@@ -205,11 +216,13 @@ $(document).ready(function() {
         $('.account-step-2-block').show();
     });
 
+
     // Forget password
     $('#forget-id').change(function() {
         $('.resetpwd').hide();
         $('#' + $(this).val()).show();
     });
+
 
     //	Debit card card
     $('.debit-card').on('keyup', function() {
@@ -218,11 +231,13 @@ $(document).ready(function() {
         }
     });
 
+
     // Forget password-confirm
     $('.forget-email1').on('click', function() {
         $('.forget-email-block1').hide();
         $('.forget-email-block2').show();
     });
+
 
     // unfreeze account
     $(".unfreeze input[type='radio']").click(function() {
@@ -234,6 +249,7 @@ $(document).ready(function() {
             $('.pan').hide();
         }
     });
+
 
     // Alert message
     $('.sucess-alert-btn').on('click', function() {
@@ -247,6 +263,8 @@ $(document).ready(function() {
             $div2.hide();
         }, 2000);
     });
+
+
 
     /* :::::::::::::::::::::::::::::::::: Research :::::::::::::::::::::::::::::::::::::::*/
 
@@ -263,11 +281,13 @@ $(document).ready(function() {
         }
     });
 
+
     // reasearch time and term
     $('.time-drop li a').on('click', function() {
         $('.invest-item-time').html($(this).closest('li').find('.invest-time').text());
         $('.rea-mod-time').hide();
     });
+
 
     //tabs -Content Change --markets
     $('.mar-time-drop li a').on('click', function() {
@@ -276,9 +296,8 @@ $(document).ready(function() {
         $('.rea-mod-time').hide();
     });
 
+
     // reasearch time and term
-
-
     function terms() {
         var allVals = [];
         var res_time = $('input[name="term"]:checked').each(function() {
@@ -292,6 +311,7 @@ $(document).ready(function() {
     $('.invest-drop-close').on('click', function() {
         $('.rea-mod-time').hide();
     });
+
 
     // sort --> reasearch
     $('.sort-name').on('click', function() {
@@ -317,6 +337,7 @@ $(document).ready(function() {
         $('.sort-by').removeClass('active');
     });
 
+
     //wish list over page
     $('.wish-compare').on('click', function() {
         if (!$(this).is(':checked')) {
@@ -335,6 +356,7 @@ $(document).ready(function() {
     $('.cancel-wish').on('click', function() {
         $(this).closest('.stock-sec').find('.schesme-wish').hide();
     });
+
 
     //wish list inside page
     $('.panel-heading').on('click', function() {
@@ -361,6 +383,7 @@ $(document).ready(function() {
         $('.schesme-wish-in').hide();
     });
 
+
     // filter boxes close
     $('.filter-ele-close').on('click', function() {
         $(this).closest('.filter-box-name').hide();
@@ -371,6 +394,7 @@ $(document).ready(function() {
         $(this).siblings(".acc-fill").removeClass("current");
     });
 
+
     // filter boxes check for radio
     $('.filter-check ').click(function() {
         if ($(this).closest('.serach-box-fly').find('.filter-check input[type="checkbox"]').is(':checked')) {
@@ -379,6 +403,7 @@ $(document).ready(function() {
             $(this).closest('.serach-box-fly').find('.fillcheck').prop("checked", true);
         }
     });
+
 
     // Grid view list view display
     $('.list-ico').on('click', function() {
@@ -396,6 +421,7 @@ $(document).ready(function() {
         $('.grid-box').removeClass('list-box');
     });
 
+
     //cart more-menu	
     $(".cartmore").on('click', function() {
         $(this).closest('.cart-more-menu').find('.cart-more-items').toggle();
@@ -410,6 +436,7 @@ $(document).ready(function() {
         $(".cart-more-items").hide();
     });
 
+
     //Filter
     $('.fill-box,.fil-fly-btns').on('click', function() {
         $('.filter-content-box').slideToggle();
@@ -420,6 +447,7 @@ $(document).ready(function() {
             $('.filter-content-box').slideUp();
         }
     });
+
 
     // Reports showall
     $('.report-showall').on('click', function() {
@@ -445,6 +473,7 @@ $(document).ready(function() {
         }
     });
 
+
     //Equity Investment Ideas
     $('.jqpop').on('click', '.graph-dis', function() {
         $('.graph-deisgn,.ratle-btns').hide();
@@ -454,6 +483,7 @@ $(document).ready(function() {
         $('.graph-content,.grph-btns').hide();
         $('.graph-deisgn,.ratle-btns').show();
     });
+
 
     //Coatch Screen Overlay
     setTimeout(function() {
@@ -471,6 +501,9 @@ $(document).ready(function() {
         $('body.overlayhide').css("overflow", "auto");
     });
 
+
+
+
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
 
     // markest stockbuz vals chnage like tabs 
@@ -482,6 +515,7 @@ $(document).ready(function() {
             hitTar.closest('ul.market-vals').next('.dval-dis').text(hitTarVal);
         }
     });
+
 
     // Sort menu
     $('.sort-select-name-click').on('click', function() {
@@ -497,6 +531,7 @@ $(document).ready(function() {
         $(this).closest('.stockhead').find('.sort-select-name').html($(this).text());
         $('.market-subnames').hide();
     });
+
 
     // Grid view list view display
     $('.mar-grid-btn').on('click', function() {
@@ -515,6 +550,7 @@ $(document).ready(function() {
         $(this).closest('.gri-li-sta').find('.mar-scattered-con').show();
     });
 
+
     //Shareholding View Details
     $(".sharehold-viewdetails").on('click', function() {
         var $el = $(this);
@@ -526,12 +562,14 @@ $(document).ready(function() {
         $(this).closest('.data-section').find('.comny-trade-hide').show();
     });
 
+
     //statisticelist
     $('.statistics-list-view').on('click', function() {
         var $el = $(this);
         $el.text($el.text() == "View Funds" ? "Hide Funds" : "View Funds");
         $(this).closest('.mutual-statistics-con').find('.mutual-statistics-list').toggle();
     });
+
 
     // gotocontract and stock buzz
     $('.contarct-buzz').on('click', function() {
@@ -542,6 +580,7 @@ $(document).ready(function() {
         $('.contarct-buzz-con').hide();
         $('.stock-buzz-con').show();
     });
+
 
     //tabs -Content Change
     $('.tab-slide1 li a').on('click', function() {
@@ -601,6 +640,8 @@ $(document).ready(function() {
         $('#' + div_name).show();
     });
 
+
+
     /* :::::::::::::::::::::::::::::::::: offerings :::::::::::::::::::::::::::::::::::::::*/
 
     //planssection 
@@ -608,19 +649,15 @@ $(document).ready(function() {
         $(this).closest('.pricing-btnsec').find('.showme-plans,.price-trade-link').hide();
         $(this).closest('.pricing-btnsec').find('.modifyplans').show();
         $(this).closest('.pricing-btnsec').find('.plans-invest').show();
-
-
         scrollTopEle($(this).closest('.pricing-btnsec').find('.plans-invest'), 100);
     });
+
 
     // expansion
     $('.pro-exp-btn').on('click', function(e) {
         e.preventDefault();
         var target = $(this).closest('.pro-over').find('.expansion-pro').slideToggle(800);
         $(this).closest('.pro-over').find('.expansion-pro1').hide();
-
-        console.log(target);
-
         scrollTopEle(target, 250);
     });
     $('.pro1-exp-btn').on('click', function(e) {
@@ -639,7 +676,8 @@ $(document).ready(function() {
         $(this).closest('.pro-over').find('.expansion-pro,.expansion-pro1').slideUp(800);
     });
 
-    /* pricing respecive div show*/
+
+    // pricing respecive div show
     $('.price-item-selctor li a').on('click', function() {
         var div_name = $(this).attr('data-val');
         $('.pricing-btnsec').hide();
@@ -660,7 +698,11 @@ $(document).ready(function() {
         $('.invest-2').show();
     });
 
-    // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
+
+
+
+    /*:::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::*/
+	
     //News-ticker	
     var nt_example1 = $('.sensex-list').newsTicker({
         row_height: 31,
@@ -672,26 +714,32 @@ $(document).ready(function() {
     // Tabs
     $('.tabs').tabs();
 
+
     // Tabs
     $(".tabs-secmenu").tabs({
         active: 1
     });
 
+
     // Tabslider
     tabslider();
+
 
     //Custom Select
     $('.select').select2({
         minimumResultsForSearch: -1,
     });
 
+
     //Table accordian
     $(".acordian-click").accordion({
         heightStyle: "content"
     });
 
+
     //menu filter
     $('.menu-filter').accordion();
+
 
     //Auto Complete -->Markets
     $(function() {
@@ -719,6 +767,7 @@ $(document).ready(function() {
     });
 
 
+
     //BX Slider for card view --> insights
 
     if ($(window).width() <= 995) {
@@ -741,29 +790,39 @@ $(document).ready(function() {
         auto: true,
     });
 
+
     //Bxslider for Option Chain --> Derivatives
     $('.option-chain-slider').bxSlider({
         mode: 'vertical',
         infiniteLoop: true,
-        pager: false,
         controls: true,
         minSlides: 3,
         maxSlides: 4,
         moveSlides: 1,
     });
 
+
     //Bxslider for experience --> homepage
     $('.exp-sliderr').bxSlider({
-        minSlides: 1,
+        slideWidth: 308,
+       minSlides: 1,
         maxSlides: 3,
+        moveSlides: 1,
     });
+
 
     //Bxslider for awards --> homepage
     $('.awards-curosal').bxSlider({
-        slideWidth: 330,
+        slideWidth: 325,
         minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
+    });
+
+
+    //Bxslider for main banners --> homepage
+    $('.homepage-banners').bxSlider({
+        auto: true,
     });
 
 
@@ -774,6 +833,7 @@ $(document).ready(function() {
         buttonImageOnly: true,
     });
 
+
     //Markets slider tab
     $('.curosal').bxSlider({
         slideWidth: 244,
@@ -782,6 +842,7 @@ $(document).ready(function() {
         moveSlides: 1,
         infiniteLoop: false
     });
+
 
     //price slider --> Offerinigs
     var price_slider_setting = {
@@ -837,12 +898,12 @@ $(document).ready(function() {
     });
 
 
-
     //View Plan Details
     $('.pop-pack').on('click', '.showdetails', function() {
         $('.plandetails-show').show();
         $('.showdetails').hide();
     });
+
 
     //Dialog Box
     $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.pop-share-details").dialog({
@@ -863,33 +924,7 @@ $(document).ready(function() {
     });
 
 
-    /*//View Details for ajax calls 
-        $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
-            $('body').toggleClass('popup-overflow');
-
-            var pagename = $(this).attr('title');
-            $(".pop-pack").dialog("open").load(pagename + ".html");
-
-        });
-    	
-    	//View Details for ajax calls->pricing offerings
-    	 $(".pop-price-btn").on("click", function() {
-            $('body').toggleClass('popup-overflow');
-            var pagename = $(this).attr('data-val');
-            $(".pop-price").dialog("open").load(pagename + ".html");
-
-        });
-    	
-    	//View Details for ajax calls->share
-    	 $(".share-details").on("click", function() {
-            $('body').toggleClass('popup-overflow');
-            var pagename = $(this).attr('data-val');
-            $(".pop-share-details").dialog("open").load(pagename + ".html");
-
-        });
-    	*/
-    //Close Dialog Popup
-
+   //Close Dialog Popup
     var scrollPos;
     $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
@@ -901,6 +936,7 @@ $(document).ready(function() {
 
     // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
     var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
+
 
     //View Details for ajax calls 
     $('.pop-like, .apply-car,.checkpremium').on('click', function(e) {
@@ -932,11 +968,13 @@ $(document).ready(function() {
         });
     });
 
+
     // social more button
     $('body').on("click", ".more-btn", function() {
         $(".more-btn").hide();
         $('.soc-icon-hide').css('display', 'inline-block');
     });
+
 
     // feedback button
     $('body').on("click", ".rate-it", function() {
@@ -944,8 +982,19 @@ $(document).ready(function() {
         $('.thank').show();
     });
 
-    // fullpage -- >offerings
 
+    //homepage popup
+    $('body').on("click", ".healcheck", function() {
+        $(".rating-div").hide();
+        $('.heal-otp').show();
+    });
+    $('body').on("click", ".thank-you", function() {
+        $(".heal-otp").hide();
+        $('.thank').show();
+    });
+
+
+    // fullpage -- >offerings
     $('.fullpage').fullpage({
         anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
         navigation: true,
@@ -977,15 +1026,18 @@ $(document).ready(function() {
         }
     });
 
+
     //Rate me -->social 
     $(".rateit").bind('over', function(event, value) {
         $(this).attr('title', tooltipvalues[value - 1]);
     });
 
+
     // timer -- markets
     $('.defaultCountdown').countdown({
         until: new Date(2015, 10 - 1, 30)
     });
+
 
     //animation -- > offerings
     var wow = new WOW({
@@ -996,6 +1048,7 @@ $(document).ready(function() {
         live: true
     });
     wow.init();
+
 
     // prcing slider for -- >offerings
     $(".slider-range-min1").slider({
@@ -1010,7 +1063,7 @@ $(document).ready(function() {
     });
 
     $(".amt-val").text("Rs " + $(".slider-range-min1").slider("value"));
-
+	
     $(".slider-range-min2").slider({
         range: "min",
         value: 3000,
@@ -1059,6 +1112,7 @@ $(document).ready(function() {
     });
     $(".amt-val5").text("Rs " + $(".slider-range-min1").slider("value"));
 
+
     // priceing progress bar -- >offerings
     var progressbar = $(".progressbar"),
         progressLabel = $(".progress-label");
@@ -1085,8 +1139,6 @@ $(document).ready(function() {
 
     setTimeout(progress, 2000);
 
-
-
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
         $('.le-products-menu').singlePageNav({
@@ -1103,8 +1155,6 @@ $(document).ready(function() {
             currentClass: 'active',
         });
     }
-
-
 
     /* resize function */
 
@@ -1172,27 +1222,30 @@ $('.customers-testmonials ul').find('li').hover(function() {
     var $point = 1;
     var liW = $this.width() + 10;
     var ele = $show.width() + 10;
-    var opts = {
-          border: '1px solid #000',
-          left: liW,
-          top: '0px'
-        };
-    
-
-
-
-
     $this.on('mousemove', function(e) {
         var screenX = e.screenX;
-        var screenY = e.screenY;
-        var docW = $(window).innerWidth();   
-        $show.siblings().stop();
-        $show.show(500).css(opts);
+        console.log('screen', screenX);
+        var docW = $(window).innerWidth();
+        var opts;
+        if ((docW - (screenX + 100)) < ele) {
+            $point = 0;
+        }
+
+        if ($point == 1) {
+            $('.cust-tool').removeClass('tool-left-push');
+        } else {
+            $('.cust-tool').addClass('tool-left-push');
+        }
+        $show.stop().fadeIn().css(opts);
+        $this.css({
+            'display': "show"
+        });
+
     });
 
 }, function() {
     // out
     var $this = $(this);
     var $show = $this.find('.cust-tool');
-    $show.hide(10);
+    $show.stop().fadeOut();
 });

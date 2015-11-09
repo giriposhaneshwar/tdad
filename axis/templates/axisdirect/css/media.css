@@ -52,9 +52,14 @@
 		right:20px;
 	}
 	/* offerings */
+	
 	/*prodcts*/
 	.le-products-menu li a{min-height:138px;}
 	.image-platfade li{width:100%;}
+	
+	/* platforms*/
+	.plat-images{width:100%;}
+	
 }
 @media screen and (max-width:997px){
 	
@@ -363,7 +368,7 @@
 		transition: all 0.5s ease-in-out;
 	}
 	.off .site-start,.off .site-start-modules{
-		padding:0;
+		margin:0;
 	}
 	
 	/* Navigation */
@@ -521,7 +526,7 @@
 		background-color: #3E3E3E;
 		min-height: 400px;
 		color: #FFF;
-		padding: 10px 0px;
+		padding: 20px 0px;
 	}
 	
 	.f-link {
@@ -534,7 +539,7 @@
 	.f-contact {
     margin: 23px 0px 0px;
 	}
-	.mar-gap-foot{margin-top:10px;}
+	.mar-gap-foot,.mob-gap-foot{margin-top:10px;}
 	.divider {
 		border-top: 1px solid #3A3A3A;
 		border-bottom: 1px solid #4A4A4A;
@@ -1130,6 +1135,7 @@
 																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 	/* ::::::: overview :::::::::::*/
 	/* All banners*/
+	.bdy-overflow{overflow-x:auto;}
 	.product-title{line-height:30px;margin-bottom:5px;}
 	
 	/* banner image button arrows*/
@@ -1155,6 +1161,8 @@
 	
 	/*Product Banner*/	
 	.product-top-align .product-paragraph, .product-bottom-align .product-paragraph, .banner-align .product-paragraph{padding:0;}
+	.product-top-align{margin-top:0;}
+	
 	.page-banner{height:inherit;}
 	.banner-video{height:inherit;}
 	.banner-video video{bottom:inherit;}
@@ -1303,7 +1311,8 @@
 	/* plaft form over page*/
 	.platform-4{background:url(../../../images/products/platform-4-small.jpg) center center;}
 	.platform-5{background:url(../../../images/products/platform-5-small.jpg) center center;}
-	.plat-mob-img img{width:100%;}
+	.plat-mob-img{display:block;}
+	.plat-web-img{display:none;}
 	.platform-con{text-align:center;margin-top:20px;}
 	.plat-txt-mid{height:inherit;}
 	
@@ -1321,7 +1330,7 @@
 	.ful-sec-7{background: url(../../../images/products/image-small.jpg) center bottom;}
 	.funtastic-down{bottom:0;position:absolute;height:inherit;}
 	.fullpage-images{text-align:center;}
-	.fullpage-big-sm{width:100%;}
+	.fulimg-100{width:100%;}
 	.fullpage-ban-con{text-align:center;margin-top:20px;}
 	
 	/* platform trade*/
@@ -1333,4 +1342,83 @@
 	.inst-icon3{background:url(../../../images/products/trade-2-03-small.png)}
 
 	.trade-instant li:last-child{margin-bottom:0;}
+	
+	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Home Page
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+	.homepage-banners li{height:350px;}
+	.hm-banners-1{
+		background:url(../../../images/home/hm-banner-01-small.jpg) center center;
+	}
+	.hm-banners-2{
+		background:url(../../../images/home/hm-banner-02-small.jpg) center center;
+	}
+	.hm-banners-3{
+		background:url(../../../images/home/hm-banner-03-small.jpg) center center;
+	}
+	.hm-banners-4{
+		background:url(../../../images/home/hm-banner-04-small.jpg) center center;
+	}
+	.ban-txt{line-height:30px;}
+	.simple-link{margin-top:5px;}
+	.home-banalign .product-button{margin-top:20px;}
+	.blockbg .banner-title{line-height:24px;}
+	.home-banalign{height:inherit;padding:50px 0;}
+	.mob-none{display:none;}
+	.web-none{display:block;}
+	.cust-tool{display:block;}
+	.mob-test-section{margin-top:20px;}
+	.test-img{float:left;}
+	.mil-spi{opacity:1;}
+	.test-main-bdy{padding-left:100px;}
+	.test-content{position:relative;border:1px solid #f0f0f0;padding:10px;}
+	.test-content:after, .test-content:before {
+		right: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.test-content:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-right-color: #fff;
+		border-width: 10px;
+		margin-top: -10px;
+	}
+	.test-content:before {
+		border-color: rgba(240, 240, 240, 0);
+		border-right-color: #f0f0f0;
+		border-width: 11px;
+		margin-top: -11px;
+	}
+	.cu-tol-con{padding:0;position:static;}
+	.cu-tol-con:before,.cu-tol-con:after{position:static;background:none;}
+	.award-circle:before,.award-circle:after{  display:none;}
+	.award-circle span{font-size:18px;}
+	.awrds-cons p{font-size:14px;}
+
+	
+	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	RI
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+	/*:::::::::: offerings ::::::::::::*/
+	
+	.ri-products-banner,.nri-over-pro-1{
+		background: url(../../../images/products/nri/nri-products-small.jpg) center center;
+	}
+	.nri-platform-banner,.nri-over-pro-2{
+		background: url(../../../images/products/nri/nri-platforms-small.jpg) center center;
+	}
+	.nri-pricing-banner,.nri-vas-banner,.nri-over-pro-3,.nri-over-pro-4{
+		background: url(../../../images/products/nri/nri-pricing-small.jpg) center center;
+	}
+	
+	
+	
 }

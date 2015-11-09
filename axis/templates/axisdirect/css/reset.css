@@ -228,8 +228,21 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
     display: none;
 }
 
-.inp-filed::-webkit-input-placeholder,.inp-filed:-moz-placeholder,.inp-filed::-moz-placeholder,.inp-filed:-ms-input-placeholder {
+/* input placeholder colors*/
+.inp-filed::-webkit-input-placeholder {
    color:#ccc;
+}
+
+.inp-filed::-moz-placeholder { / Firefox 18- /
+   color:#ccc;
+}
+
+.inp-filed::-moz-placeholder {  / Firefox 19+ /
+   color:#ccc;  
+}
+
+.inp-filed::-ms-input-placeholder {  
+   color:#ccc; 
 }
 
 /*** Button Styles ***/

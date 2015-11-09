@@ -1,8 +1,8 @@
 $ = jQuery.noConflict();
 $(document).ready(function() {
-  // scroll top
-  function scrollTopEle(query, val, cb) {
-    val = typeof val !== 'undefined' ? val : 0;
+  // scroll top 
+  var scrollTopEle = function(query, val) {
+    val == undefined || null ? 0 : val;
     //newinvest-plans-none;
     var target = query;
     if (target.length >= 1) {
@@ -10,9 +10,40 @@ $(document).ready(function() {
         scrollTop: target.offset().top - val
       }, 500);
     }
-    if (cb) cb();
   }
-  // Append Script files on Ajax Call
+
+
+  // fullpage animations -->offerings
+  var inter = null;
+  $.fn.imgSlide = function(time, lp, ease) {
+      time = typeof time !== 'undefined' ? time : 1500;
+      lp = typeof lp !== 'undefined' ? true : false;
+      ease = typeof ease !== 'undefined' ? null : ease;
+      // console.log(time);
+
+      var $this = $(this);
+      var m = $this.find('li').width();
+      var cnt = $this.find('li').size();
+      var i = 1;
+      var next = 2;
+      var c = 1;
+
+      clearInterval(inter);
+      $this.find('li:first-child img').show(ease);
+      inter = setInterval(function() {
+        $this.find('li:nth-child(' + i + ') img').show(ease).parent().siblings().find('img').hide(ease);
+        if (lp == cnt) {
+          if (i == cnt) {
+            i = 1;
+          } else {
+            i++;
+          }
+        } else {
+          i == cnt ? 0 : i = i + 1;
+        }
+      }, time);
+    }
+    // Append Script files on Ajax Call
   function appendScript(filepath, cb) {
     var ele = document.createElement('script');
     ele.setAttribute("type", "text/javascript");
@@ -23,81 +54,7 @@ $(document).ready(function() {
     $('head').append(ele);
     if (cb) cb(event, status);
   }
-  ////////////for joomla start////////////////////////////
-  // code for popup dialog for joomla
-  $(".researchmenu li a").on("click", function() {
-    //alert("hai");
-    //  $(this).removeClass("active");
-    //$(this).addClass("active");
-    localStorage.setItem("activeclass3", $(this).attr("data-type"));
-    localStorage.setItem("activeclass", localStorage.getItem("activeclass"));
-    localStorage.setItem("activeclass2", localStorage.getItem("activeclass2"));
-    //return false;
-  });
-  //code for store active class value in localstorage
-  $(".second-level-menu li a").on("click", function(e) {
-    e.preventDefault();
-    // var loc = $(this).parent().parent().parent().parent().closest("li").find("a").attr("id");
-    var loc = $(this).closest(".second-level").prev().attr("id");
-    // console.log($(this));
-    console.log(e, loc);
-    localStorage.setItem("activeclass", loc);
-    var loc = $(this).parent().parent().closest("li").find("a").attr("id");
-    var loc2 = $(this).attr("data-type");
-    //console.log(loc);
-    localStorage.setItem("activeclass2", loc);
-    localStorage.setItem("activeclass3", loc2);
-    //return false;
-    //console.log("hai setItem");
-  });
-  $(".menu-section a").on("click", function(e) {
-    // e.preventDefault();
-    var getLevel = $(this).parent().attr('data-level');
-    
-    if(getLevel == '2'){
-      $(this).addClass('active').siblings().removeClass('active').closest('li').addClass('active');
-    }
-    if ($(this).attr("data-noremove") != "1") {
-      localStorage.setItem("activeclass", "");
-      localStorage.setItem("activeclass2", "");
-    }
-  });
-  if ($('.thrid-level-menu li').attr('current')) {
-    //$(this).addClass("active");
-    console.log($(this));
-  };
-  if (localStorage.getItem("activeclass") != "") {
-    console.log(localStorage.getItem("activeclass"));
-    console.log(localStorage.getItem("activeclass2"));
-    console.log(localStorage.getItem("activeclass3"));
-    var loc = localStorage.getItem("activeclass");
-    //  console.log(loc);
-    $("#" + loc).addClass("active");
-    //      console.log("hai getItem");
-  }
-  if (localStorage.getItem("activeclass3") != "") {
-    console.log(localStorage.getItem("activeclass"));
-    console.log(localStorage.getItem("activeclass2"));
-    console.log(localStorage.getItem("activeclass3"));
-    var loc = localStorage.getItem("activeclass3");
-    //  console.log(loc);
-    $(".researchmenu li a[data-type=" + loc + "]").parent().parent().find("li").removeClass("active");
-    $(".researchmenu li a[data-type=" + loc + "]").parent().addClass("active");
-    //$("#"+loc).addClass("active");
-    //      console.log("hai getItem");
-  }
-  /*
-  if(localStorage.getItem("activeclass2")!="")
-  {
-  var loc= localStorage.getItem("activeclass2");
-  //  console.log(loc);
-  //  $("#"+loc).parent().addClass("active");
-  $("#"+loc).parent().parent().find("li").removeClass("active");
-  $("#"+loc).parent().addClass("active");
-  //      console.log("hai getItem");
-  }
-  */
-  //////////////////////////////for joomla end //////////////////////////////////
+  
   // header-top expansion for Web
   $('.header-top-expand-arrow').on('click', function() {
     $('.top-news-snap').toggle();
@@ -136,7 +93,8 @@ $(document).ready(function() {
   });
   //country select header top
   $('.hea-top-drop li a').on('click', function() {
-    $('.select-val').html($(this).text());
+    var country = $(this);
+    $('.select-val').html(country[0].innerHTML);
     $('.hea-top-drop').hide();
     $('.drop-click').removeClass('active');
   });
@@ -290,7 +248,7 @@ $(document).ready(function() {
       $('.rea-mod-time').hide();
     }
   });
-  // reasearch time and term -- reasearch module
+  // reasearch time and term
   $('.time-drop li a').on('click', function() {
     $('.invest-item-time').html($(this).closest('li').find('.invest-time').text());
     $('.rea-mod-time').hide();
@@ -315,7 +273,7 @@ $(document).ready(function() {
   $('.invest-drop-close').on('click', function() {
     $('.rea-mod-time').hide();
   });
-// sort --> reasearch
+  // sort --> reasearch
   $('.sort-name').on('click', function() {
     $(this).closest('.sort-by').find('.sort-list').toggle();
   });
@@ -678,43 +636,25 @@ $(document).ready(function() {
   $('.menu-filter').accordion();
   //Auto Complete -->Markets
   $(function() {
-        var availableTags = ["RELIND - Reliance Industries Ltd", "RELINF - Reliance Infrastructure Ltd", "RELIDF - Reliance Industrial Infrastructure Ltd", "Reliance Industries Ltd - RELIANCE", "Reliance Communications Ltd - RCOM", "Reliance Power Ltd - RPOWER", "Reliance Infrastructure Ltd - RELINFRA", "Reliance Capital Ltd - RELCAPITAL", "Religare Enterprises Ltd - RELIGARE ", "Reliance Industrial Infrastructure Ltd - RIIL ", "Reliance Chemotex Industries Ltd - NA"];
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-        $(".auto-complete").autocomplete({
-            source: availableTags,
-            open: function(event, ui) {
-                $(this).autocomplete("widget").css({
-                    "width": 511
-                });
-            }
+    var availableTags = ["RELIND - Reliance Industries Ltd", "RELINF - Reliance Infrastructure Ltd", "RELIDF - Reliance Industrial Infrastructure Ltd", "Reliance Industries Ltd - RELIANCE", "Reliance Communications Ltd - RCOM", "Reliance Power Ltd - RPOWER", "Reliance Infrastructure Ltd - RELINFRA", "Reliance Capital Ltd - RELCAPITAL", "Religare Enterprises Ltd - RELIGARE ", "Reliance Industrial Infrastructure Ltd - RIIL ", "Reliance Chemotex Industries Ltd - NA"];
+
+
+
+    $(".auto-complete").autocomplete({
+      source: availableTags,
+      open: function(event, ui) {
+        $(this).autocomplete("widget").css({
+          "width": 511
         });
+      }
     });
+  });
   $(function() {
-        var availableTags = ["Equity", "Derivatives", "Mutual", "Reliance", "Communications Lt", "RPOWER", "RELINFRA", "RELCAPITAL", "RELIGARE ", "RIIL ", "NA"];
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-      $(".global-search").autocomplete({
+    var availableTags = ["Equity", "Derivatives", "Mutual", "Reliance", "Communications Lt", "RPOWER", "RELINFRA", "RELCAPITAL", "RELIGARE ", "RIIL ", "NA"];
+
+
+
+    $(".global-search").autocomplete({
       source: availableTags,
       open: function(event, ui) {
         $(this).autocomplete("widget").css({
@@ -745,11 +685,33 @@ $(document).ready(function() {
   $('.option-chain-slider').bxSlider({
     mode: 'vertical',
     infiniteLoop: true,
-    pager: false,
     controls: true,
     minSlides: 3,
     maxSlides: 4,
     moveSlides: 1,
+  });
+
+  //Bxslider for experience --> homepage
+  $('.exp-sliderr').bxSlider({
+    slideWidth: 308,
+    minSlides: 1,
+    maxSlides: 3,
+    moveSlides: 1,
+  });
+
+
+  //Bxslider for awards --> homepage
+  $('.awards-curosal').bxSlider({
+    slideWidth: 325,
+    minSlides: 1,
+    maxSlides: 3,
+    moveSlides: 1,
+  });
+
+
+  //Bxslider for main banners --> homepage
+  $('.homepage-banners').bxSlider({
+    auto: true,
   });
   //Date Picker
   $('.datepicker').datepicker({
@@ -811,7 +773,7 @@ $(document).ready(function() {
       }
     }
   });
-  
+
   //View Plan Details
   $('.pop-pack').on('click', '.showdetails', function() {
     $('.plandetails-show').show();
@@ -827,36 +789,13 @@ $(document).ready(function() {
     width: 450,
   });
   $(window).resize(function() {
-        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
-    });
+    $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
+  });
 
   $(".pop-pack").dialog({
     width: 980,
   });
-  /*//View Details for ajax calls
-  $(".checkpremium,.pop-like,.report-ful-desc").on("click", function() {
-  $('body').toggleClass('popup-overflow');
-  var pagename = $(this).attr('title');
-  $(".pop-pack").dialog("open").load(pagename + ".html");
 
-  });
-
-  //View Details for ajax calls->pricing offerings
-  $(".pop-price-btn").on("click", function() {
-  $('body').toggleClass('popup-overflow');
-  var pagename = $(this).attr('data-val');
-  $(".pop-price").dialog("open").load(pagename + ".html");
-
-  });
-
-  //View Details for ajax calls->share
-  $(".share-details").on("click", function() {
-  $('body').toggleClass('popup-overflow');
-  var pagename = $(this).attr('data-val');
-  $(".pop-share-details").dialog("open").load(pagename + ".html");
-
-  });
-  */
   //Close Dialog Popup
   var scrollPos;
   $('body').on('click', '.dialog-close', function(e) {
@@ -869,8 +808,8 @@ $(document).ready(function() {
   // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
   var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
   //View Details for ajax calls
-  $('.pop-like, .apply-car').on('click', function(e) {
-    scrollPos=$(document).scrollTop();
+  $('.pop-like, .apply-car,.checkpremium').on('click', function(e) {
+    scrollPos = $(document).scrollTop();
     $('body').toggleClass('popup-overflow');
     if ($(this).attr('title') == undefined) {
       var pagename = $(this).attr('data-val');
@@ -912,13 +851,7 @@ $(document).ready(function() {
       }
     });
   });
-  // $(window).resize(function() {
-  //   $(".premiumresearchdialog, .pop-pack, .pop-price, .addtopopup, .share-details").dialog("option", "position", {
-  //     my: "center",
-  //     at: "center",
-  //     of: window
-  //   });
-  // });
+
   // social more button
   $('body').on("click", ".more-btn", function() {
     $(".more-btn").hide();
@@ -929,80 +862,50 @@ $(document).ready(function() {
     $(".rating-div").hide();
     $('.thank').show();
   });
+
+  //homepage popup
+  $('body').on("click", ".healcheck", function() {
+    $(".rating-div").hide();
+    $('.heal-otp').show();
+  });
+  $('body').on("click", ".thank-you", function() {
+    $(".heal-otp").hide();
+    $('.thank').show();
+  });
+
   // fullpage -- >offerings
   $('.fullpage').fullpage({
-            anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
-            navigation: true,
-            navigationPosition: 'right',
-            afterLoad:function(e){
-                
-                var page = window.location.href;
-                var pagePos = page.split('/');
-                var thisPage = pagePos[pagePos.length-1];
-                var pPage = thisPage.split('#');
-                if(pPage[0] == "platforms-mobapp.html"){
-                    var a =e;
-                    if(a == '1Page'){
-                    $('.pic-1').delay(900);
-                    $('.pic-2').delay(700).fadeIn();
-                    }else if(a == '2Page'){
-                    $('.pic-3').delay(900);
-                    $('.pic-4').delay(1200).fadeIn();
-                    $('.pic-5').delay(2700).fadeIn();
-                    }else if(a == '4Page'){
-                    $('.pic-8').delay(900);
-                    $('.pic-9').delay(1200).fadeIn();
-                    $('.pic-10').delay(2700).fadeIn();
-                    $('.pic-11').delay(4000).fadeIn();
-                    }else if(a == '5Page'){
-                    $('.pic-12').delay(900);
-                    $('.pic-13').delay(1200).fadeIn();
-                    $('.pic-14').delay(2500).fadeIn();
-                    $('.pic-15').delay(3500).fadeIn();
-                    }
-                }else if(pPage[0] == "platforms-trade.html"){
-                    var a =e;
-                    if(a == '1Page'){
-                    $('.pic-31').delay(900);
-                    $('.pic-32').delay(1500).fadeIn();
-                    $('.pic-33').delay(2500).fadeIn();
-                    $('.pic-34').delay(3500).fadeIn();
-                    }
-                }
-                else if(pPage[0] == "platforms-webportal.html"){
-                    var a =e;
-                    if(a == '2Page'){
-                    $('.pic-28').delay(1000).fadeOut();
-                    $('.pic-29').delay(900).fadeIn().fadeOut();
-                    $('.pic-30').delay(1200).fadeIn();                  
-                    }
-                    else if(a == '3Page'){
-                    $('.pic-6').delay(900);
-                    $('.pic-5').delay(500).fadeIn();
-                    }
-                    else if(a == '4Page'){
-                    $('.pic-23').delay(500);
-                    $('.pic-24').delay(1500).fadeIn();
-                    $('.pic-25').delay(2500).fadeIn();
-                    $('.pic-26').delay(3500).fadeIn();
-                    $('.pic-27').delay(4500).fadeIn();
-                    }
-                    else if(a == '6Page'){
-                    $('.pic-16').delay(500);
-                    $('.pic-17').delay(1500).fadeIn();
-                    $('.pic-18').delay(2500).fadeIn();
-                    $('.pic-19').delay(3500).fadeIn();
-                    }
-                    else if(a == '7Page'){
-                    $('.pic-20').delay(500);
-                    $('.pic-21').delay(1500).fadeIn();
-                    $('.pic-22').delay(2500).fadeIn();
-                    }
-                }
-                
-            }
-        });
-        
+    anchors: ['1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page', '8Page'],
+    navigation: true,
+    navigationPosition: 'right',
+    afterLoad: function(e, index) {
+      //console.log(e, index);
+      var $this = $(this);
+
+      var page = window.location.href;
+      var pagePos = page.split('/');
+      var thisPage = pagePos[pagePos.length - 1];
+      var pPage = thisPage.split('#');
+      var a = e;
+      $('.image-platfade').removeClass('active');
+      $('div[data-anchor="' + e + '"] .image-platfade').addClass('active');
+      var tarEle = $this.find('.image-platfade.active');
+
+      // Depending on the page you can place your function in this also 
+      if (pPage[0] == "platforms-mobapp.html") {
+        // imageSlide(time, loop, animation speed);
+        tarEle.imgSlide(1500, false);
+      } else {
+        // imageSlide(time, loop, animation speed);
+        tarEle.imgSlide(1500, true, 100);
+      }
+    },
+    onLeave: function(e, i, a) {
+      // console.log(e, i, a, $(this));
+      $(this).find('.image-platfade').removeClass('active');
+    }
+  });
+
   //Rate me -->social
   $(".rateit").bind('over', function(event, value) {
     $(this).attr('title', tooltipvalues[value - 1]);
@@ -1150,7 +1053,7 @@ function navigation() {
     });
   }
 }
- 
+
 /* tab slider */
 function tabslider() {
   $(".slide-tab").sliderTabs({
@@ -1163,46 +1066,49 @@ function tabslider() {
   })
 }
 
-// Home
-$('.profilePics ul').find('li').hover(function(){
-    // hover
-    var $this = $(this);
-    var $show = $this.find('.c');
-    var $point = 1;
-    var liW = $this.width()+10;
-    var ele = $show.width()+10;
-    
- 
-    $this.on('mousemove', function(e){
-        var screenX = e.screenX;
-        var docW = $(window).innerWidth();
-        var opts;
-        if((docW-screenX) < ele){
-            $point = 0;
-        }
- 
-        if($point == 1){
-           opts = {
-            'left': liW,
-            'top': "0px" 
-           }
-        }else{
-           opts = {
-            'right': liW,
-            'top': "0px" 
-           }
-        }
-        console.log($point);
-        $show.stop().fadeIn().css(opts);
-        $this.css({'border': "1px solid #000", 'color': '#000'}); 
- 
+// Home Testmonials
+$('.customers-testmonials ul').find('li').hover(function() {
+  // hover
+  var $this = $(this);
+  var $show = $this.find('.cust-tool');
+  var $point = 1;
+  var liW = $this.width() + 10;
+  var ele = $show.width() + 10;
+
+
+  $this.on('mousemove', function(e) {
+    var screenX = e.screenX;
+    console.log('screen', screenX);
+    var docW = $(window).innerWidth();
+    var opts;
+    if ((docW - (screenX + 100)) < ele) {
+      $point = 0;
+    }
+
+    if ($point == 1) {
+      $('.cust-tool').removeClass('tool-left-push');
+
+
+
+    } else {
+      $('.cust-tool').addClass('tool-left-push');
+
+
+
+    }
+
+    $show.stop().fadeIn().css(opts);
+    $this.css({
+      'display': "show"
     });
- 
- 
-}, function(){
-    // out
-    var $this = $(this);
-    var $show = $this.find('.c');
-    $show.stop().fadeOut();
-        $this.css({'border': "1px solid #ccc", 'color': '#ccc'}); 
+
+  });
+
+
+}, function() {
+  // out
+  var $this = $(this);
+  var $show = $this.find('.cust-tool');
+  $show.stop().fadeOut();
+
 });

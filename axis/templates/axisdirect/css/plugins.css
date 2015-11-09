@@ -609,7 +609,7 @@
  bottom: -5px;
  background-position: 16px 16px;
 }
-.dialog-close{position: absolute;top:10px;right:30px;display:block; z-index:99;}
+.dialog-close{position: absolute;top:10px;right:10px;display:block; z-index:99;}
 .dialog-close i{font-size: 18px;}
 .close-pop{background-position:-440px -41px;width:16px;height:16px;}
 .custom-dialog{display:block; background:#fff; min-height:300px;}
@@ -1347,10 +1347,11 @@ html.fp-enabled,
 #fp-nav ul li a.active:after{
 	content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    bottom: -2px;
-    right: -2px;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+	width:14px;height:14px;
     border: 1px #fff solid;
 	border-radius:50%;
 	-webkit-border-radius:50%;
