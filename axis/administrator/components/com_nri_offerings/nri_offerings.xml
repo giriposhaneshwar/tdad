@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_nri_offerings</name>
+    <creationDate>2015-11-10</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Giri</author>
+    <authorEmail>egp.designs@gmail.com</authorEmail>
+    <authorUrl>http://giri.com</authorUrl>
+    <version>1.0.0</version>
+    <description></description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>nri_offerings.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_nri_offerings.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_nri_offerings/assets/images/s_com_nri_offerings.png" >COM_NRI_OFFERINGS</menu>
+        <submenu>
+            
+			<menu link="option=com_nri_offerings&amp;view=offeringsoverv1ews" view="offeringsoverv1ews" img="components/com_nri_offerings/assets/images/s_offeringsoverv1ews.png" alt="Nri_offerings/Offeringsoverv1ews">COM_NRI_OFFERINGS_TITLE_OFFERINGSOVERV1EWS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=offeringsproductss" view="offeringsproductss" img="components/com_nri_offerings/assets/images/s_offeringsproductss.png" alt="Nri_offerings/Offeringsproductss">COM_NRI_OFFERINGS_TITLE_OFFERINGSPRODUCTSS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=offeringspricings" view="offeringspricings" img="components/com_nri_offerings/assets/images/s_offeringspricings.png" alt="Nri_offerings/Offeringspricings">COM_NRI_OFFERINGS_TITLE_OFFERINGSPRICINGS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=offeringsplatformss" view="offeringsplatformss" img="components/com_nri_offerings/assets/images/s_offeringsplatformss.png" alt="Nri_offerings/Offeringsplatformss">COM_NRI_OFFERINGS_TITLE_OFFERINGSPLATFORMSS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=offeringsaccountss" view="offeringsaccountss" img="components/com_nri_offerings/assets/images/s_offeringsaccountss.png" alt="Nri_offerings/Offeringsaccountss">COM_NRI_OFFERINGS_TITLE_OFFERINGSACCOUNTSS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=offeringsvalueaddedservicess" view="offeringsvalueaddedservicess" img="components/com_nri_offerings/assets/images/s_offeringsvalueaddedservicess.png" alt="Nri_offerings/Offeringsvalueaddedservicess">COM_NRI_OFFERINGS_TITLE_OFFERINGSVALUEADDEDSERVICESS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=platformsmobileapps" view="platformsmobileapps" img="components/com_nri_offerings/assets/images/s_platformsmobileapps.png" alt="Nri_offerings/Platformsmobileapps">COM_NRI_OFFERINGS_TITLE_PLATFORMSMOBILEAPPS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=platformsportals" view="platformsportals" img="components/com_nri_offerings/assets/images/s_platformsportals.png" alt="Nri_offerings/Platformsportals">COM_NRI_OFFERINGS_TITLE_PLATFORMSPORTALS</menu>
+
+			<menu link="option=com_nri_offerings&amp;view=platformstrades" view="platformstrades" img="components/com_nri_offerings/assets/images/s_platformstrades.png" alt="Nri_offerings/Platformstrades">COM_NRI_OFFERINGS_TITLE_PLATFORMSTRADES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>nri_offerings.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_nri_offerings.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_nri_offerings.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="nri_offerings"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

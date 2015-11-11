@@ -1042,7 +1042,7 @@ function navigation() {
       var p = $(e.target).closest('.first-level-menu').length
       if (!p) {
         $('.second-level').hide();
-        $('.first-level-menu > li').removeClass('active');
+        // $('.first-level-menu > li').removeClass('active');
       }
     });
   } else {

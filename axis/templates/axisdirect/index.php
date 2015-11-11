@@ -12,7 +12,7 @@
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-latest.js" ></script> 
 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-ui.js" ></script> 
-
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
 <div id="main">
@@ -71,11 +71,7 @@
             	<a href="javascript:void(0);" class="country-drop"><span class="coun-select-val">INDIA</span> <i class="sprite-img support-icon"></i></a>
                 <ul class="header-top-country">
                     <li><a href="javascript:void(0)">INDIA</a></li>
-                    <li><a href="javascript:void(0)">USA</a></li>
-                    <li><a href="javascript:void(0)">CANADA</a></li>
-                    <li><a href="javascript:void(0)">UK</a></li>
-                    <li><a href="javascript:void(0)">AUSTRALIA</a></li>
-                    <li><a href="javascript:void(0)">OTHERS</a></li>
+                    <li><a href="javascript:void(0)">NRI</a></li>
                 </ul>
                 <p class="res-moremenu"><i class="sprite-img more-menu"></i></p>
             </div>
