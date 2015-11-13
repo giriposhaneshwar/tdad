@@ -419,7 +419,7 @@ echo $this->loadTemplate('breadcrumb');
                                 <h1 class="product-title">Systematic Investment Plans</h1>
                                 <h4 class="product-subtitle">Achieve your goals, step-by-step</h4>
                                 <p class="product-paragraph">Attain your set goals systematically with a SIP solution. Start with small amounts regularly and create BIG wealth over a period of time. </p>
-                                <div class="two-buttons">	
+                                <div class="two-buttons">   
                                     <a href="javascript:void(0)" class="product-button transitions pro-exp-btn">Mutual Fund SIP</a>
                                     <a href="javascript:void(0)" class="product-button transitions pro1-exp-btn">Equity SIP</a>
                                 </div>

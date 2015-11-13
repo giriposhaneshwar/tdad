@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="template">
+	<name>axisdirect</name>
+	<creationDate>2015-08-17</creationDate>
+	<author>venkatesh</author>
+	<authorEmail>venkat_vend@thinkdesign.in</authorEmail>
+	<authorUrl>http://www.example.com</authorUrl>
+	<copyright>copyrights @ axisdirect 2015</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<description>Axisdirect template</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+	</files>
+	<positions>
+		<position>login_support</position>
+		<position>market_snapshot_top1</position>
+		<position>market_snapshot_top2</position>
+		<position>market_snapshot_top3</position>
+		<position>market_snapshot1</position>
+		<position>market_snapshot2</position>
+		<position>market_snapshot3</position>
+		<position>market_snapshot4</position>
+		<position>top_navigation</position>
+		<position>top_navigation_login</position>
+		<position>content</position>
+		<position>footer_position1</position>
+		<position>footer_position2</position>
+		<position>footer_position3</position>
+		<position>footer_position4</position>
+		<position>footer_position5</position>
+		<position>footer_bottom</position>
+		<position>footer</position>
+	</positions>
+</extension>

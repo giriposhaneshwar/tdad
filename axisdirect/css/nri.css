@@ -36,3 +36,11 @@
 
 /* derivatives expansion*/
 .nri-fea-headings:after{border-bottom: 0px}
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Homepage
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+.hm-banners-5{
+	background:url(../images/products/nri/nri-main-banner.jpg) center center;
+}

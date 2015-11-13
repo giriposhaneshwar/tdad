@@ -1,5 +1,5 @@
 <?php
-$this->_addPath( 'template', JPATH_COMPONENT  . '/views/oferingsoverv1ews/tmpl' );
+$this->_addPath( 'template', JPATH_COMPONENT  . '/views/platformsportals/tmpl' );
 echo $this->loadTemplate('breadcrumb');
 ?>
 <!-- Content -->
@@ -12,7 +12,7 @@ echo $this->loadTemplate('breadcrumb');
                         <div class="grid_12 product-center">
                             <h1 class="banner-title">WORKS ON EVERYTHING</h1>
                             <p class="product-paragraph par-cen-pading">We are getting increasingly mobile and increasingly comfortable with different devices too. You don’t have to say glued to just one device as our web portal is a completely responsive one that works on all your devices- smartphone, tablet or desktop.</p>
-                            <p class="plat-images-tgap"><img src="images/products/web-1-01.png"></p>
+                            <p class="plat-images-tgap"><img src="../images/products/web-1-01.png"></p>
                         </div>
                     </div>
                 </div>
@@ -22,10 +22,10 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="fullsec-move clearfix">
                         <div class="grid_6">
                             <ul class="image-platfade sec-9">
-                                <li><img src="images/products/web-2-01.png" class="pic-28"></li>
-                                <li><img src="images/products/web-2-02.png" class="pic-29"></li>
-                                <li><img src="images/products/web-2-03.png" class="pic-30"></li>
-                                <li><img src="images/products/web-2-01.png" class="pic-29"></li>
+                                <li><img src="../images/products/web-2-01.png" class="pic-28"></li>
+                                <li><img src="../images/products/web-2-02.png" class="pic-29"></li>
+                                <li><img src="../images/products/web-2-03.png" class="pic-30"></li>
+                                <li><img src="../images/products/web-2-01.png" class="pic-29"></li>
                             </ul>
                         </div>
                         <div class="grid_6">
@@ -48,8 +48,8 @@ echo $this->loadTemplate('breadcrumb');
                         </div>
                         <div class="grid_7">
                             <ul class="image-platfade sec-7">
-                                <li><img src="images/products/web-3-01.png" class="pic-6"></li>
-                                <li><img src="images/products/web-3-02.png" class="pic-5"></li>
+                                <li><img src="../images/products/web-3-01.png" class="pic-6"></li>
+                                <li><img src="../images/products/web-3-02.png" class="pic-5"></li>
                             </ul>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ echo $this->loadTemplate('breadcrumb');
                         <div class="grid_12 product-center">
                             <h1 class="banner-title">PLAY YOUR CARDS RIGHT</h1>
                             <p class="product-paragraph par-cen-pading">Say bye to old data representation style in complex tables. Say hello to our simplified card view that highlights just the right amount of information. It’s neat, clutter free and smart; designed to keep your investment journey simple.</p>
-                            <p class="plat-images-tgap"><img src="images/products/web-4-05.png"></p>
+                            <p class="plat-images-tgap"><img src="../images/products/web-4-05.png"></p>
                         </div>
                     </div>
                 </div>
@@ -84,11 +84,11 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="fullsec-move clearfix">
                         <div class="grid_8">
                             <ul class="image-platfade">
-                                <li> <img src="images/products/web-5-01.png" class="pic-16"></li>
-                                <li><img src="images/products/web-5-02.png" class="pic-17"></li>
-                                <li><img src="images/products/web-5-03.png" class="pic-18"></li>
-                                <li><img src="images/products/web-5-04.png" class="pic-19"></li>
-                                <li> <img src="images/products/web-5-01.png" class="pic-19"></li>
+                                <li> <img src="../images/products/web-5-01.png" class="pic-16"></li>
+                                <li><img src="../images/products/web-5-02.png" class="pic-17"></li>
+                                <li><img src="../images/products/web-5-03.png" class="pic-18"></li>
+                                <li><img src="../images/products/web-5-04.png" class="pic-19"></li>
+                                <li> <img src="../images/products/web-5-01.png" class="pic-19"></li>
                             </ul>
                         </div>
                         <div class="grid_4">
@@ -105,9 +105,9 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="fullsec-move clearfix">
                         <div class="grid_6">
                             <ul class="image-platfade sec-2">
-                                <li><img src="images/products/web-6-01.png" class="pic-20"></li>
-                                <li><img src="images/products/web-6-02.png" class="pic-21"></li>
-                                <li><img src="images/products/web-6-03.png" class="pic-22"></li>
+                                <li><img src="../images/products/web-6-01.png" class="pic-20"></li>
+                                <li><img src="../images/products/web-6-02.png" class="pic-21"></li>
+                                <li><img src="../images/products/web-6-03.png" class="pic-22"></li>
                             </ul>
                         </div>
                         <div class="grid_6">
@@ -126,7 +126,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="fullsec-move clearfix">
                         <div class="grid_7">
                             <div class="sec-10">
-                                <img src="images/products/web-7-01.png">
+                                <img src="../images/products/web-7-01.png">
                             </div>
                         </div>
                         <div class="grid_5">
@@ -145,7 +145,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-1-01-small.png">
+                                <img src="../images/products/web-1-01-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">WORKS ON EVERYTHING</h1>
@@ -160,7 +160,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-2-03-small.png" >
+                                <img src="../images/products/web-2-03-small.png" >
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">DON’T GET LOST!</h1>
@@ -175,7 +175,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-3-02-small.png">
+                                <img src="../images/products/web-3-02-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">Live Markets.<br>Wherever</h1>
@@ -190,7 +190,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-4-05-small.png">
+                                <img src="../images/products/web-4-05-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">PLAY YOUR CARDS RIGHT</h1>
@@ -217,7 +217,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-5-04-small.png">
+                                <img src="../images/products/web-5-04-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">NEVER MISS A NEWS... EVER!</h1>
@@ -232,7 +232,7 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-6-03-small.png">
+                                <img src="../images/products/web-6-03-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">Do things you love, we notify</h1>
@@ -249,11 +249,11 @@ echo $this->loadTemplate('breadcrumb');
                     <div class="row clearfix">
                         <div class="grid_12">
                             <div class="fullpage-images">
-                                <img src="images/products/web-7-01-small.png">
+                                <img src="../images/products/web-7-01-small.png">
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">BEAUTIFULLY REINVENTED TO KEEP <br> YOUR INVESTMENT JOURNEY SIMPLE!</h1>
-                                <a href="javascript:void(0)" class="product-button transitions">Sound great! I want to get started</a>
+                                <a href="javascript:void(0)" class="product-button transitions">Sounds great! I want to get started</a>
                             </div>
                         </div>
                     </div>

@@ -52,3 +52,4 @@ we can help you better in future </p>
       </div>
             
 </div>
+<script src="../js/rate-it.js"></script>

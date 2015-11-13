@@ -49,7 +49,7 @@ echo $this->loadTemplate('breadcrumb');
                             <div class="product-top-align wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1800ms">
                                 <h1 class="product-title">All Investments. One Destination. </h1>
                                 <p class="product-paragraph">AxisDirect  account brings all investment options together under one roof, giving you the power to diversify your portfolio. </p>
-                                <a href="index.php/offerings/offerings-products" class="product-button transitions">Check our wide range of Investment Options <i class="sprite-img right-arr overview-arrow-wh"></i></a>
+                                <a href="index.php/offerings/offerings-overview" class="product-button transitions">Check our wide range of Investment Options <i class="sprite-img right-arr overview-arrow-wh"></i></a>
                             </div>
                         </div>
                     </div>

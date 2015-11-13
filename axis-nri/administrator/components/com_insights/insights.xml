@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_insights</name>
+    <creationDate>2015-09-10</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>venkatesh</author>
+    <authorEmail>venkat_vend@thinkdesign.in</authorEmail>
+    <authorUrl>http://thinkdesign.in</authorUrl>
+    <version>1.0.0</version>
+    <description>Insights component</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>insights.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_insights.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_insights/assets/images/s_com_insights.png" >COM_INSIGHTS</menu>
+        <submenu>
+            
+			<menu link="option=com_insights&amp;view=researchcallsoverv1ewindexs" view="researchcallsoverv1ewindexs" img="components/com_insights/assets/images/s_researchcallsoverv1ewindexs.png" alt="Insights/Researchcallsoverv1ewindexs">COM_INSIGHTS_TITLE_RESEARCHCALLSOVERV1EWINDEXS</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallsinvestmentideas" view="researchcallsinvestmentideas" img="components/com_insights/assets/images/s_researchcallsinvestmentideas.png" alt="Insights/Researchcallsinvestmentideas">COM_INSIGHTS_TITLE_RESEARCHCALLSINVESTMENTIDEAS</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallsoverv1ews" view="researchcallsoverv1ews" img="components/com_insights/assets/images/s_researchcallsoverv1ews.png" alt="Insights/Researchcallsoverv1ews">COM_INSIGHTS_TITLE_RESEARCHCALLSOVERV1EWS</menu>
+
+			<menu link="option=com_insights&amp;view=researchtradingideass" view="researchtradingideass" img="components/com_insights/assets/images/s_researchtradingideass.png" alt="Insights/Researchtradingideass">COM_INSIGHTS_TITLE_RESEARCHTRADINGIDEASS</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallsderivatives" view="researchcallsderivatives" img="components/com_insights/assets/images/s_researchcallsderivatives.png" alt="Insights/Researchcallsderivatives">COM_INSIGHTS_TITLE_RESEARCHCALLSDERIVATIVES</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallspremiumideass" view="researchcallspremiumideass" img="components/com_insights/assets/images/s_researchcallspremiumideass.png" alt="Insights/Researchcallspremiumideass">COM_INSIGHTS_TITLE_RESEARCHCALLSPREMIUMIDEASS</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallsmutualfundideass" view="researchcallsmutualfundideass" img="components/com_insights/assets/images/s_researchcallsmutualfundideass.png" alt="Insights/Researchcallsmutualfundideass">COM_INSIGHTS_TITLE_RESEARCHCALLSMUTUALFUNDIDEASS</menu>
+
+			<menu link="option=com_insights&amp;view=researchcallssipideass" view="researchcallssipideass" img="components/com_insights/assets/images/s_researchcallssipideass.png" alt="Insights/Researchcallssipideass">COM_INSIGHTS_TITLE_RESEARCHCALLSSIPIDEASS</menu>
+
+			<menu link="option=com_insights&amp;view=researchreportsoverv1ews" view="researchreportsoverv1ews" img="components/com_insights/assets/images/s_researchreportsoverv1ews.png" alt="Insights/Researchreportsoverv1ews">COM_INSIGHTS_TITLE_RESEARCHREPORTSOVERV1EWS</menu>
+
+			<menu link="option=com_insights&amp;view=researchreportsfundamentalreportss" view="researchreportsfundamentalreportss" img="components/com_insights/assets/images/s_researchreportsfundamentalreportss.png" alt="Insights/Researchreportsfundamentalreportss">COM_INSIGHTS_TITLE_RESEARCHREPORTSFUNDAMENTALREPORTSS</menu>
+
+			<menu link="option=com_insights&amp;view=researchreportstechnicalreportss" view="researchreportstechnicalreportss" img="components/com_insights/assets/images/s_researchreportstechnicalreportss.png" alt="Insights/Researchreportstechnicalreportss">COM_INSIGHTS_TITLE_RESEARCHREPORTSTECHNICALREPORTSS</menu>
+
+			<menu link="option=com_insights&amp;view=researchreportsmutualfundreportss" view="researchreportsmutualfundreportss" img="components/com_insights/assets/images/s_researchreportsmutualfundreportss.png" alt="Insights/Researchreportsmutualfundreportss">COM_INSIGHTS_TITLE_RESEARCHREPORTSMUTUALFUNDREPORTSS</menu>
+
+			<menu link="option=com_insights&amp;view=researchreportssectoreconomyotherss" view="researchreportssectoreconomyotherss" img="components/com_insights/assets/images/s_researchreportssectoreconomyotherss.png" alt="Insights/Researchreportssectoreconomyotherss">COM_INSIGHTS_TITLE_RESEARCHREPORTSSECTORECONOMYOTHERSS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>insights.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_insights.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_insights.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="insights"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

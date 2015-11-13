@@ -1,20 +1,20 @@
 
 <div class="custom-dialog likepop">
-        <a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
-        
-        <div class="vas-popup dialog-title  clearfix">
-            <h4>With this Plan you enjoy the following Benefits: </h4>
-    </div>
-        <div class="dialog-content popup-insight">
+		<a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
+		
+		<div class="vas-popup dialog-title  clearfix">
+			<h4>With this Plan you enjoy the following Benefits: </h4>
+	</div>
+        <div class="vas-popup-con dialog-content popup-insight">
             <div class="popup-reports-desc vas-popup">
                 
                 <ul class="vas-list-pop">
-                    <li>
-                        <ul class="vas-in-con clearfix">
+                	<li>
+                    	<ul class="vas-in-con clearfix">
                             <li>
                                 <i class="sprite-img vas-pop-icons vas-ic1"></i>
                                 <div class="vas-pop-con">
-                                    <h3 class="vas-col1">Call & Trade Service</h3>
+                                	<h3 class="vas-col1">Call & Trade Service</h3>
                                     <p>To connect to our Trading desk to place your orders/ know your position details</p>
                                 </div>
                             </li>
@@ -30,11 +30,11 @@
                         </ul>
                     </li>
                     <li>
-                        <ul class="vas-in-con clearfix">
+                    	<ul class="vas-in-con clearfix">
                             <li>
                                 <i class="sprite-img vas-pop-icons vas-ic2"></i>
                                 <div class="vas-pop-con">
-                                    <h3 class="vas-col2">Direct Trade</h3>
+                                	<h3 class="vas-col2">Direct Trade</h3>
                                     <p>Lightning fast Desktop 
 Trading Application
 </p>
@@ -52,11 +52,11 @@ Trading Application
                         </ul>
                     </li>
                     <li>
-                        <ul class="vas-in-con clearfix">
+                    	<ul class="vas-in-con clearfix">
                             <li>
                                 <i class="sprite-img vas-pop-icons vas-ic3"></i>
                                 <div class="vas-pop-con">
-                                    <h3 class="vas-col3">Relationship Manager</h3>
+                                	<h3 class="vas-col3">Relationship Manager</h3>
                                     <p>For assisted trading</p>
                                 </div>
                             </li>
@@ -76,9 +76,3 @@ Customers </p>
             </div>
         </div>
 </div>
-<script>
-     $(".pop-pack").dialog({
-        position: { my: "center", at: "center", of: window,collision: 'fit' }
-     });
-    
-</script>

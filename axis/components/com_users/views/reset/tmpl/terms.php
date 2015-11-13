@@ -3,13 +3,13 @@
         
     
     <div class="vdetail-title clearfix">
-        <a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
-        <div class="dialog-title clearfix">
-            <div class="pop-name-btn clearfix">
-                <h2 class="mar-val">Terms & Conditions</h2>
-            </div>
-        </div>
-    </div>
+		<a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
+		<div class="dialog-title clearfix">
+			<div class="pop-name-btn clearfix">
+				<h2 class="mar-val">Terms & Conditions</h2>
+			</div>
+		</div>
+	</div>
         <div class="dialog-content popup-insight">
                 <ul class="list-icon">
                     <li>This Direct Saver Plan Offer (" Offer") is from Axis Securities Limited ("ASL") and is applicable to the Trading Accounts ("Account") with AxisDirect .</li>
@@ -59,8 +59,8 @@ reason, without giving prior intimation to the client.</li>
         </div>
 </div>
 <script>
-     $(".pop-pack").dialog({
-        position: { my: "center", at: "center", of: window,collision: 'fit' }
-     });
-    
+	 $(".pop-pack").dialog({
+		position: { my: "center", at: "center", of: window,collision: 'fit' }
+	 });
+	
 </script>

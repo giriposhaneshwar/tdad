@@ -2,7 +2,7 @@
 $this->_addPath( 'template', JPATH_COMPONENT  . '/views/oferingsoverv1ews/tmpl' );
 echo $this->loadTemplate('breadcrumb');
 ?>
- <section class="site-start-modules">
+<section class="site-start-modules">
         <div class="page-banner platform-banner">
             <div class="container_12">
                 <div class="clearfix">

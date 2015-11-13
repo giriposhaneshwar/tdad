@@ -2,17 +2,17 @@ $(document).ready(function() {
 
     // scroll top	
     var scrollTopEle = function(query, val) {
-		val == undefined || null ? 0 : val;
-		//newinvest-plans-none;
-		var target = query;
-		if (target.length >= 1) {
-			$('html, body').animate({
-				scrollTop: target.offset().top - val
-			}, 500);
-		}
-	}
-	
-	
+        val == undefined || null ? 0 : val;
+        //newinvest-plans-none;
+        var target = query;
+        if (target.length >= 1) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - val
+            }, 500);
+        }
+    }
+
+
     // fullpage animations -->offerings
     var inter = null;
     $.fn.imgSlide = function(time, lp, ease) {
@@ -702,7 +702,7 @@ $(document).ready(function() {
 
 
     /*:::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::*/
-	
+
     //News-ticker	
     var nt_example1 = $('.sensex-list').newsTicker({
         row_height: 31,
@@ -736,6 +736,19 @@ $(document).ready(function() {
         heightStyle: "content"
     });
 
+    // downloads accordian -->downloads
+    $(".download-list").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+
+    // faqs accrodian --> faqs
+    $(".faq-accordion").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
 
     //menu filter
     $('.menu-filter').accordion();
@@ -768,6 +781,187 @@ $(document).ready(function() {
 
 
 
+    //Auto Complete -->downloads
+
+    var spanInput = $('.inputValue');
+    var inputSpan = $('.downloads');
+
+    spanInput.show();
+    spanInput.css({
+        'border-bottom': '1px solid #fff'
+    });
+    /*spanInput.text("");*/
+    inputSpan.attr('type', 'hidden');
+
+    spanInput.on('click', function() {
+        inputSpan.attr('type', 'text');
+        inputSpan.focus();
+        inputSpan.val("");
+        $(this).hide();
+    });
+
+    $(function() {
+        var availableTags = ["Individual Account Opening Form", "Form Filling Instructions for Resident Indian", "NRI 4-in-1 Investment Account Opening Form", "Form Filling Instructions for NRI Form"];
+        $(".downloads").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+
+
+    //Auto Complete -->faqs
+
+    // faq-1
+    var input1Span = $('.faq-1');
+    input1Span.attr('type', 'hidden');
+    spanInput.on('click', function() {
+        input1Span.attr('type', 'text');
+        input1Span.focus();
+        $(this).removeClass('inp-placeh');
+        input1Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["How to open an account?", "How to register?", "I am not able to activate my account?", "How to register as a guest?"];
+        $(".faq-1").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+
+    //faq-2
+    var spanInput1 = $('.inputValue1');
+    var input2Span = $('.faq-2');
+    input2Span.attr('type', 'hidden');
+    spanInput1.on('click', function() {
+        input2Span.attr('type', 'text');
+        input2Span.focus();
+        $(this).removeClass('inp-placeh');
+        input2Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["Trading account", "NRI account", "Corporate account", "3-in-1 trading account"];
+        $(".faq-2").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+
+                spanInput1.text(selItem);
+                spanInput1.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+	
+	 //Auto Complete -->faqs
+
+    // faq-1
+    var input_demoSpan = $('.demo-1');
+    input_demoSpan.attr('type', 'hidden');
+    spanInput.on('click', function() {
+        input_demoSpan.attr('type', 'text');
+        input_demoSpan.focus();
+        $(this).removeClass('inp-placeh');
+        input_demoSpan.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["How to change password", "How to Trade as NRI", "How to activate my account"];
+        $(".demo-1").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+
+    //faq-2
+    var spanInput1 = $('.inputValue1');
+    var input_demo2Span = $('.demo-2');
+    input_demo2Span.attr('type', 'hidden');
+    spanInput1.on('click', function() {
+        input_demo2Span.attr('type', 'text');
+        input_demo2Span.focus();
+        $(this).removeClass('inp-placeh');
+        input_demo2Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["Setting up secure password", "Setting up old password", "Settings"];
+        $(".demo-2").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+
+                spanInput1.text(selItem);
+                spanInput1.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+	
     //BX Slider for card view --> insights
 
     if ($(window).width() <= 995) {
@@ -805,10 +999,12 @@ $(document).ready(function() {
     //Bxslider for experience --> homepage
     $('.exp-sliderr').bxSlider({
         slideWidth: 308,
-       minSlides: 1,
+        minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
+        infiniteLoop: false,
     });
+
 
 
     //Bxslider for awards --> homepage
@@ -817,6 +1013,7 @@ $(document).ready(function() {
         minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
+        infiniteLoop: false,
     });
 
 
@@ -841,6 +1038,15 @@ $(document).ready(function() {
         maxSlides: 4,
         moveSlides: 1,
         infiniteLoop: false
+    });
+
+    // faq's slider tab
+    $('.faq-slider').bxSlider({
+        slideWidth: 225,
+        minSlides: 1,
+        maxSlides: 3,
+        moveSlides: 1,
+        infiniteLoop: false,
     });
 
 
@@ -924,7 +1130,7 @@ $(document).ready(function() {
     });
 
 
-   //Close Dialog Popup
+    //Close Dialog Popup
     var scrollPos;
     $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
@@ -1063,7 +1269,7 @@ $(document).ready(function() {
     });
 
     $(".amt-val").text("Rs " + $(".slider-range-min1").slider("value"));
-	
+
     $(".slider-range-min2").slider({
         range: "min",
         value: 3000,
@@ -1236,7 +1442,7 @@ $('.customers-testmonials ul').find('li').hover(function() {
         } else {
             $('.cust-tool').addClass('tool-left-push');
         }
-        $show.stop().fadeIn().css(opts);
+        $show.stop().show().css(opts);
         $this.css({
             'display': "show"
         });
@@ -1247,5 +1453,5 @@ $('.customers-testmonials ul').find('li').hover(function() {
     // out
     var $this = $(this);
     var $show = $this.find('.cust-tool');
-    $show.stop().fadeOut();
+    $show.stop().hide();
 });

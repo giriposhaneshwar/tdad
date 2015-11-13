@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_markets</name>
+    <creationDate>2015-09-10</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>venkatesh</author>
+    <authorEmail>venkat_vend@thinkdesign.in</authorEmail>
+    <authorUrl>http://thinkdesign.in</authorUrl>
+    <version>1.0.0</version>
+    <description>Markets component</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>markets.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_markets.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_markets/assets/images/s_com_markets.png" >COM_MARKETS</menu>
+        <submenu>
+            
+			<menu link="option=com_markets&amp;view=snapshots" view="snapshots" img="components/com_markets/assets/images/s_snapshots.png" alt="Markets/Snapshots">COM_MARKETS_TITLE_SNAPSHOTS</menu>
+
+			<menu link="option=com_markets&amp;view=equitymarketstodays" view="equitymarketstodays" img="components/com_markets/assets/images/s_equitymarketstodays.png" alt="Markets/Equitymarketstodays">COM_MARKETS_TITLE_EQUITYMARKETSTODAYS</menu>
+
+			<menu link="option=com_markets&amp;view=equitytopperformer" view="equitytopperformer" img="components/com_markets/assets/images/s_equitytopperformer.png" alt="Markets/Equitytopperformer">COM_MARKETS_TITLE_EQUITYTOPPERFORMER</menu>
+
+			<menu link="option=com_markets&amp;view=equitylatestnewss" view="equitylatestnewss" img="components/com_markets/assets/images/s_equitylatestnewss.png" alt="Markets/Equitylatestnewss">COM_MARKETS_TITLE_EQUITYLATESTNEWSS</menu>
+
+			<menu link="option=com_markets&amp;view=equitymarketstatss" view="equitymarketstatss" img="components/com_markets/assets/images/s_equitymarketstatss.png" alt="Markets/Equitymarketstatss">COM_MARKETS_TITLE_EQUITYMARKETSTATSS</menu>
+
+			<menu link="option=com_markets&amp;view=derivativesmarketstodays" view="derivativesmarketstodays" img="components/com_markets/assets/images/s_derivativesmarketstodays.png" alt="Markets/Derivativesmarketstodays">COM_MARKETS_TITLE_DERIVATIVESMARKETSTODAYS</menu>
+
+			<menu link="option=com_markets&amp;view=derivativesmarketstatss" view="derivativesmarketstatss" img="components/com_markets/assets/images/s_derivativesmarketstatss.png" alt="Markets/Derivativesmarketstatss">COM_MARKETS_TITLE_DERIVATIVESMARKETSTATSS</menu>
+
+			<menu link="option=com_markets&amp;view=mutualfundoverv1ews" view="mutualfundoverv1ews" img="components/com_markets/assets/images/s_mutualfundoverv1ews.png" alt="Markets/Mutualfundoverv1ews">COM_MARKETS_TITLE_MUTUALFUNDOVERV1EWS</menu>
+
+			<menu link="option=com_markets&amp;view=mutualfundlatestnewss" view="mutualfundlatestnewss" img="components/com_markets/assets/images/s_mutualfundlatestnewss.png" alt="Markets/Mutualfundlatestnewss">COM_MARKETS_TITLE_MUTUALFUNDLATESTNEWSS</menu>
+
+			<menu link="option=com_markets&amp;view=mutualfundmarketstatss" view="mutualfundmarketstatss" img="components/com_markets/assets/images/s_mutualfundmarketstatss.png" alt="Markets/Mutualfundmarketstatss">COM_MARKETS_TITLE_MUTUALFUNDMARKETSTATSS</menu>
+
+			<menu link="option=com_markets&amp;view=indicessectorss" view="indicessectorss" img="components/com_markets/assets/images/s_indicessectorss.png" alt="Markets/Indicessectorss">COM_MARKETS_TITLE_INDICESSECTORSS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>markets.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_markets.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_markets.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="markets"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
