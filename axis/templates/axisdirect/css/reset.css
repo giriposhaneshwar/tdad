@@ -233,11 +233,11 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
    color:#ccc;
 }
 
-.inp-filed::-moz-placeholder { / Firefox 18- /
+.inp-filed::-moz-placeholder { /* Firefox 18- */
    color:#ccc;
 }
 
-.inp-filed::-moz-placeholder {  / Firefox 19+ /
+.inp-filed::-moz-placeholder {  /* Firefox 19+ */
    color:#ccc;  
 }
 
@@ -541,7 +541,7 @@ width: 20px;}
 
 .tooltip-bdy:before {
 	border-color: rgba(224, 224, 224, 0);
-	//border-right-color: #e0e0e0;
+	/*border-right-color: #e0e0e0;*/
 	border-width: 11px;
 	margin-top: -11px;
 }
