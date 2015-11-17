@@ -229,19 +229,19 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 }
 
 /* input placeholder colors*/
-.inp-filed::-webkit-input-placeholder {
+.inp-filed::-webkit-input-placeholder,.query-coment-box::-webkit-input-placeholder{
    color:#ccc;
 }
 
-.inp-filed::-moz-placeholder { /* Firefox 18- */
+.inp-filed::-moz-placeholder,.query-coment-box::-moz-placeholder { / Firefox 18- /
    color:#ccc;
 }
 
-.inp-filed::-moz-placeholder {  /* Firefox 19+ */
+.inp-filed::-moz-placeholder ,.query-coment-box::-moz-placeholder {  / Firefox 19+ /
    color:#ccc;  
 }
 
-.inp-filed::-ms-input-placeholder {  
+.inp-filed::-ms-input-placeholder,.query-coment-box::-ms-input-placeholder  {  
    color:#ccc; 
 }
 
@@ -363,8 +363,8 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 	color: #388c2c;
     background-color: #d2f4c4;
     border:1px solid #a9e590;
+	/*margin:20px 0;*/
 	padding:10px;
-	margin:20px 0;
 	text-align:center;
 }
 .sucess-msg p{
@@ -427,16 +427,24 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 /* ::::::::::::::::::::::::::::::::: Coatch screens ::::::::::::::::::::::::::::::::*/
 
 .coatch-overlay {
-    background: rgba(0, 0, 0, 0.75);
-}
-.coatch-overlay {
     width: 100%;
     position: fixed;
     height: 100%;
-    z-index: 9999;
+    z-index: 50;
     top: 0;
     left: 0;
+	 background: rgba(0, 0, 0, 0.75);
 }
+.coatch-overlay1 {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 50;
+    top: 0;
+    left: 0;
+	 background: rgba(0, 0, 0, 0.75);
+}
+
 .coatch-boxes {
    margin-top: 260px;
 }
@@ -486,6 +494,9 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 .left-image,.right-image {
 	float:left;
 }
+
+
+
 
 /* ::::::::::::::::::::::::::::::::: Tooltip Styles ::::::::::::::::::::::::::::::::*/
 
@@ -541,7 +552,7 @@ width: 20px;}
 
 .tooltip-bdy:before {
 	border-color: rgba(224, 224, 224, 0);
-	/*border-right-color: #e0e0e0;*/
+	//border-right-color: #e0e0e0;
 	border-width: 11px;
 	margin-top: -11px;
 }

@@ -486,22 +486,26 @@ $(document).ready(function() {
 
 
     //Coatch Screen Overlay
-    setTimeout(function() {
-        $('.invest-drop').removeClass('coath-text');
+     setTimeout(function() {
+        $('.invest-drop,.header-second-web').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
         if ($('.coatch-overlay').css("display", "none")) {
-            $('.overlayhide').addClass("open");
+            $('body.overlayhide').addClass("open");
         } else {
-            $('.overlayhide').removeClass("open");
+            $('body.overlayhide').removeClass("open");
         }
     }, 5000);
     $(document).click(function() {
-        $('.invest-drop').removeClass('coath-text');
+        $('.invest-drop,.header-second-web').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
         $('body.overlayhide').css("overflow", "auto");
     });
 
-
+	$('.home-tabclose').on('click', function() {
+		$('.coatch-overlay1').hide();
+		$('body.overlayhide').css("overflow", "auto");
+	});  
+	
 
 
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
@@ -698,6 +702,13 @@ $(document).ready(function() {
         $('.invest-2').show();
     });
 
+	$('.mul-selection').on('click', function() {
+        $(this).toggleClass('active');
+    });
+	$('.faq-clrlink').on('click', function() {
+		$('.mul-selection').removeClass('active');
+	});
+	
 
 
 
@@ -711,9 +722,11 @@ $(document).ready(function() {
     });
 
 
-    // Tabs
+    // Tabs -->insights
     $('.tabs').tabs();
-
+	
+	// democenter tabs -->support
+	$('.center-tab').tabs();
 
     // Tabs
     $(".tabs-secmenu").tabs({
@@ -964,19 +977,16 @@ $(document).ready(function() {
 	
     //BX Slider for card view --> insights
 
-    if ($(window).width() <= 995) {
-        $('.ca-slider').bxSlider({
-            minSlides: 1,
-            maxSlides: 1,
-        });
-    } else {
+   
         $('.ca-slider').bxSlider({
             minSlides: 1,
             maxSlides: 3,
             slideWidth: 308,
-            slideMargin: 20
+            slideMargin: 20,
+        	moveSlides: 1,
+			infiniteLoop: false,
         });
-    }
+   
 
 
     //BX Slider  --> news markets
@@ -1048,7 +1058,14 @@ $(document).ready(function() {
         moveSlides: 1,
         infiniteLoop: false,
     });
-
+	
+	 // contactus slider tab
+	$('.contact-curosal').bxSlider({
+        minSlides: 1,
+        maxSlides: 3,
+        moveSlides: 1,
+        infiniteLoop: false,
+    });
 
     //price slider --> Offerinigs
     var price_slider_setting = {

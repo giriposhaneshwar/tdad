@@ -44,6 +44,9 @@
 	.second-level-menu-name{
 		width: 90px;
 	}
+	.header-menu{
+		float:right;
+	}
 	/* bxslider */
 	.bx-wrapper .bx-prev {
 		left:20px;
@@ -60,6 +63,7 @@
 	/* platforms*/
 	.plat-images{width:100%;}
 	
+	
 }
 @media screen and (max-width:997px){
 	
@@ -74,7 +78,7 @@
 	}
 	
 	/* Coatch */
-	.coatch-overlay {
+	.coatch-overlay,.coatch-overlay1 {
 		display:none;
 	}
 	
@@ -520,6 +524,9 @@
 	.breadcrumb-sec{
 		display:none !important;
 	}
+	.first-level-menu > li.mob-nav-dis{display:block;}
+	.first-level-menu > li.mob-nav-dis.mob-nav-dis .ui-icon{display:none;}
+	
 	/* ::::::::::::::::::::::::::::::::: footer ::::::::::::::::::::::::::::::::*/
 	.footer {
 		width: 100%;
@@ -815,7 +822,8 @@
 	 }
 	 .pro-name{font-size:18px;}
 	 .shadow-panel{ border:1px solid #ccc;box-shadow:none;
-		 margin-right:inherit !important;}
+		 margin-right:5px !important;}
+	.shadow-panel
 	 .grid-box .invest-ment > li{
 		 float:none;
 	 }
@@ -1402,6 +1410,49 @@
 	.award-circle span{font-size:18px;}
 	.awrds-cons p{font-size:14px;}
 
+	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Support
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+	/*::::::: Download ::::::::::*/
+	
+	.banner-chose-sel{margin-top:20px;}
+	.inputValue{font-size:18px;}
+	.download-list > li h3{font-size:18px;}
+	.acc-oping h4{min-height:inherit;margin-bottom:10px;}
+	.download-list > li{padding:10px 0;}
+	.acc-qus{padding-left:20px;}
+	
+	/*::::::: faqs ::::::::::*/
+	.faq-list-items > li{width:155px !important;margin-right:10px;min-height:140px;box-shadow:none;border:1px solid #ccc;}
+	.faq-list-items > li:hover,.faq-accordion > li:hover{box-shadow:none;}
+	.faq-list-items > li a{padding:10px;min-height:inherit;}
+	.faq-list-items li p{font-size:14px;}
+	.faq-accordion > li{margin-bottom:10px;}
+	.faq-clrlink{font-size:12px;}
+	
+	/*::::::: contact us ::::::::::*/
+	.cont-add-box{margin-top:20px;}
+	.con-add-box2,.con-add-box3{margin-top:20px;}
+	.ri-add li a{font-size:14px;}
+	.con-add-box1,.con-add-box2,.con-add-box3{padding:0;}
+	.cont-preaddhea li{font-size:18px;}
+	.find-branch li{float:none;margin:0 0 10px 0;}
+	
+	.locateus-sel{width:inherit;}
+	.find-branch li{float:none;margin:0 0 10px 0;}
+	.tabs-slider-list > li > a{width:inherit;}
+	ul.curosal_con-dis > li > a{width:inherit;}
+	.tab-res-list > li{width:100%;border-right:0;float:none;padding:0;margin-bottom:20px;}
+	.loc-main-name,.loc-sub-name{width:110px;}
+	.loc-main-name{font-size:18px;}
+	.query-from{width:100%;}
+	.query-from-le,.query-from-re{width:100%;float:none;}
+	.query-from-re{margin-left:0;}
+	.query-coment-box{height:100px;}
+	.form-fileds li{width:100%;}
+	.le-list li, .re-list li{padding-bottom:20px;}
+	.re-list li:last-child{padding-bottom:20px;}
+	.last-liyears li:last-child{padding-bottom:0;}
 	
 	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 																	RI
