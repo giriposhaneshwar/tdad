@@ -105,22 +105,22 @@
 <jdoc:include type="modules" name="footer_position1" style="none" />
 <?php endif;?>
 </div>
-        <div class="grid_2">
+                <div class="grid_2">
 <?php if ($this->countModules('footer_position2')):?>
 <jdoc:include type="modules" name="footer_position2" style="none" />
 <?php endif;?>
 </div>
-        <div class="grid_2">
+                <div class="grid_2">
 <?php if ($this->countModules('footer_position3')):?>
-<jdoc:include type="modules" name="footer_position2" style="none" />
-<?php endif;?>
-</div>
-        <div class="grid_2">
-<?php if ($this->countModules('footer_position4')):?>
 <jdoc:include type="modules" name="footer_position3" style="none" />
 <?php endif;?>
 </div>
-        <div class="grid_4">
+                <div class="grid_2">
+<?php if ($this->countModules('footer_position4')):?>
+<jdoc:include type="modules" name="footer_position4" style="none" />
+<?php endif;?>
+</div>
+                <div class="grid_4">
 <?php if ($this->countModules('footer_position5')):?>
 <jdoc:include type="modules" name="footer_position5" style="none" />
 <?php endif;?>
@@ -149,34 +149,13 @@
       </div>
     </div>
   </footer>
-  <div class="overlay"></div>
-  <div class="pop-pack"></div>
-  <div class="coatch-overlay">
-    <div class="coatch-container">
-        <div class="coatch-boxes-home">
-            <div class="coatch-homelfttxt">
-                <p class="left-image"><img src="images/home/hom-le.png"></p>
-                 <p class="le-con">Click here to view our wide range of offerings, market trends, research insights and much more...</p>
-            </div>
-            <div class="coatch-homemitxt">
-                <p class="left-image"><img src="images/home/hom-mi.png"></p>
-                 <p class="mi-con">Click here to view our wide range of offerings, market trends, research insights and much more...</p>
-            </div>
-            <div class="coatch-homergttxt">
-                <p class="right-image"><img src="images/home/hom-re.png"></p>
-                    <p class="re-con">Click here to quickly open an account and start trading...</p>
-            </div>
 
-            <div class="home-wel-coartch">
-              <div class="home-weliner">
-                    <h1>Welcome to our brand new BETA version... </h1>
-                    <h3>More good things on their way...</h3>
-                </div>
-            </div>
+<!-- go top -->
+<p id="totop"><a href="javascript:void(0)"><img src="images/arr-top.png"></a></p>
+<div class="overlay"></div>
+<!-- Pop up boxes -->
+<div class="jqpop pop-pack"></div>
 
-        </div>
-    </div>
-</div>
 </div>
 
 <script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/jquery-ui.js" ></script>

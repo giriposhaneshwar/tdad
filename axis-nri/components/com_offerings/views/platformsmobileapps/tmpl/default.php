@@ -1,14 +1,23 @@
 <?php
-$this->_addPath( 'template', JPATH_COMPONENT  . '/views/platformsmobileapps/tmpl' );
-echo $this->loadTemplate('breadcrumb');
+$ps    = $_SERVER['PHP_SELF'];
+$split = explode('index.php', $ps);
+
+if ($_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].$split[0]) {
+	$this->_addPath('template', JPATH_COMPONENT.'/views/platformsmobileapps/tmpl');
+	echo $this->loadTemplate('breadcrumb');
+}
+
 ?>
+<?php //echo $_SERVER['HTTP_REFERER'];?>
+
+
 <!-- Content -->
     <section class="site-start-modules">
         <div class="fullpage fullpage-web">
             <div class="fullpage-box darkbg" id="section0">
                 <div class="container_12">
                     <div class="fullsec-move">
-                        <a href="index.php/offerings/offerings-platforms"><i class="sprite-img plat-back"></i></a>
+                        <a href="<?php echo $_SERVER['HTTP_REFERER'];?>"><i class="sprite-img plat-back"></i></a>
                         <div class="clearfix">
                         <div class="grid_6">
                             <div class="con-mov-sec">

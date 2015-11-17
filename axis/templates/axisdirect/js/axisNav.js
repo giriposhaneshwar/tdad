@@ -1,5 +1,5 @@
 $(function() {
-  var location, ip, locData;
+  /*var location, ip, locData;
   $.getJSON("http://jsonip.com?callback=?", function(data) {
     // console.log("Your ip: ", data);
     ip = data.ip
@@ -10,7 +10,7 @@ $(function() {
       locData = response;
       console.log("Net Location", location, ip, locData);
     }, "jsonp");
-  });
+  });*/
 
 
 

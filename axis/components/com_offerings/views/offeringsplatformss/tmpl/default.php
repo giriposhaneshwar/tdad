@@ -1,5 +1,5 @@
 <?php
-$this->_addPath( 'template', JPATH_COMPONENT  . '/views/oferingsoverv1ews/tmpl' );
+$this->_addPath('template', JPATH_COMPONENT.'/views/oferingsoverv1ews/tmpl');
 echo $this->loadTemplate('breadcrumb');
 ?>
 <section class="site-start-modules">

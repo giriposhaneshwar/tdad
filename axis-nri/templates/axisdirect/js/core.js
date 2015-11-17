@@ -425,20 +425,25 @@ $(document).ready(function() {
     $('.graph-deisgn,.ratle-btns').show();
   });
   //Coatch Screen Overlay
-  setTimeout(function() {
-    $('.invest-drop').removeClass('coath-text');
-    $('.coatch-overlay').fadeOut(300);
-    if ($('.coatch-overlay').css("display", "none")) {
-      $('.overlayhide').addClass("open");
-    } else {
-      $('.overlayhide').removeClass("open");
-    }
-  }, 5000);
-  $(document).click(function() {
-    $('.invest-drop').removeClass('coath-text');
-    $('.coatch-overlay').fadeOut(300);
-    $('body.overlayhide').css("overflow", "auto");
-  });
+     setTimeout(function() {
+        $('.invest-drop,.header-second-web').removeClass('coath-text');
+        $('.coatch-overlay').fadeOut(300);
+        if ($('.coatch-overlay').css("display", "none")) {
+            $('body.overlayhide').addClass("open");
+        } else {
+            $('body.overlayhide').removeClass("open");
+        }
+    }, 5000);
+    $(document).click(function() {
+        $('.invest-drop,.header-second-web').removeClass('coath-text');
+        $('.coatch-overlay').fadeOut(300);
+        $('body.overlayhide').css("overflow", "auto");
+    });
+ 
+    $('.home-tabclose').on('click', function() {
+        $('.coatch-overlay1').hide();
+        $('body.overlayhide').css("overflow", "auto");
+    }); 
   /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
   // markest stockbuz vals chnage like tabs
   $(document).on('click', function(e) {
@@ -609,6 +614,14 @@ $(document).ready(function() {
     $('.invest-1').hide();
     $('.invest-2').show();
   });
+
+  $('.mul-selection').on('click', function() {
+        $(this).toggleClass('active');
+    });
+    $('.faq-clrlink').on('click', function() {
+        $('.mul-selection').removeClass('active');
+    });
+
   // :::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::
   //News-ticker
   var nt_example1 = $('.sensex-list').newsTicker({
@@ -616,8 +629,12 @@ $(document).ready(function() {
     max_rows: 5,
     duration: 4000,
   });
-  // Tabs
-  $('.tabs').tabs();
+  // Tabs -->insights
+    $('.tabs').tabs();
+    
+    // democenter tabs -->support
+    $('.center-tab').tabs();
+
   // Tabs
   $(".tabs-secmenu").tabs({
     active: 1
@@ -632,6 +649,21 @@ $(document).ready(function() {
   $(".acordian-click").accordion({
     heightStyle: "content"
   });
+
+  // downloads accordian -->downloads
+    $(".download-list").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+ 
+    // faqs accrodian --> faqs
+    $(".faq-accordion").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+
   //menu filter
   $('.menu-filter').accordion();
   //Auto Complete -->Markets
@@ -663,20 +695,201 @@ $(document).ready(function() {
       }
     });
   });
-  //BX Slider for card view --> insights
-  if ($(window).width() <= 995) {
-    $('.ca-slider').bxSlider({
-      minSlides: 1,
-      maxSlides: 1,
+  //Auto Complete -->downloads
+ 
+    var spanInput = $('.inputValue');
+    var inputSpan = $('.downloads');
+ 
+    spanInput.show();
+    spanInput.css({
+        'border-bottom': '1px solid #fff'
     });
-  } else {
-    $('.ca-slider').bxSlider({
-      minSlides: 1,
-      maxSlides: 3,
-      slideWidth: 308,
-      slideMargin: 20
+    /*spanInput.text("");*/
+    inputSpan.attr('type', 'hidden');
+ 
+    spanInput.on('click', function() {
+        inputSpan.attr('type', 'text');
+        inputSpan.focus();
+        inputSpan.val("");
+        $(this).hide();
     });
-  }
+ 
+    $(function() {
+        var availableTags = ["Individual Account Opening Form", "Form Filling Instructions for Resident Indian", "NRI 4-in-1 Investment Account Opening Form", "Form Filling Instructions for NRI Form"];
+        $(".downloads").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+ 
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+ 
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+ 
+ 
+    //Auto Complete -->faqs
+ 
+    // faq-1
+    var input1Span = $('.faq-1');
+    input1Span.attr('type', 'hidden');
+    spanInput.on('click', function() {
+        input1Span.attr('type', 'text');
+        input1Span.focus();
+        $(this).removeClass('inp-placeh');
+        input1Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["How to open an account?", "How to register?", "I am not able to activate my account?", "How to register as a guest?"];
+        $(".faq-1").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+ 
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+ 
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+ 
+    //faq-2
+    var spanInput1 = $('.inputValue1');
+    var input2Span = $('.faq-2');
+    input2Span.attr('type', 'hidden');
+    spanInput1.on('click', function() {
+        input2Span.attr('type', 'text');
+        input2Span.focus();
+        $(this).removeClass('inp-placeh');
+        input2Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["Trading account", "NRI account", "Corporate account", "3-in-1 trading account"];
+        $(".faq-2").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+ 
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+ 
+                spanInput1.text(selItem);
+                spanInput1.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+    
+     //Auto Complete -->faqs
+ 
+    // faq-1
+    var input_demoSpan = $('.demo-1');
+    input_demoSpan.attr('type', 'hidden');
+    spanInput.on('click', function() {
+        input_demoSpan.attr('type', 'text');
+        input_demoSpan.focus();
+        $(this).removeClass('inp-placeh');
+        input_demoSpan.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["How to change password", "How to Trade as NRI", "How to activate my account"];
+        $(".demo-1").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+ 
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+ 
+                spanInput.text(selItem);
+                spanInput.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+ 
+    //faq-2
+    var spanInput1 = $('.inputValue1');
+    var input_demo2Span = $('.demo-2');
+    input_demo2Span.attr('type', 'hidden');
+    spanInput1.on('click', function() {
+        input_demo2Span.attr('type', 'text');
+        input_demo2Span.focus();
+        $(this).removeClass('inp-placeh');
+        input_demo2Span.val("");
+        $(this).hide();
+    });
+    $(function() {
+        var availableTags = ["Setting up secure password", "Setting up old password", "Settings"];
+        $(".demo-2").autocomplete({
+            source: availableTags,
+            open: function(event, ui) {
+ 
+                $(this).autocomplete("widget").css({
+                    "width": 218
+                });
+            },
+            select: function(event, ui) {
+                var selItem = ui.item.value;
+                var itemLen = selItem.length;
+                var mainSize = 0;
+ 
+                spanInput1.text(selItem);
+                spanInput1.show();
+                $(this).attr('type', 'hidden');
+                $('span.ui-helper-hidden-accessible').text("");
+            }
+        });
+    });
+    
+    //BX Slider for card view --> insights
+ 
+   
+        $('.ca-slider').bxSlider({
+            minSlides: 1,
+            maxSlides: 3,
+            slideWidth: 308,
+            slideMargin: 20,
+            moveSlides: 1,
+            infiniteLoop: false,
+        });
+ 
+   
+ 
   //BX Slider  --> news markets
   $('.snap-news-slider').bxSlider({
     auto: true,
@@ -697,6 +910,7 @@ $(document).ready(function() {
     minSlides: 1,
     maxSlides: 3,
     moveSlides: 1,
+    infiniteLoop: false,
   });
 
 
@@ -706,6 +920,7 @@ $(document).ready(function() {
     minSlides: 1,
     maxSlides: 3,
     moveSlides: 1,
+    infiniteLoop: false,
   });
 
 
@@ -727,6 +942,23 @@ $(document).ready(function() {
     moveSlides: 1,
     infiniteLoop: false
   });
+  // faq's slider tab
+    $('.faq-slider').bxSlider({
+        slideWidth: 225,
+        minSlides: 1,
+        maxSlides: 3,
+        moveSlides: 1,
+        infiniteLoop: false,
+    });
+    
+     // contactus slider tab
+    $('.contact-curosal').bxSlider({
+        minSlides: 1,
+        maxSlides: 3,
+        moveSlides: 1,
+        infiniteLoop: false,
+    });
+    
   //price slider --> Offerinigs
   var price_slider_setting = {
     moveSlides: 1,
@@ -1110,6 +1342,6 @@ $('.customers-testmonials ul').find('li').hover(function() {
   // out
   var $this = $(this);
   var $show = $this.find('.cust-tool');
-  $show.stop().fadeOut();
+  $show.stop().hide();
 
 });

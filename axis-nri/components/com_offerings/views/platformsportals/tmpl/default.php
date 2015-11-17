@@ -1,14 +1,21 @@
 <?php
-$this->_addPath( 'template', JPATH_COMPONENT  . '/views/platformsportals/tmpl' );
-echo $this->loadTemplate('breadcrumb');
+$ps    = $_SERVER['PHP_SELF'];
+$split = explode('index.php', $ps);
+
+if ($_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].$split[0]) {
+	$this->_addPath('template', JPATH_COMPONENT.'/views/platformsportals/tmpl');
+	echo $this->loadTemplate('breadcrumb');
+}
+
 ?>
+<?php //echo $_SERVER['HTTP_REFERER'];?>
 <!-- Content -->
     <section class="site-start-modules">
         <div class="fullpage fullpage-web">
             <div class="fullpage-box" id="section0">
                 <div class="container_12">
                     <div class="fullsec-move clearfix">
-                        <a href="index.php/offerings/offerings-platforms"><i class="sprite-img plat-back"></i></a>
+                        <a href="<?php echo $_SERVER['HTTP_REFERER'];?>"><i class="sprite-img plat-back"></i></a>
                         <div class="grid_12 product-center">
                             <h1 class="banner-title">WORKS ON EVERYTHING</h1>
                             <p class="product-paragraph par-cen-pading">We are getting increasingly mobile and increasingly comfortable with different devices too. You don’t have to say glued to just one device as our web portal is a completely responsive one that works on all your devices- smartphone, tablet or desktop.</p>
@@ -42,7 +49,7 @@ echo $this->loadTemplate('breadcrumb');
                         <div class="grid_5">
                             <div class="con-mov-sec-1">
                                 <h1 class="banner-title">Live Markets.<br>Wherever</h1>
-                                <p class="product-paragraph palt-right-pading">Don’t waste your time or get lost in realms of information and data you do not require. Using customized & easy filters and search bar built across the portal, find exactly what you are looking for. </p>
+                                <p class="product-paragraph palt-right-pading">Never lose track of your portfolio and markets. With out new top scroll bar follow you across pages so that you always stay connected with the live indices, latest news and your portfolio movements. What’s more, you get a complete market and portfolio snapshot on just one tap.</p>
                             </div>
                         </div>
                         <div class="grid_7">
@@ -60,7 +67,7 @@ echo $this->loadTemplate('breadcrumb');
                         <div class="grid_12 product-center">
                             <h1 class="banner-title">PLAY YOUR CARDS RIGHT</h1>
                             <p class="product-paragraph par-cen-pading">Say bye to old data representation style in complex tables. Say hello to our simplified card view that highlights just the right amount of information. It’s neat, clutter free and smart; designed to keep your investment journey simple.</p>
-                           
+
                                 <p class="plat-images-tgap"><img src="images/products/web-4-05.png"></p>
                         </div>
                     </div>
@@ -112,8 +119,8 @@ echo $this->loadTemplate('breadcrumb');
                         <div class="grid_6">
                             <div class="con-mov-sec">
                                 <h1 class="banner-title">Do things you love, we notify</h1>
-                                <p class="product-paragraph palt-right-pading">This intuitive platform is smartly designed to give you customized alerts and notifications. 
-                                    So now don’t worry about missing an important investment opportunity. Your set notifications will call you out, in time for making the most of the right investment opportunity. 
+                                <p class="product-paragraph palt-right-pading">This intuitive platform is smartly designed to give you customized alerts and notifications.
+                                    So now don’t worry about missing an important investment opportunity. Your set notifications will call you out, in time for making the most of the right investment opportunity.
                                 </p>
                             </div>
                         </div>
@@ -144,6 +151,7 @@ echo $this->loadTemplate('breadcrumb');
                 <div class="container_12">
                     <div class="clearfix">
                         <div class="grid_12">
+                            <a href="<?php echo $_SERVER['HTTP_REFERER'];?>"><i class="sprite-img plat-back"></i></a>
                             <div class="fullpage-images">
                                 <img src="images/products/web-1-01-small.png">
                             </div>
@@ -179,7 +187,7 @@ echo $this->loadTemplate('breadcrumb');
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">Live Markets.<br>Wherever</h1>
-                                <p class="product-paragraph">Don’t waste your time or get lost in realms of information and data you do not require. Using customized & easy filters and search bar built across the portal, find exactly what you are looking for. </p>
+                                <p class="product-paragraph">Never lose track of your portfolio and markets. With out new top scroll bar follow you across pages so that you always stay connected with the live indices, latest news and your portfolio movements. What’s more, you get a complete market and portfolio snapshot on just one tap.</p>
                             </div>
                         </div>
                     </div>
@@ -236,8 +244,8 @@ echo $this->loadTemplate('breadcrumb');
                             </div>
                             <div class="fullpage-ban-con">
                                 <h1 class="banner-title">Do things you love, we notify</h1>
-                                <p class="product-paragraph">This intuitive platform is smartly designed to give you customized alerts and notifications. 
-                                    So now don’t worry about missing an important investment opportunity. Your set notifications will call you out, in time for making the most of the right investment opportunity. 
+                                <p class="product-paragraph">This intuitive platform is smartly designed to give you customized alerts and notifications.
+                                    So now don’t worry about missing an important investment opportunity. Your set notifications will call you out, in time for making the most of the right investment opportunity.
                                 </p>
                             </div>
                         </div>

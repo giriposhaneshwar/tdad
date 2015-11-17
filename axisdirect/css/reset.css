@@ -433,20 +433,14 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
     z-index: 50;
     top: 0;
     left: 0;
-	 background: rgba(0, 0, 0, 0.75);
+	 background: rgba(0, 0, 0, 0.85);
 }
-.coatch-overlay1 {
-    width: 100%;
-    position: fixed;
-    height: 100%;
-    z-index: 50;
-    top: 0;
-    left: 0;
-	 background: rgba(0, 0, 0, 0.75);
+.coatch-overlay-home{
+	top:95px;
 }
 
 .coatch-boxes {
-   margin-top: 260px;
+   margin-top: 180px;
 }
 .coatch-container {
     position: relative;
@@ -483,9 +477,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 	float:left;
 	margin-top:60px;
 }
-.coatch-overlay {
-    background: rgba(0, 0, 0, 0.75);
-}
+
 .coatch-lfttxt,
 .coatch-rgttxt,
 .coatch-middletxt {
