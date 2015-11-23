@@ -1416,18 +1416,22 @@
 	/*::::::: Download ::::::::::*/
 	
 	.banner-chose-sel{margin-top:20px;}
-	.inputValue{font-size:18px;}
+	.banner-chose-sel .text-enterarea{display:block;margin:10px 0;}
+	.inputValue,.inputValue1{font-size:18px;}
 	.download-list > li h3{font-size:18px;}
 	.acc-oping h4{min-height:inherit;margin-bottom:10px;}
-	.download-list > li{padding:10px 0;}
+	.download-list > li h3{padding:10px 0;}
 	.acc-qus{padding-left:20px;}
 	
 	/*::::::: faqs ::::::::::*/
-	.faq-list-items > li{width:155px !important;margin-right:10px;min-height:140px;box-shadow:none;border:1px solid #ccc;}
-	.faq-list-items > li:hover,.faq-accordion > li:hover{box-shadow:none;}
+        .faq-down-1{left: 0;}
+	.faq-list-items > li{width:155px !important;margin-right:10px;min-height:140px;box-shadow:none;}
+	.faq-list-items > li a{border:1px solid #ccc;}
+	.faq-list-items > li a.active-tab{border:1px solid #1190E0;}
+	.faq-list-items > li:focus,.faq-list-items > li:hover{box-shadow:none;}
 	.faq-list-items > li a{padding:10px;min-height:inherit;}
 	.faq-list-items li p{font-size:14px;}
-	.faq-accordion > li{margin-bottom:10px;}
+	.faq-accordion > li{margin-bottom:10px;/*box-shadow:none;border:1px solid #ccc;*/}
 	.faq-clrlink{font-size:12px;}
 	
 	/*::::::: contact us ::::::::::*/

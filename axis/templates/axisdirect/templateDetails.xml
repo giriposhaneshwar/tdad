@@ -17,6 +17,9 @@
 	</files>
 	<positions>
 		<position>login_support</position>
+		<position>axis_contact_us</position>
+		<position>axis_faqs</position>
+		<position>axis_downloads</position>
 		<position>market_snapshot_top1</position>
 		<position>market_snapshot_top2</position>
 		<position>market_snapshot_top3</position>

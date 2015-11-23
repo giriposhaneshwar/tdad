@@ -169,6 +169,8 @@
 <script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/wow.js" ></script>
 <script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/rate-it.js" ></script>
 <script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/jquery.fullPage.js" ></script>
+<script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/jquery.dotdotdot.js" ></script>
+<script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/fn.js" ></script>
 <?php /*?><script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery-migrate-1.2.1.js" ></script>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.contentcarousel.js" ></script> <?php */?>
 <script type="text/javascript" src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/js/core.js" ></script>
