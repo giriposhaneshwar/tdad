@@ -287,9 +287,8 @@ $(document).ready(function() {
         $('.invest-item-time').html($(this).closest('li').find('.invest-time').text());
         $('.rea-mod-time').hide();
     });
-
-
-    //tabs -Content Change --markets
+	
+	//tabs -Content Change --markets
     $('.mar-time-drop li a').on('click', function() {
         var time_drop_text = $(this).text();
         $(this).parents('.invest-drop-txt').find('.invest-down .invest-item-time').text(time_drop_text);
@@ -706,11 +705,48 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     });
 	$('.faq-clrlink').on('click', function() {
-		$('.mul-selection').removeClass('active');
+		$(this).closest('.faq-fil-sel').find('.mul-selection').removeClass('active');
 	});
 	
+	
+	/* :::::::::::::::::::::::::::::::::: support :::::::::::::::::::::::::::::::::::::::*/
+	
+	/* faq's*/
+	
+	$('.downlist-drop li a').on('click', function() {
+		var downlist_name = $(this).attr('data-val');
+        $('#' + downlist_name).show();		
+        $(this).closest('.invest-drop-txt').find('.invest-item-time').html($(this).text());
+        $('.rea-mod-time').hide();
+    });
+	$('.faq-search-btn').on('click', function(e) {	
+	console.log('l');
+	 	e.preventDefault();
+		scrollTopEle(target, 250);
+	});
 
-
+    /* :::::::::::::::::::::::::::::::::: Learn :::::::::::::::::::::::::::::::::::::::*/
+    $('.quiz-questions li').on('click', function() {
+            $('.que-area').removeClass('que-active');
+            $(this).closest('.quiz-questions li').find('.que-area').toggleClass('que-active');
+    });
+	 $('.lern-exp-courses-btn').on('click', function() {
+		 	$('.lern-exp-demos').slideUp();
+		 	$('.lern-exp-courses').slideToggle();
+			$('li').removeClass('active');
+		 	$(this).closest('li').addClass('active');
+	 });
+	 $('.lern-exp-demos-btn').on('click', function() {
+		 	$('.lern-exp-courses').slideUp();
+		 	$('.lern-exp-demos').slideToggle();
+			$('li').removeClass('active');
+		 	$(this).closest('li').addClass('active');
+	 });
+	 $('.learn-courses-expansion').on('click', function() {
+		 	$('.course-selbox').slideUp();
+	 });
+	
+	
 
     /*:::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::*/
 
@@ -1054,10 +1090,20 @@ $(document).ready(function() {
     $('.faq-slider').bxSlider({
         slideWidth: 225,
         minSlides: 1,
+        maxSlides: 4,
+        moveSlides: 1,
+        infiniteLoop: false,
+    });
+	
+	// demos's slider tab -->learn
+	$('.demo-slider').bxSlider({
+        slideWidth: 308,
+        minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
         infiniteLoop: false,
     });
+	
 	
 	 // contactus slider tab
 	$('.contact-curosal').bxSlider({
@@ -1255,7 +1301,6 @@ $(document).ready(function() {
         $(this).attr('title', tooltipvalues[value - 1]);
     });
 
-
     // timer -- markets
     $('.defaultCountdown').countdown({
         until: new Date(2015, 10 - 1, 30)
@@ -1361,23 +1406,32 @@ $(document).ready(function() {
     }
 
     setTimeout(progress, 2000);
+	
+	
+	// result progress bar -- >learn
+	$( ".result-progress" ).progressbar({
+      value: 37
+    });
 
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
-        $('.le-products-menu').singlePageNav({
+        $('.le-products-menu,.leran-nav-section').singlePageNav({
             offset: 86,
             filter: ':not(.external)',
             speed: 750,
             currentClass: 'active',
         });
     } else {
-        $('.le-products-menu').singlePageNav({
+        $('.le-products-menu,.leran-nav-section').singlePageNav({
             offset: 34,
             filter: ':not(.external)',
             speed: 750,
             currentClass: 'active',
         });
     }
+	
+	//dots --> learn
+	$('.elipsis-dots').dotdotdot();
 
     /* resize function */
 

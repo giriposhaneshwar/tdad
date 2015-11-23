@@ -391,23 +391,21 @@ ul.ui-autocomplete.ui-menu .ui-menu-item:hover{background-color:#fff;}
 
 /************************************ progress bar *******************************************/
 
-.progressbar.ui-progressbar {
+.progressbar.ui-progressbar,.result-progress.ui-progressbar {
     background-color: #f0f0f0;
-}
-.progressbar.ui-progressbar {
     position: relative;
-    border-radius: 30px;
     height: 16px;
-    margin: 5px 0;
 }
-.progressbar.ui-progressbar .ui-progressbar-value {
+.progressbar.ui-progressbar .ui-progressbar-value,.result-progress.ui-progressbar .ui-progressbar-value {
     height: 100%;
     margin: -1px;
-    border-radius: 30px;
     display: block;
     background: url(../images/progress-bg.png) repeat left top;
 }
-.progressbar .progress-label {
+.progressbar.ui-progressbar .ui-progressbar-value{
+	border-radius:30px;
+}
+.progressbar .progress-label,.result-progress .progress-label {
     position: absolute;
     left: 50%;
     top: 4px;
