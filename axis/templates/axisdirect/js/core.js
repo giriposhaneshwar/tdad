@@ -733,11 +733,9 @@ $(document).ready(function() {
         $(this).closest('.invest-drop-txt').find('.invest-item-time').html($(this).text());
         $('.rea-mod-time').hide();
     });
-	$('.faq-search-btn').on('click', function(e) {	
-	console.log('l');
-	 	e.preventDefault();
-		scrollTopEle(target, 250);
-	});
+	$('.faq-search-btn').on('click', function() {  
+       scrollTopEle($('.faq-list-items'), 100);
+    });
 
     /* :::::::::::::::::::::::::::::::::: Learn :::::::::::::::::::::::::::::::::::::::*/
     $('.quiz-questions li').on('click', function() {

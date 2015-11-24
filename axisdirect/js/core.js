@@ -719,11 +719,9 @@ $(document).ready(function() {
         $(this).closest('.invest-drop-txt').find('.invest-item-time').html($(this).text());
         $('.rea-mod-time').hide();
     });
-	$('.faq-search-btn').on('click', function(e) {	
-	console.log('l');
-	 	e.preventDefault();
-		scrollTopEle(target, 250);
-	});
+	$('.faq-search-btn').on('click', function() {  
+       scrollTopEle($('.faq-list-items'), 100);
+    });
 
     /* :::::::::::::::::::::::::::::::::: Learn :::::::::::::::::::::::::::::::::::::::*/
     $('.quiz-questions li').on('click', function() {
@@ -1457,6 +1455,8 @@ function navigation() {
 
             event.stopImmediatePropagation();
         });
+        /*
+*/
         $('.second-level-menu > li').hover(function() {
             $(this).closest('li').siblings().removeClass('active');
             $(this).closest('li').addClass('active');

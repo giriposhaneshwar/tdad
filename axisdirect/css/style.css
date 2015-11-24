@@ -386,6 +386,7 @@ body{font-family: Arial,Helvetica,sans-serif;font-size:14px;color:#666666;backgr
 	font-size:14px;
 	font-family: 'futura_bk_btbook';
 	text-transform:capitalize;
+	/*position: relative;*/
 }
 .first-level-menu  li{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -393,6 +394,7 @@ body{font-family: Arial,Helvetica,sans-serif;font-size:14px;color:#666666;backgr
 .first-level-menu > li{
 	display:inline-block;
 	padding:0 8px;
+	vertical-align: top;
 }
 .first-level-menu > li.mob-nav-dis{
 	display:none;
@@ -465,96 +467,83 @@ body{font-family: Arial,Helvetica,sans-serif;font-size:14px;color:#666666;backgr
 	position:absolute;
 	width:100%;
 	left:0;
-	height:144px;
+	/*height:144px;*/
 	background-color:#fff;
 	display:none;
 	-webkit-box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:0 2px 2px 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
-.second-level-menu{
-	text-align:center;
-	position:relative;
-	font-size:16px;
-	border-bottom:1px dotted #c5c5c5;
-	position:absolute;
-	z-index:2;width:100%;
+ul.second-level-menu{
+	display: block;
+	background-color: #fff;
+	color: #000;
 }
-.second-level-menu > li,.thrid-level-menu li{
-	display:inline-block;
+.first-level-menu ul.second-level-menu > li{
+display: inline-block;
+vertical-align: top;
+padding: 8px 15px;
+text-align: center;
 }
-.second-level-menu > li > a{
-	color:#838383;
-	display:block;
-	padding:25px 0px;
-	margin:0 10px;
-	position:relative;
-}
-.second-level-menu > li.active > a,.second-level-menu > li > a:hover{
-	color:#000;
+.first-level-menu ul.second-level-menu > li ul{
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #000;
 }
 
-.second-level-menu-name{
-	display:inline-block;
-	vertical-align: middle;
-    width: 110px;
-	text-align:left;
+
+
+.first-level-menu ul.second-level-menu > li ul {
+	position: relative;
+	/*background: #88b7d5;*/
+	border-top: 1px solid #ABABAB;
 }
-/*.first-level-menu > li.active .second-level{
-	display:block;
-}
-*/
-.thrid-level-menu{
-	position:absolute;
-	display:none;
-	font-size:14px;
-	width:100%;
-	left:0;
-}
-.thrid-level-menu > li > a{
-	color:#838383;
-	display:block;
-	padding:20px 10px;
-}
-.second-level-menu > li.active .thrid-level-menu{
-	display:block;
-}
-.thrid-level-menu > li > a:hover, .thrid-level-menu > li.active > a{color:#000;}
-.thrid-level-menu > li > a{
-	color:#838383;
-	display:block;
-	padding:20px 10px;
-	position:relative;
-}
-.second-level-menu > li.active .thrid-level-menu{
-	display:block;
-}
-.thrid-level-menu > li > a:hover, .thrid-level-menu > li:active > a{color:#000;}
-/*.thrid-level-menu > li > a:hover, .thrid-level-menu > li:active > a{color:#000;}*/
-.thrid-level-menu > li > a:after, .thrid-level-menu > li > a:before {
- top: 0;
- left: 50%;
- border: solid transparent;
- content: " ";
- height: 0;
- width: 0;
- position: absolute;
- pointer-events: none;
+.first-level-menu ul.second-level-menu > li ul:after, 
+.first-level-menu ul.second-level-menu > li ul:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
 
-.thrid-level-menu > li.active > a:after {
- border-color: rgba(255, 255, 255, 0);
- border-top-color: #fff;
- border-width: 8px;
- margin-left: -8px;
+.first-level-menu ul.second-level-menu > li ul:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #FFFFFF;
+	border-width: 8px;
+	margin-left: -8px;
 }
-.thrid-level-menu > li.active > a:before {
- border-color: rgba(196, 196, 196, 0);
- border-top-color: #c4c4c4;
- border-width: 9px;
- margin-left: -9px;
+.first-level-menu ul.second-level-menu > li ul:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #797979;
+	border-width: 9px;
+	margin-left: -9px;
 }
 
+
+
+
+
+
+
+
+
+
+
+.first-level-menu ul.second-level-menu >  li ul.thrid-level-menu li{
+display: block;
+text-align: center;
+}
+.first-level-menu ul.second-level-menu >  li ul.thrid-level-menu li a{
+display: block;
+text-align: center;
+padding: 5px 20px;
+color: #000;
+}
 /* breadcrumb section */
 
 .breadcrumb-sec {
