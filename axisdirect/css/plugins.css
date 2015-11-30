@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 	cursor: pointer;
 	display: block;
-	height: 36px;
+	height: 30px;
 	user-select: none;
 	-webkit-user-select: none;
 }
@@ -139,14 +139,18 @@
 	width: 1px;
 }
 .select2-container--default .select2-selection--single {
-	border: 1px solid #dddddd;
-	border-radius:0;
+	border: 1px solid rgba(0,0,0,0.1);
 	overflow:hidden;
+	 border-radius:2px;
+-webkit-border-radius:2px;
+   -moz-border-radius:2px;
+   -o-border-radius:2px;
+   -ms-border-radius:2px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
 	background-color:#fff;
-	color: #a6a8ab;
-	line-height: 36px;
+	color: #666666;
+	line-height: 30px;
 	
 }
 .select2-container--default .select2-selection--single .select2-selection__clear {
@@ -158,7 +162,7 @@
 	color: #999;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
-	height: 36px;
+	height: 30px;
 	position: absolute;
 	top: 1px;
 	right: 1px;
@@ -169,7 +173,7 @@
 	width:10px;
 	height:6px;
 	display: inline-block;
-    margin-top: 14px;
+    margin-top: 11px;
 }
 .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
 	float: left;
@@ -190,7 +194,7 @@
 	width:10px;
 	height:6px;
 	display: inline-block;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 .select2-container--default .select2-selection--multiple {
 	background-color: white;
@@ -527,15 +531,15 @@
 /****************************************** Custom Radio/Check Button Styles *******************************************/
 .checkbox,.radio{margin:0;padding-left:25px;position:relative;-webkit-transition:.25s;-moz-transition:.25s;-o-transition:.25s;transition:.25s;cursor:pointer;line-height:18px;}
 .checkbox input,.radio input{outline:none!important;opacity:0;display:none;filter:alpha(opacity=0);zoom:1;padding:0 0 0 12px;}
-.checkbox.checked .icon,.radio.checked .icon{background-position:0 -20px;opacity:1;display:block\9;}
-.radio.checked .icon{background-position:0 -20px}
+.checkbox.checked .icon,.radio.checked .icon{background-position:0 -18px;opacity:1;display:block\9;}
+.radio.checked .icon{background-position:0 -18px}
 .checkbox.checked .icon-to-fade,.radio.checked .icon-to-fade{opacity:0;display:none\9;}
 .checkbox.disabled,.radio.disabled{cursor:default;}
 .checkbox.disabled .icon,.radio.disabled .icon{opacity:0;display:none\9;}
 .checkbox.disabled .icon-to-fade,.radio.disabled .icon-to-fade{background-position:0 -40px;opacity:1;display:block\9;}
 .checkbox.disabled.checked .icon,.radio.disabled.checked .icon{background-position:0 -60px;opacity:1;display:block\9;}
 .checkbox.disabled.checked .icon-to-fade,.radio.disabled.checked .icon-to-fade{opacity:0;display:none\9}
-.checkbox .icon,.checkbox .icon-to-fade,.radio .icon,.radio .icon-to-fade{background:url(../images/checkbox.png) no-repeat;display:block;height:20px;width:20px;left:0;opacity:1;position:absolute;top:0px;-webkit-transition:opacity .1s linear;-moz-transition:opacity .1s linear;-o-transition:opacity .1s linear;transition:opacity .1s linear;-webkit-backface-visibility:hidden;vertical-align:middle;}
+.checkbox .icon,.checkbox .icon-to-fade,.radio .icon,.radio .icon-to-fade{background:url(../images/checkbox.png) no-repeat;display:block;height:18px;width:18px;left:0;opacity:1;position:absolute;top:0px;-webkit-transition:opacity .1s linear;-moz-transition:opacity .1s linear;-o-transition:opacity .1s linear;transition:opacity .1s linear;-webkit-backface-visibility:hidden;vertical-align:middle;}
 .checkbox .icon,.radio .icon{opacity:0;z-index:2;display:none\9;}
 
 .radio .icon,.radio .icon-to-fade{background-image:url(../images/radio.png);}
@@ -970,7 +974,7 @@ table {
 }
 
 .current-day {
-    color: #2d313a;
+    font-weight:600;	
 }
 
 .event {

@@ -1,0 +1,46 @@
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Offerings
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*overview*/
+.nri-main-banner{
+	background: url(../images/products/nri/nri-main-banner.jpg) center center;
+}
+
+/* products*/
+.ri-products-banner{
+	background: url(../images/products/nri/nri-products.jpg) center center;
+}
+.nri-platform-banner{
+	background: url(../images/products/nri/nri-platforms.jpg) center center;
+}
+.nri-pricing-banner,.nri-vas-banner{
+	background: url(../images/products/nri/nri-pricing.jpg) center center;
+}
+.nri-over-pro-1{
+	background: url(../images/products/nri/nri-over-pro-1.jpg) center center;
+}
+.nri-over-pro-2{
+	background: url(../images/products/nri/nri-over-pro-2.jpg) center center;
+}
+.nri-over-pro-3,.nri-over-pro-4{
+	background: url(../images/products/nri/nri-over-pro-3.jpg) center center;
+}   
+.nri-over-pro-5{
+	background: url(../images/products/overview-5.jpg) center center;
+}
+
+/* products singlepage menu */
+.nri-le-products-menu li{width:16.6%;}
+/* equity expansion*/
+.nri-exp-thr-el li{width:50%;}
+
+/* derivatives expansion*/
+.nri-fea-headings:after{border-bottom: 0px}
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Homepage
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+.hm-banners-5{
+	background:url(../images/products/nri/nri-main-banner.jpg) center center;
+}

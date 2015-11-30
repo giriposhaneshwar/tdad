@@ -35,7 +35,7 @@ a{
 small{
 	font-size:12px;
 }
-
+.bold{font-weight:600;}
 
 /* remember to define focus styles! */
 :focus {
@@ -155,6 +155,7 @@ a{
 .ml10{
 	margin-left:10px;
 }
+.mr5{margin-right:5px; }
 
 .pd10{
 	padding:10px;
@@ -212,12 +213,20 @@ a{
 /* Input fiedlds */
 input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{border:1px solid #DBD6D6;}
 .inp-filed{
- border:1px solid #dddddd;
+ border:1px solid rgba(0,0,0,0.1);
  width: 100%;
- height: 36px;
+ height: 30px;
  padding: 0 24px 0 10px;
+ border-radius:2px;
+-webkit-border-radius:2px;
+   -moz-border-radius:2px;
+   -o-border-radius:2px;
+   -ms-border-radius:2px;
+   font-family: Arial,Helvetica,sans-serif;
 }
-.form-fileds li{margin-bottom:20px;}
+.error{border:1px solid red;}
+input.error{border:1px solid red;}
+.form-fileds > li{margin-bottom:20px;}
 .mandatory-field{position:relative;}
 .form-fileds label{margin-bottom:5px;display:block;color: #808184;}
 .mandatory-field{position:relative;}
@@ -232,21 +241,17 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 }
 
 /* input placeholder colors*/
-.inp-filed::-webkit-input-placeholder,.query-coment-box::-webkit-input-placeholder{
-   color:#ccc;
+
+.inp-filed::-webkit-input-placeholder,.query-coment-box::-webkit-input-placeholder,.search-page-inp::-webkit-input-placeholder  {
+    color: #ccc;
+}
+.inp-filed::-moz-placeholder,.query-coment-box::-moz-placeholder,.search-page-inp::-moz-placeholder {
+    color: #ccc;
+}
+.inp-filed:-ms-input-placeholder,.query-coment-box:-ms-input-placeholder,.search-page-inp:-ms-input-placeholder {
+    color: #ccc;
 }
 
-.inp-filed::-moz-placeholder,.query-coment-box::-moz-placeholder { / Firefox 18- /
-   color:#ccc;
-}
-
-.inp-filed::-moz-placeholder ,.query-coment-box::-moz-placeholder {  / Firefox 19+ /
-   color:#ccc;  
-}
-
-.inp-filed::-ms-input-placeholder,.query-coment-box::-ms-input-placeholder  {  
-   color:#ccc; 
-}
 
 /*** Button Styles ***/
 /* Buttons */
@@ -265,11 +270,11 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 	color:#fff;
 }
 .primary-btn{
-	background-color:#1190e0;
-	border-bottom:2px solid #006db2;
+	background-color:#296098;
+	border-bottom:2px solid #083866;
 }
 .primary-btn:hover{
-	background-color:#006db2;
+	background-color:#083866;
 }
 .secondary-btn{
 	background-color:#303030;
@@ -419,6 +424,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
 }
 .wish-suces{
 	display:none;
+	margin:10px 0;
 }
 /* ::::::::::::::::::::::::::::::::: Layout Styles ::::::::::::::::::::::::::::::::*/
 
@@ -692,7 +698,7 @@ ul.curosal_con-dis > li > a.active-tab .market-pri-inc.dec{background-position: 
     -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     -o-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.2s ease-in-out;
-	margin-right:20px;float:left;
+	margin-right:19px;float:left;
 }
 .slide-list-items-4 > li:hover{	
 	box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23);
@@ -703,4 +709,11 @@ ul.curosal_con-dis > li > a.active-tab .market-pri-inc.dec{background-position: 
 }
 .slide-list-items-4.items-3 > li{
 	width:308px !important;
+}
+.no-slide-lists-4{
+	margin-left:-25px;
+}
+/* no slide  items with shadow */
+.no-slide-lists-4 > li{
+	margin: 0 0 20px 25px;
 }

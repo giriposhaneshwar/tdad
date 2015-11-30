@@ -64,7 +64,7 @@
 .c-radio {
 	position: relative;
 	font-size: 14px;
-	line-height: 22px;
+	line-height: 16px;
 	margin: 0 20px;
 	font-family: 'futura_bk_btbook';
 }
@@ -121,7 +121,7 @@
 	left: 0;
 	z-index: -1;
 	width: 100%;
-	height: 35px;
+	height: 30px;
 	border-radius: 0;
 }
 .rd-btn .c-radio input[type="radio"] + span {
@@ -134,7 +134,7 @@
 }
 .rd-btn .c-radio input[type="radio"] + span:hover::before, .c-radio input[type="radio"]:checked + span::before {
 	width: 100%;
-	height: 35px;
+	height: 30px;
 }
 .rd-btn .c-radio input[type="radio"]:checked + span::after {
 	display: none;
@@ -313,7 +313,7 @@ ul.ui-autocomplete.ui-menu .ui-menu-item:hover{background-color:#fff;}
 .events-calender .calendar h2{padding-left:0px;margin-top:20px;}
 
 /* ::::::::::::::::::::::::::::::::: Calendar Styles ::::::::::::::::::::::::::::::::: */
-.ui-datepicker{cursor:pointer;font-size:13px;background:#f5f3f3;padding:10px;width:250px;border:1px solid #ccc;display:none;z-index:9 !important;}
+.ui-datepicker{cursor:pointer;font-size:13px;background:#f5f3f3;padding:10px;width:250px;border:1px solid #ccc;display:none;z-index:12 !important;}
 .ui-datepicker .ui-datepicker-title{margin:0 10px 0 10px;text-align:left;line-height:22px;color:#666766;text-align:center;}
 .ui-icon{text-indent:-99999px;display:block;}
 .ui-datepicker .ui-datepicker-header{padding:2px;position:relative;background:#fbfbfb;margin-bottom:4px;}

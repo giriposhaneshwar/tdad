@@ -76,7 +76,18 @@
                 <p class="res-moremenu"><i class="sprite-img more-menu"></i></p>
             </div>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+<?php 
+//jimport('joomla.application.component.helper'); // Import component helper library
+$params = JRequest::get(); // Get parameter helper (corrected 'JRquest' spelling)
+// $out = $params->get('parameter_name'); // Get an individual parameter
 
+if($params["option"]!="com_learn" && $params["view"]!="overv1ews")
+{
+//print_r($_SERVER);
+
+//if()
+?>
     <div class="header-second-web ">
       <div class="logosection"> <a href="<?php echo $this->baseurl;?>/" class="logo"><img src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/images/logo.png" class="logo-web"></a></div>
       <div class="menu-section tophead">
@@ -90,6 +101,7 @@
 <?php endif;?>
 </div>
     </div>
+    <?php }?>
   </header>
 <!--  <section class="site-start">
     <div class="container_12">-->
@@ -97,6 +109,11 @@
    <!-- </div>
   </section>-->
   <!-- footer -->
+  <?php
+
+if($params["option"]!="com_learn" && strstr($params["view"], "learn-course"))
+{
+  ?>
   <footer class="footer">
     <div class="container_12">
       <div class="row clearfix">
@@ -149,7 +166,7 @@
       </div>
     </div>
   </footer>
-
+<?php } ?>
 <!-- go top -->
 <p id="totop"><a href="javascript:void(0)"><img src="images/arr-top.png"></a></p>
 <div class="overlay"></div>
