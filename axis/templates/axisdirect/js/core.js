@@ -196,6 +196,7 @@ $(document).ready(function() {
 
     $('.like-box-btn').on('click', function() {
         $(this).find('.like-small').addClass('active');
+        $(this).find('.like-small-white').addClass('active');
         $('.like-box').show().delay(2000).fadeOut(800);
     });
     $('.like-box-btn1').on('click', function() {
@@ -281,6 +282,10 @@ $(document).ready(function() {
 
 
     /* :::::::::::::::::::::::::::::::::: Research :::::::::::::::::::::::::::::::::::::::*/
+    
+    $('.research-modify').on('click', function() {
+        scrollTopEle($('#research-result-items'), 100);
+    });
 
     // reasearch time and term 
     $('.invest-down').on('click', function() {
@@ -374,25 +379,22 @@ $(document).ready(function() {
     //wish list inside page
     $('.panel-heading').on('click', function() {
         if ($(this).closest('.panel-heading').find('.panel-compare-action input[type="checkbox"]').is(':checked')) {
-            $('.sel-msg-fly-in').show();
-            $(this).parentsUntil('stock-details').find('.wishlist-in').addClass('wishwork');
-        } else {
-            $('.sel-msg-fly-in').hide();
-        }
+            $(this).closest('.stock-sec,.box-start').find('.sel-msg-fly-in').hide();
+            $(this).closest('.stock-sec,.box-start').find('.schesme-wish-in').show();
+ 
+ 
+        } 
     });
     $('.wishlist').on('click', function() {
-        $('.select-basic-compare').show().delay(2000).fadeOut(800);
+        $(this).closest('.stock-sec,.box-start').find('.panel-compare-action').show();
+         $(this).closest('.stock-sec,.box-start').find('.sel-msg-fly-in').show(); 
     });
-
-    $('.cart-list').on('click', '.wishwork', function() {
-        $('.sel-msg-fly-in').hide();
-        $('.schesme-wish-in').show();
+ 
+   $('.add-wish').on('click', function() {
+         $(this).closest('.stock-sec,.box-start').find('.schesme-wish-in').hide();
+        $(this).closest('.stock-sec,.box-start').find('.wish-suces-in').show().delay(2000).fadeOut(800);
     });
-    $('.add-wish').on('click', function() {
-        $('.schesme-wish-in').hide();
-        $('.wish-suces-in').show().delay(2000).fadeOut(800);
-    });
-    $('.cancel-wish-in').on('click', function() {
+    $('.cancel-wish').on('click', function() {
         $('.schesme-wish-in').hide();
     });
 
@@ -742,21 +744,22 @@ $(document).ready(function() {
             $('.que-area').removeClass('que-active');
             $(this).closest('.quiz-questions li').find('.que-area').toggleClass('que-active');
     });
-	 $('.lern-exp-courses-btn').on('click', function() {
-		 	$('.lern-exp-demos').slideUp();
-		 	$('.lern-exp-courses').slideToggle();
-			$('li').removeClass('active');
-		 	$(this).closest('li').addClass('active');
-	 });
-	 $('.lern-exp-demos-btn').on('click', function() {
-		 	$('.lern-exp-courses').slideUp();
-		 	$('.lern-exp-demos').slideToggle();
-			$('li').removeClass('active');
-		 	$(this).closest('li').addClass('active');
-	 });
-	 $('.learn-courses-expansion').on('click', function() {
-		 	$('.course-selbox').slideUp();
-	 });
+     $('.lern-exp-courses-btn').on('click', function() {
+            $('.lern-exp-demos').slideUp();
+            $('.lern-exp-courses').slideToggle();
+            $('li.lern-crse-li2').removeClass('active');
+            $(this).closest('li').toggleClass('active');
+     });
+     $('.lern-exp-demos-btn').on('click', function() {
+            $('.lern-exp-courses').slideUp();
+            $('.lern-exp-demos').slideToggle();
+            $('li.lern-crse-li1').removeClass('active');
+            $(this).closest('li').toggleClass('active');
+     });
+     $('.learn-courses-expansion').on('click', function() {
+            $('.course-selbox').slideUp();
+            $('li.lern-crse-li1,li.lern-crse-li2').removeClass('active');
+     });
 	
 	
 
@@ -1440,6 +1443,9 @@ $(document).ready(function() {
       value: 37
     });
 
+    //dots --> learn
+    $('.elipsis-dots').dotdotdot();
+
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
         $('.le-products-menu,.leran-nav-section').singlePageNav({
@@ -1457,8 +1463,6 @@ $(document).ready(function() {
         });
     }
 	
-	//dots --> learn
-	$('.elipsis-dots').dotdotdot();
 
     /* resize function */
 

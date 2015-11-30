@@ -177,6 +177,9 @@
 		margin:88px 0 0 0;
 		transition:none;
 	}
+	.site-start-learn {
+    	margin-top: 34px;
+	}
 	.header-top-expand-arrow{
 		right:10px;
 		left:inherit;
@@ -697,6 +700,20 @@
 	/* slider */
 	.tile-view .bx-wrapper .bx-prev,.tile-view .bx-wrapper .bx-next{display:none;}
 	
+	
+	/* page banners */
+	.pagead-banner{
+		margin-top:10px;
+	}
+	.pagead-banner .web-img{
+		display:none;
+	}
+	.pagead-banner{
+		text-align:center;
+	}
+	.pagead-banner .mob-img{
+		display:inline-block;		
+	}
 	/* filter */
 	
 	.fill-box{
@@ -712,7 +729,7 @@
 	}
 	.fill-box1 > li{
 		width:inherit;
-		margin-bottom:15px;
+		margin: 0px 0px 15px 0px;
 	}
 	.fill-box1 > li:last-child{
 		margin-bottom:5px;
@@ -734,7 +751,9 @@
 		padding:0 0 10px 0;
 	}
 	.rec-check{margin-top:10px;}
-	
+	.search-fly-btn{
+		margin-bottom:0;
+	}
 	/* Search */
 	
 	.page-search{
@@ -818,7 +837,7 @@
 	 /* grid view */
 	 /* slider */
 	 .panel{
-		 width:100%;
+		 /*width:100%;*/
 	 }
 	 .pro-name{font-size:18px;}
 	 .shadow-panel{ border:1px solid #ccc;box-shadow:none;
@@ -899,6 +918,9 @@
 	.mutual-pop-33 li{padding:5px 10px;}
 	
 	/* premium */
+	.premium .dialog-title{
+		height:110px;
+	}
 	.subscribedplan-info{
 		display:none;
 	}
@@ -1409,6 +1431,35 @@
 	.award-circle:before,.award-circle:after{  display:none;}
 	.award-circle span{font-size:18px;}
 	.awrds-cons p{font-size:14px;}
+	
+	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Open An Account
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+																			
+	.open-acc-rig{position:static;}
+	.openanacc-banners{margin-top:30px;}
+	.open-accfrmbox{border:0;background-color:transparent;width:100%;}
+	.account-content{padding-top:30px;text-align:center;}
+	.opena-banners-1{
+		background:url(../../../images/open-account/b-1small.jpg) center center;
+	}
+	.opena-banners-2{
+		background:url(../../../images/open-account/b-2small.jpg) center center;
+	}
+	
+	.opena-banners-3{
+		background:url(../../../images/open-account/b-3.jpg) center center;
+	}
+	
+	.opena-banners-4{
+		background:url(../../../images/open-account/b-4.jpg) center center;
+	}
+	.opena-banners-5{
+		background:url(../../../images/open-account/b-5.jpg) center center;
+	}
+	.opena-banners-6{
+		background:url(../../../images/open-account/b-6.jpg) center center;
+	}
 
 	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 																	Support
@@ -1424,7 +1475,7 @@
 	.acc-qus{padding-left:20px;}
 	
 	/*::::::: faqs ::::::::::*/
-        .faq-down-1{left: 0;}
+	.faq-down-1{left: 0;}
 	.faq-list-items > li{width:155px !important;margin-right:10px;min-height:140px;box-shadow:none;}
 	.faq-list-items > li a{border:1px solid #ccc;}
 	.faq-list-items > li a.active-tab{border:1px solid #1190E0;}
@@ -1453,11 +1504,31 @@
 	.query-from-le,.query-from-re{width:100%;float:none;}
 	.query-from-re{margin-left:0;}
 	.query-coment-box{height:100px;}
-	.form-fileds li{width:100%;}
+	.form-fileds > li{width:100%;}
 	.le-list li, .re-list li{padding-bottom:20px;}
 	.re-list li:last-child{padding-bottom:20px;}
 	.last-liyears li:last-child{padding-bottom:0;}
 	
+	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+																	Learn
+																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+	/* :::::::::::: Course page :::::::::::::::*/
+	
+	/* Left Menu */
+	#leftsection {
+		left:-324px;
+	}
+	.course-pagecontent{
+		padding-left:0;
+	}
+	
+	/* course right part */
+	.course-menu{
+		display:block;
+		width:40px;
+		height:40px;
+		padding:10px;
+	}
 	/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 																	RI
 																			::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

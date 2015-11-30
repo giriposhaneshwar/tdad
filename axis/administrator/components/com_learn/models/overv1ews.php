@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @version     1.0.0
- * @package     com_learn
- * @copyright   Copyright (C) 2015. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      E Giri Poshaneshwar <giri.eshwardiamond@gmail.com> - http://
+ * @version    CVS: 1.0.0
+ * @package    Com_Learn
+ * @author     Giri <egp.designs@gmail.com>
+ * @copyright  Copyright (C) 2015. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
 
@@ -13,86 +13,89 @@ jimport('joomla.application.component.modellist');
 
 /**
  * Methods supporting a list of Learn records.
+ *
+ * @since  1.6
  */
-class LearnModelOverv1ews extends JModelList {
+class LearnModelOverv1ews extends JModelList
+{
+	/**
+	 * Method to auto-populate the model state.
+	 *
+	 * Note. Calling getState in this method will result in recursion.
+	 *
+	 * @param   string  $ordering   Elements order
+	 * @param   string  $direction  Order direction
+	 *
+	 * @return void
+	 *
+	 * @throws Exception
+	 */
+	protected function populateState($ordering = null, $direction = null)
+	{
+		// Initialise variables.
+		$app = JFactory::getApplication('administrator');
 
-    /**
-     * Constructor.
-     *
-     * @param    array    An optional associative array of configuration settings.
-     * @see        JController
-     * @since    1.6
-     */
-    public function __construct($config = array()) {
-        if (empty($config['filter_fields'])) {
-            $config['filter_fields'] = array(
-                
-            );
-        }
+		// Load the filter state.
+		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
+		$this->setState('filter.search', $search);
 
-        parent::__construct($config);
-    }
+		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
+		$this->setState('filter.state', $published);
 
-    /**
-     * Method to auto-populate the model state.
-     *
-     * Note. Calling getState in this method will result in recursion.
-     */
-    protected function populateState($ordering = null, $direction = null) {
-        // Initialise variables.
-        $app = JFactory::getApplication('administrator');
+		// Load the parameters.
+		$params = JComponentHelper::getParams('com_learn');
+		$this->setState('params', $params);
 
-        // Load the filter state.
-        $search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
-        $this->setState('filter.search', $search);
+		// List state information.
+		parent::populateState('a.id', 'asc');
+	}
 
-        $published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
-        $this->setState('filter.state', $published);
+	/**
+	 * Method to get a store id based on model configuration state.
+	 *
+	 * This is necessary because the model is used by the component and
+	 * different modules that might need different sets of data or different
+	 * ordering requirements.
+	 *
+	 * @param   string  $id  A prefix for the store id.
+	 *
+	 * @return   string A store id.
+	 *
+	 * @since    1.6
+	 */
+	protected function getStoreId($id = '')
+	{
+		// Compile the store id.
+		$id .= ':' . $this->getState('filter.search');
+		$id .= ':' . $this->getState('filter.state');
 
-        
+		return parent::getStoreId($id);
+	}
 
-        // Load the parameters.
-        $params = JComponentHelper::getParams('com_learn');
-        $this->setState('params', $params);
-
-        // List state information.
-        parent::populateState('a.id', 'asc');
-    }
-
-    /**
-     * Method to get a store id based on model configuration state.
-     *
-     * This is necessary because the model is used by the component and
-     * different modules that might need different sets of data or different
-     * ordering requirements.
-     *
-     * @param	string		$id	A prefix for the store id.
-     * @return	string		A store id.
-     * @since	1.6
-     */
-    protected function getStoreId($id = '') {
-        // Compile the store id.
-        $id.= ':' . $this->getState('filter.search');
-        $id.= ':' . $this->getState('filter.state');
-
-        return parent::getStoreId($id);
-    }
-
-    /**
-     * Build an SQL query to load the list data.
-     *
-     * @return	JDatabaseQuery
-     * @since	1.6
-     */
-    protected function getListQuery() {
+	/**
+	 * Build an SQL query to load the list data.
+	 *
+	 * @return   JDatabaseQuery
+	 *
+	 * @since    1.6
+	 */
+	protected function getListQuery()
+	{
 		$db	= $this->getDbo();
-		$query	= $db->getQuery(true); return $query;
-    }
+		$query	= $db->getQuery(true);
 
-    public function getItems() {
-        $items = parent::getItems();
-        
-        return $items;
-    }
+		return $query;
+	}
 
+	/**
+	 * Get an array of data items
+	 *
+	 * @return mixed Array of data items on success, false on failure.
+	 */
+	public function getItems()
+	{
+		$items = parent::getItems();
+
+		return $items;
+	}
 }

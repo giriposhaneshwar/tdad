@@ -21,21 +21,21 @@
       <div class="before-expand">
         <div class="clearfix">
          <div class="leftpart">
-              <div class="top-news">
-<?php if ($this->countModules('market_snapshot_top1')):?>
-<jdoc:include type="modules" name="market_snapshot_top1" style="none" />
-<?php endif;?>
-</div>
+            <div class="top-news">
+              <?php if ($this->countModules('market_snapshot_top1')):?>
+              <jdoc:include type="modules" name="market_snapshot_top1" style="none" />
+              <?php endif;?>
+            </div>
             </div>
             <div class="rightpart">
-              <div class="top-news top-news-right clearfix">
-<?php if ($this->countModules('market_snapshot_top2')):?>
-<jdoc:include type="modules" name="market_snapshot_top2" style="none" />
-<?php endif;?>
-                <?php /*?><?php if ($this->countModules('market_snapshot_top3')) : ?>
-<jdoc:include type="modules" name="market_snapshot_top3" style="none" />
-<?php endif; ?><?php */?>
-</div>
+                <div class="top-news top-news-right clearfix">
+                  <?php if ($this->countModules('market_snapshot_top2')):?>
+                  <jdoc:include type="modules" name="market_snapshot_top2" style="none" />
+                  <?php endif;?>
+                                  <?php /*?><?php if ($this->countModules('market_snapshot_top3')) : ?>
+                  <jdoc:include type="modules" name="market_snapshot_top3" style="none" />
+                  <?php endif; ?><?php */?>
+                </div>
             </div>
         </div>
       </div>
@@ -76,17 +76,14 @@
                 <p class="res-moremenu"><i class="sprite-img more-menu"></i></p>
             </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br>
-<?php 
-//jimport('joomla.application.component.helper'); // Import component helper library
+<?php
 $params = JRequest::get(); // Get parameter helper (corrected 'JRquest' spelling)
-// $out = $params->get('parameter_name'); // Get an individual parameter
 
-if($params["option"]!="com_learn" && $params["view"]!="overv1ews")
+// echo '<br><br><br><br><br><br><br><br><br><br><br><br>'.$params['view']." // ".strstr($params["view"], "_vs");
+
+// if($params["option"]!="com_learn" && strstr($params["view"], "_vs"))
+if($params["option"] != "com_learn" || strstr($params["view"], "_vs") != "_vs")
 {
-//print_r($_SERVER);
-
-//if()
 ?>
     <div class="header-second-web ">
       <div class="logosection"> <a href="<?php echo $this->baseurl;?>/" class="logo"><img src="<?php echo $this->baseurl?>/templates/<?php echo $this->template?>/images/logo.png" class="logo-web"></a></div>
@@ -96,12 +93,12 @@ if($params["option"]!="com_learn" && $params["view"]!="overv1ews")
 <jdoc:include type="modules" name="top_navigation_login" style="none" />
 <?php endif;?>
 </div>
-<?php if ($this->countModules('top_navigation')):?>
-<jdoc:include type="modules" name="top_navigation" style="none" />
-<?php endif;?>
+  <?php if ($this->countModules('top_navigation')):?>
+  <jdoc:include type="modules" name="top_navigation" style="none" />
+  <?php endif;?>
 </div>
     </div>
-    <?php }?>
+    <?php } ?>
   </header>
 <!--  <section class="site-start">
     <div class="container_12">-->
@@ -110,8 +107,7 @@ if($params["option"]!="com_learn" && $params["view"]!="overv1ews")
   </section>-->
   <!-- footer -->
   <?php
-
-if($params["option"]!="com_learn" && strstr($params["view"], "learn-course"))
+if($params["option"]!="com_learn" || strstr($params["view"], "_vs") != "_vs")
 {
   ?>
   <footer class="footer">
@@ -172,6 +168,7 @@ if($params["option"]!="com_learn" && strstr($params["view"], "learn-course"))
 <div class="overlay"></div>
 <!-- Pop up boxes -->
 <div class="jqpop pop-pack"></div>
+<div class="like-box">Thanks for Liking, Please spread your love by sharing...</div>
 
 </div>
 

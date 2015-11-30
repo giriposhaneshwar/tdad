@@ -1,22 +1,25 @@
 <?php
 
 /**
- * @version     1.0.0
- * @package     com_learn
- * @copyright   Copyright (C) 2015. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      E Giri Poshaneshwar <giri.eshwardiamond@gmail.com> - http://
+ * @version    CVS: 1.0.0
+ * @package    Com_Learn
+ * @author     Giri <egp.designs@gmail.com>
+ * @copyright  Copyright (C) 2015. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
 
+/**
+ * Class LearnFrontendHelper
+ *
+ * @since  1.6
+ */
 class LearnFrontendHelper
 {
-	
-
 	/**
 	 * Get an instance of the named model
 	 *
-	 * @param string $name
+	 * @param   string  $name  Model name
 	 *
 	 * @return null|object
 	 */

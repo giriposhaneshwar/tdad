@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @version     1.0.0
- * @package     com_learn
- * @copyright   Copyright (C) 2015. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      E Giri Poshaneshwar <giri.eshwardiamond@gmail.com> - http://
+ * @version    CVS: 1.0.0
+ * @package    Com_Learn
+ * @author     Giri <egp.designs@gmail.com>
+ * @copyright  Copyright (C) 2015. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
 
@@ -13,14 +13,15 @@ jimport('joomla.application.component.modellist');
 
 /**
  * Methods supporting a list of Learn records.
+ *
+ * @since  1.6
  */
 class LearnModelOverv1ews extends JModelList
 {
-
 	/**
 	 * Constructor.
 	 *
-	 * @param    array    An optional associative array of configuration settings.
+	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @see        JController
 	 * @since      1.6
@@ -33,6 +34,7 @@ class LearnModelOverv1ews extends JModelList
 				
 			);
 		}
+
 		parent::__construct($config);
 	}
 
@@ -41,20 +43,25 @@ class LearnModelOverv1ews extends JModelList
 	 *
 	 * Note. Calling getState in this method will result in recursion.
 	 *
+	 * @param   string  $ordering   Elements order
+	 * @param   string  $direction  Order direction
+	 *
+	 * @return void
+	 *
+	 * @throws Exception
+	 *
 	 * @since    1.6
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
-
-
 		// Initialise variables.
 		$app = JFactory::getApplication();
 
 		// List state information
-		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'));
+		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->get('list_limit'));
 		$this->setState('list.limit', $limit);
 
-		$limitstart = $app->input->getInt('limitstart', 0);
+		$limitstart = $app->getUserStateFromRequest('limitstart', 'limitstart', 0);
 		$this->setState('list.start', $limitstart);
 
 		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
@@ -132,6 +139,7 @@ class LearnModelOverv1ews extends JModelList
 		}
 
 		$ordering = $app->input->get('filter_order');
+
 		if (!empty($ordering))
 		{
 			$list             = $app->getUserState($this->context . '.list');
@@ -140,6 +148,7 @@ class LearnModelOverv1ews extends JModelList
 		}
 
 		$orderingDirection = $app->input->get('filter_order_Dir');
+
 		if (!empty($orderingDirection))
 		{
 			$list              = $app->getUserState($this->context . '.list');
@@ -151,26 +160,37 @@ class LearnModelOverv1ews extends JModelList
 
 		
 
-		if (isset($list['ordering'])) {
-                    $this->setState('list.ordering', $list['ordering']);
-                }
-                if (isset($list['direction'])) {
-                    $this->setState('list.direction', $list['direction']);
-                }
-                
+		if (isset($list['ordering']))
+		{
+			$this->setState('list.ordering', $list['ordering']);
+		}
+
+		if (isset($list['direction']))
+		{
+			$this->setState('list.direction', $list['direction']);
+		}
 	}
 
 	/**
 	 * Build an SQL query to load the list data.
 	 *
-	 * @return    JDatabaseQuery
+	 * @return   JDatabaseQuery
+	 *
 	 * @since    1.6
 	 */
-	protected function getListQuery() {
+	protected function getListQuery()
+	{
 		$db	= $this->getDbo();
-		$query	= $db->getQuery(true);	return $query;
+		$query	= $db->getQuery(true);
+
+		return $query;
 	}
 
+	/**
+	 * Method to get an array of data items
+	 *
+	 * @return  mixed An array of data on success, false on failure.
+	 */
 	public function getItems()
 	{
 		$items = parent::getItems();
@@ -182,12 +202,15 @@ class LearnModelOverv1ews extends JModelList
 	/**
 	 * Overrides the default function to check Date fields format, identified by
 	 * "_dateformat" suffix, and erases the field if it's not correct.
+	 *
+	 * @return void
 	 */
 	protected function loadFormData()
 	{
 		$app              = JFactory::getApplication();
 		$filters          = $app->getUserState($this->context . '.filter', array());
 		$error_dateformat = false;
+
 		foreach ($filters as $key => $value)
 		{
 			if (strpos($key, '_dateformat') && !empty($value) && !$this->isValidDate($value))
@@ -196,6 +219,7 @@ class LearnModelOverv1ews extends JModelList
 				$error_dateformat = true;
 			}
 		}
+
 		if ($error_dateformat)
 		{
 			$app->enqueueMessage(JText::_("COM_LEARN_SEARCH_FILTER_DATE_FORMAT"), "warning");
@@ -206,14 +230,14 @@ class LearnModelOverv1ews extends JModelList
 	}
 
 	/**
-	 * Checks if a given date is valid and in an specified format (YYYY-MM-DD)
+	 * Checks if a given date is valid and in a specified format (YYYY-MM-DD)
 	 *
-	 * @param string Contains the date to be checked
+	 * @param   string  $date  Date to be checked
 	 *
+	 * @return bool
 	 */
 	private function isValidDate($date)
 	{
 		return preg_match("/^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/", $date) && date_create($date);
 	}
-
 }
