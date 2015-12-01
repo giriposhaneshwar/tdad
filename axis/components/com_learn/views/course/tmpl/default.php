@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 
 	<div class="item_fields">
 		<table class="table">
-			
+		
 		</table>
 	</div>
 	

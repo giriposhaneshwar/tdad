@@ -54,7 +54,7 @@
                                              <li>
                                                 <div class="custom-radio selectme">
                                                     <label>Date:</label>
-                                                   <div class="learn-filter mstockselect">
+                                                   <div class="learn-filter mstockselect">  
                                                     <p class="mar-date-inp">
                                                         <input type="text" class="hist-date datepicker">
                                                     </p>
