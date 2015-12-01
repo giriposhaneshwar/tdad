@@ -42,9 +42,6 @@ class LearnViewCoursess extends JViewLegacy
 
 		$this->state      = $this->get('State');
 		$this->params     = $app->getParams('com_learn');
-
-
-
 		
 
 		// Check for errors.
@@ -114,7 +111,6 @@ class LearnViewCoursess extends JViewLegacy
 		{
 			$this->document->setMetadata('robots', $this->params->get('robots'));
 		}
-
 	}
 
 	/**
@@ -126,7 +122,6 @@ class LearnViewCoursess extends JViewLegacy
 	 */
 	public function getState($state)
 	{
-		
 		return isset($this->state->{$state}) ? $this->state->{$state} : false;
 	}
 }

@@ -60,6 +60,10 @@
 
 			<menu link="option=com_learn&amp;view=demos_vs" view="demos_vs" img="components/com_learn/assets/images/s_demos_vs.png" alt="Learn/Demos_vs">COM_LEARN_TITLE_DEMOS_VS</menu>
 
+			<menu link="option=com_learn&amp;view=quizstartvs" view="quizstartvs" img="components/com_learn/assets/images/s_quizstartvs.png" alt="Learn/Quizstartvs">COM_LEARN_TITLE_QUIZSTARTVS</menu>
+
+			<menu link="option=com_learn&amp;view=quizendvs" view="quizendvs" img="components/com_learn/assets/images/s_quizendvs.png" alt="Learn/Quizendvs">COM_LEARN_TITLE_QUIZENDVS</menu>
+
         </submenu>
         <files folder="administrator">
             <filename>access.xml</filename>

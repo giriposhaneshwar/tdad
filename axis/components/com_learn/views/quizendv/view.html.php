@@ -13,17 +13,17 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
 
 /**
- * View class for a list of Learn.
+ * View to edit
  *
  * @since  1.6
  */
-class LearnViewCourse_vs extends JViewLegacy
+class LearnViewQuizendv extends JViewLegacy
 {
-	protected $items;
-
-	protected $pagination;
-
 	protected $state;
+
+	protected $item;
+
+	protected $form;
 
 	protected $params;
 
@@ -38,11 +38,17 @@ class LearnViewCourse_vs extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		$app = JFactory::getApplication();
+		$app  = JFactory::getApplication();
+		$user = JFactory::getUser();
 
-		$this->state      = $this->get('State');
-		$this->params     = $app->getParams('com_learn');
-		
+		$this->state  = $this->get('State');
+		$this->item   = $this->get('Data');
+		$this->params = $app->getParams('com_learn');
+
+		if (!empty($this->item))
+		{
+			
+		}
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -50,7 +56,20 @@ class LearnViewCourse_vs extends JViewLegacy
 			throw new Exception(implode("\n", $errors));
 		}
 
+		
+
+		if ($this->_layout == 'edit')
+		{
+			$authorised = $user->authorise('core.create', 'com_learn');
+
+			if ($authorised !== true)
+			{
+				throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+			}
+		}
+
 		$this->_prepareDocument();
+
 		parent::display($tpl);
 	}
 
@@ -68,7 +87,7 @@ class LearnViewCourse_vs extends JViewLegacy
 		$title = null;
 
 		// Because the application sets a default page title,
-		// we need to get it from the menu item itself
+		// We need to get it from the menu item itself
 		$menu = $menus->getActive();
 
 		if ($menu)
@@ -111,17 +130,5 @@ class LearnViewCourse_vs extends JViewLegacy
 		{
 			$this->document->setMetadata('robots', $this->params->get('robots'));
 		}
-	}
-
-	/**
-	 * Check if state is set
-	 *
-	 * @param   mixed  $state  State
-	 *
-	 * @return bool
-	 */
-	public function getState($state)
-	{
-		return isset($this->state->{$state}) ? $this->state->{$state} : false;
 	}
 }
