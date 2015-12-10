@@ -1,4 +1,21 @@
 $(function() {
+  /*var location, ip, locData;
+  $.getJSON("http://jsonip.com?callback=?", function(data) {
+    // console.log("Your ip: ", data);
+    ip = data.ip
+    console.log("Net IP", ip);
+    $.get("http://ipinfo.io/" + ip, function(response) {
+      // $(self).html(ip + "-" + response.country);
+      location = response.country;
+      locData = response;
+      console.log("Net Location", location, ip, locData);
+    }, "jsonp");
+  });*/
+
+
+
+  // =================================
+
   /*$(".researchmenu li a").on("click", function() {
     //alert("hai");
     //  $(this).removeClass("active");
@@ -8,8 +25,8 @@ $(function() {
     localStorage.setItem("activeclass2", localStorage.getItem("activeclass2"));
     //return false;
   });*/
-  
-  $.fn.hitMenuNav = function(e){
+  //code for store active class value in localstorage
+  $(".menu-section a").on("click", function(e) {
     // e.preventDefault();
     var $this = $(this);
     var locUrl = $this.attr('href');
@@ -31,13 +48,11 @@ $(function() {
         localStorage.setItem('active1', $this.parent().closest('ul.first-level-menu').find('li a').attr('id'));
       }
     } else {
-      // console.log("Clicked", $(this))
+      console.log("Clicked", $(this))
     }
-  }
 
-  //code for store active class value in localstorage
-  $(".menu-section a").on('click', function(e){
-    $(this).hitMenuNav(e);
+
+    // Menu Ites
   });
 
   function makeActive() {

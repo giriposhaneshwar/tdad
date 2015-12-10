@@ -2,7 +2,7 @@
 	<div class="ceo-heading-popup clearfix">
 		<a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>
 		<div class="dialog-title clearfix">
-			<h3 class="car-pop-hea">Know More</h3>
+			<h3 class="car-pop-hea">About the speaker</h3>
 		</div>
 	</div>
 	<div class="popup-insight">
@@ -16,15 +16,14 @@
 					<p class="popup-desig">Technical Research</p>
 				</div>
 				<div class="exp-popup-right popup-right-con">
-					<p>
-						He is our Head-Technical Analyst and has done his Post-Graduate in Management from DAVV Indore.
-
-					</p>
-					<p class="mt10"> He has been tracking the Equity Markets since 2001.</p>                                                                                       
-					<p class="mt10">
-						 He is responsible for analysing, conducting market research and interact with the research team to help them formulate plans.</p>                        <p class="mt10"> He has worked for some of the best broking establishments in India and has a good track record of 13 years</p>                                                                                                                                
-                         <p class="mt10">He spots quality  companies based on valuations and then applies Technical analysis to buy into the stock at the appropriate time
-</p>
+					<ul class="list-icon">
+						<li>He is our Head-Technical Analyst and has done his Post-Graduate in Management from DAVV Indore.</li>
+					<li> He has been tracking the Equity Markets since 2001.</li>
+					<li>
+						He is responsible for analysing, conducting market research and interact with the research team to help them formulate plans.
+					</li>
+					<li> He has worked for some of the best broking establishments in India and has a good track record of 13 years</li>
+					<li>He spots quality  companies based on valuations and then applies Technical analysis to buy into the stock at the appropriate time</li>
 				</div>
 			</div>
 		</div>

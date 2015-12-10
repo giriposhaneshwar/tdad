@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_learn</name>
-    <creationDate>2015-11-30</creationDate>
+    <creationDate>2015-12-08</creationDate>
     <copyright>Copyright (C) 2015. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <author>Giri</author>
@@ -32,37 +32,40 @@
         <folder>models</folder>
         <folder>controllers</folder>
         <folder>helpers</folder>
-        <folder>assets</folder>
     </files>
+    <media destination="com_learn" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
     <languages folder="languages/site">
         
 			<language tag="en-GB">en-GB/en-GB.com_learn.ini</language>
     </languages>
     <administration>
-        <menu img="components/com_learn/assets/images/s_com_learn.png" >COM_LEARN</menu>
+        <menu img="media/com_learn/images/s_com_learn.png" >COM_LEARN</menu>
         <submenu>
             
-			<menu link="option=com_learn&amp;view=overv1ews" view="overv1ews" img="components/com_learn/assets/images/s_overv1ews.png" alt="Learn/Overv1ews">COM_LEARN_TITLE_OVERV1EWS</menu>
+			<menu link="option=com_learn&amp;view=overv1ews" view="overv1ews" img="media/com_learn/images/s_overv1ews.png" alt="Learn/Overv1ews">COM_LEARN_TITLE_OVERV1EWS</menu>
 
-			<menu link="option=com_learn&amp;view=coursess" view="coursess" img="components/com_learn/assets/images/s_coursess.png" alt="Learn/Coursess">COM_LEARN_TITLE_COURSESS</menu>
+			<menu link="option=com_learn&amp;view=coursess" view="coursess" img="media/com_learn/images/s_coursess.png" alt="Learn/Coursess">COM_LEARN_TITLE_COURSESS</menu>
 
-			<menu link="option=com_learn&amp;view=demoss" view="demoss" img="components/com_learn/assets/images/s_demoss.png" alt="Learn/Demoss">COM_LEARN_TITLE_DEMOSS</menu>
+			<menu link="option=com_learn&amp;view=demoss" view="demoss" img="media/com_learn/images/s_demoss.png" alt="Learn/Demoss">COM_LEARN_TITLE_DEMOSS</menu>
 
-			<menu link="option=com_learn&amp;view=eclassrooms" view="eclassrooms" img="components/com_learn/assets/images/s_eclassrooms.png" alt="Learn/Eclassrooms">COM_LEARN_TITLE_ECLASSROOMS</menu>
+			<menu link="option=com_learn&amp;view=eclassrooms" view="eclassrooms" img="media/com_learn/images/s_eclassrooms.png" alt="Learn/Eclassrooms">COM_LEARN_TITLE_ECLASSROOMS</menu>
 
-			<menu link="option=com_learn&amp;view=directspeaks" view="directspeaks" img="components/com_learn/assets/images/s_directspeaks.png" alt="Learn/Directspeaks">COM_LEARN_TITLE_DIRECTSPEAKS</menu>
+			<menu link="option=com_learn&amp;view=directspeaks" view="directspeaks" img="media/com_learn/images/s_directspeaks.png" alt="Learn/Directspeaks">COM_LEARN_TITLE_DIRECTSPEAKS</menu>
 
-			<menu link="option=com_learn&amp;view=goodreadss" view="goodreadss" img="components/com_learn/assets/images/s_goodreadss.png" alt="Learn/Goodreadss">COM_LEARN_TITLE_GOODREADSS</menu>
+			<menu link="option=com_learn&amp;view=goodreadss" view="goodreadss" img="media/com_learn/images/s_goodreadss.png" alt="Learn/Goodreadss">COM_LEARN_TITLE_GOODREADSS</menu>
 
-			<menu link="option=com_learn&amp;view=course_vs" view="course_vs" img="components/com_learn/assets/images/s_course_vs.png" alt="Learn/Course_vs">COM_LEARN_TITLE_COURSE_VS</menu>
+			<menu link="option=com_learn&amp;view=course_vs" view="course_vs" img="media/com_learn/images/s_course_vs.png" alt="Learn/Course_vs">COM_LEARN_TITLE_COURSE_VS</menu>
 
-			<menu link="option=com_learn&amp;view=quiz_vs" view="quiz_vs" img="components/com_learn/assets/images/s_quiz_vs.png" alt="Learn/Quiz_vs">COM_LEARN_TITLE_QUIZ_VS</menu>
+			<menu link="option=com_learn&amp;view=quiz_vs" view="quiz_vs" img="media/com_learn/images/s_quiz_vs.png" alt="Learn/Quiz_vs">COM_LEARN_TITLE_QUIZ_VS</menu>
 
-			<menu link="option=com_learn&amp;view=demos_vs" view="demos_vs" img="components/com_learn/assets/images/s_demos_vs.png" alt="Learn/Demos_vs">COM_LEARN_TITLE_DEMOS_VS</menu>
+			<menu link="option=com_learn&amp;view=demos_vs" view="demos_vs" img="media/com_learn/images/s_demos_vs.png" alt="Learn/Demos_vs">COM_LEARN_TITLE_DEMOS_VS</menu>
 
-			<menu link="option=com_learn&amp;view=quizstartvs" view="quizstartvs" img="components/com_learn/assets/images/s_quizstartvs.png" alt="Learn/Quizstartvs">COM_LEARN_TITLE_QUIZSTARTVS</menu>
+			<menu link="option=com_learn&amp;view=quiz_start_vs" view="quiz_start_vs" img="media/com_learn/images/s_quiz_start_vs.png" alt="Learn/Quiz_start_vs">COM_LEARN_TITLE_QUIZ_START_VS</menu>
 
-			<menu link="option=com_learn&amp;view=quizendvs" view="quizendvs" img="components/com_learn/assets/images/s_quizendvs.png" alt="Learn/Quizendvs">COM_LEARN_TITLE_QUIZENDVS</menu>
+			<menu link="option=com_learn&amp;view=quiz_end_vs" view="quiz_end_vs" img="media/com_learn/images/s_quiz_end_vs.png" alt="Learn/Quiz_end_vs">COM_LEARN_TITLE_QUIZ_END_VS</menu>
 
         </submenu>
         <files folder="administrator">

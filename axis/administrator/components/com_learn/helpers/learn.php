@@ -72,14 +72,14 @@ class LearnHelper
 			$vName == 'demos_vs'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_LEARN_TITLE_QUIZSTARTVS'),
-			'index.php?option=com_learn&view=quizstartvs',
-			$vName == 'quizstartvs'
+			JText::_('COM_LEARN_TITLE_QUIZ_START_VS'),
+			'index.php?option=com_learn&view=quiz_start_vs',
+			$vName == 'quiz_start_vs'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_LEARN_TITLE_QUIZENDVS'),
-			'index.php?option=com_learn&view=quizendvs',
-			$vName == 'quizendvs'
+			JText::_('COM_LEARN_TITLE_QUIZ_END_VS'),
+			'index.php?option=com_learn&view=quiz_end_vs',
+			$vName == 'quiz_end_vs'
 		);
 	}
 

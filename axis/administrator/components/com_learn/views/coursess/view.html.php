@@ -76,6 +76,7 @@ class LearnViewCoursess extends JViewLegacy
 			if ($canDo->get('core.create'))
 			{
 				JToolBarHelper::addNew('course.add', 'JTOOLBAR_NEW');
+				JToolbarHelper::custom('coursess.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
 			}
 
 			if ($canDo->get('core.edit') && isset($this->items[0]))

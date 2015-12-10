@@ -381,7 +381,7 @@
             });
 
             var windowsWidth = $window.width();
-            windowsHeight = $window.height();  //updating global var
+            windowsHeight = $window.height() -96;  //updating global var
             //text resizing
             if (options.resize) {
                 resizeMe(windowsHeight, windowsWidth);

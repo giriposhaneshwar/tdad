@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // scroll top	
+    // scroll top   
     var scrollTopEle = function(query, val) {
         val == undefined || null ? 0 : val;
         //newinvest-plans-none;
@@ -23,14 +23,14 @@ $(document).ready(function() {
         }
         $('head').append(ele);
 
-        if(cb) cb(event, status);
+        if (cb) cb(event, status);
     }
 
 
     // fullpage animations -->offerings
     var inter = null;
     $.fn.imgSlide = function(time, lp, ease) {
-        time = typeof time !== 'undefined' ? time : 1500;
+        time = typeof time !== 'undefined' ? time : 1000;
         lp = typeof lp !== 'undefined' ? true : false;
         ease = typeof ease !== 'undefined' ? null : ease;
         // console.log(time);
@@ -86,7 +86,7 @@ $(document).ready(function() {
     }
 
 
-    //support-menu	
+    //support-menu  
     $('.drop-click').on('click', function() {
         var $div = $(this).next();
         $('.support-menu').not($div).hide();
@@ -101,7 +101,7 @@ $(document).ready(function() {
     });
 
 
-    //country select header top	
+    //country select header top 
     $('.hea-top-drop li a').on('click', function() {
         var country = $(this);
         $('.select-val').html(country[0].innerHTML);
@@ -127,7 +127,7 @@ $(document).ready(function() {
     navigation();
 
 
-    //	vector menu
+    //  vector menu
     $('.responsive-menu').on('click', function() {
         $('body').toggleClass("off");
         $('.menu-section').show();
@@ -139,8 +139,17 @@ $(document).ready(function() {
         }
     });
 
+    $(".course-menu").on("click", function() {
+        $("body").toggleClass("course_push");
+    });
 
-    //Responsive more-menu	
+    $(".left-offclose").on("click", function() {
+        $("body").removeClass("course_push");
+        $("body").removeClass("off");
+    });
+
+
+    //Responsive more-menu  
 
     $(".res-moremenu").on('click', function() {
         $('.header-menu').toggle();
@@ -191,11 +200,11 @@ $(document).ready(function() {
 
 
 
-
     /* :::::::::::::::::::::::::::::::::: Share like :::::::::::::::::::::::::::::::::::::::*/
 
     $('.like-box-btn').on('click', function() {
         $(this).find('.like-small').addClass('active');
+        $(this).find('.like-small-white').addClass('active');
         $('.like-box').show().delay(2000).fadeOut(800);
     });
     $('.like-box-btn1').on('click', function() {
@@ -203,9 +212,53 @@ $(document).ready(function() {
         $('.like-box').show().delay(2000).fadeOut(800);
     });
 
+    /* :::::::::::::::::::::::::::::::::: Open account  :::::::::::::::::::::::::::::::::::::::*/
+
+    $('.open-accsubmit').on('click', function() {
+        $('.open-err').show();
+    });
+
+    $('#uae,#uae1').change(function() {
+        $('.uae').hide();
+    });
+    $('#india,#india1').change(function() {
+        $('.uae').show();
+    });
+
 
 
     /* :::::::::::::::::::::::::::::::::: Kyc :::::::::::::::::::::::::::::::::::::::*/
+    $.fn.toolTipsDisable = function() {
+        $this = $(this);
+        $this.on('click', function(e) {
+
+            // $this.next().find('.logintool-con');
+            // console.log($this.next().find('.logintool-con'));
+            var tar = $('.logintool-con');
+            $.each(tar, function(i, n) {
+                $(n).hide();
+            });
+
+
+            $(e.target.nextElementSibling).find('.logintool-con').toggle();
+
+        })
+    }
+
+    $('.logintool').toolTipsDisable();
+    $('.search-area').toolTipsDisable();
+    $('.search-page-icon').toolTipsDisable();
+
+    $('.flyclose').on('click', function() {
+        $(this).closest('.logintool-con').hide();
+    });
+
+    $(document).on('click', function(e) {
+        var p = $(e.target).closest('.logintool,.search-area,.invest-btn').length
+        if (!p) {
+            // $('.logintool-con').hide();
+        }
+    });
 
     // Wizard
     $('.pcacs-tabs').on('click', function() {
@@ -238,7 +291,7 @@ $(document).ready(function() {
     });
 
 
-    //	Debit card card
+    //  Debit card card
     $('.debit-card').on('keyup', function() {
         if (this.value.length == this.maxLength) {
             $(this).next('.debit-card').focus();
@@ -282,6 +335,10 @@ $(document).ready(function() {
 
     /* :::::::::::::::::::::::::::::::::: Research :::::::::::::::::::::::::::::::::::::::*/
 
+    $('.research-modify').on('click', function() {
+        scrollTopEle($('#research-result-items'), 100);
+    });
+
     // reasearch time and term 
     $('.invest-down').on('click', function() {
         var $div = $(this).next();
@@ -301,8 +358,8 @@ $(document).ready(function() {
         $('.invest-item-time').html($(this).closest('li').find('.invest-time').text());
         $('.rea-mod-time').hide();
     });
-	
-	//tabs -Content Change --markets
+
+    //tabs -Content Change --markets
     $('.mar-time-drop li a').on('click', function() {
         var time_drop_text = $(this).text();
         $(this).parents('.invest-drop-txt').find('.invest-down .invest-item-time').text(time_drop_text);
@@ -374,25 +431,22 @@ $(document).ready(function() {
     //wish list inside page
     $('.panel-heading').on('click', function() {
         if ($(this).closest('.panel-heading').find('.panel-compare-action input[type="checkbox"]').is(':checked')) {
-            $('.sel-msg-fly-in').show();
-            $(this).parentsUntil('stock-details').find('.wishlist-in').addClass('wishwork');
-        } else {
-            $('.sel-msg-fly-in').hide();
+            $(this).closest('.stock-sec,.box-start').find('.sel-msg-fly-in').hide();
+            $(this).closest('.stock-sec,.box-start').find('.schesme-wish-in').show();
+
+
         }
     });
     $('.wishlist').on('click', function() {
-        $('.select-basic-compare').show().delay(2000).fadeOut(800);
+        $(this).closest('.stock-sec,.box-start').find('.panel-compare-action').show();
+        $(this).closest('.stock-sec,.box-start').find('.sel-msg-fly-in').show();
     });
 
-    $('.cart-list').on('click', '.wishwork', function() {
-        $('.sel-msg-fly-in').hide();
-        $('.schesme-wish-in').show();
-    });
     $('.add-wish').on('click', function() {
-        $('.schesme-wish-in').hide();
-        $('.wish-suces-in').show().delay(2000).fadeOut(800);
+        $(this).closest('.stock-sec,.box-start').find('.schesme-wish-in').hide();
+        $(this).closest('.stock-sec,.box-start').find('.wish-suces-in').show().delay(2000).fadeOut(800);
     });
-    $('.cancel-wish-in').on('click', function() {
+    $('.cancel-wish').on('click', function() {
         $('.schesme-wish-in').hide();
     });
 
@@ -435,7 +489,7 @@ $(document).ready(function() {
     });
 
 
-    //cart more-menu	
+    //cart more-menu    
     $(".cartmore").on('click', function() {
         $(this).closest('.cart-more-menu').find('.cart-more-items').toggle();
     });
@@ -499,7 +553,7 @@ $(document).ready(function() {
 
 
     //Coatch Screen Overlay
-     setTimeout(function() {
+    setTimeout(function() {
         $('.invest-drop,.header-second-web').removeClass('coath-text');
         $('.coatch-overlay').fadeOut(300);
         if ($('.coatch-overlay').css("display", "none")) {
@@ -513,12 +567,15 @@ $(document).ready(function() {
         $('.coatch-overlay').fadeOut(300);
         $('body.overlayhide').css("overflow", "auto");
     });
+    setTimeout(function() {
+        $('.coatch-overlay1').hide();
+    }, 4000);
 
-	$('.home-tabclose').on('click', function() {
-		$('.coatch-overlay1').hide();
-		$('body.overlayhide').css("overflow", "auto");
-	});  
-	
+    $('.home-tabclose').on('click', function() {
+        $('.coatch-overlay1').hide();
+        $('body.overlayhide').css("overflow", "auto");
+    });
+
 
 
     /* :::::::::::::::::::::::::::::::::: Markets :::::::::::::::::::::::::::::::::::::::*/
@@ -715,68 +772,73 @@ $(document).ready(function() {
         $('.invest-2').show();
     });
 
-	$('.mul-selection').on('click', function() {
+    $('.mul-selection').on('click', function() {
         $(this).toggleClass('active');
     });
-	$('.faq-clrlink').on('click', function() {
-		$(this).closest('.faq-fil-sel').find('.mul-selection').removeClass('active');
-	});
-	
-	
-	/* :::::::::::::::::::::::::::::::::: support :::::::::::::::::::::::::::::::::::::::*/
-	
-	/* faq's*/
-	
-	$('.downlist-drop li a').on('click', function() {
-		var downlist_name = $(this).attr('data-val');
-        $('#' + downlist_name).show();		
+    $('.faq-clrlink').on('click', function() {
+        $(this).closest('.faq-fil-sel').find('.mul-selection').removeClass('active');
+    });
+
+
+    /* :::::::::::::::::::::::::::::::::: support :::::::::::::::::::::::::::::::::::::::*/
+
+    /* faq's*/
+
+    $('.downlist-drop li a').on('click', function() {
+        var downlist_name = $(this).attr('data-val');
+        $('#' + downlist_name).show();
         $(this).closest('.invest-drop-txt').find('.invest-item-time').html($(this).text());
         $('.rea-mod-time').hide();
     });
-	$('.faq-search-btn').on('click', function(e) {	
-	console.log('l');
-	 	e.preventDefault();
-		scrollTopEle(target, 250);
-	});
+    $('.faq-search-btn').on('click', function() {
+        scrollTopEle($('.faq-list-items'), 100);
+    });
 
     /* :::::::::::::::::::::::::::::::::: Learn :::::::::::::::::::::::::::::::::::::::*/
     $('.quiz-questions li').on('click', function() {
-            $('.que-area').removeClass('que-active');
-            $(this).closest('.quiz-questions li').find('.que-area').toggleClass('que-active');
+        $('.que-area').removeClass('que-active');
+        $(this).closest('.quiz-questions li').find('.que-area').toggleClass('que-active');
     });
-	 $('.lern-exp-courses-btn').on('click', function() {
-		 	$('.lern-exp-demos').slideUp();
-		 	$('.lern-exp-courses').slideToggle();
-			$('li').removeClass('active');
-		 	$(this).closest('li').addClass('active');
-	 });
-	 $('.lern-exp-demos-btn').on('click', function() {
-		 	$('.lern-exp-courses').slideUp();
-		 	$('.lern-exp-demos').slideToggle();
-			$('li').removeClass('active');
-		 	$(this).closest('li').addClass('active');
-	 });
-	 $('.learn-courses-expansion').on('click', function() {
-		 	$('.course-selbox').slideUp();
-	 });
-	
-	
+    $('.lern-exp-courses-btn').on('click', function() {
+        $('.lern-exp-demos').slideUp();
+        $('.lern-exp-courses').slideToggle();
+        $('li.lern-crse-li2').removeClass('active');
+        $(this).closest('li').toggleClass('active');
+        scrollTopEle($('.learn-banner'), 0);
+    });
+    $('.lern-exp-demos-btn').on('click', function() {
+        $('.lern-exp-courses').slideUp();
+        $('.lern-exp-demos').slideToggle();
+        $('li.lern-crse-li1').removeClass('active');
+        $(this).closest('li').toggleClass('active');
+    });
+    $('.learn-courses-expansion').on('click', function() {
+        $('.course-selbox').slideUp();
+        $('li.lern-crse-li1,li.lern-crse-li2').removeClass('active');
+    });
+
+
 
     /*:::::::::::::::::::::::::::::::::: Plugins :::::::::::::::::::::::::::::::::::::::*/
 
-    //News-ticker	
+    //News-ticker   
     var nt_example1 = $('.sensex-list').newsTicker({
         row_height: 31,
         max_rows: 5,
+        duration: 4000,
+    });
+    var nt_example1 = $('.sensex-list-top').newsTicker({
+        row_height: 14,
+        max_rows: 1,
         duration: 4000,
     });
 
 
     // Tabs -->insights
     $('.tabs').tabs();
-	
-	// democenter tabs -->support
-	$('.center-tab').tabs();
+
+    // democenter tabs -->support
+    $('.center-tab').tabs();
 
     // Tabs
     $(".tabs-secmenu").tabs({
@@ -790,7 +852,7 @@ $(document).ready(function() {
 
     //Custom Select
     $('.select').select2({
-        minimumResultsForSearch: -1,
+        // minimumResultsForSearch: -1,
     });
 
 
@@ -955,8 +1017,8 @@ $(document).ready(function() {
             }
         });
     });
-	
-	 //Auto Complete -->faqs
+
+    //Auto Complete -->faqs
 
     // faq-1
     var input_demoSpan = $('.demo-1');
@@ -1024,19 +1086,19 @@ $(document).ready(function() {
             }
         });
     });
-	
+
     //BX Slider for card view --> insights
 
-   
-        $('.ca-slider').bxSlider({
-            minSlides: 1,
-            maxSlides: 3,
-            slideWidth: 308,
-            slideMargin: 20,
-        	moveSlides: 1,
-			infiniteLoop: false,
-        });
-   
+
+    $('.ca-slider').bxSlider({
+        minSlides: 1,
+        maxSlides: 3,
+        slideWidth: 308,
+        slideMargin: 20,
+        moveSlides: 1,
+        infiniteLoop: false,
+    });
+
 
 
     //BX Slider  --> news markets
@@ -1108,19 +1170,19 @@ $(document).ready(function() {
         moveSlides: 1,
         infiniteLoop: false,
     });
-	
-	// demos's slider tab -->learn
-	$('.demo-slider').bxSlider({
+
+    // demos's slider tab -->learn
+    $('.demo-slider').bxSlider({
         slideWidth: 308,
         minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
         infiniteLoop: false,
     });
-	
-	
-	 // contactus slider tab
-	$('.contact-curosal').bxSlider({
+
+
+    // contactus slider tab
+    $('.contact-curosal').bxSlider({
         minSlides: 1,
         maxSlides: 3,
         moveSlides: 1,
@@ -1199,7 +1261,7 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details").dialog("option", "position", "center");
+        $(".premiumresearchdialog,.pop-pack,.pop-price,.addtopopup,.share-details,.pop-packonload").dialog("option", "position", "center");
     });
 
     $(".pop-pack").dialog({
@@ -1211,33 +1273,67 @@ $(document).ready(function() {
     var scrollPos;
     $('body').on('click', '.dialog-close', function(e) {
         e.preventDefault();
-        $('body').removeClass('popup-overflow');
         $(".pop-pack,.pop-share-details").dialog("close");
         $(document).scrollTop(scrollPos);
         return false;
     });
 
-    // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
-    var popUrl = "index.php?option=com_users&view=reset&tmpl=component";
+    // index.php?option=com_content&view=article&id=89
+    var artObj = {
+
+    };
+
+
 
 
     //View Details for ajax calls 
+    function browserCompatable(loadPop) {
+        $('.browserCheck').append('<span class="loadPopBrowse pop-like" data-val="' + loadPop + '"></span>');
+    }
+
+    browserCompatable('browser-pop');
+
+    $(document).ready(function() {
+        $('span.pop-like.loadPopBrowse').trigger('click', function() {
+            alert("triggered");
+        });
+    });
+
     $('.pop-like, .apply-car,.checkpremium').on('click', function(e) {
+
         scrollPos = $(document).scrollTop();
-        $('body').toggleClass('popup-overflow');
+
+        // Getting the Popup Value form the data-val / title
         if ($(this).attr('title') == undefined) {
             var pagename = $(this).attr('data-val');
         } else {
             var pagename = $(this).attr('title');
         }
-        var loadPopup = popUrl + "&layout=" + pagename;
+        //if the file location is not from parent filter then this will tell the domain locaiton
+        var fileLoc = window.location.href.split('index.php');
+        // Based on the "data-action='cms'" attribute we are figureouting the action to perform Article or Component to popout
+        if ($(this).attr('data-action')) {
+            //var artUrl = "index.php?option=com_content&view=article&tmpl=component&id=89";
+            var popUrl = fileLoc[0] + "index.php/" + pagename + "?tmpl=component";
+        } else {
+            // data-url="index.php?option=com_users&view=reset&layout=share_social&tmpl=component" title="share"
+            var popUrl = "index.php?option=com_users&view=reset&tmpl=component&layout=" + pagename;
+        }
+
+        // this is for Mockup html popup ( can be removed in joomla built )
         var localPop = pagename + '.html';
+
+        // setting the width of popup window based on the property form dom elemnt "data-size"
+        // if property is set to value we will assign the value else that will be "undefined" and default value will be assigned
         $('.pop-pack').dialog({
             width: $(this).attr('data-size') == undefined ? 980 : $(this).attr('data-size')
         });
-        $(".pop-pack").dialog("open").load(loadPopup, function(content, status, xhr) {
+
+        $(".pop-pack").dialog("open").load(popUrl, function(content, status, xhr) {
             // console.log(content, status, xhr);
             if (status == 'success') {
+                // for appending close button in article view
+                $('.item-page').append('<a href="javascript:void(0)" class="dialog-close close-popup"><i class="sprite-img close-pop"></i></a>');
                 $(".pop-pack").dialog({
                     position: {
                         my: "center",
@@ -1252,19 +1348,20 @@ $(document).ready(function() {
                 var getPos = $.inArray('index.php', pathRev);
                 var newPath = "";
                 for (var i = 0; i <= getPos; i++) {
-                  newPath = newPath + pathRev[i] + "/";
-                  // console.log(newPath);
+                    newPath = newPath + pathRev[i] + "/";
+                    console.log(newPath);
                 }
                 console.log(pathRev, $.inArray('index.php', pathRev), newPath);
                 var localPth = "templates/axisdirect/js/";
                 var fileRemoteLoc = newPath.substring(0, newPath.length - 10);
                 appendScript(fileRemoteLoc + localPth + 'rate-it.js', function(xhr, status) {
-                  console.log(xhr, status);
+                    console.log(xhr, status);
                 });
                 // $(document).find('head').append('<script src="js/rate-it.js"></script>');
             }
         });
     });
+    $(".pop-packonload").dialog("open");
 
 
     // social more button
@@ -1276,6 +1373,11 @@ $(document).ready(function() {
 
     // feedback button
     $('body').on("click", ".rate-it", function() {
+        $(".rating-div").hide();
+        $('.thank').show();
+    });
+
+    $('body').on("click", ".thank-youmsg", function() {
         $(".rating-div").hide();
         $('.thank').show();
     });
@@ -1298,6 +1400,13 @@ $(document).ready(function() {
         navigation: true,
         navigationPosition: 'right',
         afterLoad: function(e, index) {
+            var a = e;
+            if (a == '2Page') {
+                $('.invest-gifimage1').attr('src', '../images/open-account/class.gif');
+            }
+            if (a == '5Page') {
+                $('.power-list li.power1,.power-list li.power2,.power-list li.power3,.power-list li.power4,.power-list li.power5').addClass('wow fadeInDown animated');
+            }
             //console.log(e, index);
             var $this = $(this);
             var page = window.location.href;
@@ -1312,15 +1421,16 @@ $(document).ready(function() {
             // Depending on the page you can place your function in this also 
             if (pPage[0] == "platforms-mobapp.html") {
                 // imageSlide(time, loop, animation speed);
-                tarEle.imgSlide(1500, false);
+                tarEle.imgSlide(1000, false);
             } else {
                 // imageSlide(time, loop, animation speed);
-                tarEle.imgSlide(1500, true, 100);
+                tarEle.imgSlide(1000, true, 100);
             }
         },
         onLeave: function(e, i, a) {
             // console.log(e, i, a, $(this));
             $(this).find('.image-platfade').removeClass('active');
+            $('.power-list li.power1,.power-list li.power2,.power-list li.power3,.power-list li.power4,.power-list li.power5').removeClass('wow fadeInDown animated');
         }
     });
 
@@ -1435,12 +1545,15 @@ $(document).ready(function() {
     }
 
     setTimeout(progress, 2000);
-	
-	
-	// result progress bar -- >learn
-	$( ".result-progress" ).progressbar({
-      value: 37
+
+
+    // result progress bar -- >learn
+    $(".result-progress").progressbar({
+        value: 37
     });
+
+    //dots --> learn
+    $('.elipsis-dots').dotdotdot();
 
     // Menu Active and scrool 
     if ($(window).width() <= 995) {
@@ -1458,9 +1571,7 @@ $(document).ready(function() {
             currentClass: 'active',
         });
     }
-	
-	//dots --> learn
-	$('.elipsis-dots').dotdotdot();
+
 
     /* resize function */
 
@@ -1485,10 +1596,10 @@ function navigation() {
             $(this).closest('li').toggleClass('active');
 
             event.stopImmediatePropagation();
-        });
-        $('.second-level-menu > li').hover(function() {
-            $(this).closest('li').siblings().removeClass('active');
-            $(this).closest('li').addClass('active');
+
+
+
+
         });
 
         $(document).on('click', function(e) {
@@ -1503,9 +1614,6 @@ function navigation() {
             collapsible: true,
             active: true,
             heightStyle: "content"
-        });
-        $('.menu-section a').on('click', function(e){
-            $(this).hitMenuNav(e);
         });
     }
 }
@@ -1524,7 +1632,7 @@ function tabslider() {
 }
 
 // Home Testmonials
-$('.customers-testmonials ul').find('li').hover(function() {
+$('.customers-testmonials ul, .open-acc-customers ul').find('li').hover(function() {
     // hover
     var $this = $(this);
     var $show = $this.find('.cust-tool');
@@ -1533,9 +1641,8 @@ $('.customers-testmonials ul').find('li').hover(function() {
     var ele = $show.width() + 10;
     $this.on('mousemove', function(e) {
         var screenX = e.screenX;
-        console.log('screen', screenX);
+        // console.log('screen', screenX);
         var docW = $(window).innerWidth();
-        var opts;
         if ((docW - (screenX + 100)) < ele) {
             $point = 0;
         }
@@ -1545,7 +1652,7 @@ $('.customers-testmonials ul').find('li').hover(function() {
         } else {
             $('.cust-tool').addClass('tool-left-push');
         }
-        $show.stop().show().css(opts);
+        $show.stop().show();
         $this.css({
             'display': "show"
         });

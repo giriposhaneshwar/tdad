@@ -1,5 +1,5 @@
 <?php
-$this->_addPath( 'template', JPATH_COMPONENT  . '/views/offeringsvalueaddedservicess/tmpl' );
+$this->_addPath('template', JPATH_COMPONENT . '/views/offeringsvalueaddedservicess/tmpl');
 echo $this->loadTemplate('breadcrumb');
 ?>
 <!-- Content -->
@@ -19,8 +19,8 @@ echo $this->loadTemplate('breadcrumb');
                 </div>
             </div>
         </div>
-       
-        
+
+
         <!-- INVESTMENT & TRADING IDEAS -->
         <div class="pro-over">
             <div class="over-products vas-bg-2">
@@ -105,10 +105,10 @@ echo $this->loadTemplate('breadcrumb');
                                     <div class="invest-con">
                                         <h4 class="hea-heaing">Invest in Equity for Long Term/ Do SIP </h4>
                                         <p class="exp-txt">(6 to 12 months)</p>
-                                        
-                                         <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop"><span class="invest-pop-btn">View Investment Ideas</span></a>
+
+                                         <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-investpop"><span class="invest-pop-btn">View Investment Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-investpop">
+                                    <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-investpop">
                                         <p class="ribbonBtn">View Investment Ideas</p>
                                     </a>
                                 </li>
@@ -117,10 +117,10 @@ echo $this->loadTemplate('breadcrumb');
                                     <div class="invest-con">
                                         <h4 class="hea-heaing">Trade in Equity for Short Term</h4>
                                         <p class="exp-txt">(Less Than 1 month)</p>
-                                        
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop"><span class="invest-pop-btn ri-col2">View Trading Ideas</span></a>
+
+                                        <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-tradingpop"><span class="invest-pop-btn ri-col2">View Trading Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-tradingpop">
+                                    <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-tradingpop">
                                         <p class="ribbonBtn ri-col2">View Trading Ideas</p>
                                     </a>
                                 </li>
@@ -129,10 +129,10 @@ echo $this->loadTemplate('breadcrumb');
                                     <div class="invest-con">
                                         <h4 class="hea-heaing">Invest in Mutual Funds/Do SIP</h4>
                                         <p class="exp-txt">(> 3 years)</p>
-                                        
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop"><span class="invest-pop-btn ri-col4">View Mutual Fund Ideas</span></a>
+
+                                        <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-mutualpop"><span class="invest-pop-btn ri-col4">View Mutual Fund Ideas</span></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-mutualpop">
+                                    <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-mutualpop">
                                         <p class="ribbonBtn ri-col4">View Mutual Fund Ideas</p>
                                     </a>
                                 </li>
@@ -141,10 +141,10 @@ echo $this->loadTemplate('breadcrumb');
                                     <div class="invest-con">
                                         <h4 class="hea-heaing">Trade in Derivative Strategies</h4>
                                         <p class="exp-txt">( 1 day – 1 month)</p>
-                                        
-                                        <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop"><span class="invest-pop-btn ri-col5">View Derivative Strategies</span></a>
+
+                                        <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-strategiespop"><span class="invest-pop-btn ri-col5">View Derivative Strategies</span></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="pop-like" data-val="vas-strategiespop">
+                                    <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-strategiespop">
                                         <p class="ribbonBtn ri-col5">View Derivative Strategies</p>
                                     </a>
                                 </li>
@@ -154,7 +154,7 @@ echo $this->loadTemplate('breadcrumb');
                 </div>
             </div>
         </div>
-        
+
         <!-- PORTFOLIO TRACKER -->
         <div class="pro-over">
             <div class="over-products vas-bg-1">
@@ -213,7 +213,7 @@ echo $this->loadTemplate('breadcrumb');
             </div>
         </div>
         <!-- LEVERAGE MULTIPLY YOUR POTENTIAL -->
-        
+
         <!--<div class="pro-over">
             <div class="over-products vas-bg-3">
                 <div class="container_12">
@@ -303,7 +303,7 @@ echo $this->loadTemplate('breadcrumb');
                 </div>
             </div>
         </div>-->
-        
+
         <!-- Push Notifications -->
         <div class="pro-over">
             <div class="over-products vas-bg-4">
@@ -380,7 +380,7 @@ echo $this->loadTemplate('breadcrumb');
                 </div>
             </div>
         </div>
-        
+
         <!-- Financial Planning -->
         <div class="pro-over">
             <div class="over-products vas-bg-5">
@@ -407,14 +407,14 @@ echo $this->loadTemplate('breadcrumb');
                                 <li>
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp1"></i></span>
                                     <h4 class="hea-heaing">Risk Profiler</h4>
-                                    
+
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
                                 <li>
                                     <span class="der-icon-border fin-icon-border"><i class="sprite-img fin-exp-icon fin-exp2"></i></span>
                                     <div class="eq-exp-con">
                                         <h4 class="hea-heaing">Financial Health Check</h4>
-                                        
+
                                     </div>
                                     <a href="javascript:void(0)" class="fin-aply-btn">Start Now</a>
                                 </li>
@@ -445,6 +445,6 @@ echo $this->loadTemplate('breadcrumb');
                 </div>
             </div>
         </div>
-        
-        
+
+
     </section>

@@ -225,7 +225,7 @@ input:focus,input:hover,textarea:focus,textarea:hover,select:focus,select:hover{
    font-family: Arial,Helvetica,sans-serif;
 }
 .error{border:1px solid red;}
-input.error{border:1px solid red;}
+input.error{border:2px solid #feb13f;}
 .form-fileds > li{margin-bottom:20px;}
 .mandatory-field{position:relative;}
 .form-fileds label{margin-bottom:5px;display:block;color: #808184;}
@@ -397,8 +397,9 @@ input.error{border:1px solid red;}
 	padding:10px; 
 	margin:10px 0;
 	display:none;
-	text-align:center;
+	/*text-align:center;*/
 	border:1px solid #f8db78;
+	position:relative;
 }
 .schesme-wish{
 	background-color:#fff;border:1px solid #e8e8e8;
@@ -444,6 +445,16 @@ input.error{border:1px solid red;}
     left: 0;
 	 background: rgba(0, 0, 0, 0.85);
 }
+.coatch-overlay1 {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 50;
+    top: 0;
+    left: 0;
+	 background: rgba(0, 0, 0, 0.85);
+}
+
 .coatch-overlay-home{
 	top:95px;
 }
@@ -502,7 +513,7 @@ input.error{border:1px solid red;}
 /* ::::::::::::::::::::::::::::::::: Tooltip Styles ::::::::::::::::::::::::::::::::*/
 
 .tooltipdiv{position:relative;left:0px;top:0px;cursor:pointer;}
-.tooltip-bdy{position:absolute;background:#eff2f4; border:1px solid #ddd;border-radius:1px;min-height:70px;width:270px;top:0px;left:20px;display:none;z-index:2;}
+.tooltip-bdy{position:absolute;background:#eff2f4; border-radius:1px;min-height:70px;width:270px;top:0px;left:20px;display:none;z-index:2;}
 .info-icon{ background: #999;border-radius: 50%; /*bottom: 10px;*/color: #999;height: 20px;padding: 4px;/*position: absolute;right: 250px;*/text-align: center; display:inline-block;
 width: 20px;}
 .thumb-tool{position:absolute;top:-38px;}
@@ -511,7 +522,6 @@ width: 20px;}
 
 .tooltip-bdy:after, .tooltip-bdy:before {
 	right: 100%;
-	top: 29%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -520,59 +530,54 @@ width: 20px;}
 	pointer-events: none;
 }
 
-/* tooltip Left*/
-.tooltip-bdy:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #eff2f4;
-	border-width: 10px;
-	margin-top: -10px;
-}
+
 
 /* tooltip Right*/
-.tooltip-bdy.right:after {
-	border-color: rgba(255, 255, 255, 0);
-	/*border-left-color: #ffffff;*/
-	border-width: 10px;
-	margin-top: -10px;
-}
+.logintool .tooltip-bdy{background:none;}
+.tool-box:hover .tooltip-bdy{display:block;}
+.tooltip-bdy.right:after {border-color: rgba(255, 255, 255, 0);border-width: 10px;margin-top: -10px;}
+.tool-box .tooltip-bdy.right{width:inherit;padding:5px;right:55px;left:initial;min-height:inherit;}
+.tool-box .tooltip-inner{padding:0;}
+.tool-box .tooltip-bdy.right:after, .tool-box .tooltip-bdy.right:before{left: 100%;top: 50%;}
+.tool-box .tooltip-bdy.right:before{border-width: 8px;margin-top: -8px;border-left-color: #eff2f4;}
 
 /* tooltip top*/
-/*.tooltip-bdy.top:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-width: 10px;
-	margin-left: -10px;
-}*/
+.tool-box .tooltip-bdy.top{width:260px;padding:5px;top:35px;left:initial;right:20px; min-height:inherit;}
+.tool-box .tooltip-inner{padding:0;}
 
-/* tooltip Bottom*/
-.tooltip-bdy.bottom:after {
-	border-color: rgba(255, 255, 255, 0);
-	/*border-top-color: #ffffff;*/
-	border-width: 10px;
-	margin-left: -10px;
+.tooltip-bdy.top .tooltip-inner {
+	padding:8px 15px;
+	position: relative;
+	background: #eff2f4;
+	border: 1px solid #ddd;
+}
+.tooltip-bdy.top .tooltip-inner:after,.tooltip-bdy.top .tooltip-inner:before {
+	bottom: 100%;
+	left: 92%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
 
-.tooltip-bdy:before {
-	border-color: rgba(224, 224, 224, 0);
-	//border-right-color: #e0e0e0;
-	border-width: 11px;
-	margin-top: -11px;
+.tooltip-bdy.top .tooltip-inner:after {
+	border-color: rgba(239, 242, 244, 0);
+	border-bottom-color: #eff2f4;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.tooltip-bdy.top .tooltip-inner:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-bottom-color: #ddd;
+	border-width: 9px;
+	margin-left: -9px;
 }
 
-.tooltip-bdy.left:after {
-	border-color: rgba(224, 224, 224, 0);
-	border-left-color: #e0e0e0;
-	border-width: 11px;
-	margin-top: -11px;
-}
-.tooltip-bdy.left:before {
-	border-color: rgba(224, 224, 224, 0);
-	/*border-left-color: #c2e1f5;*/
-	border-width: 11px;
-	margin-top: -11px;
-}
+
 
 .headingtooltip {
-	position: relative;
 	background: #eff2f4;
 	border: 1px solid #e0e0e0;
 	display:none;

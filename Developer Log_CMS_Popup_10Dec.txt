@@ -1,0 +1,25 @@
+
+
+Focused Popup's for CMS form Offerings-> Value Added Services
+----------
+Investment Ideas (Alias: investment-ideas)
+Trading Ideas (Alias: trading-ideas)
+Mutual Fund Ideas (Alias: mutual-fund-ideas)
+Derivative Strategies (Alias: derivative-strategies)
+
+
+
+
+Offerings -> Value Added Services -> Research Products, Popup's to CMS
+-------------------------------------------------------------------------------
+Front End/component view Modificaiton : 
+- 	Append attribute "data-action='cms'" along with attribute "data-val" where ever you want to trigger 	article instead of component in popup. following is the example of dom element: 
+	ex: <a href="javascript:void(0)" class="pop-like" data-action="cms" data-val="vas-investpop">
+                                        <p class="ribbonBtn">View Investment Ideas</p>
+                                    </a>
+-	In Javascript file core.js at line: 1302 - 1364 i have implemented the popup to what to trigger 		component or article from joomla admin. I am pulling the data based on the url's.
+
+Admin panel specifications : 
+-	Create Article with the specif name, Category = "uncategoriesed".
+-	Create invisible menu item with the name that match the DOM data-val attribute, so that the alias of 	 menu shuld match with attribute data-val's Value. so that the URL can be pointed based on the DOM 			value instead of article ID.
+- 	Rest of the logic can be done by code.js script.

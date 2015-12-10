@@ -30,7 +30,7 @@
 	box-sizing: border-box;
 	cursor: pointer;
 	display: block;
-	min-height: 32px;
+	min-height: 30px;
 	user-select: none;
 	-webkit-user-select: none;
 }
@@ -72,8 +72,8 @@
 	padding: 0;
 }
 .select2-results__option {
-	height:36px;
-	line-height:36px;
+	height:30px;
+	line-height:30px;
 	padding-left:10px;
 	user-select: none;
 	-webkit-user-select: none;
@@ -1332,7 +1332,7 @@ html.fp-enabled,
     display: block;
     width: 14px;
     height: 13px;
-    margin: 7px;
+    margin: 5px;
     position:relative;
 }
 .fp-slidesNav ul li {
@@ -1351,12 +1351,12 @@ html.fp-enabled,
 #fp-nav ul li a.active:after{
 	content: '';
     position: absolute;
-    top: -1px;
+    /*top: -1px;
     left: -1px;
     bottom: -1px;
-    right: -1px;
-	width:14px;height:14px;
-    border: 1px #fff solid;
+    right: -1px;*/
+	width:8px;height:8px;
+    border: 2px #fff solid;
 	border-radius:50%;
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
@@ -1367,14 +1367,15 @@ html.fp-enabled,
 #fp-nav ul li:hover a.active span,
 .fp-slidesNav ul li:hover a.active span{
     border-radius: 100%;
+	background: transparent;
  }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
     border-radius: 50%;
     position: absolute;
     z-index: 1;
-    height: 6px;
-    width: 6px;
+    height: 4px;
+    width: 4px;
     border: 0;
     background: #ffffff;
     left: 50%;
